@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_alternativo"
+        tools:context=".Cadastro">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Defina seu e-mail e senha"
+            android:textSize="24sp"
+            android:textColor="@color/preto"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginTop="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/edtEmail"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:hint="Email"
+            android:autofillHints="emailAddress"
+            android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/ic_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+
+        <EditText
+            android:id="@+id/edtSenha"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:hint="Senha"
+            android:autofillHints="password"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/ic_lock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail"/>
+
+        <EditText
+            android:id="@+id/edtConfirmarSenha"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:hint="Confirmar senha"
+            android:autofillHints="password"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/ic_lock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtSenha"/>
+
+        <ImageView
+            android:id="@+id/imgCadastro"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/img_cadastroContinuar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtConfirmarSenha"/>
+
+        <Button
+            android:id="@+id/btnEntrar"
+            android:layout_width="280dp"
+            android:layout_height="54dp"
+            android:background="@drawable/btnlogin"
+            android:layout_marginTop="64dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Cadastrar-se"
+            android:textSize="20sp"
+            android:textColor="@color/branco"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgCadastro" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

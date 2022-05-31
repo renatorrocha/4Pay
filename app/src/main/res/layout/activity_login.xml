@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="307dp"
+        android:layout_height="145dp"
+        android:src="@drawable/icon_foursys"
+        android:background="#00000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"/>
+    
+    <EditText
+        android:id="@+id/edtNome"
+        style="@style/campoEscrever"
+        android:layout_marginTop="72dp"
+        android:hint="Email"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress"
+        android:drawableEnd="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+    <EditText
+        android:id="@+id/edtSenha"
+        style="@style/campoEscrever"
+        android:layout_marginTop="48dp"
+        android:hint="Senha"
+        android:autofillHints="emailAddress"
+        android:inputType="numberPassword"
+        android:drawableEnd="@drawable/ic_lock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNome"/>
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="280dp"
+        android:layout_height="54dp"
+        android:background="@drawable/btnlogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtSenha"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Entrar"
+        android:textSize="20sp"
+        android:textColor="@color/branco"
+        />
+
+    <TextView
+        android:id="@+id/tvCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:text="Cadastrar-se"
+        android:textSize="20sp"
+        android:textColor="@color/preto"
+        android:fontFamily="@font/nunito_bold"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/btnEntrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:background="@drawable/dashed_underline"
+        android:layout_height="16dp"
+        android:text="Esqueci a senha"
+        android:textSize="12sp"
+        android:textColor="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:layout_marginTop="22dp"
+        app:layout_constraintTop_toBottomOf="@id/tvCadastrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
