@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtRua"/>
 
     <Button
-        android:id="@+id/btnEntrar"
+        android:id="@+id/btnContinuar"
         android:layout_width="280dp"
         android:layout_height="54dp"
         android:background="@drawable/btnlogin"
