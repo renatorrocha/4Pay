@@ -1,113 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_alternativo"
-    tools:context=".Cadastro">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_alternativo"
+        tools:context=".Cadastro">
 
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:text="Informe os seus dados"
-        android:textSize="24sp"
-        android:textColor="@color/preto"
-        android:fontFamily="@font/nunito_bold"
-        android:layout_marginTop="26dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="26dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Informe os seus dados"
+            android:textColor="@color/preto"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edtNome"
-        style="@style/campoEscrever"
-        android:layout_marginTop="23dp"
-        android:hint="Nome completo"
-        android:autofillHints="name"
-        android:inputType="textPersonName"
-        android:drawableStart="@drawable/ic_person"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+        <EditText
+            android:id="@+id/edtNome"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:autofillHints="name"
+            android:drawableStart="@drawable/ic_person"
+            android:hint="Nome completo"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
-    <EditText
-        android:id="@+id/edtCpf"
-        style="@style/campoEscrever"
-        android:layout_marginTop="23dp"
-        android:hint="CPF"
-        android:autofillHints="name"
-        android:inputType="number"
-        android:drawableStart="@drawable/ic_id"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNome"/>
+        <EditText
+            android:id="@+id/edtCpf"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:autofillHints="name"
+            android:drawableStart="@drawable/ic_id"
+            android:hint="CPF"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNome" />
 
-    <EditText
-        android:id="@+id/edtNascimento"
-        style="@style/campoEscrever"
-        android:layout_marginTop="23dp"
-        android:hint="Data de nascimento"
-        android:inputType="date"
-        android:drawableStart="@drawable/ic_id"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCpf"/>
+        <EditText
+            android:id="@+id/edtNascimento"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:drawableStart="@drawable/ic_id"
+            android:hint="Data de nascimento"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCpf" />
 
-    <EditText
-        android:id="@+id/edtCep"
-        style="@style/campoEscrever"
-        android:layout_marginTop="23dp"
-        android:hint="Cep"
-        android:inputType="textPostalAddress"
-        android:drawableStart="@drawable/adress_book"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNascimento"/>
+        <EditText
+            android:id="@+id/edtCep"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:drawableStart="@drawable/adress_book"
+            android:hint="Cep"
+            android:inputType="textPostalAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNascimento" />
 
-    <EditText
-        android:id="@+id/edtRua"
-        style="@style/campoEscrever"
-        android:layout_marginTop="23dp"
-        android:hint="Rua e número"
-        android:inputType="text"
-        android:drawableStart="@drawable/adress_book"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCep"/>
+        <EditText
+            android:id="@+id/edtRua"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:drawableStart="@drawable/adress_book"
+            android:hint="Rua e número"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCep" />
 
-    <EditText
-        android:id="@+id/edtCidade"
-        style="@style/campoEscrever"
-        android:layout_marginTop="23dp"
-        android:hint="Cidade"
-        android:inputType="text"
-        android:drawableStart="@drawable/adress_book"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtRua"/>
+        <EditText
+            android:id="@+id/edtCidade"
+            style="@style/campoEscrever"
+            android:layout_marginTop="23dp"
+            android:drawableStart="@drawable/adress_book"
+            android:hint="Cidade"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtRua" />
 
-    <Button
-        android:id="@+id/btnContinuar"
-        android:layout_width="280dp"
-        android:layout_height="54dp"
-        android:background="@drawable/btnlogin"
-        android:layout_marginTop="84dp"
-        android:fontFamily="@font/nunito_bold"
-        android:text="Continuar"
-        android:textSize="20sp"
-        android:textColor="@color/branco"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCidade"
-        />
+        <Button
+            android:id="@+id/btnContinuar"
+            android:layout_width="280dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="84dp"
+            android:background="@drawable/btnlogin"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Continuar"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCidade" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
