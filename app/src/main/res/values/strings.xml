@@ -2,5 +2,7 @@
     <string name="app_name">Appbanco</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_gerar_cartao">Gerar cartão</string>
+    <string name="txt_destinatario_pix">Para João</string>
+    <string name="txt_btn_transferir">Transferir</string>
 
 </resources>
