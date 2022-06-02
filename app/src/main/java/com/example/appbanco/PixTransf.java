@@ -8,15 +8,15 @@ import android.widget.Button;
 
 public class PixTransf extends AppCompatActivity {
 
-    Button btnPixProximo;
+    Button btnProximo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pix_transf);
 
-        btnPixProximo = findViewById(R.id.btnPixProximo);
+        btnProximo = findViewById(R.id.btnPixProximo);
 
-        btnPixProximo.setOnClickListener(view -> {
+        btnProximo.setOnClickListener(view -> {
             startActivity(new Intent(this, PixTransfDestino.class));
         });
 
