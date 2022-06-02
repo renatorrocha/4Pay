@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/background.xml" value="0.261" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/background_alternativo.xml" value="0.199" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/bakcground.xml" value="0.196" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/btnlogin.xml" value="0.261" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/edtext.xml" value="0.261" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/line.xml" value="0.3265" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/font/font.xml" value="0.3958333333333333" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_cadastro.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.33" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_esqueci_senha.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_login.xml" value="0.20300751879699247" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_tipo_conta.xml" value="0.33568904593639576" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/drawable/btnlogin.xml" value="0.249" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/drawable/ic_arrow_right.xml" value="0.231" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/drawable/line_shape.xml" value="0.231" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/activity_cadastro.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.1125" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/activity_cartoes.xml" value="0.264" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/activity_esqueci_senha.xml" value="0.264" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/activity_gerar_cartoes.xml" value="0.264" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/activity_pix_transf.xml" value="0.264" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/activity_pix_transferencia.xml" value="0.1734375" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/fragment_cartoes.xml" value="0.264" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/fragment_gerar_cartoes.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/line_shape.xml" value="0.34427083333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
