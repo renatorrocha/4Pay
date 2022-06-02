@@ -9,6 +9,7 @@
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/btnlogin.xml" value="0.261" />
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/edtext.xml" value="0.261" />
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/line.xml" value="0.3265" />
+<<<<<<< HEAD
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/font/font.xml" value="0.3958333333333333" />
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_cadastro.xml" value="0.36666666666666664" />
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.33" />
@@ -32,6 +33,23 @@
         <entry key="..\:/Users/gfarias/Downloads/Appbanco-main/app/src/main/res/layout/line_shape.xml" value="0.34427083333333336" />
         <entry key="..\:/Users/imiranda/Downloads/Appbanco-main/app/src/main/res/layout/activity_pix_transf.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/Downloads/Appbanco-main/app/src/main/res/layout/activity_pix_transf_destino.xml" value="0.4" />
+=======
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/linha.xml" value="0.199" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/font/font.xml" value="0.3958333333333333" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_cadastro.xml" value="0.33" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.33" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_esqueci_senha.xml" value="0.21243523316062177" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_home.xml" value="0.35260416666666666" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_login.xml" value="0.30462962962962964" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_operadora.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_pix.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_recarga.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_recarga_pagamento.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_recarga_valor_cartao.xml" value="0.5" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_recarga_valor_conta.xml" value="0.33" />
+        <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/layout/activity_tipo_conta.xml" value="0.33568904593639576" />
+>>>>>>> 0e4792ee0011d97adb9c18b6812fbac73d5da982
       </map>
     </option>
   </component>

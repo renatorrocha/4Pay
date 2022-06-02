@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_alternativo"
+        tools:context=".Operadora">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="279dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="26dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Qual é a operadora?"
+            android:textColor="@color/preto"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNumero"
+            android:layout_width="130dp"
+            android:layout_height="19dp"
+            android:text="(99) 99999-9999"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTitulo"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/rbtnClaro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumero">
+
+            <RadioButton
+                android:id="@+id/rbtnClaro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/preto"
+                android:layout_marginTop="16dp"
+                android:text="Claro"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <RadioButton
+                android:id="@+id/rbtnTim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/preto"
+                android:layout_marginTop="16dp"
+                android:text="Tim"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <RadioButton
+                android:id="@+id/rbtnOi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/preto"
+                android:layout_marginTop="16dp"
+                android:text="Oi"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <RadioButton
+                android:id="@+id/rbtnVivo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/preto"
+                android:layout_marginTop="16dp"
+                android:text="Vivo"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/btnProximo"
+            android:layout_width="280dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/btnlogin"
+            android:fontFamily="@font/nunito_bold"
+            android:text="próximo"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
