@@ -14,9 +14,9 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".PixTransfFinal"
-=======
+            android:exported="false" />
+        <activity
             android:name=".HomeConfigs"
             android:exported="false" />
         <activity
@@ -24,7 +24,6 @@
             android:exported="false" />
         <activity
             android:name=".Transferencia"
->>>>>>> main
             android:exported="false" />
         <activity
             android:name=".PixTransfDestino"
