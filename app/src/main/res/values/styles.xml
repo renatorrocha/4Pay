@@ -2,12 +2,13 @@
 <resources>
 
     <style name="campoEscrever">
-        <item name="android:layout_width">254dp</item>
+        <item name="android:layout_width">307dp</item>
         <item name="android:layout_height">41dp</item>
         <item name="android:background">@drawable/edtext</item>
-        <item name="android:layout_margin">20dp</item>
         <item name="android:paddingStart">8dp</item>
         <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
         <item name="android:textColorHint">@color/preto</item>
         <item name="android:fontFamily">@font/nunito_regular</item>
         <item name="android:drawablePadding">8dp</item>
