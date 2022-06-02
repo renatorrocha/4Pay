@@ -14,7 +14,7 @@
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="307dp"
+        android:layout_width="320dp"
         android:layout_height="145dp"
         android:src="@drawable/icon_foursys"
         android:background="#00000000"
@@ -22,11 +22,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"/>
-    
+
     <EditText
         android:id="@+id/edtNome"
         style="@style/campoEscrever"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="92dp"
         android:hint="Email"
         android:autofillHints="emailAddress"
         android:inputType="textEmailAddress"
@@ -38,7 +38,7 @@
     <EditText
         android:id="@+id/edtSenha"
         style="@style/campoEscrever"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:hint="Senha"
         android:autofillHints="emailAddress"
         android:inputType="numberPassword"
