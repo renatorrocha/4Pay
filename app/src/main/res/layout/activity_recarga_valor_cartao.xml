@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_alternativo"
+        tools:context=".RecargaValorCartao">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="279dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginStart="-80dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Qual é o valor da recarga?"
+
+            android:textColor="@color/preto"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSaldo"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Limite disponível: R$ 999"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvTitulo"
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:checkedButton="@id/rbtnOpt1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSaldo">
+
+            <RadioButton
+                android:id="@+id/rbtnOpt1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="21dp"
+                android:buttonTint="@color/preto"
+                android:layout_marginTop="2dp"
+                android:text="R$ 12,00"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <ImageView
+                android:id="@+id/imgLinha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/linha"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/rbtnOpt2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="21dp"
+                android:buttonTint="@color/preto"
+                android:text="R$ 15,00"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <ImageView
+                android:id="@+id/imgLinha2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/linha"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/rbtnOpt3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="21dp"
+                android:buttonTint="@color/preto"
+                android:text="R$ 20,00"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <ImageView
+                android:id="@+id/imgLinha3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/linha"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/rbtnOpt4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="21dp"
+                android:buttonTint="@color/preto"
+                android:text="R$ 25,00"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <ImageView
+                android:id="@+id/imgLinha4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/linha"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/rbtnOpt5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="21dp"
+                android:buttonTint="@color/preto"
+                android:text="R$ 30,00"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <ImageView
+                android:id="@+id/imgLinha5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/linha"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/rbtnOpt6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="21dp"
+                android:buttonTint="@color/preto"
+                android:text="R$ 35,00"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <ImageView
+                android:id="@+id/imgLinha6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/linha"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/rbtnOpt7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="21dp"
+                android:buttonTint="@color/preto"
+                android:text="R$ 40,00"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_regular"/>
+
+            <ImageView
+                android:id="@+id/imgLinha7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/linha"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnProximo"
+            android:layout_width="280dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="135dp"
+            android:background="@drawable/btnlogin"
+            android:fontFamily="@font/nunito_bold"
+            android:text="próximo"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
