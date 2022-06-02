@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_alternativo"
+        tools:context=".RecargaPagamentov">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="279dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="26dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Escolha a forma de pagamento"
+            android:textAlignment="center"
+            android:textColor="@color/preto"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvConta"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Conta do 4Bank"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgDinheiro"
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+
+        <TextView
+            android:id="@+id/tvSaldo"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Saldo disponível: R$ 999"
+            android:textSize="11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgDinheiro"
+            app:layout_constraintTop_toBottomOf="@id/tvConta" />
+
+        <ImageView
+            android:id="@+id/imgDinheiro"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="-5dp"
+            android:src="@drawable/ic_money"
+            app:layout_constraintEnd_toStartOf="@id/tvConta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvConta" />
+
+        <ImageView
+            android:id="@+id/imgLinha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/linha"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgDinheiro"/>
+
+
+        <TextView
+            android:id="@+id/tvCartao"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Cartão de crédito"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgCartao"
+            app:layout_constraintTop_toBottomOf="@id/imgLinha" />
+
+        <TextView
+            android:id="@+id/tvLimite"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Limite disponível: 999"
+            android:textSize="11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgDinheiro"
+            app:layout_constraintTop_toBottomOf="@id/tvCartao" />
+
+        <ImageView
+            android:id="@+id/imgCartao"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="-5dp"
+            android:src="@drawable/ic_cartao"
+            app:layout_constraintEnd_toStartOf="@id/tvCartao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvCartao" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="360dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="60dp"
+            android:checkedButton="@id/rbtnConta"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvTitulo"
+            app:layout_constraintTop_toTopOf="@+id/imgDinheiro"
+            app:layout_constraintBottom_toBottomOf="@id/imgCartao">
+
+        <RadioButton
+            android:id="@+id/rbtnConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/preto"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"/>
+
+        <RadioButton
+            android:id="@+id/rbtnCartao"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/preto"
+            android:layout_marginTop="70dp"
+            android:layout_marginStart="20dp"/>
+
+        </RadioGroup>
+
+
+
+        <Button
+            android:id="@+id/btnProximo"
+            android:layout_width="280dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="220dp"
+            android:background="@drawable/btnlogin"
+            android:fontFamily="@font/nunito_bold"
+            android:text="próximo"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgCartao" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

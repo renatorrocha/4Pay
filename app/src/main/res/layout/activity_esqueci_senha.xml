@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        tools:context=".MainActivity">
+        tools:context=".EsqueciSenha">
 
         <ImageView
             android:id="@+id/ivLogo"
@@ -72,6 +72,7 @@
             app:layout_constraintTop_toBottomOf="@id/btnEnviar" />
 
         <TextView
+            android:id="@+id/tvEnviarDenovo"
             android:layout_width="wrap_content"
             android:layout_height="16dp"
             android:layout_marginTop="22dp"
@@ -83,7 +84,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgEsqueciSenha" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
