@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Pagamentos.Recarga;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.appbanco.databinding.ActivityOperadoraBinding;
+import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityRecargaBinding;
 
 public class Recarga extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class Recarga extends AppCompatActivity {
         binding.btnProximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Recarga.this,RecargaPagamento.class);
+                Intent intent = new Intent(Recarga.this, Operadora.class);
                 startActivity(intent);
             }
         });

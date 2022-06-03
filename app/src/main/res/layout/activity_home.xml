@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo"
-    tools:context=".Home">
+    tools:context=".view.Home.Home">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="50dp"
-            android:src="@drawable/perfil" />
+            android:src="@drawable/ic_person_pink" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="44dp"
-        android:src="@drawable/olho_fechado"
+        android:src="@drawable/ic_olho_fechado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="60dp"
-        android:drawableTop="@drawable/saldo"
+        android:drawableTop="@drawable/ic_saldo"
         android:text="Saldo e Extratos"
         android:textColor="@color/preto"
         android:textSize="16sp"
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
         android:text="Pix"
-        android:drawableTop="@drawable/pix"
+        android:drawableTop="@drawable/ic_pix"
         android:textColor="@color/preto"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/tvTransf"
@@ -111,7 +111,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="52dp"
         android:text="Pagamentos"
-        android:drawableTop="@drawable/pag"
+        android:drawableTop="@drawable/ic_pag"
         android:textColor="@color/preto"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/tvRecarga"
@@ -126,7 +126,7 @@
         android:layout_marginStart="56dp"
         android:layout_marginBottom="152dp"
         android:text="Cartão"
-        android:drawableTop="@drawable/card"
+        android:drawableTop="@drawable/ic_card"
         android:textColor="@color/preto"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -142,7 +142,7 @@
         android:layout_marginBottom="152dp"
         android:text="Transferência"
         android:textColor="@color/preto"
-        android:drawableTop="@drawable/transferencia"
+        android:drawableTop="@drawable/ic_transferencia"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvCartao"

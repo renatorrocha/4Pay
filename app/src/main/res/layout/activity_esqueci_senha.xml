@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        tools:context=".EsqueciSenha">
+        tools:context=".view.Login_Cadastro.EsqueciSenha">
 
         <ImageView
             android:id="@+id/ivLogo"
@@ -17,7 +17,7 @@
             android:layout_height="145dp"
             android:layout_marginTop="16dp"
             android:background="#00000000"
-            android:src="@drawable/icon_foursys"
+            android:src="@drawable/icon_4pay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,17 +35,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtEmail"
-            style="@style/campoEscrever"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:autofillHints="emailAddress"
-            android:drawableStart="@drawable/ic_email"
             android:hint="Email:"
-            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+            app:startIconDrawable="@drawable/ic_email"
+            app:startIconTint="@color/preto">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnEnviar"

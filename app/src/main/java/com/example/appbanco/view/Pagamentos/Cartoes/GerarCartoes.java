@@ -1,8 +1,10 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Pagamentos.Cartoes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.appbanco.R;
 
 public class GerarCartoes extends AppCompatActivity {
 

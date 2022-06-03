@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Login_Cadastro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.appbanco.databinding.ActivityEsqueciSenhaBinding;
+import com.example.appbanco.view.Home.Home;
 
 public class EsqueciSenha extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class EsqueciSenha extends AppCompatActivity {
         binding.btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EsqueciSenha.this,Home.class);
+                Intent intent = new Intent(EsqueciSenha.this, Home.class);
                 startActivity(intent);
                 Toast.makeText(EsqueciSenha.this, "Um email de recuperacao foi enviado", Toast.LENGTH_SHORT).show();
             }

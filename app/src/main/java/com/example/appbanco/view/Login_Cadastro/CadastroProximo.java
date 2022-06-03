@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Login_Cadastro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +23,7 @@ public class CadastroProximo extends AppCompatActivity {
         binding.btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CadastroProximo.this,TipoConta.class);
+                Intent intent = new Intent(CadastroProximo.this, TipoConta.class);
                 startActivity(intent);
             }
         });

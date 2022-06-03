@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
-        tools:context=".Recarga">
+        tools:context=".view.Pagamentos.Recarga.Recarga">
 
         <TextView
             android:id="@+id/tvTitulo"

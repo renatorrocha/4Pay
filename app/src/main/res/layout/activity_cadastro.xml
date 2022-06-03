@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
-        tools:context=".Cadastro">
+        tools:context=".view.Login_Cadastro.Cadastro">
 
         <TextView
             android:id="@+id/tvTitulo"
@@ -24,73 +24,143 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtNome"
-            style="@style/campoEscrever"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:autofillHints="name"
-            android:drawableStart="@drawable/ic_person"
             android:hint="Nome completo"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
-
-        <EditText
-            android:id="@+id/edtCpf"
-            style="@style/campoEscrever"
-            android:layout_marginTop="23dp"
             android:autofillHints="name"
-            android:drawableStart="@drawable/ic_id"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/preto">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtCpf"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
             android:hint="CPF"
-            android:inputType="number"
+            android:autofillHints="name"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+            app:layout_constraintTop_toBottomOf="@+id/edtNome"
+            app:startIconDrawable="@drawable/ic_id"
+            app:startIconTint="@color/preto">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtNascimento"
-            style="@style/campoEscrever"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:drawableStart="@drawable/ic_id"
             android:hint="Data de nascimento"
-            android:inputType="date"
+            android:autofillHints="name"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCpf" />
+            app:layout_constraintTop_toBottomOf="@+id/edtCpf"
+            app:startIconDrawable="@drawable/ic_id"
+            app:startIconTint="@color/preto">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtCep"
-            style="@style/campoEscrever"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:drawableStart="@drawable/adress_book"
             android:hint="Cep"
-            android:inputType="textPostalAddress"
+            android:autofillHints="name"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtNascimento" />
+            app:layout_constraintTop_toBottomOf="@+id/edtNascimento"
+            app:startIconDrawable="@drawable/ic_adress_book"
+            app:startIconTint="@color/preto">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtRua"
-            style="@style/campoEscrever"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:drawableStart="@drawable/adress_book"
             android:hint="Rua e número"
-            android:inputType="text"
+            android:autofillHints="name"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCep" />
+            app:layout_constraintTop_toBottomOf="@+id/edtCep"
+            app:startIconDrawable="@drawable/ic_adress_book"
+            app:startIconTint="@color/preto">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtCidade"
-            style="@style/campoEscrever"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:drawableStart="@drawable/adress_book"
             android:hint="Cidade"
-            android:inputType="text"
+            android:autofillHints="name"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtRua" />
+            app:layout_constraintTop_toBottomOf="@+id/edtRua"
+            app:startIconDrawable="@drawable/ic_adress_book"
+            app:startIconTint="@color/preto">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnContinuar"

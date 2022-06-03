@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Pagamentos.Pix;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,17 +7,21 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Transferencia extends AppCompatActivity {
+import com.example.appbanco.R;
+import com.example.appbanco.view.Home.Home;
 
-    Button btnTransf2;
+public class PixTransfFinal extends AppCompatActivity {
+
+    Button btnTransf;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transferencia);
+        setContentView(R.layout.activity_pix_transf_final);
 
-        btnTransf2 = findViewById(R.id.btnTransf2);
+        btnTransf = findViewById(R.id.btnTransf);
 
-        btnTransf2.setOnClickListener(view -> {
+        btnTransf.setOnClickListener(view -> {
             startActivity(new Intent(this, Home.class));
             Toast.makeText(this, "Transferencia realizada.", Toast.LENGTH_SHORT).show();
         });

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,34 +10,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
-        tools:context=".Cadastro">
+        tools:context=".view.Login_Cadastro.Cadastro">
 
         <TextView
             android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="Defina o tipo de conta"
-            android:textSize="24sp"
-            android:textColor="@color/preto"
-            android:fontFamily="@font/nunito_bold"
             android:layout_marginTop="26dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Defina o tipo de conta"
+            android:textColor="@color/preto"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvCategoria"
             android:layout_width="248dp"
             android:layout_height="wrap_content"
-            android:text="Escolha uma categoria de conta"
-            android:textSize="16sp"
-            android:textColor="@color/preto"
-            android:fontFamily="@font/nunito_regular"
             android:layout_marginTop="31dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Escolha uma categoria de conta"
+            android:textColor="@color/preto"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -53,49 +51,48 @@
                 android:id="@+id/rbtnComum"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Comum"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/rbtnSuper"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Super"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/rbtnPremium"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Premium"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/tvTipoConta"
             android:layout_width="248dp"
             android:layout_height="wrap_content"
-            android:text="Escolha o tipo de conta"
-            android:textSize="16sp"
-            android:textColor="@color/preto"
-            android:fontFamily="@font/nunito_regular"
             android:layout_marginTop="36dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Escolha o tipo de conta"
+            android:textColor="@color/preto"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <RadioGroup
             android:id="@+id/radioGroup2"
@@ -110,23 +107,23 @@
                 android:id="@+id/rbtnPoupanca"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Conta Poupança"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/rbtnCorrente"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Conta Corrente"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
         </RadioGroup>
 
@@ -134,14 +131,14 @@
             android:id="@+id/btnEntrar"
             android:layout_width="280dp"
             android:layout_height="54dp"
+            android:layout_marginTop="42dp"
             android:background="@drawable/btnlogin"
-            android:layout_marginTop="206dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Finalizar"
-            android:textSize="20sp"
             android:textColor="@color/branco"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
 

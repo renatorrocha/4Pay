@@ -14,61 +14,61 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
-            android:name=".PixTransfFinal"
+            android:name=".view.Pagamentos.Pix.PixTransfFinal"
             android:exported="false" />
         <activity
-            android:name=".HomeConfigs"
+            android:name=".view.Home.HomeConfigs"
             android:exported="false" />
         <activity
-            android:name=".DadosUsuario"
+            android:name=".view.Home.DadosUsuario"
             android:exported="false" />
         <activity
-            android:name=".Transferencia"
+            android:name=".view.Pagamentos.Transferencia.Transferencia"
             android:exported="false" />
         <activity
-            android:name=".PixTransfDestino"
+            android:name=".view.Pagamentos.Pix.PixTransfDestino"
             android:exported="false" />
         <activity
-            android:name=".PixTransf"
+            android:name=".view.Pagamentos.Pix.PixTransf"
             android:exported="false" />
         <activity
-            android:name=".GerarCartoes"
+            android:name=".view.Pagamentos.Cartoes.GerarCartoes"
             android:exported="false" />
         <activity
-            android:name=".Cartoes"
+            android:name=".view.Pagamentos.Cartoes.Cartoes"
             android:exported="false" />
         <activity
-            android:name=".RecargaValorCartao"
+            android:name=".view.Pagamentos.Recarga.RecargaValorCartao"
             android:exported="false" />
         <activity
-            android:name=".RecargaValorConta"
+            android:name=".view.Pagamentos.Recarga.RecargaValorConta"
             android:exported="false" />
         <activity
-            android:name=".RecargaPagamento"
+            android:name=".view.Pagamentos.Recarga.RecargaPagamento"
             android:exported="false" />
         <activity
-            android:name=".Operadora"
+            android:name=".view.Pagamentos.Recarga.Operadora"
             android:exported="false" />
         <activity
-            android:name=".Recarga"
+            android:name=".view.Pagamentos.Recarga.Recarga"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".view.Home.Home"
             android:exported="false" />
         <activity
-            android:name=".EsqueciSenha"
+            android:name=".view.Login_Cadastro.EsqueciSenha"
             android:exported="false" />
         <activity
-            android:name=".TipoConta"
+            android:name=".view.Login_Cadastro.TipoConta"
             android:exported="false" />
         <activity
-            android:name=".CadastroProximo"
+            android:name=".view.Login_Cadastro.CadastroProximo"
             android:exported="false" />
         <activity
-            android:name=".Cadastro"
+            android:name=".view.Login_Cadastro.Cadastro"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".view.Login_Cadastro.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
