@@ -24,34 +24,54 @@
                 android:layout_height="145dp"
                 android:layout_marginTop="16dp"
                 android:background="#00000000"
-                android:src="@drawable/icon_foursys"
+                android:src="@drawable/icon_4pay"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/edtNome"
-                style="@style/campoEscrever"
-                android:layout_marginTop="72dp"
-                android:autofillHints="emailAddress"
-                android:drawableEnd="@drawable/ic_person"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
-            <EditText
-                android:id="@+id/edtSenha"
-                style="@style/campoEscrever"
-                android:layout_marginTop="48dp"
-                android:autofillHints="emailAddress"
-                android:drawableEnd="@drawable/ic_lock"
-                android:hint="Senha"
-                android:inputType="numberPassword"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtNome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="46dp"
+                android:hint="Email"
+                android:textColorHint="@color/preto"
+                app:boxStrokeColor="@color/preto"
+                app:hintTextColor="@color/preto"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+                app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+                app:startIconDrawable="@drawable/ic_person"
+                app:startIconTint="@color/preto">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/preto" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtSenha"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Senha"
+                android:textColorHint="@color/preto"
+                app:boxStrokeColor="@color/preto"
+                app:hintTextColor="@color/preto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtNome"
+                app:startIconDrawable="@drawable/ic_lock"
+                app:startIconTint="@color/preto">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/preto" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btnEntrar"
@@ -96,12 +116,12 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--        <FrameLayout-->
-<!--            android:id="@+id/fLayout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_above="@id/clLogin"-->
-<!--            />-->
+        <!--        <FrameLayout-->
+        <!--            android:id="@+id/fLayout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_above="@id/clLogin"-->
+        <!--            />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

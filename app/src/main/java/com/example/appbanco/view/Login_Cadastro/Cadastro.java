@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Login_Cadastro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 
 import com.example.appbanco.databinding.ActivityCadastroBinding;

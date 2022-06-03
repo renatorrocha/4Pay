@@ -1,13 +1,14 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.appbanco.databinding.ActivityHomeBinding;
-import com.example.appbanco.databinding.ActivityLoginBinding;
+import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
+import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
+import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
 
 public class Home extends AppCompatActivity {
 

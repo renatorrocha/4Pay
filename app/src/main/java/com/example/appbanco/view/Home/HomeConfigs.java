@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.appbanco.R;
 import com.example.appbanco.adapter.Photo;
 import com.example.appbanco.adapter.Photoadapter;
 
@@ -20,7 +21,6 @@ public class HomeConfigs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_configs);
-
 
         ListView lista = (ListView) findViewById(R.id._dynamic);
 
@@ -54,18 +54,18 @@ public class HomeConfigs extends AppCompatActivity {
         Photo e = new Photo(R.drawable.ic_perfil, "Meus dados");
         photos.add(e);
 
-        e = new Photo(R.drawable.sec, "Segurança");
+        e = new Photo(R.drawable.ic_sec, "Segurança");
         photos.add(e);
 
         e = new Photo(R.drawable.config, "Configuração");
         photos.add(e);
 
-        e = new Photo(R.drawable.not, "Notificação");
+        e = new Photo(R.drawable.ic_not, "Notificação");
         photos.add(e);
-        e = new Photo(R.drawable.card, "Configurar Cartão");
+        e = new Photo(R.drawable.ic_card, "Configurar Cartão");
         photos.add(e);
 
-        e = new Photo(R.drawable.sobre, "Sobre");
+        e = new Photo(R.drawable.ic_sobre, "Sobre");
         photos.add(e);
 
         return photos;

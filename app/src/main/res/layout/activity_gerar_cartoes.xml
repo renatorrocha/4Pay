@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo"
-    tools:context=".GerarCartoes">
+    tools:context=".view.Pagamentos.Cartoes.GerarCartoes">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

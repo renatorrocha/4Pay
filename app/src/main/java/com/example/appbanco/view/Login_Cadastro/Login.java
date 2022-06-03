@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Login_Cadastro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.appbanco.databinding.ActivityLoginBinding;
+import com.example.appbanco.view.Home.Home;
 
 public class Login extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class Login extends AppCompatActivity {
         binding.btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this,Home.class);
+                Intent intent = new Intent(Login.this, Home.class);
                 startActivity(intent);
             }
         });
@@ -29,7 +30,7 @@ public class Login extends AppCompatActivity {
         binding.tvCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this,Cadastro.class);
+                Intent intent = new Intent(Login.this, Cadastro.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +38,7 @@ public class Login extends AppCompatActivity {
         binding.tvEsqueciSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this,EsqueciSenha.class);
+                Intent intent = new Intent(Login.this, EsqueciSenha.class);
                 startActivity(intent);
             }
         });

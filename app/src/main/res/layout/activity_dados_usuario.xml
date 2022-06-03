@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/person_style"
-    tools:context=".DadosUsuario">
+    tools:context=".view.Home.DadosUsuario">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="410dp"
+        android:layout_width="wrap_content"
         android:layout_height="220dp"
-        android:layout_marginTop="1dp"
         android:background="@color/preto"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="60dp"
-            android:src="@drawable/perfil" />
+            android:src="@drawable/ic_person_pink" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,10 +38,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="120dp"
+            android:layout_marginEnd="4dp"
             android:lines="2"
             android:text="Agência 0000 - Conta 123456789-0 Banco 0123"
             android:textColor="@color/branco"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
 

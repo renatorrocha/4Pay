@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.appbanco.R;
 
 public class DadosUsuario extends AppCompatActivity {
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PixTransfDestino"
+    tools:context=".view.Pagamentos.Pix.PixTransfDestino"
     android:background="@drawable/background_alternativo">
 
     <TextView
@@ -56,7 +56,8 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Envie uma mensagem"
+        android:hint="Envie uma mensagem"
+        android:textColorHint="@color/preto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -68,7 +69,8 @@
         android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Cpf, Email ou telefone"
+        android:hint="Cpf, Email ou telefone"
+        android:textColorHint="@color/preto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"

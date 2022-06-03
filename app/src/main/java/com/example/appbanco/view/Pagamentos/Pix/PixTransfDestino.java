@@ -1,11 +1,12 @@
-package com.example.appbanco;
+package com.example.appbanco.view.Pagamentos.Pix;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.example.appbanco.R;
 
 public class PixTransfDestino extends AppCompatActivity {
 
