@@ -20,7 +20,7 @@ public class Home extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.linearLayout.setOnClickListener(view1 -> {
+        binding.clHomeTop.setOnClickListener(view1 -> {
             startActivity(new Intent(this, HomeConfigs.class));
         });
 
@@ -28,7 +28,7 @@ public class Home extends AppCompatActivity {
 //            startActivity(new Intent(this, ));
 //        });
 
-        binding.tvPix.setOnClickListener(view1 -> {
+        binding.clPix.setOnClickListener(view1 -> {
             startActivity(new Intent(this, PixTransf.class));
         });
 
@@ -36,15 +36,15 @@ public class Home extends AppCompatActivity {
 //            startActivity(new Intent(this, ));
 //        });
 
-        binding.tvCartao.setOnClickListener(view1 -> {
+        binding.clCartao.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Cartoes.class));
         });
 
-        binding.tvTransf.setOnClickListener(view1 -> {
+        binding.clTransf.setOnClickListener(view1 -> {
             startActivity(new Intent(this, PixTransf.class));
         });
 
-        binding.tvRecarga.setOnClickListener(view1 -> {
+        binding.clRecarga.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Recarga.class));
         });
 
