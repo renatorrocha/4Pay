@@ -6,7 +6,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseHelper {
 
-    private static FirebaseAuth auth;
+    private static FirebaseAuth auth=null;
     private static DatabaseReference databaseReference;
 
     public static String getIdFirebase(){

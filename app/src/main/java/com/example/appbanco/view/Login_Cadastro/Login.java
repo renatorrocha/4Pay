@@ -1,46 +1,91 @@
 package com.example.appbanco.view.Login_Cadastro;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-import com.example.appbanco.databinding.ActivityLoginBinding;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+import com.example.appbanco.R;
+import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.view.Home.Home;
+
 
 public class Login extends AppCompatActivity {
 
-    private ActivityLoginBinding binding;
+    private Button  btnEntrar;
+    private EditText edtemail;
+    private EditText edtSenha;
+    private TextView tvCadastrar;
+    private ProgressBar progressbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_login);
 
-        binding.btnEntrar.setOnClickListener(new View.OnClickListener() {
+        iniciaComponentes();
+        btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, Home.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                validaDados();
             }
         });
 
-        binding.tvCadastrar.setOnClickListener(new View.OnClickListener() {
+        tvCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, Cadastro.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, Cadastro.class));
             }
         });
 
-        binding.tvEsqueciSenha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, EsqueciSenha.class);
-                startActivity(intent);
+    }
+
+    public void validaDados() {
+
+        String email = edtemail.getText().toString();
+        String senha = edtSenha.getText().toString();
+
+        if (!email.isEmpty()) {
+            if (!senha.isEmpty()) {
+
+                progressbar.setVisibility(View.VISIBLE);
+                logar(email, senha);
+
+            } else {
+                edtSenha.requestFocus();
+                edtSenha.setError("Informe sua senha");
             }
+
+        } else {
+            edtemail.requestFocus();
+            edtemail.setError("Informe seu email");
+        }
+    }
+
+    private void logar(String email, String senha) {
+        FirebaseHelper.getAuth().signInWithEmailAndPassword(
+                email, senha
+        ).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                finish();
+                startActivity(new Intent(this, Home.class));
+            } else {
+                progressbar.setVisibility(View.GONE);
+                Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
         });
+    }
+    private void iniciaComponentes() {
+
+        edtemail = findViewById(R.id.emaill);
+        edtSenha = findViewById(R.id.senhaa);
+        btnEntrar=findViewById(R.id.btnEntrar);
+        tvCadastrar=findViewById(R.id.tvCadastrar);
+        progressbar = findViewById(R.id.progressbar);
     }
 }
