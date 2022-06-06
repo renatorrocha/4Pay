@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/ivLogo"
                 android:layout_width="340dp"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/icon_4pay"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +72,7 @@
                     android:id="@+id/etSenhaLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPassword"
                     android:textColor="@color/preto" />
             </com.google.android.material.textfield.TextInputLayout>
 

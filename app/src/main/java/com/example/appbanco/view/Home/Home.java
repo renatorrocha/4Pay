@@ -20,7 +20,7 @@ public class Home extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.clHomeTop.setOnClickListener(view1 -> {
+        binding.ivPerson.setOnClickListener(view1 -> {
             startActivity(new Intent(this, HomeConfigs.class));
         });
 

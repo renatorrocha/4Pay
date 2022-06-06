@@ -12,6 +12,8 @@ import android.widget.ListView;
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.Photo;
 import com.example.appbanco.adapter.Photoadapter;
+import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.view.Login_Cadastro.Login;
 
 import java.util.ArrayList;
 
@@ -34,7 +36,9 @@ public class HomeConfigs extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case 1: Intent intent1 = new Intent(view.getContext(),DadosUsuario.class);
+                    case 6:
+                        FirebaseHelper.getAuth().signOut();
+                        startActivity(new Intent(HomeConfigs.this, Login.class));
                         break;
 
 
@@ -62,10 +66,14 @@ public class HomeConfigs extends AppCompatActivity {
 
         e = new Photo(R.drawable.ic_not, "Notificação");
         photos.add(e);
+
         e = new Photo(R.drawable.ic_card, "Configurar Cartão");
         photos.add(e);
 
         e = new Photo(R.drawable.ic_sobre, "Sobre");
+        photos.add(e);
+
+        e = new Photo(R.drawable.ic_lock, "Sair");
         photos.add(e);
 
         return photos;
