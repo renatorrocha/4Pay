@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
         binding.btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this, CriaChavePix.class);
+                Intent intent = new Intent(Login.this, Home.class);
                 startActivity(intent);
             }
         });

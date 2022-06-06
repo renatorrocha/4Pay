@@ -24,9 +24,9 @@ public class Home extends AppCompatActivity {
             startActivity(new Intent(this, HomeConfigs.class));
         });
 
-//        binding.tvExtrato.setOnClickListener(view1 -> {
-//            startActivity(new Intent(this, ));
-//        });
+        binding.clSaldoExt.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, Extrato.class));
+        });
 
         binding.clPix.setOnClickListener(view1 -> {
             startActivity(new Intent(this, PixTransf.class));

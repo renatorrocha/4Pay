@@ -8,63 +8,35 @@
     tools:context=".view.Pagamentos.Pix.PixTransf">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="26dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="Valor da tranferência"
+        android:text="Confirme sua senha"
+        android:textAlignment="center"
         android:textColor="@color/preto"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/nunito_regular"
-        android:text="Seu saldo disponível:   R$"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/tvValorSaldo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:fontFamily="@font/nunito_bold"
-        android:text=" 1000,00"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtValorPix"
+        android:id="@+id/edtSenha"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="307dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
-        android:autofillHints="name"
-        android:hint="R$"
+        android:layout_marginTop="48dp"
+        android:hint="Nome completo"
+        android:autofillHints="password"
         android:textColorHint="@color/preto"
         app:boxStrokeColor="@color/preto"
         app:hintTextColor="@color/preto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/preto">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,20 +44,30 @@
             android:textColor="@color/preto" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <ImageView
+        android:id="@+id/ivCartaoCriado"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/img_cadastro_continuar"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toBottomOf="@id/edtSenha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
-        android:id="@+id/btnPixProximo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnProximo"
+        android:layout_width="280dp"
+        android:layout_height="54dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/btnlogin"
-        android:text="Próximo"
-        android:textAllCaps="false"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Confirmar"
+        android:textColor="@color/branco"
         android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
