@@ -40,14 +40,14 @@
         android:id="@+id/btnGerarCartao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/btn_gerar_cartao"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textColor="@color/branco"
         android:textAlignment="center"
         android:background="@drawable/btnlogin"
-        app:layout_constraintTop_toBottomOf="@id/clCartao"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

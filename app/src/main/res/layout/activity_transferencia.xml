@@ -118,14 +118,15 @@
         android:id="@+id/btnTransf2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="496dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/btnlogin"
         android:text="Transferir"
+        android:textAllCaps="false"
+        android:textSize="20sp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/textView5"

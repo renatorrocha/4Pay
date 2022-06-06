@@ -143,15 +143,16 @@
             android:id="@+id/btnProximo"
             android:layout_width="280dp"
             android:layout_height="54dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
-            android:text="próximo"
+            android:text="Próximo"
             android:textColor="@color/branco"
             android:textSize="20sp"
+            android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgCartao" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

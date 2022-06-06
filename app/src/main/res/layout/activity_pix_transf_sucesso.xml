@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
-        tools:context=".view.Pagamentos.Recarga.Recarga">
+        tools:context=".view.PixTransfSucesso">
 
         <TextView
             android:id="@+id/tvTitulo"
@@ -17,7 +17,7 @@
             android:layout_height="63dp"
             android:layout_marginTop="26dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Qual número você quer recarregar?"
+            android:text="Transferência realizada com sucesso!"
             android:textAlignment="center"
             android:textColor="@color/preto"
             android:textSize="24sp"
@@ -25,23 +25,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tfnumero"
-            android:layout_width="208dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="96dp"
-            android:hint="(DDD) + Número"
-            app:endIconMode="clear_text"
-            app:layout_constraintEnd_toEndOf="parent"
+        <ImageView
+            android:id="@+id/ivCartaoCriado"
+            android:layout_width="285dp"
+            android:layout_height="285dp"
+            android:src="@drawable/img_cartao_criado"
+            android:layout_marginTop="48dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitulo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <Button
             android:id="@+id/btnProximo"
@@ -50,7 +42,7 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
-            android:text="Próximo"
+            android:text="Confirmar"
             android:textColor="@color/branco"
             android:textSize="20sp"
             android:textAllCaps="false"

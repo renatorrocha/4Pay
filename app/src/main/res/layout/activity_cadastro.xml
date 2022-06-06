@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
@@ -41,6 +42,7 @@
             app:startIconDrawable="@drawable/ic_person"
             app:startIconTint="@color/preto">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -63,7 +65,9 @@
             app:layout_constraintTop_toBottomOf="@+id/edtNome"
             app:startIconDrawable="@drawable/ic_id"
             app:startIconTint="@color/preto">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -84,9 +88,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtCpf"
-            app:startIconDrawable="@drawable/ic_id"
+            app:startIconDrawable="@drawable/ic_calendar"
             app:startIconTint="@color/preto">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nascimento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
@@ -94,12 +100,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtCep"
+            android:id="@+id/edtemail"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="Cep"
+            android:hint="E-mail"
             android:autofillHints="name"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
@@ -107,9 +113,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtNascimento"
-            app:startIconDrawable="@drawable/ic_adress_book"
+            app:startIconDrawable="@drawable/ic_email"
             app:startIconTint="@color/preto">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
@@ -117,22 +125,24 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtRua"
+            android:id="@+id/edtsenha"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="Rua e número"
+            android:hint="Senha"
             android:autofillHints="name"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCep"
-            app:startIconDrawable="@drawable/ic_adress_book"
+            app:layout_constraintTop_toBottomOf="@+id/edtemail"
+            app:startIconDrawable="@drawable/ic_lock"
             app:startIconTint="@color/preto">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/senha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -140,22 +150,24 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtCidade"
+            android:id="@+id/edtconfirmarsenha"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="Cidade"
+            android:hint="Confirmar Senha"
             android:autofillHints="name"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtRua"
-            app:startIconDrawable="@drawable/ic_adress_book"
+            app:layout_constraintTop_toBottomOf="@+id/edtsenha"
+            app:startIconDrawable="@drawable/ic_lock"
             app:startIconTint="@color/preto">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmasenha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -166,15 +178,33 @@
             android:id="@+id/btnContinuar"
             android:layout_width="280dp"
             android:layout_height="54dp"
-            android:layout_marginTop="84dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Continuar"
+            android:onClick="validaDados"
             android:textColor="@color/branco"
             android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/progressbar"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtCidade" />
+            app:layout_constraintTop_toBottomOf="@+id/edtconfirmarsenha"
+            app:layout_constraintVertical_bias="0.166" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

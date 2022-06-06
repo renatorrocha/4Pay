@@ -22,8 +22,8 @@ public class PixTransfFinal extends AppCompatActivity {
         btnTransf = findViewById(R.id.btnTransf);
 
         btnTransf.setOnClickListener(view -> {
-            startActivity(new Intent(this, Home.class));
-            Toast.makeText(this, "Transferencia realizada.", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, ConfirmacaoPix.class));
+
         });
     }
 }
