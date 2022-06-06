@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background">
 
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -20,10 +20,9 @@
 
             <ImageView
                 android:id="@+id/ivLogo"
-                android:layout_width="307dp"
-                android:layout_height="145dp"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#00000000"
                 android:src="@drawable/icon_4pay"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +30,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edtNome"
+                android:id="@+id/edtemail"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="307dp"
                 android:layout_height="wrap_content"
@@ -45,7 +44,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/ivLogo"
                 app:startIconDrawable="@drawable/ic_person"
                 app:startIconTint="@color/preto">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmailLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/preto" />
@@ -63,11 +64,12 @@
                 app:hintTextColor="@color/preto"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtNome"
+                app:layout_constraintTop_toBottomOf="@+id/edtemail"
                 app:startIconDrawable="@drawable/ic_lock"
                 app:startIconTint="@color/preto">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSenhaLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/preto" />
@@ -81,6 +83,7 @@
                 android:layout_marginTop="84dp"
                 android:background="@drawable/btnlogin"
                 android:fontFamily="@font/nunito_bold"
+                android:onClick="validaDados"
                 android:text="Entrar"
                 android:textAllCaps="false"
                 android:textColor="@color/branco"
@@ -89,11 +92,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
+
             <TextView
                 android:id="@+id/tvCadastrar"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/nunito_bold"
                 android:text="Cadastrar-se"
                 android:textColor="@color/preto"
@@ -106,7 +110,7 @@
                 android:id="@+id/tvEsqueciSenha"
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/dashed_underline"
                 android:fontFamily="@font/nunito_regular"
                 android:text="Esqueci a senha"
@@ -116,15 +120,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvCadastrar" />
 
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tvEsqueciSenha"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--        <FrameLayout-->
-        <!--            android:id="@+id/fLayout"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:layout_above="@id/clLogin"-->
-        <!--            />-->
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.core.widget.NestedScrollView>
