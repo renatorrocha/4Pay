@@ -22,53 +22,47 @@ import com.example.appbanco.view.Home.Home;
 
 public class Login extends AppCompatActivity {
 
-    private Button btnEntrar;
-    private EditText edtemail;
-    private EditText edtSenha;
-    private TextView tvCadastrar;
-    private ProgressBar progressbar;
+    ActivityLoginBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
-        iniciaComponentes();
-        btnEntrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validaDados();
-            }
+        binding.btnEntrar.setOnClickListener(view -> {
+            validaDados();
         });
 
-        tvCadastrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Login.this, Cadastro.class));
-            }
+        binding.tvCadastrar.setOnClickListener(view ->  {
+            startActivity(new Intent(Login.this, Cadastro.class));
+        });
+
+        binding.tvEsqueciSenha.setOnClickListener(view -> {
+            startActivity(new Intent(this, EsqueciSenha.class));
         });
 
     }
 
     public void validaDados() {
-
-        String email = edtemail.getText().toString();
-        String senha = edtSenha.getText().toString();
+        String email = binding.etEmailLogin.getText().toString();
+        String senha = binding.etSenhaLogin.getText().toString();
 
         if (!email.isEmpty()) {
             if (!senha.isEmpty()) {
 
-                progressbar.setVisibility(View.VISIBLE);
+                binding.progressbar.setVisibility(View.VISIBLE);
                 logar(email, senha);
 
             } else {
-                edtSenha.requestFocus();
-                edtSenha.setError("Informe sua senha");
+                binding.etSenhaLogin.requestFocus();
+                binding.etSenhaLogin.setError("Informe sua senha");
             }
 
         } else {
-            edtemail.requestFocus();
-            edtemail.setError("Informe seu email");
+            binding.etEmailLogin.requestFocus();
+            binding.etEmailLogin.setError("Informe seu email");
         }
     }
 
@@ -80,19 +74,10 @@ public class Login extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, Home.class));
             } else {
-                progressbar.setVisibility(View.GONE);
+                binding.progressbar.setVisibility(View.GONE);
                 Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
             }
 
         });
-    }
-
-    private void iniciaComponentes() {
-
-        edtemail = findViewById(R.id.etEmailLogin);
-        edtSenha = findViewById(R.id.etSenhaLogin);
-        btnEntrar = findViewById(R.id.btnEntrar);
-        tvCadastrar = findViewById(R.id.tvCadastrar);
-        progressbar = findViewById(R.id.progressbar);
     }
 }

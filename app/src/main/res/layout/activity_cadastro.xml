@@ -145,7 +145,7 @@
                 android:id="@+id/senha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:textColor="@color/preto" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -170,7 +170,7 @@
                 android:id="@+id/confirmasenha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:textColor="@color/preto" />
         </com.google.android.material.textfield.TextInputLayout>
 
