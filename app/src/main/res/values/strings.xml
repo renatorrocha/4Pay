@@ -4,5 +4,23 @@
     <string name="btn_gerar_cartao">Gerar cartão</string>
     <string name="txt_destinatario_pix">Para João</string>
     <string name="txt_btn_transferir">Transferir</string>
+    <string name="txt_btn_chave_pix">Próximo</string>
+    <string name="title_tela_pix">Crie sua chave PIX</string>
+    <string name="imagem_chave_pix">Imagem Chave Pix</string>
+    <string name="txt_tipo_chave">Selecione o tipo de chave</string>
+    <string name="txt_opc_email_pix">Email</string>
+    <string name="txt_opc_cpf_pix">CPF</string>
+    <string name="txt_hint_email">Teste@foursys.com.br</string>
+    <string name="txt_hint_cpf">123.3456.789-99</string>
+    <string name="txt_hint_celular">(99)99999-9999</string>
+    <string name="txt_opc_celular_pix">Celular</string>
+    <string name="txt_btn_prox_tipo_chave">Próximo</string>
+    <string name="txt_gerar_chave">Gerar Chave</string>
+    <string name="txt_hint_chave_aleatoria">123abc456def</string>
+    <string name="txt_apresenta_chave">Chave de</string>
+    <string name="txt_tipo_chave_recebida">{tipoChave}</string>
+    <string name="txt_criacao_chave_concluida">cadastrada com sucesso</string>
+    <string name="txt_btn_concluir_pix">Concluir</string>
+    <string name="txt_imagem_chave_criada">Imagem Chave Pix Criada</string>
 
 </resources>

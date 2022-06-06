@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.appbanco.databinding.ActivityLoginBinding;
+import com.example.appbanco.view.Chave_Pix.CriaChavePix;
 import com.example.appbanco.view.Home.Home;
 
 public class Login extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class Login extends AppCompatActivity {
         binding.btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this, Home.class);
+                Intent intent = new Intent(Login.this, CriaChavePix.class);
                 startActivity(intent);
             }
         });
