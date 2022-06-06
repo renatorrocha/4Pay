@@ -14,15 +14,15 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
-            android:name=".ChaveCriada"
+            android:name=".view.Chave_Pix.ChaveCriada"
             android:exported="false" />
         <activity
-            android:name=".TipoChave"
+            android:name=".view.Chave_Pix.TipoChave"
             android:exported="false" />
         <activity
-            android:name=".CriaChavePix"
-=======
+            android:name=".view.Chave_Pix.CriaChavePix"
+            android:exported="false" />
+        <activity
             android:name=".view.Home.Extrato"
             android:exported="false" />
         <activity
@@ -33,7 +33,6 @@
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Pix.ConfirmacaoPix"
->>>>>>> 1d7b4c8c1730e3925d8231fc4186bfb13d270562
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Pix.PixTransfFinal"
