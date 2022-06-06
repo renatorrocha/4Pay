@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="8dp">
+    android:paddingVertical="12dp">
 
 
     <ImageView
         android:id="@+id/imagem"
         android:layout_width="35dp"
         android:layout_height="30dp"
-        app:layout_constraintEnd_toEndOf="@+id/tvtitle"
-        app:layout_constraintHorizontal_bias="0.005"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_perfil" />
 
     <TextView
         android:id="@+id/tvtitle"
-        android:layout_width="370dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:paddingLeft="26dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:paddingLeft="18dp"
         android:inputType="textPersonName"
         android:text=" titulo"
         android:textColor="@color/preto"
         android:textSize="22sp"
+
+        app:layout_constraintStart_toEndOf="@id/imagem"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
