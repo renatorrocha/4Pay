@@ -7,8 +7,10 @@ import android.os.Bundle;
 
 import com.example.appbanco.databinding.ActivityHomeBinding;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
+import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
 import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
+import com.example.appbanco.view.Pagamentos.Transferencia.Transferencia;
 
 public class Home extends AppCompatActivity {
 
@@ -41,7 +43,7 @@ public class Home extends AppCompatActivity {
         });
 
         binding.clTransf.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, PixTransf.class));
+            startActivity(new Intent(this, Transferencia.class));
         });
 
         binding.clRecarga.setOnClickListener(view1 -> {
