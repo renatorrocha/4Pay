@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.Photo;
 import com.example.appbanco.adapter.Photoadapter;
+import com.example.appbanco.databinding.ActivityHomeConfigsBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.view.Login_Cadastro.Login;
 
@@ -19,10 +20,19 @@ import java.util.ArrayList;
 
 public class HomeConfigs extends AppCompatActivity {
 
+    ActivityHomeConfigsBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_configs);
+        binding = ActivityHomeConfigsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+
+        Intent intent = getIntent();
+        String nomeUser = intent.getStringExtra("nomeUser");
+        String[] splitName = nomeUser.trim().split("\\s+");
+        binding.tvNomeUser.setText(splitName[2]);
 
         ListView lista = (ListView) findViewById(R.id._dynamic);
 
@@ -50,8 +60,6 @@ public class HomeConfigs extends AppCompatActivity {
         ArrayAdapter adapter = new Photoadapter(this, adicionarPhoto());
         lista.setAdapter(adapter);
     }
-
-
 
     private ArrayList<Photo> adicionarPhoto() {
         ArrayList<Photo> photos = new ArrayList<Photo>();

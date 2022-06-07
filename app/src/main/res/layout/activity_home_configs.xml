@@ -9,54 +9,61 @@
 
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="240dp"
         android:background="@color/preto"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/ivUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="60dp"
-            android:src="@drawable/ic_person_pink" />
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_person_pink"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
+            android:id="@+id/tvNomeUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="130dp"
-            android:layout_marginTop="-80dp"
             android:text="José"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/nunito_regular"
             android:textColor="@color/branco"
-            android:textSize="40sp"
-            android:textStyle="bold" />
+            android:textSize="36sp"
+            app:layout_constraintStart_toEndOf="@id/ivUser"
+            app:layout_constraintTop_toTopOf="@id/ivUser"/>
 
         <TextView
+            android:id="@+id/tvDadosConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
-            android:lines="2"
-            android:text="Agência 0000 - Conta 123456789-0 Banco 0123"
+            android:fontFamily="@font/nunito_regular"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="Agência 0000 - Conta 123456789-0 \nBanco 0123"
             android:textColor="@color/branco"
             android:textSize="16sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvNomeUser"
+            app:layout_constraintStart_toEndOf="@id/ivUser"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ListView
         android:id="@+id/_dynamic"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/clLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
