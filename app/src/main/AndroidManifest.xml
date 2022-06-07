@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
+            android:name=".DepositofFormActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.Login_Cadastro.Login"
             android:exported="false" />
         <activity
@@ -90,12 +93,11 @@
             android:exported="false" />
         <activity
             android:name=".view.Login_Cadastro.Cadastro"
-            android:exported="false" />
-<!--            SE MUDAR A TELA SPLASH DAQUI, MOVA O TEMA TAMBÉM -->
+            android:exported="false" /> <!-- SE MUDAR A TELA SPLASH DAQUI, MOVA O TEMA TAMBÉM -->
         <activity
             android:name=".view.Home.Splash"
-            android:theme="@style/Theme.Splash"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
