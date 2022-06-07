@@ -1,125 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
         tools:context=".view.Login_Cadastro.CadastroProximo">
 
+
         <TextView
             android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Defina seu e-mail e senha"
+            android:text="Dados adicionais"
             android:textColor="@color/preto"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/edtcelular"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23" />
+
+        <TextView
+            android:id="@+id/tvcep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="12dp"
+            android:text="CEP"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtcep"
+            app:layout_constraintEnd_toStartOf="@+id/tvuf"
+            app:layout_constraintHorizontal_bias="0.967"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvcelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="Celular"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.071"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="307dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:autofillHints="emailAddress"
-            android:hint="Email"
+        <EditText
+            android:id="@+id/edtcelular"
+            android:layout_width="336dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/background_alternativo"
             android:textColorHint="@color/preto"
-            app:boxStrokeColor="@color/preto"
-            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.346"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
-            app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/preto">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/preto" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtSenha"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="307dp"
+        <TextView
+            android:id="@+id/tvendereco"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:autofillHints="password"
-            android:hint="Senha"
+            android:layout_marginTop="12dp"
+            android:text="Endereço"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtendereco"
+            app:layout_constraintStart_toStartOf="@+id/edtendereco"
+            app:layout_constraintTop_toBottomOf="@+id/edtcelular"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/edtendereco"
+            android:layout_width="336dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_alternativo"
             android:textColorHint="@color/preto"
-            app:boxStrokeColor="@color/preto"
-            app:hintTextColor="@color/preto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtEmail"
-            app:startIconDrawable="@drawable/ic_lock"
-            app:startIconTint="@color/preto">
+            app:layout_constraintBottom_toTopOf="@+id/tvuf"
+            app:layout_constraintEnd_toEndOf="@+id/tvnumb"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvcep" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textColor="@color/preto" />
-        </com.google.android.material.textfield.TextInputLayout>
+        <EditText
+            android:id="@+id/edtcep"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/background_alternativo"
+            android:textColorHint="@color/preto"
+            app:layout_constraintBottom_toTopOf="@+id/tvlogradouro"
+            app:layout_constraintEnd_toStartOf="@+id/edtuf"
+            app:layout_constraintHorizontal_bias="0.588"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtConfirmarSenha"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="307dp"
+        <TextView
+            android:id="@+id/tvuf"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:autofillHints="password"
-            android:hint="Confirmar senha"
+            android:layout_marginEnd="112dp"
+            android:layout_marginBottom="20dp"
+            android:text="UF"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtuf"
+            app:layout_constraintEnd_toStartOf="@+id/tvnumb" />
+
+        <EditText
+            android:id="@+id/edtuf"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="56dp"
+            android:background="@drawable/background_alternativo"
             android:textColorHint="@color/preto"
-            app:boxStrokeColor="@color/preto"
-            app:hintTextColor="@color/preto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtSenha"
-            app:startIconDrawable="@drawable/ic_lock"
-            app:startIconTint="@color/preto">
+            app:layout_constraintBottom_toTopOf="@+id/edtlogradouro"
+            app:layout_constraintEnd_toStartOf="@+id/edtnumb" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textColor="@color/preto" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <ImageView
-            android:id="@+id/imgCadastro"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="52dp"
-            android:src="@drawable/img_cadastro_continuar"
+        <TextView
+            android:id="@+id/tvnumb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="20dp"
+            android:text="N°"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtnumb"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/edtnumb" />
+
+        <EditText
+            android:id="@+id/edtnumb"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="56dp"
+            android:background="@drawable/background_alternativo"
+            android:textColorHint="@color/preto"
+            app:layout_constraintBottom_toTopOf="@+id/edtlogradouro"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvlogradouro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Logradouro"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtlogradouro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edtlogradouro" />
+
+        <EditText
+            android:id="@+id/edtlogradouro"
+            android:layout_width="336dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="180dp"
+            android:background="@drawable/background_alternativo"
+            android:textColorHint="@color/preto"
+            app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvmunicipio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Municipio"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtmunicipio"
+            app:layout_constraintEnd_toEndOf="@+id/edtmunicipio"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edtmunicipio" />
+
+        <EditText
+            android:id="@+id/edtbairro"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="96dp"
+            android:background="@drawable/background_alternativo"
+            android:textColorHint="@color/preto"
+            app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+            app:layout_constraintEnd_toStartOf="@+id/edtmunicipio"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtConfirmarSenha" />
+            app:layout_constraintTop_toBottomOf="@+id/tvbairro"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tvbairro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="144dp"
+            android:text="Bairro"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+            app:layout_constraintEnd_toStartOf="@+id/tvmunicipio"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edtbairro" />
+
+        <EditText
+            android:id="@+id/edtmunicipio"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="96dp"
+            android:background="@drawable/background_alternativo"
+            android:textColorHint="@color/preto"
+            app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.858"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnCadastrar"
             android:layout_width="280dp"
             android:layout_height="54dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="88dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Cadastrar-se"
+            android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
-            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
