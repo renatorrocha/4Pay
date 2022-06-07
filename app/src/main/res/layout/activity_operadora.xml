@@ -18,8 +18,8 @@
             android:layout_marginTop="26dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Qual é a operadora?"
-            android:textColor="@color/preto"
             android:textAlignment="center"
+            android:textColor="@color/preto"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,9 +31,9 @@
             android:layout_height="19dp"
             android:text="(99) 99999-9999"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTitulo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/tvTitulo"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -48,45 +48,45 @@
                 android:id="@+id/rbtnClaro"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Claro"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/rbtnTim"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Tim"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/rbtnOi"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Oi"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/rbtnVivo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="16dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Vivo"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
         </RadioGroup>
 
 
@@ -100,9 +100,9 @@
             android:text="próximo"
             android:textColor="@color/branco"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

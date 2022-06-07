@@ -29,11 +29,11 @@
             android:id="@+id/ivCartaoCriado"
             android:layout_width="285dp"
             android:layout_height="285dp"
-            android:src="@drawable/img_cartao_criado"
             android:layout_marginTop="48dp"
-            app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+            android:src="@drawable/img_cartao_criado"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
 
         <Button
             android:id="@+id/btnProximo"
@@ -43,12 +43,12 @@
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Concluído"
+            android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
-            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

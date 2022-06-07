@@ -15,8 +15,8 @@
             android:id="@+id/tvTitulo"
             android:layout_width="279dp"
             android:layout_height="63dp"
-            android:layout_marginTop="26dp"
             android:layout_marginStart="-80dp"
+            android:layout_marginTop="26dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Qual é o valor da recarga?"
 
@@ -52,19 +52,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="21dp"
-                android:buttonTint="@color/preto"
                 android:layout_marginTop="2dp"
+                android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="R$ 12,00"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imgLinha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/linha"
                 android:layout_marginTop="4dp"
+                android:src="@drawable/linha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -72,20 +72,20 @@
                 android:id="@+id/rbtnOpt2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="2dp"
                 android:layout_marginStart="21dp"
+                android:layout_marginTop="2dp"
                 android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="R$ 15,00"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imgLinha2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/linha"
                 android:layout_marginTop="4dp"
+                android:src="@drawable/linha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -93,20 +93,20 @@
                 android:id="@+id/rbtnOpt3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="21dp"
+                android:layout_marginTop="4dp"
                 android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="R$ 20,00"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imgLinha3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/linha"
                 android:layout_marginTop="4dp"
+                android:src="@drawable/linha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -114,20 +114,20 @@
                 android:id="@+id/rbtnOpt4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="21dp"
+                android:layout_marginTop="4dp"
                 android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="R$ 25,00"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imgLinha4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/linha"
                 android:layout_marginTop="4dp"
+                android:src="@drawable/linha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -135,20 +135,20 @@
                 android:id="@+id/rbtnOpt5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="21dp"
+                android:layout_marginTop="4dp"
                 android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="R$ 30,00"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imgLinha5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/linha"
                 android:layout_marginTop="4dp"
+                android:src="@drawable/linha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -156,20 +156,20 @@
                 android:id="@+id/rbtnOpt6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="21dp"
+                android:layout_marginTop="4dp"
                 android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="R$ 35,00"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imgLinha6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/linha"
                 android:layout_marginTop="4dp"
+                android:src="@drawable/linha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -177,20 +177,20 @@
                 android:id="@+id/rbtnOpt7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="21dp"
+                android:layout_marginTop="4dp"
                 android:buttonTint="@color/preto"
+                android:fontFamily="@font/nunito_regular"
                 android:text="R$ 40,00"
                 android:textColor="@color/preto"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_regular"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/imgLinha7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/linha"
                 android:layout_marginTop="4dp"
+                android:src="@drawable/linha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -204,12 +204,12 @@
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Próximo"
+            android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
-            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

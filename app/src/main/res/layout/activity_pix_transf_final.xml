@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Pagamentos.Pix.PixTransfFinal"
-    android:background="@drawable/background_alternativo">
+    android:background="@drawable/background_alternativo"
+    tools:context=".view.Pagamentos.Pix.PixTransfFinal">
 
     <TextView
         android:id="@+id/textView4"
@@ -171,10 +171,10 @@
         android:background="@drawable/btnlogin"
         android:text="@string/txt_btn_transferir"
         android:textAllCaps="false"
-        android:textSize="20sp"
         android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
