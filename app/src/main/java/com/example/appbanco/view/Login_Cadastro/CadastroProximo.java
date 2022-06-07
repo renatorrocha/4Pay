@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.appbanco.databinding.ActivityCadastroProximoBinding;
 import com.example.appbanco.model.Endereco;
 import com.example.appbanco.model.MyApi;
+import com.thyagoneves.custom_mask_textwatcher.CustomMask;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +33,8 @@ public class CadastroProximo extends AppCompatActivity {
         binding = ActivityCadastroProximoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.edtcelular.addTextChangedListener(CustomMask.Companion.mask("(##) #####-####", binding.edtcelular, null));
+
         binding.btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +52,7 @@ public class CadastroProximo extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (s.length() == 9){
+                if (s.length() == 9) {
 
                     cep = s.toString();
                     buscaEndereco(cep);
@@ -66,13 +69,13 @@ public class CadastroProximo extends AppCompatActivity {
 
     }
 
-    private void buscaEndereco(String cep){
+    private void buscaEndereco(String cep) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://viacep.com.br/ws/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-//instância para interface
+        //instância para interface
         MyApi myApi = retrofit.create(MyApi.class);
         Call<Endereco> call = myApi.getData(cep);
         // retorno = > sucesso e falha
@@ -102,6 +105,6 @@ public class CadastroProximo extends AppCompatActivity {
         });
     }
 
-    }
+}
 
 

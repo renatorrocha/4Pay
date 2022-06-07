@@ -8,7 +8,6 @@
     tools:context=".view.Home.HomeConfigs">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clLayout"
         android:layout_width="match_parent"
@@ -25,35 +24,35 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:src="@drawable/ic_person_pink"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNomeUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="José"
             android:layout_marginLeft="8dp"
             android:fontFamily="@font/nunito_regular"
+            android:text="José"
             android:textColor="@color/branco"
             android:textSize="36sp"
             app:layout_constraintStart_toEndOf="@id/ivUser"
-            app:layout_constraintTop_toTopOf="@id/ivUser"/>
+            app:layout_constraintTop_toTopOf="@id/ivUser" />
 
         <TextView
             android:id="@+id/tvDadosConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_regular"
-            android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito_regular"
             android:text="Agência 0000 - Conta 123456789-0 \nBanco 0123"
             android:textColor="@color/branco"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/tvNomeUser"
-            app:layout_constraintStart_toEndOf="@id/ivUser"/>
+            app:layout_constraintStart_toEndOf="@id/ivUser"
+            app:layout_constraintTop_toBottomOf="@id/tvNomeUser" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ListView

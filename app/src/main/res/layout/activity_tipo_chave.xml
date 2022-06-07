@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Chave_Pix.TipoChave"
-    android:background="@drawable/background_alternativo">
+    android:background="@drawable/background_alternativo"
+    tools:context=".view.Chave_Pix.TipoChave">
 
     <TextView
         android:id="@+id/textView17"
@@ -144,8 +144,8 @@
         android:id="@+id/btnTipoChaveProximo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/btnlogin"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/btnlogin"
         android:text="@string/txt_btn_prox_tipo_chave"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"

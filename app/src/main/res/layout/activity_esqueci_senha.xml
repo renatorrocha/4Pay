@@ -16,13 +16,13 @@
             android:id="@+id/tvTituloEsqSenha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="28sp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/nunito_bold"
-            android:textColor="@color/preto"
             android:text="Recupere a sua senha"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/preto"
+            android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -34,18 +34,18 @@
             android:text="Informe seu email:"
             android:textColor="@color/preto"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/edtEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTituloEsqSenha"
-            app:layout_constraintBottom_toTopOf="@id/edtEmail"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloEsqSenha" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtEmail"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="307dp"
             android:layout_height="wrap_content"
-            android:hint="Email:"
             android:autofillHints="emailAddress"
+            android:hint="Email:"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
@@ -54,6 +54,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvInformeEmail"
             app:startIconDrawable="@drawable/ic_email"
             app:startIconTint="@color/preto">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmailEsqSenha"
                 android:layout_width="match_parent"
@@ -74,15 +75,15 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edtEmail"/>
+            app:layout_constraintTop_toBottomOf="@id/edtEmail" />
 
         <ProgressBar
             android:id="@+id/progressbarEsqSenha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvEnviarDenovo"
             tools:visibility="visible" />
 
@@ -92,22 +93,22 @@
             android:layout_height="200dp"
             android:layout_marginBottom="64dp"
             android:src="@drawable/img_esqueci_senha"
+            app:layout_constraintBottom_toTopOf="@id/btnEnviar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/btnEnviar"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <Button
             android:id="@+id/btnEnviar"
             android:layout_width="280dp"
             android:layout_height="54dp"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Recuperar senha"
             android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
-            android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"

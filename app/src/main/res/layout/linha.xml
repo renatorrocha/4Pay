@@ -21,14 +21,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:paddingLeft="18dp"
         android:inputType="textPersonName"
+        android:paddingLeft="18dp"
         android:text=" titulo"
         android:textColor="@color/preto"
         android:textSize="22sp"
 
-        app:layout_constraintStart_toEndOf="@id/imagem"
         app:layout_constraintBottom_toBottomOf="parent"
-         />
+        app:layout_constraintStart_toEndOf="@id/imagem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
