@@ -8,11 +8,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.appbanco.R;
+import com.example.appbanco.model.Transferencia;
+import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Home;
 
 public class PixTransfFinal extends AppCompatActivity {
 
     Button btnTransf;
+    private Transferencia transferencia;
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
