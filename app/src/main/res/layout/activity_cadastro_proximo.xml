@@ -229,11 +229,12 @@
             app:layout_constraintHorizontal_bias="0.858"
             app:layout_constraintStart_toStartOf="parent" />
 
+
         <Button
             android:id="@+id/btnCadastrar"
             android:layout_width="280dp"
             android:layout_height="54dp"
-            android:layout_marginBottom="88dp"
+            android:layout_marginBottom="64dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Cadastrar-se"
