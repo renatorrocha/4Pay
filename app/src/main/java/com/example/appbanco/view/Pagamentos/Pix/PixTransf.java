@@ -4,24 +4,52 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.appbanco.R;
+import com.example.appbanco.databinding.ActivityPixTransfBinding;
+import com.example.appbanco.model.Transferencia;
 
 public class PixTransf extends AppCompatActivity {
 
-    Button btnProximo;
+    ActivityPixTransfBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pix_transf);
+        binding = ActivityPixTransfBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        btnProximo = findViewById(R.id.btnPixProximo);
+    }
 
-        btnProximo.setOnClickListener(view -> {
-            startActivity(new Intent(this, PixTransfDestino.class));
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = getIntent();
+        binding.tvValorSaldo.setText(intent.getStringExtra("userSaldo"));
+
+        binding.btnPixProximo.setOnClickListener(view -> {
+            validaDados(view);
         });
 
+    }
 
+    public void validaDados(View view){
+        double value = Double.parseDouble(binding.etValorPix.getText().toString());
+        if(value > 0){
+
+            Transferencia transf = new Transferencia();
+            transf.setValor(value);
+
+            Intent intent = new Intent(this, PixTransfDestino.class);
+            intent.putExtra("transferencia", transf);
+            startActivity(intent);
+
+        }else {
+            Toast.makeText(this, "Digite um valor maior que 0.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

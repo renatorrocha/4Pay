@@ -37,9 +37,6 @@ public class Home extends AppCompatActivity {
             startActivity(new Intent(this, Extrato.class));
         });
 
-        binding.clPix.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, PixTransf.class));
-        });
 
 //        binding.tvPagamentos.setOnClickListener(view1 -> {
 //            startActivity(new Intent(this, ));
@@ -63,6 +60,12 @@ public class Home extends AppCompatActivity {
         super.onStart();
 
         getUserData();
+
+        binding.clPix.setOnClickListener(view1 -> {
+            Intent intent = new Intent( this, PixTransf.class);
+            intent.putExtra("userSaldo", binding.tvSaldoValor.getText().toString());
+            startActivity(intent);
+        });
     }
 
     private void getUserData(){

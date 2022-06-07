@@ -45,4 +45,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.5'
     implementation 'com.google.firebase:firebase-database'
 
+
+    implementation 'com.github.BlacKCaT27:CurrencyEditText:2.0.2'
+
 }
