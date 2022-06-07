@@ -22,5 +22,7 @@
     <string name="txt_criacao_chave_concluida">cadastrada com sucesso</string>
     <string name="txt_btn_concluir_pix">Concluir</string>
     <string name="txt_imagem_chave_criada">Imagem Chave Pix Criada</string>
+    <string name="txt_depositar_title">Depositar</string>
+    <string name="txt_hint_deposito">R$:</string>
 
 </resources>
