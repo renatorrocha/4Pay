@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixTransfBinding;
+import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Transferencia;
 
 public class PixTransf extends AppCompatActivity {
@@ -22,19 +23,12 @@ public class PixTransf extends AppCompatActivity {
         binding = ActivityPixTransfBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-    }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         Intent intent = getIntent();
-        binding.tvValorSaldo.setText(intent.getStringExtra("userSaldo"));
+        binding.tvValorSaldo.setText("R$ " + intent.getStringExtra("userSaldo"));
 
         binding.btnPixProximo.setOnClickListener(view -> {
             validaDados(view);
         });
-
     }
 
     public void validaDados(View view){
@@ -42,6 +36,8 @@ public class PixTransf extends AppCompatActivity {
         if(value > 0){
 
             Transferencia transf = new Transferencia();
+            transf.setIdUserOrigem(FirebaseHelper.getIdFirebase());
+            transf.setData(System.currentTimeMillis());
             transf.setValor(value);
 
             Intent intent = new Intent(this, PixTransfDestino.class);
