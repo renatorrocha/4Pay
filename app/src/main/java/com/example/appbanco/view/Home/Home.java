@@ -10,6 +10,7 @@ import com.example.appbanco.databinding.ActivityHomeBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
+import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
 import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
 import com.google.firebase.database.DataSnapshot;
@@ -38,16 +39,12 @@ public class Home extends AppCompatActivity {
         });
 
 
-//        binding.tvPagamentos.setOnClickListener(view1 -> {
-//            startActivity(new Intent(this, ));
-//        });
-
         binding.clCartao.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Cartoes.class));
         });
 
-        binding.clTransf.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, PixTransf.class));
+        binding.clDeposito.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, DepositofFormActivity.class));
         });
 
         binding.clRecarga.setOnClickListener(view1 -> {
