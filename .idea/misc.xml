@@ -20,6 +20,7 @@
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/drawable/btnlogin.xml" value="0.226" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_cartao_criado.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_deposito_form.xml" value="0.264" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_deposito_recibo.xml" value="0.4" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_home_configs.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_pix_transf.xml" value="0.4" />
@@ -27,6 +28,7 @@
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_recarga.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_recarga_pagamento.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_recarga_valor_cartao.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/divisor.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/layout_dialog_info.xml" value="0.4" />
         <entry key="..\:/Users/user/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.3375" />
         <entry key="..\:/Users/user/Appbanco-main/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3395" />
