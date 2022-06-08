@@ -27,7 +27,7 @@
         android:layout_width="307dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:hint="Nome completo"
+        android:hint="Senha"
         android:autofillHints="password"
         android:textColorHint="@color/preto"
         app:boxStrokeColor="@color/preto"

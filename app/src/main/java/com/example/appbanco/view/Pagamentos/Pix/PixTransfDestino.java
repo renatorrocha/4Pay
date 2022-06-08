@@ -25,7 +25,6 @@ import java.util.Locale;
 
 public class PixTransfDestino extends AppCompatActivity {
 
-
     ActivityPixTransfDestinoBinding binding;
     List<Usuario> usuarioList = new ArrayList<>();
     private String pesquisa = "";
@@ -38,28 +37,14 @@ public class PixTransfDestino extends AppCompatActivity {
         binding = ActivityPixTransfDestinoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
         getAllUsersData();
-        configPesquisa();
+
+        transf = (Transferencia) getIntent().getSerializableExtra("transferencia");
+        binding.tvValorPix.setText("R$ " + transf.getValor());
 
         binding.btnPixFinal.setOnClickListener(view -> {
-            Intent intent = new Intent(this, PixTransfFinal.class);
-            intent.putExtra("userDestino", userDestino);
-
-            transf = (Transferencia) getIntent().getSerializableExtra("transferencia");
-            intent.putExtra("transferencia", transf);
-            startActivity(intent);
+            configPesquisa();
         });
-
-
 
     }
 
@@ -95,36 +80,28 @@ public class PixTransfDestino extends AppCompatActivity {
         String pesquisa = binding.etPessoaDestino.getText().toString();
 
         if (!pesquisa.equals("")) {
-            pesquisarUsuarios();
-
+            pesquisarUsuarios(pesquisa);
         } else {
             Toast.makeText(this, "Insira os dados corretamente.", Toast.LENGTH_SHORT).show();
         }
-
     }
 
-    private void pesquisarUsuarios() {
-        for (Usuario usuario : new ArrayList<>(usuarioList)) {
-            if (!usuario.getNome().toLowerCase().contains(pesquisa.toLowerCase())) {
-                usuarioList.remove(usuario);
+    private void pesquisarUsuarios(String pesquisa) {
+        for (int i = 0; i < usuarioList.size(); i++) {
+            if (pesquisa.equals(usuarioList.get(i).getEmail())) {
+                userDestino = usuarioList.get(i);
+                Intent intent = new Intent(this, PixTransfFinal.class);
+
+                intent.putExtra("userDestino", userDestino);
+                intent.putExtra("transferencia", transf);
+                startActivity(intent);
             }
         }
 
         if (usuarioList.isEmpty()) {
             Toast.makeText(this, "Nenhum usuario com este nome.", Toast.LENGTH_SHORT).show();
-        }
 
-        if (usuarioList.size() == 1) {
-            userDestino = usuarioList.get(0);
         }
-
     }
 
-//    private void configFiltro(){
-//        if(!pesquisa.equals("")){
-//            binding.etPessoaDestino.setText("Pesquisa: " + pesquisa);
-//        }else {
-//            binding.etPessoaDestino.setText("");
-//        }
-//    }
 }
