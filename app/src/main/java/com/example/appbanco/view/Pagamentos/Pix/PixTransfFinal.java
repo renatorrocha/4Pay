@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+
 public class PixTransfFinal extends AppCompatActivity {
 
     ActivityPixTransfFinalBinding binding;
@@ -89,7 +91,11 @@ public class PixTransfFinal extends AppCompatActivity {
 
         binding.tvUserDestino.setText("Para "+ userDestino.getNome());
         binding.tvValorTransfPix.setText("R$ " + String.valueOf(transferencia.getValor()));
-        binding.tvDataTransf.setText(Long.toString((transferencia.getData())));
+
+        SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormatada = formataData.format(transferencia.getData());
+
+        binding.tvDataTransf.setText(dataFormatada);
 
     }
 }

@@ -7,13 +7,14 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.chrono.ChronoLocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Transferencia implements Serializable {
 
     private String id;
     private String idUserOrigem;
     private String idUserDestino;
-    private long data;
+    private Date data;
     private double valor;
 
     public Transferencia(){
@@ -45,9 +46,9 @@ public class Transferencia implements Serializable {
         this.idUserDestino = idUserDestino;
     }
 
-    public long getData() {return data;}
+    public Date getData() {return data;}
 
-    public void setData(long data) {this.data = data;}
+    public void setData(Date data) {this.data = data;}
 
     public double getValor() {
         return valor;
