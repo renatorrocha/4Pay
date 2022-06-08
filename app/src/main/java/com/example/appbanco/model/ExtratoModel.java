@@ -1,22 +1,41 @@
 package com.example.appbanco.model;
 
+import com.example.appbanco.help.FirebaseHelper;
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ExtratoModel {
 
+    private String id;
+    private String operacao;
     private String tituloExtrato;
     private String pessoa;
-    private String valor;
-    private String data;
+    private double valor;
+    private long data;
+    private String tipo;
 
-    public ExtratoModel(String tituloExtrato, String pessoa, String valor, String data){
-        this.tituloExtrato = tituloExtrato;
-        this.pessoa = pessoa;
-        this.valor = valor;
-        this.data = data;
+    public ExtratoModel() {
+        DatabaseReference extratoRef = FirebaseHelper.getDatabaseReference();
+        setId(extratoRef.push().getKey());
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getOperacao() {
+        return operacao;
+    }
+
+    public void setOperacao(String operacao) {
+        this.operacao = operacao;
+    }
 
     public String getTituloExtrato() {
         return tituloExtrato;
@@ -34,23 +53,29 @@ public class ExtratoModel {
         this.pessoa = pessoa;
     }
 
-    public String getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
-    public String getData() {
+    public long getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(long data) {
         this.data = data;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }
 
 

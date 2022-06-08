@@ -19,7 +19,7 @@ public class Extrato extends AppCompatActivity {
     ActivityExtratoBinding binding;
     private List<ExtratoModel> list;
     private ExtratoModel extModel;
-    Extrato.ViewHolder extViewHolder = new Extrato.ViewHolder();
+    /*Extrato.ViewHolder extViewHolder = new Extrato.ViewHolder();
     RecyclerView.Adapter extAdapter;
 
     @Override
@@ -34,7 +34,7 @@ public class Extrato extends AppCompatActivity {
         extViewHolder.rv_extrato.setHasFixedSize(true);
         extViewHolder.rv_extrato.setLayoutManager(new LinearLayoutManager(this));
 
-        list = getExtratoList();
+        /*list = getExtratoList();
         extAdapter = new ExtratoAdapter(list);
         extViewHolder.rv_extrato.setAdapter(extAdapter);
 
@@ -51,7 +51,7 @@ public class Extrato extends AppCompatActivity {
         list.add(4,new ExtratoModel("Transferencia Enviada", "Gabriel", "400,00", "15 MAI"));
         list.add(5,new ExtratoModel("Transferencia Recebida", "Pedro", "1300,00", "14 MAI"));
         return list;
-    };
+    }; */
 
     public static class ViewHolder{
         RecyclerView rv_extrato;

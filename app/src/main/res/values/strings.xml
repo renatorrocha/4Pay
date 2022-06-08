@@ -24,5 +24,9 @@
     <string name="txt_imagem_chave_criada">Imagem Chave Pix Criada</string>
     <string name="txt_depositar_title">Depositar</string>
     <string name="txt_hint_deposito">R$:</string>
+    <string name="txt_descrição_deposito">informe o valor a ser depositado</string>
+    <string name="txt_valor_deposito_descr">Valor deposito</string>
+    <string name="txt_btn_confirmar">Confirmar</string>
+    <string name="txt_valor_deposito">R$ %1$s</string>
 
 </resources>
