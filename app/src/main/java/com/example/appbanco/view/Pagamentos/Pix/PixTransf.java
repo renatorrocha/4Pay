@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixTransfBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Transferencia;
@@ -33,9 +31,9 @@ public class PixTransf extends AppCompatActivity {
         });
     }
 
-    public void validaDados(View view){
+    public void validaDados(View view) {
         double value = Double.parseDouble(binding.etValorPix.getText().toString());
-        if(value > 0){
+        if (value > 0) {
 
             Transferencia transf = new Transferencia();
             transf.setIdUserOrigem(FirebaseHelper.getIdFirebase());
@@ -46,8 +44,9 @@ public class PixTransf extends AppCompatActivity {
             intent.putExtra("transferencia", transf);
             startActivity(intent);
 
-        }else {
+        } else {
             Toast.makeText(this, "Digite um valor maior que 0.", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

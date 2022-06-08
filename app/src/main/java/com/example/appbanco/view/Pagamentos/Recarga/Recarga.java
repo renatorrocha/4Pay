@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityRecargaBinding;
@@ -12,6 +13,7 @@ import com.example.appbanco.databinding.ActivityRecargaBinding;
 public class Recarga extends AppCompatActivity {
 
     private ActivityRecargaBinding binding;
+    private EditText edtTelefone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
