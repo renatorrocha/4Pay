@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+
 public class PixTransfSucesso extends AppCompatActivity {
 
     private ActivityPixTransfSucessoBinding binding;
@@ -46,7 +48,10 @@ public class PixTransfSucesso extends AppCompatActivity {
 
         Transferencia transf = (Transferencia) getIntent().getSerializableExtra("transferencia");
         Usuario userDestino = (Usuario) getIntent().getSerializableExtra("userDestino");
-        binding.tvPixData.setText(Long.toString(transf.getData()));
+
+        SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormatada = formataData.format(transf.getData());
+        binding.tvPixData.setText(dataFormatada);
         binding.tvValorPixFinal.setText(Double.toString(transf.getValor()));
         binding.tvPixFinalPessoaPara.setText(userDestino.getNome());
         binding.tvCodigoTransferencia.setText("Código: "+ transf.getId());
@@ -99,7 +104,9 @@ public class PixTransfSucesso extends AppCompatActivity {
     }
 
     private void configDados(Transferencia transferencia, Usuario userDestino) {
-        binding.tvPixData.setText(Long.toString(transferencia.getData()));
+        SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormatada = formataData.format(transferencia.getData());
+        binding.tvPixData.setText(dataFormatada);
         binding.tvValorPixFinal.setText(Double.toString(transferencia.getValor()));
         binding.tvPixFinalPessoaPara.setText(userDestino.getNome());
         binding.tvCodigoTransferencia.setText(transferencia.getId());

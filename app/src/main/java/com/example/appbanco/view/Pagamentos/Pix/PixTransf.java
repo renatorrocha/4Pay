@@ -13,6 +13,8 @@ import com.example.appbanco.databinding.ActivityPixTransfBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Transferencia;
 
+import java.util.Date;
+
 public class PixTransf extends AppCompatActivity {
 
     ActivityPixTransfBinding binding;
@@ -37,7 +39,7 @@ public class PixTransf extends AppCompatActivity {
 
             Transferencia transf = new Transferencia();
             transf.setIdUserOrigem(FirebaseHelper.getIdFirebase());
-            transf.setData(System.currentTimeMillis());
+            transf.setData(new Date());
             transf.setValor(value);
 
             Intent intent = new Intent(this, PixTransfDestino.class);
