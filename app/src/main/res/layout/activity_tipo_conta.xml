@@ -134,13 +134,13 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
-            android:textAllCaps="false"
             android:text="Finalizar"
+            android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

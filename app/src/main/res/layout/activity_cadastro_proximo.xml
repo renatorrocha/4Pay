@@ -1,125 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
         tools:context=".view.Login_Cadastro.CadastroProximo">
 
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/ib_voltar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?actionBarDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
         <TextView
             android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="48dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Defina seu e-mail e senha"
+            android:text="Dados Adicionais"
             android:textColor="@color/preto"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtEmail"
+            android:id="@+id/celular"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="307dp"
+            android:layout_width="336dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:autofillHints="emailAddress"
-            android:hint="Email"
+            android:layout_marginTop="48dp"
+            android:autofillHints="name"
+            android:hint="Celular"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
-            app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/preto">
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtcelular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="phone"
                 android:textColor="@color/preto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtSenha"
+            android:id="@+id/cep"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="307dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:autofillHints="password"
-            android:hint="Senha"
+            android:layout_marginTop="24dp"
+            android:autofillHints="postalCode"
+            android:hint="CEP"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtEmail"
-            app:startIconDrawable="@drawable/ic_lock"
-            app:startIconTint="@color/preto">
+            app:layout_constraintEnd_toStartOf="@+id/uf"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/celular"
+            app:layout_constraintTop_toBottomOf="@+id/celular">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtcep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+                android:inputType="textAutoComplete"
                 android:textColor="@color/preto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtConfirmarSenha"
+            android:id="@+id/uf"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="307dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:autofillHints="password"
-            android:hint="Confirmar senha"
+            android:layout_marginTop="24dp"
+            android:hint="UF"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
+            app:layout_constraintEnd_toStartOf="@+id/numb"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cep"
+            app:layout_constraintTop_toBottomOf="@+id/celular"
+            app:layout_constraintVertical_chainStyle="spread">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtuf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/preto"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/numb"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="N°"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
+            app:layout_constraintEnd_toEndOf="@id/celular"
+            app:layout_constraintStart_toEndOf="@+id/uf"
+            app:layout_constraintTop_toBottomOf="@+id/celular"
+            app:layout_constraintVertical_chainStyle="spread">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtnumb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/logradouro"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:autofillHints="name"
+            android:hint="Logradouro"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtSenha"
-            app:startIconDrawable="@drawable/ic_lock"
-            app:startIconTint="@color/preto">
+            app:layout_constraintTop_toBottomOf="@+id/cep">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtlogradouro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+                android:inputType="textPostalAddress"
                 android:textColor="@color/preto" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/imgCadastro"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="52dp"
-            android:src="@drawable/img_cadastro_continuar"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bairro"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:autofillHints="postalCode"
+            android:hint="Bairro"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
+            app:layout_constraintEnd_toStartOf="@id/municipio"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/celular"
+            app:layout_constraintTop_toBottomOf="@+id/logradouro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtbairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/municipio"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:autofillHints="postalCode"
+            android:hint="Municipio"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
+            app:layout_constraintEnd_toEndOf="@id/logradouro"
+            app:layout_constraintStart_toEndOf="@id/bairro"
+            app:layout_constraintTop_toBottomOf="@+id/logradouro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtmunicipio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/complemento"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Complemento"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtConfirmarSenha" />
+            app:layout_constraintTop_toBottomOf="@+id/bairro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtcomplemento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnCadastrar"
             android:layout_width="280dp"
             android:layout_height="54dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="88dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Cadastrar-se"
+            android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
-            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="40dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.517"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            tools:visibility="visible" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

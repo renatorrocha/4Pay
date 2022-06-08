@@ -14,6 +14,7 @@ import com.example.appbanco.R;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Usuario;
 import com.google.firebase.database.DatabaseReference;
+import com.thyagoneves.custom_mask_textwatcher.CustomMask;
 
 public class Cadastro extends AppCompatActivity {
 
@@ -32,6 +33,9 @@ public class Cadastro extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
 
         iniciaComponentes();
+
+        edtCpf.addTextChangedListener(CustomMask.Companion.mask("###.###.###-##", edtCpf, null));
+        edtNascimento.addTextChangedListener(CustomMask.Companion.mask("##/##/####", edtNascimento, null));
 
     }
 
