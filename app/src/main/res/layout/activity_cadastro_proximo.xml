@@ -12,16 +12,39 @@
         android:background="@drawable/background_alternativo"
         tools:context=".view.Login_Cadastro.CadastroProximo">
 
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/ib_voltar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?actionBarDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
         <TextView
             android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="48dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Informe os seus dados"
+            android:text="Dados Adicionais"
             android:textColor="@color/preto"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,7 +91,7 @@
                 android:id="@+id/edtcep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="textAutoComplete"
                 android:textColor="@color/preto" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -216,7 +239,7 @@
             android:id="@+id/btnCadastrar"
             android:layout_width="280dp"
             android:layout_height="54dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="88dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Cadastrar-se"
@@ -227,6 +250,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="40dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
