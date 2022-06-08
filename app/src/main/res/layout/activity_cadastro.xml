@@ -31,8 +31,8 @@
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="Nome completo"
             android:autofillHints="name"
+            android:hint="Nome completo"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
@@ -41,6 +41,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
             app:startIconDrawable="@drawable/ic_person"
             app:startIconTint="@color/preto">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nome"
                 android:layout_width="match_parent"
@@ -55,8 +56,8 @@
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="CPF"
             android:autofillHints="name"
+            android:hint="CPF"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
@@ -80,8 +81,8 @@
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="Data de nascimento"
             android:autofillHints="name"
+            android:hint="Data de nascimento"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
@@ -105,8 +106,8 @@
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="E-mail"
             android:autofillHints="name"
+            android:hint="E-mail"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
@@ -130,8 +131,8 @@
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="Senha"
             android:autofillHints="name"
+            android:hint="Senha"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
@@ -155,8 +156,8 @@
             android:layout_width="307dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:hint="Confirmar Senha"
             android:autofillHints="name"
+            android:hint="Confirmar Senha"
             android:textColorHint="@color/preto"
             app:boxStrokeColor="@color/preto"
             app:hintTextColor="@color/preto"
@@ -181,8 +182,8 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
-            android:text="Continuar"
             android:onClick="validaDados"
+            android:text="Continuar"
             android:textColor="@color/branco"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/progressbar"
@@ -198,12 +199,12 @@
             android:layout_height="wrap_content"
 
             android:layout_marginBottom="32dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            android:visibility="gone"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

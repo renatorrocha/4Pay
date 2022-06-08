@@ -65,11 +65,11 @@
             android:id="@+id/imgLinha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/linha"
             android:layout_marginTop="25dp"
+            android:src="@drawable/linha"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgDinheiro"/>
+            app:layout_constraintTop_toBottomOf="@+id/imgDinheiro" />
 
 
         <TextView
@@ -114,29 +114,28 @@
             android:layout_height="145dp"
             android:layout_marginStart="60dp"
             android:checkedButton="@id/rbtnConta"
+            app:layout_constraintBottom_toBottomOf="@id/imgCartao"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvTitulo"
-            app:layout_constraintTop_toTopOf="@+id/imgDinheiro"
-            app:layout_constraintBottom_toBottomOf="@id/imgCartao">
+            app:layout_constraintTop_toTopOf="@+id/imgDinheiro">
 
-        <RadioButton
-            android:id="@+id/rbtnConta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/preto"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"/>
+            <RadioButton
+                android:id="@+id/rbtnConta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:buttonTint="@color/preto" />
 
-        <RadioButton
-            android:id="@+id/rbtnCartao"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:buttonTint="@color/preto"
-            android:layout_marginTop="70dp"
-            android:layout_marginStart="20dp"/>
+            <RadioButton
+                android:id="@+id/rbtnCartao"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="70dp"
+                android:buttonTint="@color/preto" />
 
         </RadioGroup>
-
 
 
         <Button
@@ -147,12 +146,12 @@
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
             android:text="Próximo"
+            android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
-            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

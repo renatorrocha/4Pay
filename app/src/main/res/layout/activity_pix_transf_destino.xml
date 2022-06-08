@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Pagamentos.Pix.PixTransfDestino"
-    android:background="@drawable/background_alternativo">
+    android:background="@drawable/background_alternativo"
+    tools:context=".view.Pagamentos.Pix.PixTransfDestino">
 
     <TextView
         android:id="@+id/textView"
@@ -52,9 +52,12 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="307dp"
         android:layout_height="wrap_content"
-        android:hint="Enviar uma mensagem"
-        android:textColorHint="@color/preto"
+        android:layout_marginHorizontal="100dp"
         android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Envie uma mensagem"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/preto"
         app:boxStrokeColor="@color/preto"
         app:hintTextColor="@color/preto"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,9 +76,11 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="307dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:ems="10"
         android:hint="Cpf, Email ou telefone"
+        android:inputType="textPersonName"
         android:textColorHint="@color/preto"
-        android:layout_marginTop="46dp"
         app:boxStrokeColor="@color/preto"
         app:hintTextColor="@color/preto"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,11 +101,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:background="@drawable/btnlogin"
-        android:textColor="@color/white"
         android:text="Próximo"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
