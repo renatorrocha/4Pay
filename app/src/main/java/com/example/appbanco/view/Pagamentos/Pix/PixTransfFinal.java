@@ -13,6 +13,7 @@ import com.example.appbanco.R;
 
 import com.example.appbanco.databinding.ActivityPixTransfFinalBinding;
 import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
 import com.google.firebase.database.DataSnapshot;
@@ -49,19 +50,7 @@ public class PixTransfFinal extends AppCompatActivity {
     public void confirmarTransf(View view) {
         if (transferencia != null) {
             if (userOrigem.getSaldo() >= transferencia.getValor()) {
-
-                userOrigem.setSaldo(userOrigem.getSaldo() - transferencia.getValor());
-                userOrigem.atualizarSaldo();
-
-                userDestino.setSaldo(userDestino.getSaldo() + transferencia.getValor());
-                userDestino.atualizarSaldo();
-
-                Intent intent = new Intent(this, PixTransfSucesso.class);
-                if (transferencia != null) {
-                    intent.putExtra("transferencia", transferencia);
-                    intent.putExtra("userDestino", userDestino);
-                    startActivity(intent);
-                }
+                salvarTransferencia();
             } else {
                 Toast.makeText(this, "Sem saldo.", Toast.LENGTH_SHORT).show();
             }
@@ -85,12 +74,36 @@ public class PixTransfFinal extends AppCompatActivity {
         });
     }
 
+    private void salvarTransferencia(){
+        DatabaseReference transferenciaRef = FirebaseHelper.getDatabaseReference()
+                .child("transferencias")
+                .child(transferencia.getId());
+
+        transferenciaRef.setValue(transferencia).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                userOrigem.setSaldo(userOrigem.getSaldo() - transferencia.getValor());
+                userOrigem.atualizarSaldo();
+
+                userDestino.setSaldo(userDestino.getSaldo() + transferencia.getValor());
+                userDestino.atualizarSaldo();
+
+                Intent intent = new Intent(this, PixTransfSucesso.class);
+                intent.putExtra("idTransferencia",transferencia.getId());
+                startActivity(intent);
+
+            }else{
+                Toast.makeText(this, "Não foi possivel completar a transferência.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
     private void configDados() {
         userDestino = (Usuario) getIntent().getSerializableExtra("userDestino");
         transferencia = (Transferencia) getIntent().getSerializableExtra("transferencia");
 
         binding.tvUserDestino.setText("Para "+ userDestino.getNome());
-        binding.tvValorTransfPix.setText("R$ " + String.valueOf(transferencia.getValor()));
+        binding.tvValorTransfPix.setText(getString( R.string.txt_valor_deposito, GetMask.getValor(transferencia.getValor())));
 
         SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
         String dataFormatada = formataData.format(transferencia.getData());

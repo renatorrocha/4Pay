@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityDadosUsuarioBinding;
 import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Usuario;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -83,7 +84,7 @@ public class DadosUsuario extends AppCompatActivity {
                         "Email: " + user.getEmail(),
                         "Telefone:",
                         "Endereço:",
-                        "Renda mensal: "+ user.getSaldo(),
+                        "Renda mensal: "+getString(R.string.txt_valor_deposito, GetMask.getValor(user.getSaldo())),
                         "Consultar senha de 4 digítos:",
                         "Extrato anual de juros tarifas e impostos:"};
 

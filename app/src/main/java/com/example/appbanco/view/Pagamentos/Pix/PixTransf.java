@@ -24,6 +24,7 @@ public class PixTransf extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         Intent intent = getIntent();
+
         binding.tvValorSaldo.setText("R$ " + intent.getStringExtra("userSaldo"));
 
         binding.btnPixProximo.setOnClickListener(view -> {
@@ -32,7 +33,7 @@ public class PixTransf extends AppCompatActivity {
     }
 
     public void validaDados(View view) {
-        double value = Double.parseDouble(binding.etValorPix.getText().toString());
+        double value = (double) binding.etValorPix.getRawValue() / 100;
         if (value > 0) {
 
             Transferencia transf = new Transferencia();
