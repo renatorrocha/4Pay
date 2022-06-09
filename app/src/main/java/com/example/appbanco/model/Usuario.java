@@ -16,8 +16,9 @@ public class Usuario implements Serializable {
         private String urlImagem;
         private double saldo;
         private String senha;
+        private Endereco endereco;
 
-        public Usuario() {
+    public Usuario() {
         }
 
         public void atualizarSaldo(){
@@ -91,5 +92,13 @@ public class Usuario implements Serializable {
 
         public void setSenha(String senha) {
             this.senha = senha;
+        }
+
+        public Endereco getEndereco() {
+            return endereco;
+        }
+
+        public void setEndereco(Endereco endereco) {
+            this.endereco = endereco;
         }
     }
