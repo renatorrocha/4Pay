@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixTransfDestinoBinding;
 import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
 import com.google.firebase.database.DataSnapshot;
@@ -40,7 +41,8 @@ public class PixTransfDestino extends AppCompatActivity {
         getAllUsersData();
 
         transf = (Transferencia) getIntent().getSerializableExtra("transferencia");
-        binding.tvValorPix.setText("R$ " + transf.getValor());
+        binding.tvValorPix.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(transf.getValor())));
+
 
         binding.btnPixFinal.setOnClickListener(view -> {
             configPesquisa();
@@ -92,6 +94,7 @@ public class PixTransfDestino extends AppCompatActivity {
                 userDestino = usuarioList.get(i);
                 Intent intent = new Intent(this, PixTransfFinal.class);
 
+                transf.setIdUserDestino(userDestino.getId());
                 intent.putExtra("userDestino", userDestino);
                 intent.putExtra("transferencia", transf);
                 startActivity(intent);

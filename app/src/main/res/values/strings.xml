@@ -28,5 +28,6 @@
     <string name="txt_valor_deposito_descr">Valor deposito</string>
     <string name="txt_btn_confirmar">Confirmar</string>
     <string name="txt_valor_deposito">R$ %1$s</string>
+    <string name="txt_valor_saldo"> %1$s</string>
 
 </resources>

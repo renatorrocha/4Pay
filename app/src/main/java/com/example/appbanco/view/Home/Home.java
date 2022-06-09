@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityHomeBinding;
 import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
@@ -74,10 +76,11 @@ public class Home extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Usuario user = snapshot.getValue(Usuario.class);
-                binding.tvSaldoValor.setText(Double.toString(user.getSaldo()));
+
+                binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(user.getSaldo())));
 
                 String[] splitName = user.getNome().trim().split("\\s+");
-                binding.tvBemVindo.setText("Bom dia, " + splitName[0]);
+                binding.tvBemVindo.setText("Bem vindo, " + splitName[0]);
 
             }
 
