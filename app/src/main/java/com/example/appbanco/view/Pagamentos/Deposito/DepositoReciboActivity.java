@@ -32,6 +32,7 @@ public class DepositoReciboActivity extends AppCompatActivity {
         setContentView(R.layout.activity_deposito_recibo);
 
         iniciaComponentes();
+        getDeposito();
 
         button = findViewById(R.id.buttonRecibo);
 
