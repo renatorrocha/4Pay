@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 
 
+import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixTransfSucessoBinding;
 import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Home;
@@ -46,26 +48,14 @@ public class PixTransfSucesso extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        Transferencia transf = (Transferencia) getIntent().getSerializableExtra("transferencia");
-        Usuario userDestino = (Usuario) getIntent().getSerializableExtra("userDestino");
-
-        SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
-        String dataFormatada = formataData.format(transf.getData());
-        binding.tvPixData.setText(dataFormatada);
-        binding.tvValorPixFinal.setText(Double.toString(transf.getValor()));
-        binding.tvPixFinalPessoaPara.setText(userDestino.getNome());
-        binding.tvCodigoTransferencia.setText("Código: "+ transf.getId());
     }
 
 
-
-
     private void recuperarTransferencia() {
-        Transferencia transf = (Transferencia) getIntent().getSerializableExtra("transferencia") ;
-        String idTransferencia = transf.getId();
+        String idTransferencia = (String) getIntent().getStringExtra("idTransferencia") ;
 
         DatabaseReference transferenciaRef = FirebaseHelper.getDatabaseReference()
-                .child("transferencia")
+                .child("transferencias")
                 .child(idTransferencia);
         transferenciaRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -104,11 +94,13 @@ public class PixTransfSucesso extends AppCompatActivity {
     }
 
     private void configDados(Transferencia transferencia, Usuario userDestino) {
+
         SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
         String dataFormatada = formataData.format(transferencia.getData());
         binding.tvPixData.setText(dataFormatada);
-        binding.tvValorPixFinal.setText(Double.toString(transferencia.getValor()));
+
+        binding.tvValorPixFinal.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(transferencia.getValor())));
         binding.tvPixFinalPessoaPara.setText(userDestino.getNome());
-        binding.tvCodigoTransferencia.setText(transferencia.getId());
+        binding.tvCodigoTransferencia.setText("Cod: " + transferencia.getId());
     }
 }
