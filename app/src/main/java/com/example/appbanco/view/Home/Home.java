@@ -80,7 +80,7 @@ public class Home extends AppCompatActivity {
                 binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(user.getSaldo())));
 
                 String[] splitName = user.getNome().trim().split("\\s+");
-                binding.tvBemVindo.setText("Bom dia, " + splitName[0]);
+                binding.tvBemVindo.setText("Bem vindo, " + splitName[0]);
 
             }
 
