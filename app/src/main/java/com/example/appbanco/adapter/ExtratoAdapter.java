@@ -55,6 +55,7 @@ public class ExtratoAdapter extends RecyclerView.Adapter<ExtratoAdapter.ViewHold
         holder.tvExtTitulo.setText(item.getOperacao());
         holder.tvExtPessoa.setText(item.getTipo());
         holder.tvExtValor.append(context.getString(R.string.txt_valor_saldo, GetMask.getValor(item.getValor())));
+        holder.tvExtData.setText(GetMask.getDate(item.getData(), 3));
 
 
     }
