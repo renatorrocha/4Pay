@@ -40,6 +40,7 @@ public class DepositoReciboActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DepositoReciboActivity.this, Home.class);
+                startActivity(intent);
             }
         });
     }
