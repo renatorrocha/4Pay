@@ -17,7 +17,7 @@ public class GerarCartoes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gerar_cartoes);
 
-        btnGerarCartao = findViewById(R.id.btnGerarCartao);
+//        btnGerarCartao = findViewById(R.id.btnGerarCartao);
 
         btnGerarCartao.setOnClickListener(view1 -> {
             startActivity(new Intent(this, CartaoCriado.class));
