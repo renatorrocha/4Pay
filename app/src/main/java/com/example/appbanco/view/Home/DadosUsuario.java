@@ -80,7 +80,7 @@ public class DadosUsuario extends AppCompatActivity {
 
                 String[] splitName = user.getNome().trim().split("\\s+");
 
-                String [] itens = {"Nome de Preferência: "+ splitName[0],
+                String [] itens = {"Nome de Preferência: "+ user.getNome(),
                         "Email: " + user.getEmail(),
                         "Telefone:",
                         "Endereço:",
