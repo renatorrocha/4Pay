@@ -28,5 +28,7 @@
     <string name="txt_valor_deposito_descr">Valor deposito</string>
     <string name="txt_btn_confirmar">Confirmar</string>
     <string name="txt_valor_deposito">R$ %1$s</string>
+    <string name="txt_seguro_cartao">Com o seguro cartao da 4pay, voce pode ficar tranquilo que te protegemos contra alguns imprevistos alem de fornecer sorteios mensais e coberturas contra roubo, saques....</string>
+    <string name="txt_seguro_vida">Com o nosso seguro de vida 4pay, seguramos até R$150mil de capital, despesas Médico-Hospitalares e Cobertura para auxiliar e confortar seus agregados em diversas ocasioes</string>
 
 </resources>

@@ -26,17 +26,23 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtTelefone"
+            android:id="@+id/Telefone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="208dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="96dp"
             android:hint="(DDD) + Número"
-            app:endIconMode="clear_text"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitulo">
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+            app:startIconDrawable="@drawable/ic_phone"
+            app:startIconTint="@color/preto">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTelefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

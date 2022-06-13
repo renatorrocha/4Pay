@@ -9,11 +9,11 @@ import android.widget.EditText;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityRecargaBinding;
+import com.thyagoneves.custom_mask_textwatcher.CustomMask;
 
 public class Recarga extends AppCompatActivity {
 
     private ActivityRecargaBinding binding;
-    private EditText edtTelefone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,8 @@ public class Recarga extends AppCompatActivity {
 
         binding = ActivityRecargaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.edtTelefone.addTextChangedListener(CustomMask.Companion.mask("(##) #####-####", binding.edtTelefone, null));
 
         binding.btnProximo.setOnClickListener(new View.OnClickListener() {
             @Override
