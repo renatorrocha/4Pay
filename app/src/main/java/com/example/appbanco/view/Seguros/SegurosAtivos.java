@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.SegurosAtivosAdapter;
 import com.example.appbanco.model.ListaSeguro;
 import com.example.appbanco.model.SegurosUsuario;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Home.Home;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +25,7 @@ public class SegurosAtivos extends AppCompatActivity {
 
     private SegurosAtivosAdapter segurosAdapter;
     private RecyclerView rvSeguros;
+    private ImageButton btn_voltar;
     Usuario usuario;
 
     @Override
@@ -41,5 +46,13 @@ public class SegurosAtivos extends AppCompatActivity {
         rvSeguros.setLayoutManager(new LinearLayoutManager(this));
         segurosAdapter = new SegurosAtivosAdapter(listSeguros);
         rvSeguros.setAdapter(segurosAdapter);
+
+        btn_voltar = findViewById(R.id.btn_voltar);
+        btn_voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SegurosAtivos.this, Home.class));
+            }
+        });
     }
 }
