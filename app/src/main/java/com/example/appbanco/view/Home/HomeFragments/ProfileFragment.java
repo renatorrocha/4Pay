@@ -1,18 +1,21 @@
-package com.example.appbanco.view.Home;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.appbanco.view.Home.HomeFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.appbanco.R;
-import com.example.appbanco.databinding.ActivityDadosUsuarioBinding;
+import com.example.appbanco.databinding.FragmentProfileBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Usuario;
@@ -21,30 +24,24 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-public class DadosUsuario extends AppCompatActivity {
+public class ProfileFragment extends Fragment {
 
-    ActivityDadosUsuarioBinding binding;
-
-
+    FragmentProfileBinding binding;
     private ListView listadados;
     private String[] itens = {"Nome de Preferência:", "Email:", "Telefone:",
             "Endereço:", "Renda mensal:", "Consultar senha de 4 digítos:",
             "Extrato anual de juros tarifas e impostos:"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = ActivityDadosUsuarioBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = FragmentProfileBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
 
-        binding.ivArrowBack.setOnClickListener(view -> {
-            startActivity(new Intent(DadosUsuario.this, HomeConfigs.class));
-        });
 
-        listadados=findViewById(R.id.listdados);
+        listadados = view.findViewById(R.id.listdados);
         //Adaptador para a lista
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(
-                getApplicationContext(),
+                view.getContext(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
                 itens
@@ -57,19 +54,21 @@ public class DadosUsuario extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String valorSelecionado = listadados.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(),valorSelecionado,Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(), valorSelecionado, Toast.LENGTH_LONG).show();
             }
         });
+
+        return view;
     }
 
     @Override
-    protected void onStart(){
+    public void onStart() {
         super.onStart();
 
         getUserData();
     }
 
-    private void getUserData(){
+    private void getUserData() {
         DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
                 .child(FirebaseHelper.getIdFirebase());
@@ -80,16 +79,16 @@ public class DadosUsuario extends AppCompatActivity {
 
                 String[] splitName = user.getNome().trim().split("\\s+");
 
-                String [] itens = {"Nome de Preferência: "+ user.getNome(),
+                String[] itens = {"Nome de Preferência: " + user.getNome(),
                         "Email: " + user.getEmail(),
                         "Telefone:",
                         "Endereço:",
-                        "Renda mensal: "+getString(R.string.txt_valor_deposito, GetMask.getValor(user.getSaldo())),
+                        "Renda mensal: " + getString(R.string.txt_valor_deposito, GetMask.getValor(user.getSaldo())),
                         "Consultar senha de 4 digítos:",
                         "Extrato anual de juros tarifas e impostos:"};
 
                 ArrayAdapter<String> adaptador = new ArrayAdapter<String>(
-                        getApplicationContext(),
+                        getView().getContext(),
                         android.R.layout.simple_list_item_1,
                         android.R.id.text1,
                         itens

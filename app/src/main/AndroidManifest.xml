@@ -34,9 +34,6 @@
             android:name=".view.Chave_Pix.CriaChavePix"
             android:exported="false" />
         <activity
-            android:name=".view.Home.Extrato"
-            android:exported="false" />
-        <activity
             android:name=".view.Pagamentos.Cartoes.CartaoCriado"
             android:exported="false" />
         <activity
@@ -47,12 +44,6 @@
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Pix.PixTransfFinal"
-            android:exported="false" />
-        <activity
-            android:name=".view.Home.HomeConfigs"
-            android:exported="false" />
-        <activity
-            android:name=".view.Home.DadosUsuario"
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Transferencia.Transferencia"

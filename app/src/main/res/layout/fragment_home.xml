@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_alternativo"
+    tools:context=".view.Home.Home">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHomeTop"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/preto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <ImageView
+            android:id="@+id/ivLogo4Pay"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_4pay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivNoti"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_not_rosa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvBemVindo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Bem vindo, José"
+        android:textColor="@color/preto"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clHomeTop" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="R$"
+        android:textColor="@color/preto"
+        app:layout_constraintEnd_toStartOf="@id/tvSaldoValor"
+        app:layout_constraintTop_toTopOf="@id/tvSaldoValor" />
+
+    <TextView
+        android:id="@+id/tvSaldoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="1126,48"
+        android:textColor="@color/preto"
+        android:textSize="44sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBemVindo" />
+
+
+    <TextView
+        android:id="@+id/tvLinha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/line_shape"
+        app:layout_constraintBottom_toTopOf="@id/clOpcoes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSaldoValor" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clOpcoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="18dp"
+        app:layout_constraintTop_toBottomOf="@id/tvLinha">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clDeposito"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/clPix"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvTransf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:paddingVertical="4dp"
+                android:text="Depósito"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginVertical="6dp"
+                android:paddingVertical="4dp"
+                android:src="@drawable/ic_pag"
+                app:layout_constraintBottom_toTopOf="@id/tvTransf"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/preto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPix"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/clDeposito"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvPix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:paddingVertical="4dp"
+                android:text="Pix"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginVertical="6dp"
+                android:paddingVertical="4dp"
+                android:src="@drawable/ic_pix"
+                app:layout_constraintBottom_toTopOf="@+id/tvPix"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/preto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPagamentos"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toStartOf="@id/clPix"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clPix">
+
+            <TextView
+                android:id="@+id/tvPagamentos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:paddingVertical="4dp"
+                android:text="Pagamentos"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginVertical="6dp"
+                android:paddingVertical="4dp"
+                android:src="@drawable/ic_transferencia"
+                app:layout_constraintBottom_toTopOf="@id/tvPagamentos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/preto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCartao"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/clPagamentos"
+            app:layout_constraintTop_toBottomOf="@id/clPix">
+
+            <TextView
+                android:id="@+id/tvCartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:paddingVertical="4dp"
+                android:text="Cartão"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginVertical="6dp"
+                android:paddingVertical="4dp"
+                android:src="@drawable/ic_card"
+                app:layout_constraintBottom_toTopOf="@id/tvCartao"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/preto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clRecarga"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="@id/clPagamentos"
+            app:layout_constraintTop_toBottomOf="@id/clCartao">
+
+            <TextView
+                android:id="@+id/tvRecarga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:paddingVertical="4dp"
+                android:text="Recarga"
+                android:textAlignment="center"
+                android:textColor="@color/preto"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginVertical="6dp"
+                android:paddingVertical="4dp"
+                android:src="@drawable/celular"
+                app:layout_constraintBottom_toTopOf="@id/tvRecarga"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/preto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
