@@ -4,8 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_alternativo"
+    android:background="@drawable/background"
     tools:context=".view.Pagamentos.Cartoes.Cartoes">
+
+    <TextView
+        android:id="@+id/tvTituloCartoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:paddingVertical="8dp"
+        android:fontFamily="@font/nunito_regular"
+        android:textColor="@color/rosa"
+        android:background="@color/preto"
+        android:text="Gerenciar cartões"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,19 +31,19 @@
         app:layout_constraintBottom_toTopOf="@id/clCartaoDebito"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tvTituloCartoes">
 
 
         <TextView
             android:id="@+id/tvCartDebtCredt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="76dp"
-            android:fontFamily="@font/nunito_regular"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/nunito_bold"
             android:text="Cartão de débito e crédito"
             android:textColor="@color/preto"
-            android:textSize="30sp"
+            android:textSize="26sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +52,8 @@
             android:id="@+id/tvLimite1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="6dp"
             android:text="Limite"
             android:textColor="@color/preto"
             app:layout_constraintEnd_toStartOf="@id/tvLimite1Valor"
@@ -48,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
             android:text="R$ 1000,00"
             android:textColor="@color/preto"
             android:textStyle="bold"
@@ -83,7 +100,7 @@
             android:id="@+id/tvFaturaAtual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/nunito_regular"
             android:text="Fatura atual"
             android:textColor="@color/preto"
@@ -100,7 +117,7 @@
             android:fontFamily="@font/nunito_regular"
             android:text="R$ 01,00"
             android:textColor="@color/preto"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/tvFaturaAtual"
             app:layout_constraintStart_toStartOf="@id/tvFaturaAtual"
@@ -110,7 +127,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/line_shape"
+            android:background="@drawable/line_shape_white"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvFaturaAtualValor" />
@@ -131,12 +149,11 @@
             android:id="@+id/tvCartDebito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginRight="8dp"
-            android:fontFamily="@font/nunito_regular"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/nunito_bold"
             android:text="Cartão de débito"
             android:textColor="@color/preto"
-            android:textSize="30sp"
+            android:textSize="26sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -145,7 +162,8 @@
             android:id="@+id/tvLimite2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="6dp"
             android:text="Limite"
             android:textColor="@color/preto"
             app:layout_constraintEnd_toStartOf="@id/tvLimite2Valor"
@@ -157,7 +175,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
             android:text="R$ 600,00"
             android:textColor="@color/preto"
             android:textStyle="bold"
@@ -192,7 +210,7 @@
             android:id="@+id/tvFaturaAtual2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/nunito_regular"
             android:text="Fatura atual"
             android:textColor="@color/preto"
@@ -209,7 +227,7 @@
             android:fontFamily="@font/nunito_regular"
             android:text="R$ 03,00"
             android:textColor="@color/preto"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/tvFaturaAtual2"
             app:layout_constraintStart_toStartOf="@id/tvFaturaAtual2"
@@ -219,7 +237,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/line_shape"
+            android:background="@drawable/line_shape_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvFaturaAtualValor2" />
@@ -238,12 +256,12 @@
             android:id="@+id/tvGerarCartao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="120dp"
-            android:fontFamily="@font/nunito_regular"
+            android:fontFamily="@font/nunito_bold"
             android:text="Gerar cartão"
             android:textColor="@color/preto"
-            android:textSize="30sp"
+            android:textSize="28sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -260,7 +278,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/line_shape"
+            android:background="@drawable/line_shape_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvGerarCartao" />
