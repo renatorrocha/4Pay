@@ -1,29 +1,26 @@
 package com.example.appbanco.view.Home;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 
+import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityHomeBinding;
-import com.example.appbanco.help.FirebaseHelper;
-import com.example.appbanco.help.GetMask;
-import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
-import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
-import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
-import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
-import com.example.appbanco.view.Pagamentos.Transferencia.Transferencia;
+import com.example.appbanco.view.Home.HomeFragments.ConfigsFragment;
+import com.example.appbanco.view.Home.HomeFragments.ExtratoFragment;
+import com.example.appbanco.view.Home.HomeFragments.HomeFragment;
+import com.example.appbanco.view.Home.HomeFragments.ProfileFragment;
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 
 public class Home extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
+    private MeowBottomNavigation bnv_Main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,63 +28,47 @@ public class Home extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.ivPerson.setOnClickListener(view1 -> {
-            Intent intent = new Intent( this, HomeConfigs.class);
-            intent.putExtra("nomeUser", binding.tvBemVindo.getText());
-            startActivity(intent);
-        });
 
-        binding.clSaldoExt.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, Extrato.class));
-        });
+        bnv_Main = findViewById(R.id.bnv_Main);
+        bnv_Main.add(new MeowBottomNavigation.Model(1,R.drawable.ic_home));
+        bnv_Main.add(new MeowBottomNavigation.Model(2,R.drawable.ic_person));
+        bnv_Main.add(new MeowBottomNavigation.Model(3,R.drawable.ic_dados));
+        bnv_Main.add(new MeowBottomNavigation.Model(4,R.drawable.ic_conf));
 
+        bnv_Main.show(1,true);
+        replace(new HomeFragment());
+        bnv_Main.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
+            @Override
+            public Unit invoke(MeowBottomNavigation.Model model) {
+                switch (model.getId())
+                {
+                    case 1:
+                        replace(new HomeFragment());
+                        break;
 
-        binding.clCartao.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, Cartoes.class));
-        });
+                    case 2:
+                        replace(new ProfileFragment());
+                        break;
 
-        binding.clDeposito.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, DepositofFormActivity.class));
-        });
+                    case 3:
+                        replace(new ExtratoFragment());
+                        break;
 
-        binding.clRecarga.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, Recarga.class));
+                    case 4:
+                        replace(new ConfigsFragment());
+                        break;
+                }
+
+                return null;
+            }
         });
 
     }
-    @Override
-    protected void onStart(){
-        super.onStart();
 
-        getUserData();
+    private void replace(Fragment fragment) {
 
-        binding.clPix.setOnClickListener(view1 -> {
-            Intent intent = new Intent( this, PixTransf.class);
-            intent.putExtra("userSaldo", binding.tvSaldoValor.getText().toString());
-            startActivity(intent);
-        });
-    }
-
-    private void getUserData(){
-        DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
-                .child("usuarios")
-                .child(FirebaseHelper.getIdFirebase());
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Usuario user = snapshot.getValue(Usuario.class);
-
-                binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(user.getSaldo())));
-
-                String[] splitName = user.getNome().trim().split("\\s+");
-                binding.tvBemVindo.setText("Bem vindo, " + splitName[0]);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame,fragment);
+        transaction.commit();
     }
 }

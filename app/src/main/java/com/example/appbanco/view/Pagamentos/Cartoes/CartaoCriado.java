@@ -23,7 +23,7 @@ public class CartaoCriado extends AppCompatActivity {
         binding.btnProximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CartaoCriado.this, Cartoes.class);
+                Intent intent = new Intent(CartaoCriado.this, Home.class);
                 startActivity(intent);
             }
         });

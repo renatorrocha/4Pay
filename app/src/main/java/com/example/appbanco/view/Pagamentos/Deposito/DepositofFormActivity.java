@@ -19,7 +19,6 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Deposito;
 import com.example.appbanco.model.ExtratoModel;
 import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Home.Extrato;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,8 +26,6 @@ import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
-
-import com.example.appbanco.R;
 
 public class DepositofFormActivity extends AppCompatActivity {
 

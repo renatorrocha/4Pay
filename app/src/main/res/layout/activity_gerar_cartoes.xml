@@ -8,6 +8,8 @@
     tools:context=".view.Pagamentos.Cartoes.GerarCartoes">
 
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clCartao"
         android:layout_width="match_parent"
