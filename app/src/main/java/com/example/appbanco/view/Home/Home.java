@@ -17,7 +17,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import com.example.appbanco.view.Pagamentos.Transferencia.Transferencia;
 
 public class Home extends AppCompatActivity {
 
@@ -52,6 +51,9 @@ public class Home extends AppCompatActivity {
             startActivity(new Intent(this, Recarga.class));
         });
 
+        binding.clSeguro.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, Seguros.class));
+        });
     }
     @Override
     protected void onStart(){
