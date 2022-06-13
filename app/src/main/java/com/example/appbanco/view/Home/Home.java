@@ -17,6 +17,7 @@ import com.example.appbanco.view.Home.HomeFragments.ProfileFragment;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
+
 public class Home extends AppCompatActivity {
 
     private ActivityHomeBinding binding;

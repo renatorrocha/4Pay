@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.appbanco">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
+        <activity
+            android:name=".view.Home.Seguros"
+            android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Deposito.DepositoReciboActivity"
             android:exported="false" />
@@ -89,8 +92,7 @@
             android:exported="false" />
         <activity
             android:name=".view.Login_Cadastro.Cadastro"
-            android:exported="false" />
-        <!-- SE MUDAR A TELA SPLASH DAQUI, MOVA O TEMA TAMBÉM -->
+            android:exported="false" /> <!-- SE MUDAR A TELA SPLASH DAQUI, MOVA O TEMA TAMBÉM -->
         <activity
             android:name=".view.Home.Splash"
             android:exported="true"
