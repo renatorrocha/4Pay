@@ -29,5 +29,7 @@
     <string name="txt_btn_confirmar">Confirmar</string>
     <string name="txt_valor_deposito">R$ %1$s</string>
     <string name="txt_valor_saldo"> %1$s</string>
+    <string name="txt_descricao_plano">Descrição do plano...</string>
+    <string name="txt_titulo_seguro">Titulo do Seguro</string>
 
 </resources>

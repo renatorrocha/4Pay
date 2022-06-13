@@ -1,5 +1,6 @@
 package com.example.appbanco.model;
 
+import com.example.appbanco.Seguros;
 import com.example.appbanco.help.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
@@ -17,6 +18,7 @@ public class Usuario implements Serializable {
         private double saldo;
         private String senha;
         private Endereco endereco;
+        private SegurosUsuario seguros;
 
     public Usuario() {
         }
@@ -101,4 +103,12 @@ public class Usuario implements Serializable {
         public void setEndereco(Endereco endereco) {
             this.endereco = endereco;
         }
+
+    public SegurosUsuario getSeguros() {
+        return seguros;
     }
+
+    public void setSeguros(SegurosUsuario seguros) {
+        this.seguros = seguros;
+    }
+}
