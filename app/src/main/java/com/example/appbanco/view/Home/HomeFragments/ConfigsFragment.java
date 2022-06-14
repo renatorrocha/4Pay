@@ -44,13 +44,7 @@ public class ConfigsFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 switch (position) {
-
-                    case 0:
-                        Intent intent = new Intent(view.getContext(), ProfileFragment.class);
-                        startActivity(intent);
-                        break;
-
-                    case 6:
+                    case 5:
                         FirebaseHelper.getAuth().signOut();
                         startActivity(new Intent(view.getContext(), Login.class));
                         break;
