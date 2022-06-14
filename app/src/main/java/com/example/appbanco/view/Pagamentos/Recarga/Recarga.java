@@ -25,7 +25,7 @@ public class Recarga extends AppCompatActivity {
 
         binding.edtTelefone.addTextChangedListener(CustomMask.Companion.mask("(##) #####-####", binding.edtTelefone, null));
 
-        binding.btnProximo.setOnClickListener(new View.OnClickListener() {
+        binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Recarga.this, Operadora.class);

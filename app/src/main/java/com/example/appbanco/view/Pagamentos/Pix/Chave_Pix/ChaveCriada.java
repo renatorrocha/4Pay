@@ -1,4 +1,4 @@
-package com.example.appbanco.view.Chave_Pix;
+package com.example.appbanco.view.Pagamentos.Pix.Chave_Pix;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.appbanco.databinding.ActivityChaveCriadaBinding;
+import com.example.appbanco.view.Pagamentos.Pix.Pix;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
 
 public class ChaveCriada extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class ChaveCriada extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.btcChaveConcluir.setOnClickListener(view -> {
-            startActivity(new Intent(ChaveCriada.this, PixTransf.class));
+            startActivity(new Intent(ChaveCriada.this, Pix.class));
         });
     }
 }
