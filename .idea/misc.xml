@@ -27,6 +27,7 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/ic_launcher_background.xml" value="0.157" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/ic_person.xml" value="0.192" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/line_shape.xml" value="0.192" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.29010416666666666" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_cartao_criado.xml" value="0.2171875" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_cartoes.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_chave_criada.xml" value="0.36666666666666664" />
@@ -54,6 +55,7 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_extrato.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_profile.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_visualizar_cartoes.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/layout_dialog_info.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/linha.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/toolbar_volta.xml" value="0.18385416666666668" />

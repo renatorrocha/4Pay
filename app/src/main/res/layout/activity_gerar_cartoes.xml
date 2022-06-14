@@ -58,11 +58,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <TextView
                         android:id="@+id/ivCartaoCredito"
                         android:layout_width="360dp"
                         android:layout_height="240dp"
-                        android:src="@drawable/credit_card"
+                        android:text="Credit card   "
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textAlignment="textEnd"
+                        android:background="@drawable/credit_card"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvTipoCartao" />
@@ -178,11 +183,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <TextView
                         android:id="@+id/ivCartaoDebito"
                         android:layout_width="360dp"
                         android:layout_height="240dp"
-                        android:src="@drawable/credit_card"
+                        android:text="Debit card   "
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textAlignment="textEnd"
+                        android:background="@drawable/credit_card"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvTipoCartaoDebito" />
@@ -294,11 +304,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <TextView
                         android:id="@+id/ivCartaoDebitoCredito"
                         android:layout_width="360dp"
                         android:layout_height="240dp"
-                        android:src="@drawable/credit_card"
+                        android:text="Credit / Debit card   "
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textAlignment="textEnd"
+                        android:background="@drawable/credit_card"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvTipoCartaoDebitoCredito" />
@@ -393,6 +408,14 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
+    <FrameLayout
+        android:id="@+id/frameCartao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
