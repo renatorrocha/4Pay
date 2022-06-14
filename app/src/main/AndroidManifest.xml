@@ -19,6 +19,9 @@
             android:name=".view.Home.Seguros"
             android:exported="false" />
         <activity
+        android:name=".view.Seguros.SegurosAtivos"
+            android:exported="false" />
+        <activity
             android:name=".view.Pagamentos.Deposito.DepositoReciboActivity"
             android:exported="false" />
         <activity

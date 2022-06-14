@@ -17,6 +17,7 @@ public class Usuario implements Serializable {
         private double saldo;
         private String senha;
         private Endereco endereco;
+        private SegurosUsuario seguros;
 
     public Usuario() {
         }
@@ -101,4 +102,12 @@ public class Usuario implements Serializable {
         public void setEndereco(Endereco endereco) {
             this.endereco = endereco;
         }
+
+    public SegurosUsuario getSeguros() {
+        return seguros;
     }
+
+    public void setSeguros(SegurosUsuario seguros) {
+        this.seguros = seguros;
+    }
+}
