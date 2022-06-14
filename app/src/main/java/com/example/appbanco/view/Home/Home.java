@@ -15,6 +15,7 @@ import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
 import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
+import com.example.appbanco.view.Seguros.SegurosAtivos;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,7 +39,7 @@ public class Home extends AppCompatActivity {
         });
 
         binding.clSaldoExt.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, Extrato.class));
+            startActivity(new Intent(this, SegurosAtivos.class));
         });
 
 
