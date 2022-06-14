@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Appbanco" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.Appbanco" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/preto</item>
         <item name="colorPrimaryVariant">@color/preto</item>

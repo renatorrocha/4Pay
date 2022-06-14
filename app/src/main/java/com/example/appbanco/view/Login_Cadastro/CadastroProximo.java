@@ -208,7 +208,6 @@ public class CadastroProximo extends AppCompatActivity {
 
     private void salvarDadosUsuario(Endereco endereco) {
 
-
         DatabaseReference usuarioRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
                 .child(Objects.requireNonNull(FirebaseHelper.getAuth().getUid()))
