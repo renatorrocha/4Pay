@@ -35,5 +35,5 @@
     <string name="txt_titulo_seguro">Titulo do Seguro</string>
     <string name="txt_valorRendimento">R$</string>
     <string name="txt_informe_rendimento">Informe seu rendimento</string>
-
+    <string name="txt_cartao">Este cartão possui taxas \nconforme sua utilização</string>
 </resources>
