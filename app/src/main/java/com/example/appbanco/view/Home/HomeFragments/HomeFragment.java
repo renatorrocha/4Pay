@@ -15,6 +15,7 @@ import com.example.appbanco.databinding.FragmentHomeBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Home.Seguros;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
@@ -45,6 +46,10 @@ public class HomeFragment extends Fragment {
 
         binding.clRecarga.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), Recarga.class));
+        });
+
+        binding.clSeguro.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), Seguros.class));
         });
 
         return view;
