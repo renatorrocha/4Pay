@@ -1,4 +1,4 @@
-package com.example.appbanco.view.Chave_Pix;
+package com.example.appbanco.view.Pagamentos.Pix.Chave_Pix;
 
 import androidx.appcompat.app.AppCompatActivity;
 

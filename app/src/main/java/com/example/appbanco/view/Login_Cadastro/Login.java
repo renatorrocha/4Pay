@@ -6,16 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.appbanco.databinding.ActivityLoginBinding;
-import com.example.appbanco.view.Chave_Pix.CriaChavePix;
-
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.appbanco.R;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.view.Home.Home;
 
