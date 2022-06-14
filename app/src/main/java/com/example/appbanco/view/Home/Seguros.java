@@ -23,7 +23,7 @@ public class Seguros extends AppCompatActivity {
         setContentView(R.layout.activity_seguros);
 
         viewPager2 = findViewById(R.id.viewPager);
-        int[] images = {R.drawable.cartao_credito, R.drawable.cartao_credito};
+        int[] images = {R.drawable.cartao_credito, R.drawable.seguro_de_vida};
         String[] titulo = {"Seguro De Cartão", "Seguro De Vida"};
         String[] desc = {getString(R.string.txt_seguro_cartao), getString(R.string.txt_seguro_vida)};
 
