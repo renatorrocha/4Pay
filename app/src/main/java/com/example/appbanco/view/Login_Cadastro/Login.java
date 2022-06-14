@@ -8,6 +8,7 @@ import android.view.View;
 
 import android.widget.Toast;
 
+import com.example.appbanco.databinding.ActivityLoginBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.view.Home.Home;
 
