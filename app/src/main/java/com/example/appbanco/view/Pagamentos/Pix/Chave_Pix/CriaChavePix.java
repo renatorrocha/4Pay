@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.appbanco.databinding.ActivityCriaChavePixBinding;
+
 public class CriaChavePix extends AppCompatActivity {
 
     private ActivityCriaChavePixBinding binding;
