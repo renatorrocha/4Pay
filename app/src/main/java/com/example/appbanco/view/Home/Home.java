@@ -29,7 +29,6 @@ public class Home extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         bnv_Main = findViewById(R.id.bnv_Main);
         bnv_Main.add(new MeowBottomNavigation.Model(1,R.drawable.ic_home));
         bnv_Main.add(new MeowBottomNavigation.Model(2,R.drawable.ic_person));
