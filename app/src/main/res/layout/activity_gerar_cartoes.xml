@@ -7,6 +7,17 @@
     android:background="@drawable/background"
     tools:context=".view.Pagamentos.Cartoes.GerarCartoes">
 
+    <ImageView
+        android:id="@+id/ivVoltarCartao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintTop_toTopOf="@id/tvSelecioneCartao"
+        app:layout_constraintBottom_toBottomOf="@id/tvSelecioneCartao"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp"
+        app:tint="@color/preto" />
+
     <TextView
         android:id="@+id/tvSelecioneCartao"
         android:layout_width="wrap_content"
@@ -36,7 +47,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvCartaoCredito"
                 android:layout_width="380dp"
-                android:layout_height="wrap_content"
+                android:layout_height="580dp"
                 android:layout_marginHorizontal="16dp"
                 app:cardBackgroundColor="@color/preto"
                 app:cardCornerRadius="14dp">
@@ -138,6 +149,7 @@
 
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCartaoCredito"
                         style="@style/Widget.Material3.Button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -151,8 +163,7 @@
                         app:backgroundTint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvCartaoDesc" />
+                        app:layout_constraintStart_toStartOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -161,7 +172,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvCartaoDebito"
                 android:layout_width="380dp"
-                android:layout_height="wrap_content"
+                android:layout_height="580dp"
                 android:layout_marginHorizontal="16dp"
                 app:cardBackgroundColor="@color/preto"
                 app:cardCornerRadius="14dp">
@@ -261,6 +272,7 @@
                         app:layout_constraintTop_toBottomOf="@id/tvCartaoLimiteDebito" />
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCartaoDebito"
                         style="@style/Widget.Material3.Button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -274,15 +286,14 @@
                         app:backgroundTint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvCartaoDescDebito" />
+                        app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvCartaoDebitoCredito"
                 android:layout_width="380dp"
-                android:layout_height="wrap_content"
+                android:layout_height="580dp"
                 android:layout_marginHorizontal="16dp"
                 app:cardBackgroundColor="@color/preto"
                 app:cardCornerRadius="14dp">
@@ -384,6 +395,7 @@
 
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCartaoCreditoDebito"
                         style="@style/Widget.Material3.Button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -397,8 +409,7 @@
                         app:backgroundTint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvCartaoDescDebitoCredito" />
+                        app:layout_constraintStart_toStartOf="parent" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
