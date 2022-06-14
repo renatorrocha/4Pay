@@ -25,13 +25,38 @@ public class GerarCartoes extends AppCompatActivity {
         binding.ivCartaoCredito.setOnClickListener(view1 -> {
             replace(new VisualizarCartoes());
             binding.frameCartao.setVisibility(View.VISIBLE);
+        });
 
+        binding.ivCartaoDebito.setOnClickListener(view1 -> {
+            replace(new VisualizarCartoes());
+            binding.frameCartao.setVisibility(View.VISIBLE);
+        });
+
+        binding.ivCartaoDebitoCredito.setOnClickListener(view1 -> {
+            replace(new VisualizarCartoes());
+            binding.frameCartao.setVisibility(View.VISIBLE);
         });
 
         binding.frameCartao.setOnClickListener(view1 -> {
             if(binding.frameCartao.getVisibility() == View.VISIBLE){
                 binding.frameCartao.setVisibility(View.INVISIBLE);
             }
+        });
+
+        binding.btnCartaoCredito.setOnClickListener(view -> {
+            startActivity(new Intent(this, CartaoCriado.class));
+        });
+
+        binding.btnCartaoDebito.setOnClickListener(view -> {
+            startActivity(new Intent(this, CartaoCriado.class));
+        });
+
+        binding.btnCartaoCreditoDebito.setOnClickListener(view -> {
+            startActivity(new Intent(this, CartaoCriado.class));
+        });
+
+        binding.ivVoltarCartao.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, Cartoes.class));
         });
 
     }
