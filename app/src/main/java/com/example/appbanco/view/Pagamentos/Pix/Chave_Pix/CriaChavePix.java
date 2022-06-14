@@ -1,13 +1,11 @@
-package com.example.appbanco.view.Chave_Pix;
+package com.example.appbanco.view.Pagamentos.Pix.Chave_Pix;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.appbanco.databinding.ActivityCriaChavePixBinding;
-import com.example.appbanco.view.Pagamentos.Pix.PixTransfDestino;
 
 public class CriaChavePix extends AppCompatActivity {
 

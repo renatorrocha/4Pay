@@ -23,7 +23,7 @@ public class RecargaValorCartao extends AppCompatActivity {
         binding = ActivityRecargaValorCartaoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnProximo.setOnClickListener(new View.OnClickListener() {
+        binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RecargaValorCartao.this, Home.class);
