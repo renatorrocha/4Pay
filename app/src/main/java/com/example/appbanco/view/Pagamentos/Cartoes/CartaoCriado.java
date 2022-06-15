@@ -20,7 +20,7 @@ public class CartaoCriado extends AppCompatActivity {
         binding = ActivityCartaoCriadoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
+        binding.btnProximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CartaoCriado.this, Home.class);

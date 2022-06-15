@@ -117,12 +117,12 @@
             android:layout_height="285dp"
             android:layout_marginBottom="32dp"
             android:src="@drawable/img_cartao_criado"
-            app:layout_constraintBottom_toTopOf="@id/btnSeusSeguros"
+            app:layout_constraintBottom_toTopOf="@id/btnProximo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnSeusSeguros"
+            android:id="@+id/btnProximo"
             android:layout_width="280dp"
             android:layout_height="54dp"
             android:layout_marginBottom="32dp"
