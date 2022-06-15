@@ -2,6 +2,9 @@ package com.example.appbanco.view.Login_Cadastro;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import android.content.Intent;
@@ -17,7 +20,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.thyagoneves.custom_mask_textwatcher.CustomMask;
 
 public class Cadastro extends AppCompatActivity {
-
 
     private EditText edtNome;
     private EditText edtCpf;
@@ -36,6 +38,13 @@ public class Cadastro extends AppCompatActivity {
 
         edtCpf.addTextChangedListener(CustomMask.Companion.mask("###.###.###-##", edtCpf, null));
         edtNascimento.addTextChangedListener(CustomMask.Companion.mask("##/##/####", edtNascimento, null));
+
+        // Animacao de background
+        ConstraintLayout constraintLayout = findViewById(R.id.mainLayout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
 
     }
 

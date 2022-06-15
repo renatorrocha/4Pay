@@ -3,6 +3,7 @@ package com.example.appbanco.view.Login_Cadastro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 
@@ -35,6 +36,12 @@ public class Login extends AppCompatActivity {
         binding.tvEsqueciSenha.setOnClickListener(view -> {
             startActivity(new Intent(this, EsqueciSenha.class));
         });
+
+        AnimationDrawable animationDrawable = (AnimationDrawable) binding.mainLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+
 
     }
 

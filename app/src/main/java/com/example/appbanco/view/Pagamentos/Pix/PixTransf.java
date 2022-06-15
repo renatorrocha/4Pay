@@ -12,6 +12,7 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Transferencia;
 
 import java.util.Date;
+import java.util.Locale;
 
 public class PixTransf extends AppCompatActivity {
 
@@ -26,6 +27,7 @@ public class PixTransf extends AppCompatActivity {
         Intent intent = getIntent();
 
         binding.tvValorSaldo.setText("R$ " + intent.getStringExtra("userSaldo"));
+        binding.etValorPix.setLocale(new Locale("PT", "br"));
 
         binding.btnPixProximo.setOnClickListener(view -> {
             validaDados(view);
