@@ -197,7 +197,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/btnSeusSeguros"
+            android:id="@+id/btnProximo"
             android:layout_width="280dp"
             android:layout_height="54dp"
             android:layout_marginBottom="32dp"
