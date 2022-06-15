@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
-        tools:context=".view.Pagamentos.Recarga.Operadora">
+        tools:context=".view.Pagamentos.Recarga.RecargaOperadora">
 
         <TextView
             android:id="@+id/tvTitulo"
@@ -97,7 +97,8 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
-            android:text="próximo"
+            android:text="@string/txt_proximo"
+            android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
