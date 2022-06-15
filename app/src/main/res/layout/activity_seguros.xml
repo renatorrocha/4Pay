@@ -43,10 +43,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnProximo"
         android:layout_width="280dp"
         android:layout_height="54dp"
+        android:backgroundTint="@color/preto"
         android:layout_marginBottom="32dp"
         android:background="@drawable/btnlogin"
         android:fontFamily="@font/nunito_bold"

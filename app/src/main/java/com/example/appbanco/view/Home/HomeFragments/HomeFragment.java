@@ -57,10 +57,9 @@ public class HomeFragment extends Fragment {
         });
 
         binding.clPix.setOnClickListener(view1 -> {
-            Intent itPix= new Intent(getContext(), PixTransf.class);
+            Intent itPix = new Intent(getContext(), Pix.class);
             itPix.putExtra("userSaldo", binding.tvSaldoValor.getText().toString());
-
-            startActivity(new Intent(view.getContext(), Pix.class));
+            startActivity(itPix);
         });
         return view;
     }
