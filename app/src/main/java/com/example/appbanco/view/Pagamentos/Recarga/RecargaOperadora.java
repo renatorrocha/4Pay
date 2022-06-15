@@ -7,24 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.appbanco.R;
-import com.example.appbanco.databinding.ActivityOperadoraBinding;
+import com.example.appbanco.databinding.ActivityRecargaOperadoraBinding;
 
-public class Operadora extends AppCompatActivity {
+public class RecargaOperadora extends AppCompatActivity {
 
-    private ActivityOperadoraBinding binding;
+    private ActivityRecargaOperadoraBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_operadora);
+        setContentView(R.layout.activity_recarga_operadora);
 
-        binding = ActivityOperadoraBinding.inflate(getLayoutInflater());
+        binding = ActivityRecargaOperadoraBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Operadora.this,RecargaPagamento.class);
+                Intent intent = new Intent(RecargaOperadora.this,RecargaPagamento.class);
                 startActivity(intent);
             }
         });

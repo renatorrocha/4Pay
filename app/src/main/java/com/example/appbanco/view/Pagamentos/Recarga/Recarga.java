@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityRecargaBinding;
@@ -28,7 +27,7 @@ public class Recarga extends AppCompatActivity {
         binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Recarga.this, Operadora.class);
+                Intent intent = new Intent(Recarga.this, RecargaOperadora.class);
                 startActivity(intent);
             }
         });

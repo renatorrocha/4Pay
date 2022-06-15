@@ -17,7 +17,6 @@
         android:textColor="@color/preto"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +30,9 @@
         android:textColor="@color/preto"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintEnd_toStartOf="@+id/tvValorSaldo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -44,6 +45,8 @@
         android:text=" 1000,00"
         android:textColor="@color/preto"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:background="@drawable/btnlogin"
-        android:text="Próximo"
+        android:text="@string/txt_proximo"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"

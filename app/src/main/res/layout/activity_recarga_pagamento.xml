@@ -145,7 +145,7 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/btnlogin"
             android:fontFamily="@font/nunito_bold"
-            android:text="Próximo"
+            android:text="@string/txt_proximo"
             android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
