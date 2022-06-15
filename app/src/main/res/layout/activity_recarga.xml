@@ -13,6 +13,32 @@
 
         <TextView
             android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/preto"
+            android:fontFamily="@font/nunito_regular"
+            android:paddingVertical="8dp"
+            android:text="Recarga"
+            android:textAlignment="center"
+            android:textColor="@color/rosa"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivArrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
+            app:layout_constraintTop_toTopOf="@id/tvTitulo"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvQualRecarga"
             android:layout_width="279dp"
             android:layout_height="63dp"
             android:layout_marginTop="26dp"
@@ -23,7 +49,7 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/Telefone"
@@ -50,7 +76,7 @@
 
 
         <Button
-            android:id="@+id/btnSeusSeguros"
+            android:id="@+id/btnProximo"
             android:layout_width="280dp"
             android:layout_height="54dp"
             android:layout_marginBottom="32dp"

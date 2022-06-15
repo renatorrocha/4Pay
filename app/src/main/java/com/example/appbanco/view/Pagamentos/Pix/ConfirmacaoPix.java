@@ -19,7 +19,7 @@ public class ConfirmacaoPix extends AppCompatActivity {
         binding = ActivityConfirmacaoPixBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
+        binding.btnProximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ConfirmacaoPix.this, PixTransfSucesso.class);

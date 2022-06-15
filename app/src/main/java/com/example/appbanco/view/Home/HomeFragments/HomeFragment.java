@@ -18,6 +18,7 @@ import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Seguros;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
+import com.example.appbanco.view.Pagamentos.Pix.Pix;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
 import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
 import com.google.firebase.database.DataSnapshot;
@@ -36,6 +37,9 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
+        getUserData();
+
+
         binding.clCartao.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), Cartoes.class));
         });
@@ -52,21 +56,15 @@ public class HomeFragment extends Fragment {
             startActivity(new Intent(view.getContext(), Seguros.class));
         });
 
+        binding.clPix.setOnClickListener(view1 -> {
+            Intent itPix= new Intent(getContext(), PixTransf.class);
+            itPix.putExtra("userSaldo", binding.tvSaldoValor.getText().toString());
+
+            startActivity(new Intent(view.getContext(), Pix.class));
+        });
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        getUserData();
-
-        binding.clPix.setOnClickListener(view1 -> {
-            Intent intent = new Intent(getContext(), PixTransf.class);
-            intent.putExtra("userSaldo", binding.tvSaldoValor.getText().toString());
-            startActivity(intent);
-        });
-    }
 
     private void getUserData() {
         DatabaseReference userRef = FirebaseHelper.getDatabaseReference()

@@ -9,16 +9,29 @@
 
     <TextView
         android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:fontFamily="@font/nunito_bold"
-        android:text="Escolha nossos seguros"
-        android:textColor="@color/preto"
-        android:textSize="28sp"
+        android:background="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingVertical="8dp"
+        android:text="Gerenciar seguros"
+        android:textAlignment="center"
+        android:textColor="@color/rosa"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivArrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
+        app:layout_constraintTop_toTopOf="@id/tvTitulo"
+        app:tint="@color/white" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -31,7 +44,7 @@
         />
 
     <Button
-        android:id="@+id/btnSeusSeguros"
+        android:id="@+id/btnProximo"
         android:layout_width="280dp"
         android:layout_height="54dp"
         android:layout_marginBottom="32dp"

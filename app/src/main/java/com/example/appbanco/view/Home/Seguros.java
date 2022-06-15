@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.appbanco.R;
 import com.example.appbanco.VPAdapter;
@@ -20,6 +21,7 @@ public class Seguros extends AppCompatActivity {
     ViewPager2 viewPager2;
     ArrayList<ViewPagerItem> viewPagerItemArrayList;
 
+    private ImageView ivArrowBack;
     private Button btnSeusSeguros;
 
     @Override
@@ -27,6 +29,7 @@ public class Seguros extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seguros);
 
+        ivArrowBack = findViewById(R.id.ivArrowBack);
         viewPager2 = findViewById(R.id.viewPager);
         int[] images = {R.drawable.cartao_credito, R.drawable.seguro_de_vida};
         String[] titulo = {"Seguro De Cartão", "Seguro De Vida"};
@@ -38,6 +41,8 @@ public class Seguros extends AppCompatActivity {
             ViewPagerItem viewPagerItem = new ViewPagerItem(images[i],titulo[i],desc[i]);
             viewPagerItemArrayList.add(viewPagerItem);
         }
+
+        btnSeusSeguros = findViewById(R.id.btnProximo);
 
         VPAdapter vpAdapter = new VPAdapter(viewPagerItemArrayList);
 
@@ -56,6 +61,10 @@ public class Seguros extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(Seguros.this, SegurosAtivos.class));
             }
+        });
+
+        ivArrowBack.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, Home.class));
         });
 
     }
