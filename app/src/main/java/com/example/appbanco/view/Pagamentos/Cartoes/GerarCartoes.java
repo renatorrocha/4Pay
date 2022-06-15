@@ -16,11 +16,19 @@ import com.example.appbanco.view.Home.HomeFragments.HomeFragment;
 public class GerarCartoes extends AppCompatActivity {
 
     ActivityGerarCartoesBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityGerarCartoesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.frameCartao.setOnClickListener(view1 -> {
+            if (binding.frameCartao.getVisibility() == View.VISIBLE) {
+                binding.frameCartao.setVisibility(View.INVISIBLE);
+            }
+
+        });
 
         binding.ivCartaoCredito.setOnClickListener(view1 -> {
             replace(new VisualizarCartoes());
@@ -35,12 +43,6 @@ public class GerarCartoes extends AppCompatActivity {
         binding.ivCartaoDebitoCredito.setOnClickListener(view1 -> {
             replace(new VisualizarCartoes());
             binding.frameCartao.setVisibility(View.VISIBLE);
-        });
-
-        binding.frameCartao.setOnClickListener(view1 -> {
-            if(binding.frameCartao.getVisibility() == View.VISIBLE){
-                binding.frameCartao.setVisibility(View.INVISIBLE);
-            }
         });
 
         binding.btnCartaoCredito.setOnClickListener(view -> {
@@ -62,8 +64,12 @@ public class GerarCartoes extends AppCompatActivity {
     }
 
     private void replace(Fragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frameCartao,fragment);
-        transaction.commit();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.from_bottom, 0);
+            transaction.replace(R.id.frameCartao, fragment);
+            transaction.commit();
+
     }
+
+
 }
