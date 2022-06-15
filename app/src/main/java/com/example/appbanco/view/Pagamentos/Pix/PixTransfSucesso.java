@@ -32,7 +32,7 @@ public class PixTransfSucesso extends AppCompatActivity {
         binding = ActivityPixTransfSucessoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnProximo.setOnClickListener(new View.OnClickListener() {
+        binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PixTransfSucesso.this, Home.class);

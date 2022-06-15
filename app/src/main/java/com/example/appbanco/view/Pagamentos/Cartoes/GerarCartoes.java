@@ -1,26 +1,69 @@
 package com.example.appbanco.view.Pagamentos.Cartoes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.appbanco.R;
+import com.example.appbanco.databinding.ActivityGerarCartoesBinding;
+import com.example.appbanco.view.Home.HomeFragments.HomeFragment;
 
 public class GerarCartoes extends AppCompatActivity {
 
-    Button btnGerarCartao;
-
+    ActivityGerarCartoesBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gerar_cartoes);
+        binding = ActivityGerarCartoesBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-//        btnGerarCartao = findViewById(R.id.btnGerarCartao);
+        binding.ivCartaoCredito.setOnClickListener(view1 -> {
+            replace(new VisualizarCartoes());
+            binding.frameCartao.setVisibility(View.VISIBLE);
+        });
 
-        btnGerarCartao.setOnClickListener(view1 -> {
+        binding.ivCartaoDebito.setOnClickListener(view1 -> {
+            replace(new VisualizarCartoes());
+            binding.frameCartao.setVisibility(View.VISIBLE);
+        });
+
+        binding.ivCartaoDebitoCredito.setOnClickListener(view1 -> {
+            replace(new VisualizarCartoes());
+            binding.frameCartao.setVisibility(View.VISIBLE);
+        });
+
+        binding.frameCartao.setOnClickListener(view1 -> {
+            if(binding.frameCartao.getVisibility() == View.VISIBLE){
+                binding.frameCartao.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        binding.btnCartaoCredito.setOnClickListener(view -> {
             startActivity(new Intent(this, CartaoCriado.class));
         });
+
+        binding.btnCartaoDebito.setOnClickListener(view -> {
+            startActivity(new Intent(this, CartaoCriado.class));
+        });
+
+        binding.btnCartaoCreditoDebito.setOnClickListener(view -> {
+            startActivity(new Intent(this, CartaoCriado.class));
+        });
+
+        binding.ivVoltarCartao.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, Cartoes.class));
+        });
+
+    }
+
+    private void replace(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameCartao,fragment);
+        transaction.commit();
     }
 }
