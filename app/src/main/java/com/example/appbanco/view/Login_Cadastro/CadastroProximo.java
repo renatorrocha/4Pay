@@ -10,8 +10,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityCadastroProximoBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Endereco;
@@ -34,6 +37,8 @@ public class CadastroProximo extends AppCompatActivity {
     private String cep;
     private Endereco endereco;
     private ProgressBar progressbar;
+    private TextView tvLimiteCartao;
+    private SeekBar sbAjusteLimite;
 
 
     @Override
@@ -71,6 +76,26 @@ public class CadastroProximo extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        sbAjusteLimite = (SeekBar)findViewById(R.id.sbAjusteLimite);
+        tvLimiteCartao = (TextView)findViewById(R.id.tvLimiteCartao);
+
+        sbAjusteLimite.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+                tvLimiteCartao.setText("R$ " + String.valueOf(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
 
             }
         });
@@ -137,7 +162,7 @@ public class CadastroProximo extends AppCompatActivity {
 
                                 ocultaTeclado();
 
-                                binding.progressbar.setVisibility(View.VISIBLE);
+                                //binding.progressbar.setVisibility(View.VISIBLE);
 
 
                                 if (endereco == null) endereco = new Endereco();
@@ -182,7 +207,6 @@ public class CadastroProximo extends AppCompatActivity {
     }
 
     private void salvarDadosUsuario(Endereco endereco) {
-
 
         DatabaseReference usuarioRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")

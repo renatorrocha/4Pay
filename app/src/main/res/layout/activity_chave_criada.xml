@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo"
-    tools:context=".view.Chave_Pix.ChaveCriada">
+    tools:context=".view.Pagamentos.Pix.Chave_Pix.ChaveCriada">
 
     <TextView
         android:id="@+id/textView18"

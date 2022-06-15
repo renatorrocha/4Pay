@@ -33,5 +33,7 @@
     <string name="txt_seguro_vida">Com o nosso seguro de vida 4pay, seguramos até R$150mil de capital, despesas Médico-Hospitalares e Cobertura para auxiliar e confortar seus agregados em diversas ocasioes</string>
     <string name="txt_descricao_plano">Descrição do plano...</string>
     <string name="txt_titulo_seguro">Titulo do Seguro</string>
-
+    <string name="txt_valorRendimento">R$</string>
+    <string name="txt_informe_rendimento">Informe seu rendimento</string>
+    <string name="txt_cartao">Este cartão possui taxas \nconforme sua utilização</string>
 </resources>

@@ -7,6 +7,17 @@
     android:background="@drawable/background"
     tools:context=".view.Pagamentos.Cartoes.GerarCartoes">
 
+    <ImageView
+        android:id="@+id/ivVoltarCartao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintTop_toTopOf="@id/tvSelecioneCartao"
+        app:layout_constraintBottom_toBottomOf="@id/tvSelecioneCartao"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp"
+        app:tint="@color/preto" />
+
     <TextView
         android:id="@+id/tvSelecioneCartao"
         android:layout_width="wrap_content"
@@ -20,89 +31,402 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/tvSelecioneCartao"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvCartaoCredito"
-            android:layout_width="380dp"
-            android:layout_height="460dp"
-            android:layout_marginLeft="16dp"
-            app:cardBackgroundColor="@color/preto"
-            app:cardCornerRadius="14dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tvTipoCartao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_bold"
-                    android:paddingVertical="12dp"
-                    android:text="Cartão de crédito"
-                    android:textColor="@color/rosa"
-                    android:textSize="22sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/ivCartaoCredito"
-                    android:layout_width="360dp"
-                    android:layout_height="240dp"
-                    android:src="@drawable/credit_card"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvTipoCartao" />
-
-                <TextView
-                    android:id="@+id/tvCartaoLimite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_regular"
-                    android:paddingTop="12dp"
-                    android:text="Limite"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="@id/ivCartaoCredito"
-                    app:layout_constraintTop_toBottomOf="@id/ivCartaoCredito" />
-
-                <TextView
-                    android:id="@+id/tvCartaoLimiteValor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_regular"
-                    android:paddingLeft="12dp"
-                    android:text="R$ 1000,00"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@id/tvCartaoLimite"
-                    app:layout_constraintStart_toEndOf="@id/tvCartaoLimite"/>
-
-                <TextView
-                    android:id="@+id/tvCartaoValidade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Validade"
-                    android:fontFamily="@font/nunito_regular"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    android:paddingTop="12dp"
-                    android:paddingLeft="36dp"
-                    app:layout_constraintTop_toBottomOf="@id/ivCartaoCredito"
-                    app:layout_constraintStart_toEndOf="@id/tvCartaoLimiteValor" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelecioneCartao">
 
 
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCartaoCredito"
+                android:layout_width="380dp"
+                android:layout_height="580dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardBackgroundColor="@color/preto"
+                app:cardCornerRadius="14dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvTipoCartao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:paddingVertical="12dp"
+                        android:text="Cartão de crédito"
+                        android:textColor="@color/rosa"
+                        android:textSize="22sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/ivCartaoCredito"
+                        android:layout_width="360dp"
+                        android:layout_height="240dp"
+                        android:text="Credit card   "
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textAlignment="textEnd"
+                        android:background="@drawable/credit_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTipoCartao" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoLimite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingTop="16dp"
+                        android:text="Limite"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/ivCartaoCredito"
+                        app:layout_constraintTop_toBottomOf="@id/ivCartaoCredito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoLimiteValor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="12dp"
+                        android:text="R$ 1000,00"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvCartaoLimite"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoLimite" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoValidade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="36dp"
+                        android:paddingTop="16dp"
+                        android:text="Validade"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoLimiteValor"
+                        app:layout_constraintTop_toBottomOf="@id/ivCartaoCredito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoValidadeValor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="12dp"
+                        android:paddingTop="12dp"
+                        android:text="06/28"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/tvCartaoValidade"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoValidade" />
 
 
+                    <TextView
+                        android:id="@+id/tvCartaoDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingBottom="12dp"
+                        android:text="@string/txt_cartao"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/tvCartaoLimite"
+                        app:layout_constraintTop_toBottomOf="@id/tvCartaoLimite" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCartaoCredito"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginVertical="24dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="Gerar cartão"
+                        android:textAllCaps="false"
+                        android:textColor="@color/preto"
+                        android:textSize="24sp"
+                        app:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCartaoDebito"
+                android:layout_width="380dp"
+                android:layout_height="580dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardBackgroundColor="@color/preto"
+                app:cardCornerRadius="14dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvTipoCartaoDebito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:paddingVertical="12dp"
+                        android:text="Cartão de débito"
+                        android:textColor="@color/rosa"
+                        android:textSize="22sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/ivCartaoDebito"
+                        android:layout_width="360dp"
+                        android:layout_height="240dp"
+                        android:text="Debit card   "
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textAlignment="textEnd"
+                        android:background="@drawable/credit_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTipoCartaoDebito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoLimiteDebito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingTop="16dp"
+                        android:text="Limite"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/ivCartaoDebito"
+                        app:layout_constraintTop_toBottomOf="@id/ivCartaoDebito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoLimiteValorDebito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="12dp"
+                        android:text="R$ 1700,00"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvCartaoLimiteDebito"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoLimiteDebito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoValidadeDebito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="36dp"
+                        android:paddingTop="16dp"
+                        android:text="Validade"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoLimiteValorDebito"
+                        app:layout_constraintTop_toBottomOf="@id/ivCartaoDebito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoValidadeValorDebito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="12dp"
+                        android:paddingTop="12dp"
+                        android:text="06/29"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/tvCartaoValidadeDebito"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoValidadeDebito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoDescDebito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingBottom="12dp"
+                        android:text="@string/txt_cartao"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/tvCartaoLimiteDebito"
+                        app:layout_constraintTop_toBottomOf="@id/tvCartaoLimiteDebito" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCartaoDebito"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginVertical="24dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="Gerar cartão"
+                        android:textAllCaps="false"
+                        android:textColor="@color/preto"
+                        android:textSize="24sp"
+                        app:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCartaoDebitoCredito"
+                android:layout_width="380dp"
+                android:layout_height="580dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardBackgroundColor="@color/preto"
+                app:cardCornerRadius="14dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvTipoCartaoDebitoCredito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:paddingVertical="12dp"
+                        android:text="Cartão de débito e crédito"
+                        android:textColor="@color/rosa"
+                        android:textSize="22sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/ivCartaoDebitoCredito"
+                        android:layout_width="360dp"
+                        android:layout_height="240dp"
+                        android:text="Credit / Debit card   "
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textAlignment="textEnd"
+                        android:background="@drawable/credit_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTipoCartaoDebitoCredito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoLimiteDebitoCredito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingTop="16dp"
+                        android:text="Limite"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/ivCartaoDebitoCredito"
+                        app:layout_constraintTop_toBottomOf="@id/ivCartaoDebitoCredito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoLimiteValorDebitoCredito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="12dp"
+                        android:text="R$ 1300,00"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvCartaoLimiteDebitoCredito"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoLimiteDebitoCredito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoValidadeDebitoCredito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="36dp"
+                        android:paddingTop="16dp"
+                        android:text="Validade"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoLimiteValorDebitoCredito"
+                        app:layout_constraintTop_toBottomOf="@id/ivCartaoDebitoCredito" />
+
+                    <TextView
+                        android:id="@+id/tvCartaoValidadeValorDebitoCredito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingLeft="12dp"
+                        android:paddingTop="12dp"
+                        android:text="06/29"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/tvCartaoValidadeDebitoCredito"
+                        app:layout_constraintStart_toEndOf="@id/tvCartaoValidadeDebitoCredito" />
+
+
+                    <TextView
+                        android:id="@+id/tvCartaoDescDebitoCredito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingBottom="12dp"
+                        android:text="@string/txt_cartao"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/tvCartaoLimiteDebitoCredito"
+                        app:layout_constraintTop_toBottomOf="@id/tvCartaoLimiteDebitoCredito" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCartaoCreditoDebito"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginVertical="24dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="Gerar cartão"
+                        android:textAllCaps="false"
+                        android:textColor="@color/preto"
+                        android:textSize="24sp"
+                        app:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:id="@+id/frameCartao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

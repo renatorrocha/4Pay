@@ -17,7 +17,6 @@ import com.example.appbanco.view.Home.HomeFragments.ProfileFragment;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
-
 public class Home extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
@@ -28,7 +27,6 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 
         bnv_Main = findViewById(R.id.bnv_Main);
         bnv_Main.add(new MeowBottomNavigation.Model(1,R.drawable.ic_home));

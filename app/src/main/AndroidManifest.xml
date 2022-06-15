@@ -16,10 +16,13 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
+            android:name=".view.Pagamentos.Pix.Pix"
+            android:exported="false" />
+        <activity
             android:name=".view.Home.Seguros"
             android:exported="false" />
         <activity
-        android:name=".view.Seguros.SegurosAtivos"
+            android:name=".view.Seguros.SegurosAtivos"
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Deposito.DepositoReciboActivity"
@@ -31,13 +34,13 @@
             android:name=".view.Login_Cadastro.Login"
             android:exported="false" />
         <activity
-            android:name=".view.Chave_Pix.ChaveCriada"
+            android:name=".view.Pagamentos.Pix.Chave_Pix.ChaveCriada"
             android:exported="false" />
         <activity
-            android:name=".view.Chave_Pix.TipoChave"
+            android:name=".view.Pagamentos.Pix.Chave_Pix.TipoChave"
             android:exported="false" />
         <activity
-            android:name=".view.Chave_Pix.CriaChavePix"
+            android:name=".view.Pagamentos.Pix.Chave_Pix.CriaChavePix"
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Cartoes.CartaoCriado"
