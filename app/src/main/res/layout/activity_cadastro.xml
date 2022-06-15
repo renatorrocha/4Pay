@@ -185,6 +185,7 @@
             android:fontFamily="@font/nunito_bold"
             android:onClick="validaDados"
             android:text="Continuar"
+            android:textAllCaps="false"
             android:textColor="@color/branco"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/progressbar"

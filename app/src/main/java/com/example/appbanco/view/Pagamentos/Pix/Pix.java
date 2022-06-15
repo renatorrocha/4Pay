@@ -24,6 +24,9 @@ public class Pix extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pix);
 
+
+
+
         tvEnviarPix = findViewById(R.id.tvEnviarPix);
         confPix = findViewById(R.id.confPix);
         ivArrowBack = findViewById(R.id.ivArrowBack);
@@ -36,7 +39,12 @@ public class Pix extends AppCompatActivity {
         tvEnviarPix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Pix.this, PixTransf.class));
+                Intent itPix = getIntent();
+                String userSaldo = itPix.getStringExtra("userSaldo");
+
+                Intent intent = new Intent(Pix.this, PixTransf.class);
+                intent.putExtra("userSaldo", userSaldo);
+                startActivity(intent);
             }
         });
 
