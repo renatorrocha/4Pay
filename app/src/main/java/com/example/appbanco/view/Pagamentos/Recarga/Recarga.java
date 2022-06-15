@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityRecargaBinding;
+import com.example.appbanco.view.Home.Home;
 import com.thyagoneves.custom_mask_textwatcher.CustomMask;
 
 public class Recarga extends AppCompatActivity {
@@ -24,12 +25,16 @@ public class Recarga extends AppCompatActivity {
 
         binding.edtTelefone.addTextChangedListener(CustomMask.Companion.mask("(##) #####-####", binding.edtTelefone, null));
 
-        binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
+        binding.btnProximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Recarga.this, RecargaOperadora.class);
                 startActivity(intent);
             }
+        });
+
+        binding.ivArrowBack.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, Home.class));
         });
     }
 }
