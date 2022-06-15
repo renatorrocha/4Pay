@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Deposito;
 import com.example.appbanco.model.ExtratoModel;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Home.Home;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +34,7 @@ public class DepositofFormActivity extends AppCompatActivity {
     private CurrencyEditText edtValor;
     private AlertDialog dialog;
     private Button btnConfirmar;
+    private ImageView ivArrowBack;
     private ProgressBar progressBar;
 
     private Usuario usuario;
@@ -46,6 +49,12 @@ public class DepositofFormActivity extends AppCompatActivity {
         iniciaComponentes();
 
         btnConfirmar = findViewById(R.id.btnConfirmar);
+        ivArrowBack = findViewById(R.id.ivArrowBack);
+
+        ivArrowBack.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, Home.class));
+        });
+
 
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
