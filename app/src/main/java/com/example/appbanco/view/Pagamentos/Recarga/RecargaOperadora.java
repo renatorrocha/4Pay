@@ -21,7 +21,7 @@ public class RecargaOperadora extends AppCompatActivity {
         binding = ActivityRecargaOperadoraBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
+        binding.btnProximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RecargaOperadora.this,RecargaPagamento.class);
