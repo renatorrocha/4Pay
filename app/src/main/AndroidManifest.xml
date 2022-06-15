@@ -79,7 +79,7 @@
             android:name=".view.Pagamentos.Recarga.RecargaPagamento"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Recarga.Operadora"
+            android:name=".view.Pagamentos.Recarga.RecargaOperadora"
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Recarga.Recarga"
