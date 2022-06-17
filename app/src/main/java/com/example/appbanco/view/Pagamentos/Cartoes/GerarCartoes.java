@@ -57,7 +57,7 @@ public class GerarCartoes extends AppCompatActivity {
             startActivity(new Intent(this, CartaoCriado.class));
         });
 
-        binding.ivVoltarCartao.setOnClickListener(view1 -> {
+        binding.ivArrowBack.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Cartoes.class));
         });
 

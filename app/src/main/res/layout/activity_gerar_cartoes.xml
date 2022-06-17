@@ -7,36 +7,39 @@
     android:background="@drawable/background"
     tools:context=".view.Pagamentos.Cartoes.GerarCartoes">
 
-    <ImageView
-        android:id="@+id/ivVoltarCartao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_back"
-        app:layout_constraintTop_toTopOf="@id/tvSelecioneCartao"
-        app:layout_constraintBottom_toBottomOf="@id/tvSelecioneCartao"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp"
-        app:tint="@color/preto" />
-
     <TextView
-        android:id="@+id/tvSelecioneCartao"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvTituloCartoes"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_bold"
-        android:paddingVertical="32dp"
+        android:background="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingVertical="8dp"
         android:text="Selecione um cartão"
-        android:textColor="@color/preto"
-        android:textSize="28sp"
+        android:textAlignment="center"
+        android:textColor="@color/rosa"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivArrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTituloCartoes"
+        app:layout_constraintTop_toTopOf="@id/tvTituloCartoes"
+        app:tint="@color/white" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSelecioneCartao">
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCartoes">
 
 
         <LinearLayout

@@ -37,26 +37,10 @@ public class ConfigsFragment extends Fragment {
         binding = FragmentConfigsBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        ListView lista = (ListView) view.findViewById(R.id._dynamic);
-
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                switch (position) {
-                    case 5:
-                        FirebaseHelper.getAuth().signOut();
-                        startActivity(new Intent(view.getContext(), Login.class));
-                        break;
-
-
-                }
-
-            }
+        binding.clSair.setOnClickListener(view1 -> {
+            FirebaseHelper.getAuth().signOut();
+            startActivity(new Intent(view.getContext(), Login.class));
         });
-
-        ArrayAdapter adapter = new Photoadapter(view.getContext(), adicionarPhoto());
-        lista.setAdapter(adapter);
 
         return view;
     }
@@ -86,30 +70,5 @@ public class ConfigsFragment extends Fragment {
             }
         });
     }
-
-    private ArrayList<Photo> adicionarPhoto() {
-        ArrayList<Photo> photos = new ArrayList<Photo>();
-
-        Photo e = new Photo(R.drawable.ic_sec, "Segurança");
-        photos.add(e);
-
-        e = new Photo(R.drawable.config, "Configuração");
-        photos.add(e);
-
-        e = new Photo(R.drawable.ic_not, "Notificação");
-        photos.add(e);
-
-        e = new Photo(R.drawable.ic_card, "Configurar Cartão");
-        photos.add(e);
-
-        e = new Photo(R.drawable.ic_sobre, "Sobre");
-        photos.add(e);
-
-        e = new Photo(R.drawable.ic_lock, "Sair");
-        photos.add(e);
-
-        return photos;
-    }
-
 
 }
