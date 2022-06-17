@@ -40,9 +40,9 @@ public class HomeFragment extends Fragment {
         getUserData();
 
 
-        binding.clCartao.setOnClickListener(view1 -> {
-            startActivity(new Intent(view.getContext(), Cartoes.class));
-        });
+//        binding.clCartao.setOnClickListener(view1 -> {
+//            startActivity(new Intent(view.getContext(), Cartoes.class));
+//        });
 
         binding.clDeposito.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), DepositofFormActivity.class));
@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment {
 
                 binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(user.getSaldo())));
                 String[] splitName = user.getNome().trim().split("\\s+");
-                binding.tvBemVindo.setText("Bem vindo, " + splitName[0]);
+                binding.tvBemVindo.setText("Olá, " + splitName[0]);
 
             }
 
