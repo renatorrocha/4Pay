@@ -35,4 +35,9 @@
     <string name="txt_valorRendimento">R$</string>
     <string name="txt_informe_rendimento">Informe seu rendimento</string>
     <string name="txt_cartao">Este cartão possui taxas \nconforme sua utilização</string>
+    <string name="txt_sec">Segurança</string>
+    <string name="txt_config_app">Configurar app</string>
+    <string name="txt_noti">Notificações</string>
+    <string name="txt_sobre">Sobre</string>
+    <string name="txt_sair">Sair</string>
 </resources>

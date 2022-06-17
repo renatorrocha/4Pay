@@ -6,62 +6,367 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo">
 
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingVertical="8dp"
+        android:text="Configurações"
+        android:textAlignment="center"
+        android:textColor="@color/rosa"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/preto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo">
+
+            <ImageView
+                android:id="@+id/ivUser"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/ic_person_pink"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNomeUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text=""
+                android:textColor="@color/branco"
+                android:textSize="28sp"
+                app:layout_constraintStart_toEndOf="@id/ivUser"
+                app:layout_constraintTop_toTopOf="@id/ivUser" />
+
+            <TextView
+                android:id="@+id/tvDadosConta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Conta - 123456789\nBanco - 4Pay"
+                android:textColor="@color/branco"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/ivUser"
+                app:layout_constraintTop_toBottomOf="@id/tvNomeUser" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="62dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="Editar"
+                    android:textAlignment="center"
+                    android:textColor="@color/preto" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clLayout"
+        android:id="@+id/clOpcoes"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:background="@color/preto"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toBottomOf="@id/cvPerfil">
 
-        <ImageView
-            android:id="@+id/ivUser"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSeguranca"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:src="@drawable/ic_person_pink"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvNomeUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text=""
-            android:textColor="@color/branco"
-            android:textSize="36sp"
-            app:layout_constraintStart_toEndOf="@id/ivUser"
-            app:layout_constraintTop_toTopOf="@id/ivUser" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSec"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                android:backgroundTint="@color/azul_claro"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvDadosConta"
-            android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_sec" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/txt_sec"
+                android:textColor="@color/preto"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cvSec"
+                app:layout_constraintStart_toEndOf="@id/cvSec"
+                app:layout_constraintTop_toTopOf="@id/cvSec" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:background="@drawable/line_shape_cinza"
+                app:layout_constraintTop_toBottomOf="@id/cvSec"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clConfigApp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text="Agência 0001 - Conta 123456789-0 \nBanco 4Pay"
-            android:textColor="@color/branco"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/ivUser"
-            app:layout_constraintTop_toBottomOf="@id/tvNomeUser" />
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clSeguranca">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvConfigApp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                android:backgroundTint="@color/azul_claro"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_conf" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/txt_config_app"
+                android:textColor="@color/preto"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cvConfigApp"
+                app:layout_constraintStart_toEndOf="@id/cvConfigApp"
+                app:layout_constraintTop_toTopOf="@id/cvConfigApp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:background="@drawable/line_shape_cinza"
+                app:layout_constraintTop_toBottomOf="@id/cvConfigApp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clNoti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clConfigApp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvNoti"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                android:backgroundTint="@color/azul_claro"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_not" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/txt_noti"
+                android:textColor="@color/preto"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cvNoti"
+                app:layout_constraintStart_toEndOf="@id/cvNoti"
+                app:layout_constraintTop_toTopOf="@id/cvNoti" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:background="@drawable/line_shape_cinza"
+                app:layout_constraintTop_toBottomOf="@id/cvNoti"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSobre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clNoti">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSobre"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                android:backgroundTint="@color/azul_claro"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_sobre" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/txt_sobre"
+                android:textColor="@color/preto"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cvSobre"
+                app:layout_constraintStart_toEndOf="@id/cvSobre"
+                app:layout_constraintTop_toTopOf="@id/cvSobre" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:background="@drawable/line_shape_cinza"
+                app:layout_constraintTop_toBottomOf="@id/cvSobre"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ListView
-        android:id="@+id/_dynamic"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clLayout" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/clSair"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:cardCornerRadius="12dp"
+            android:layout_marginTop="86dp"
+            android:backgroundTint="@color/preto"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toBottomOf="@id/clOpcoes">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginLeft="12dp"
+                    android:backgroundTint="@color/rosa"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:src="@drawable/ic_exit" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_sair"
+                    android:textSize="24sp"
+                    android:layout_marginRight="16dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/nunito_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    <!--    <ListView-->
+    <!--        android:id="@+id/_dynamic"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/clLayout" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
