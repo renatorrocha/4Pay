@@ -14,13 +14,10 @@ public class Transferencia implements Serializable {
     private String id;
     private String idUserOrigem;
     private String idUserDestino;
-    private Date data;
+    private long data;
     private double valor;
 
-    public Transferencia(){
-        DatabaseReference transfRef = FirebaseHelper.getDatabaseReference();
-        setId(transfRef.push().getKey());
-    }
+    public Transferencia(){}
 
     public String getId() {
         return id;
@@ -46,9 +43,9 @@ public class Transferencia implements Serializable {
         this.idUserDestino = idUserDestino;
     }
 
-    public Date getData() {return data;}
+    public long getData() {return data;}
 
-    public void setData(Date data) {this.data = data;}
+    public void setData(long data) {this.data = data;}
 
     public double getValor() {
         return valor;

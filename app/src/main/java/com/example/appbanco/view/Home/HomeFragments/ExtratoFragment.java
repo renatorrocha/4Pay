@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ExtratoFragment extends Fragment {
@@ -34,8 +35,8 @@ public class ExtratoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-       binding = FragmentExtratoBinding.inflate(getLayoutInflater());
-       View view = binding.getRoot();
+        binding = FragmentExtratoBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
 
         recuperarExtrato();
 
@@ -45,25 +46,28 @@ public class ExtratoFragment extends Fragment {
         extratoAdapter = new ExtratoAdapter(list, view.getContext());
         rvExtrato.setAdapter(extratoAdapter);
 
-       return view;
+        return view;
     }
 
-    private void recuperarExtrato(){
+    private void recuperarExtrato() {
         DatabaseReference extratoRef = FirebaseHelper.getDatabaseReference()
                 .child("extratos")
                 .child(FirebaseHelper.getIdFirebase());
         extratoRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    for( DataSnapshot ds : snapshot.getChildren()){
+                if (snapshot.exists()) {
+                    list.clear();
+                    for (DataSnapshot ds : snapshot.getChildren()) {
                         ExtratoModel extrato = ds.getValue(ExtratoModel.class);
                         list.add(extrato);
                     }
 
-                }else {
+                } else {
                     Toast.makeText(getView().getContext(), "Nenhum extrato encontrado.", Toast.LENGTH_SHORT).show();
                 }
+
+                Collections.reverse(list);
 
                 extratoAdapter.notifyDataSetChanged();
             }
