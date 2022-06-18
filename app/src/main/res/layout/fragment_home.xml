@@ -36,6 +36,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tvNoti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:paddingHorizontal="5dp"
+            android:fontFamily="@font/nunito_bold"
+            android:textColor="@color/preto"
+            android:background="@drawable/bg_noti"
+            app:layout_constraintTop_toTopOf="@id/ivNoti"
+            app:layout_constraintEnd_toStartOf="@id/ivNoti" />
+
         <ImageView
             android:id="@+id/ivNoti"
             android:layout_width="36dp"
@@ -85,6 +100,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvBemVindo" />
 
+    <ImageView
+        android:id="@+id/ivEsconderSaldo"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/ic_eye"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvSaldoValor"
+        app:layout_constraintBottom_toBottomOf="@id/tvSaldoValor" />
+
     <TextView
         android:id="@+id/tvLinha"
         android:layout_width="match_parent"
@@ -119,6 +144,7 @@
             android:textSize="12sp"/>
 
         <TextView
+            android:id="@+id/tvNumCartao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -131,9 +157,10 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/tvValidadeCartao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="07/29"
+            android:text="@string/txt_cartao_validade"
             android:layout_marginBottom="16dp"
             android:layout_marginRight="8dp"
             android:textColor="@color/preto"

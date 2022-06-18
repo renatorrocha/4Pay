@@ -2,6 +2,7 @@ package com.example.appbanco.model;
 
 import com.example.appbanco.help.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ServerValue;
 
 public class Notificacao {
 
@@ -16,6 +17,20 @@ public class Notificacao {
     public Notificacao() {
         DatabaseReference notiRef = FirebaseHelper.getDatabaseReference();
         setId(notiRef.push().getKey());
+    }
+
+    public void enviar() {
+        DatabaseReference notiRef = FirebaseHelper.getDatabaseReference()
+                .child("notificacoes")
+                .child(getIdDestinario())
+                .child(getId());
+        notiRef.setValue(this).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DatabaseReference notiUpdate = notiRef
+                        .child("data");
+                notiUpdate.setValue(ServerValue.TIMESTAMP);
+            }
+        });
     }
 
     public String getId() {
