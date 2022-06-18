@@ -1,4 +1,4 @@
-package com.example.appbanco;
+package com.example.appbanco.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.appbanco.R;
+import com.example.appbanco.model.ViewPagerItem;
 
 import java.util.ArrayList;
 
@@ -34,9 +37,9 @@ public class VPAdapter extends RecyclerView.Adapter<VPAdapter.ViewHolder> {
 
         ViewPagerItem viewPagerItem = viewPagerItemArrayList.get(position);
 
-        holder.imageView.setImageResource(viewPagerItem.imgID);
-        holder.tvTitulo.setText(viewPagerItem.titulo);
-        holder.tvDescricao.setText(viewPagerItem.descricao);
+        holder.imageView.setImageResource(viewPagerItem.getImgID());
+        holder.tvTitulo.setText(viewPagerItem.getTitulo());
+        holder.tvDescricao.setText(viewPagerItem.getDescricao());
 
     }
 

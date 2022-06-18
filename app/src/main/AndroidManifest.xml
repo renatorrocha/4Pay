@@ -16,6 +16,18 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
+            android:name=".view.Pagamentos.Pix.PixCobrar.PixCobrarFinal"
+            android:exported="false" />
+        <activity
+            android:name=".view.Pagamentos.Pix.PixCobrar.PixCobrarDestino"
+            android:exported="false" />
+        <activity
+            android:name=".view.Pagamentos.Pix.PixCobrar.PixCobrar"
+            android:exported="false" />
+        <activity
+            android:name=".view.Home.Notificacoes"
+            android:exported="false" />
+        <activity
             android:name=".view.Pagamentos.Pix.Pix"
             android:exported="false" />
         <activity
@@ -46,22 +58,22 @@
             android:name=".view.Pagamentos.Cartoes.CartaoCriado"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Pix.PixTransfSucesso"
+            android:name=".view.Pagamentos.Pix.PixTransferir.PixTransfSucesso"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Pix.ConfirmacaoPix"
+            android:name=".view.Pagamentos.Pix.PixTransferir.ConfirmacaoPix"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Pix.PixTransfFinal"
+            android:name=".view.Pagamentos.Pix.PixTransferir.PixTransfFinal"
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Transferencia.Transferencia"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Pix.PixTransfDestino"
+            android:name=".view.Pagamentos.Pix.PixTransferir.PixTransfDestino"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Pix.PixTransf"
+            android:name=".view.Pagamentos.Pix.PixTransferir.PixTransf"
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Cartoes.GerarCartoes"

@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.appbanco.R;
-import com.example.appbanco.VPAdapter;
-import com.example.appbanco.ViewPagerItem;
+import com.example.appbanco.adapter.VPAdapter;
+import com.example.appbanco.model.ViewPagerItem;
 import com.example.appbanco.view.Seguros.SegurosAtivos;
 
 import java.util.ArrayList;
