@@ -119,7 +119,7 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
         });
     }
 
-    private interface OnClick{
+    public interface OnClick{
         void onClickListener(Notificacao notificacao);
     }
 

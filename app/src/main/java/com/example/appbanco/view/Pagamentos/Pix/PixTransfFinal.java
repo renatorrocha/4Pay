@@ -15,6 +15,7 @@ import com.example.appbanco.databinding.ActivityPixTransfFinalBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.ExtratoModel;
+import com.example.appbanco.model.Notificacao;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
 import com.google.firebase.database.DataSnapshot;
@@ -129,6 +130,8 @@ public class PixTransfFinal extends AppCompatActivity {
                 updateTransferencia.setValue(ServerValue.TIMESTAMP);
 
                 if(extrato.getTipo().equals("SAIDA")){
+
+                    enviaNoti(extrato.getId());
                     Intent intent = new Intent(this, PixTransfSucesso.class);
                     intent.putExtra("idTransferencia",transferencia.getId());
                     startActivity(intent);
@@ -139,6 +142,15 @@ public class PixTransfFinal extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void enviaNoti(String idOperacao){
+        Notificacao notificacao = new Notificacao();
+        notificacao.setOperação("TRANSFERENCIA");
+        notificacao.setIdDestinario(userDestino.getId());
+        notificacao.setIdCobrador(userOrigem.getId());
+        notificacao.setIdOperacao(idOperacao);
+        notificacao.enviar();
     }
 
 
