@@ -34,12 +34,12 @@ public class Notificacoes extends AppCompatActivity implements NotiAdapter.OnCli
         binding = ActivityNotificacoesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        getAllNoti();
+
         binding.rvNoti.setLayoutManager(new LinearLayoutManager(this));
         binding.rvNoti.setHasFixedSize(true);
         notiAdapter = new NotiAdapter(list, getBaseContext(), this);
         binding.rvNoti.setAdapter(notiAdapter);
-
-        getAllNoti();
 
         binding.ivArrowBack.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Home.class));
