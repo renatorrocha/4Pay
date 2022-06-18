@@ -160,7 +160,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clDeposito"
-                android:layout_width="wrap_content"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -168,8 +168,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvDeposito"
-                    android:layout_width="86dp"
-                    android:layout_height="86dp"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
                     android:backgroundTint="@color/azul_claro"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -192,7 +192,8 @@
                     android:paddingVertical="4dp"
                     android:text="Depósito"
                     android:textColor="@color/preto"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cvDeposito" />
@@ -201,7 +202,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clPix"
-                android:layout_width="wrap_content"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -209,8 +210,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvPix"
-                    android:layout_width="86dp"
-                    android:layout_height="86dp"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
                     android:backgroundTint="@color/azul_claro"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -233,7 +234,8 @@
                     android:paddingVertical="4dp"
                     android:text="Pix"
                     android:textColor="@color/preto"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cvPix" />
@@ -242,7 +244,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clPags"
-                android:layout_width="wrap_content"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -250,8 +252,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvPags"
-                    android:layout_width="86dp"
-                    android:layout_height="86dp"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
                     android:backgroundTint="@color/azul_claro"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -274,7 +276,8 @@
                     android:paddingVertical="4dp"
                     android:text="Pagamentos"
                     android:textColor="@color/preto"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -284,7 +287,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clRecarga"
-                android:layout_width="wrap_content"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -292,8 +295,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvRecarga"
-                    android:layout_width="86dp"
-                    android:layout_height="86dp"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
                     android:backgroundTint="@color/azul_claro"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -316,7 +319,8 @@
                     android:paddingVertical="4dp"
                     android:text="Recarga"
                     android:textColor="@color/preto"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cvRecarga" />
@@ -325,7 +329,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clSeguro"
-                android:layout_width="wrap_content"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -333,8 +337,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvSeguro"
-                    android:layout_width="86dp"
-                    android:layout_height="86dp"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
                     android:backgroundTint="@color/azul_claro"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -357,7 +361,8 @@
                     android:paddingVertical="4dp"
                     android:text="Seguros"
                     android:textColor="@color/preto"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cvSeguro" />

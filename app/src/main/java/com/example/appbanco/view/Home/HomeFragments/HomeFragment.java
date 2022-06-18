@@ -15,6 +15,7 @@ import com.example.appbanco.databinding.FragmentHomeBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Home.Notificacoes;
 import com.example.appbanco.view.Home.Seguros;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
@@ -40,9 +41,9 @@ public class HomeFragment extends Fragment {
         getUserData();
 
 
-//        binding.clCartao.setOnClickListener(view1 -> {
-//            startActivity(new Intent(view.getContext(), Cartoes.class));
-//        });
+        binding.clCartao.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), Cartoes.class));
+        });
 
         binding.clDeposito.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), DepositofFormActivity.class));
@@ -61,6 +62,10 @@ public class HomeFragment extends Fragment {
             itPix.putExtra("userSaldo", binding.tvSaldoValor.getText().toString());
             startActivity(itPix);
         });
+
+        binding.ivNoti.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), Notificacoes.class));
+        });
         return view;
     }
 
@@ -69,7 +74,7 @@ public class HomeFragment extends Fragment {
         DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
                 .child(FirebaseHelper.getIdFirebase());
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Usuario user = snapshot.getValue(Usuario.class);

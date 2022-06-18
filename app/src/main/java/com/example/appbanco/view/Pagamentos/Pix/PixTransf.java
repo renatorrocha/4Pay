@@ -40,7 +40,6 @@ public class PixTransf extends AppCompatActivity {
 
             Transferencia transf = new Transferencia();
             transf.setIdUserOrigem(FirebaseHelper.getIdFirebase());
-            transf.setData(new Date());
             transf.setValor(value);
 
             Intent intent = new Intent(this, PixTransfDestino.class);

@@ -14,11 +14,13 @@ import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixTransfFinalBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
+import com.example.appbanco.model.ExtratoModel;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
@@ -50,7 +52,16 @@ public class PixTransfFinal extends AppCompatActivity {
     public void confirmarTransf(View view) {
         if (transferencia != null) {
             if (userOrigem.getSaldo() >= transferencia.getValor()) {
-                salvarTransferencia();
+
+                userOrigem.setSaldo(userOrigem.getSaldo() - transferencia.getValor());
+                userOrigem.atualizarSaldo();
+
+                userDestino.setSaldo(userDestino.getSaldo() + transferencia.getValor());
+                userDestino.atualizarSaldo();
+
+
+                salvarExtrato(userOrigem, "SAIDA");
+                salvarExtrato(userDestino, "ENTRADA");
             } else {
                 Toast.makeText(this, "Sem saldo.", Toast.LENGTH_SHORT).show();
             }
@@ -74,22 +85,54 @@ public class PixTransfFinal extends AppCompatActivity {
         });
     }
 
-    private void salvarTransferencia(){
+    private void salvarExtrato(Usuario usuario, String tipo){
+
+        ExtratoModel extrato =  new ExtratoModel();
+        extrato.setOperacao("TRANSFERENCIA");
+        extrato.setValor(transferencia.getValor());
+        extrato.setTipo(tipo);
+
+        DatabaseReference extratoRef = FirebaseHelper.getDatabaseReference()
+                .child("extratos")
+                .child(usuario.getId())
+                .child(extrato.getId());
+        extratoRef.setValue(extrato).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+
+                DatabaseReference updateExtrato = extratoRef
+                        .child("data");
+                updateExtrato.setValue(ServerValue.TIMESTAMP);
+
+                salvarTransferencia(extrato);
+
+            }else{
+//                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+
+    private void salvarTransferencia(ExtratoModel extrato){
+
+        transferencia.setId(extrato.getId());
+
         DatabaseReference transferenciaRef = FirebaseHelper.getDatabaseReference()
                 .child("transferencias")
                 .child(transferencia.getId());
 
         transferenciaRef.setValue(transferencia).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
-                userOrigem.setSaldo(userOrigem.getSaldo() - transferencia.getValor());
-                userOrigem.atualizarSaldo();
 
-                userDestino.setSaldo(userDestino.getSaldo() + transferencia.getValor());
-                userDestino.atualizarSaldo();
+                DatabaseReference updateTransferencia = transferenciaRef
+                        .child("data");
+                updateTransferencia.setValue(ServerValue.TIMESTAMP);
 
-                Intent intent = new Intent(this, PixTransfSucesso.class);
-                intent.putExtra("idTransferencia",transferencia.getId());
-                startActivity(intent);
+                if(extrato.getTipo().equals("SAIDA")){
+                    Intent intent = new Intent(this, PixTransfSucesso.class);
+                    intent.putExtra("idTransferencia",transferencia.getId());
+                    startActivity(intent);
+                }
 
             }else{
                 Toast.makeText(this, "Não foi possivel completar a transferência.", Toast.LENGTH_SHORT).show();
@@ -97,6 +140,7 @@ public class PixTransfFinal extends AppCompatActivity {
         });
 
     }
+
 
     private void configDados() {
         userDestino = (Usuario) getIntent().getSerializableExtra("userDestino");
