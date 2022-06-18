@@ -95,12 +95,10 @@ public class PixTransfSucesso extends AppCompatActivity {
 
     private void configDados(Transferencia transferencia, Usuario userDestino) {
 
-        SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
-        String dataFormatada = formataData.format(transferencia.getData());
-        binding.tvPixData.setText(dataFormatada);
 
+        binding.tvPixData.setText(GetMask.getDate(transferencia.getData(), 3));
         binding.tvValorPixFinal.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(transferencia.getValor())));
         binding.tvPixFinalPessoaPara.setText(userDestino.getNome());
-        binding.tvCodigoTransferencia.setText("Cod: " + transferencia.getId());
+        binding.tvCodigoTransferencia.setText("Código: " + transferencia.getId());
     }
 }
