@@ -22,7 +22,6 @@ import com.example.appbanco.view.Home.Seguros;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
 import com.example.appbanco.view.Pagamentos.Pix.Pix;
-import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
 import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +29,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 

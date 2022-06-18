@@ -1,4 +1,4 @@
-package com.example.appbanco.view.Pagamentos.Pix;
+package com.example.appbanco.view.Pagamentos.Pix.PixTransferir;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -162,9 +162,10 @@ public class PixTransfFinal extends AppCompatActivity {
         binding.tvValorTransfPix.setText(getString( R.string.txt_valor_deposito, GetMask.getValor(transferencia.getValor())));
 
         SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
-        String dataFormatada = formataData.format(transferencia.getData());
+        String dataFormatada = formataData.format(System.currentTimeMillis());
 
-        binding.tvDataTransf.setText(dataFormatada);
+        binding.tvData.setText(dataFormatada);
+
 
     }
 }

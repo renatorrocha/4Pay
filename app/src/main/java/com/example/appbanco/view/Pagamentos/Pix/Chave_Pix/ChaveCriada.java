@@ -7,7 +7,6 @@ import android.os.Bundle;
 
 import com.example.appbanco.databinding.ActivityChaveCriadaBinding;
 import com.example.appbanco.view.Pagamentos.Pix.Pix;
-import com.example.appbanco.view.Pagamentos.Pix.PixTransf;
 
 public class ChaveCriada extends AppCompatActivity {
 
