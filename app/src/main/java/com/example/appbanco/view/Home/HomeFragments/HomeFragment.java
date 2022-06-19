@@ -19,9 +19,10 @@ import com.example.appbanco.model.Notificacao;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Notificacoes;
 import com.example.appbanco.view.Home.Seguros;
-import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
 import com.example.appbanco.view.Pagamentos.Pix.Pix;
+import com.example.appbanco.view.Pagamentos.Recarga.RecargaInicio;
+
 import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -52,7 +53,7 @@ public class HomeFragment extends Fragment {
         });
 
         binding.clRecarga.setOnClickListener(view1 -> {
-            startActivity(new Intent(view.getContext(), Recarga.class));
+            startActivity(new Intent(view.getContext(), RecargaInicio.class));
         });
 
         binding.clSeguro.setOnClickListener(view1 -> {

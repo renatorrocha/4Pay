@@ -54,6 +54,7 @@ dependencies {
 
     // Mask
     implementation 'com.github.T7Droid:Custom-Mask-for-EditText:1.0.0'
+    implementation 'com.github.santalu:maskara:1.0.0'
 
     //  Meow Bottom nav menu
     implementation 'com.etebarian:meow-bottom-navigation:1.2.0'
