@@ -35,6 +35,16 @@ public class Notificacao implements Serializable {
         });
     }
 
+    public void salvar(){
+        DatabaseReference notiRef = FirebaseHelper.getDatabaseReference()
+                .child("notificacoes")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(this.id)
+                .child("lida");
+        notiRef.setValue(!this.lida);
+
+    }
+
     public String getId() {
         return id;
     }
