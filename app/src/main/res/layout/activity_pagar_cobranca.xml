@@ -3,22 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/background_alternativo"
-    tools:context=".view.Pagamentos.Pix.PixTransferir.PixTransfFinal">
+    android:layout_height="match_parent"
+    tools:context=".view.Pagamentos.Pix.PixCobrar.PagarCobranca">
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/nunito_bold"
-        android:text="Transferência"
-        android:textColor="@color/preto"
-        android:textSize="28sp"
+        android:background="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingVertical="8dp"
+        android:text="Pagar Cobrança"
+        android:textAlignment="center"
+        android:textColor="@color/rosa"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivArrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
+        app:layout_constraintTop_toTopOf="@id/tvTitulo"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/textView3"
@@ -26,15 +39,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/nunito_regular"
-        android:text="Valor da transferência"
+        android:text="Valor da cobrança"
         android:textColor="@color/preto"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
     <TextView
-        android:id="@+id/tvValorTransfPix"
+        android:id="@+id/tvValorCobranca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_bold"
@@ -51,11 +64,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/nunito_regular"
-        android:text="@string/txt_destinatario_pix"
+        android:text="De João"
         android:textColor="@color/preto"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/tvValorTransfPix" />
+        app:layout_constraintTop_toBottomOf="@+id/tvValorCobranca" />
 
     <TextView
         android:layout_width="match_parent"
@@ -96,49 +109,18 @@
         android:layout_height="wrap_content"
         android:background="@drawable/line_shape"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDataPixFinal"
-        app:layout_constraintBottom_toTopOf="@id/tvCpfFinal"/>
+        app:layout_constraintTop_toBottomOf="@id/tvDataPixFinal"/>
 
-    <TextView
-        android:id="@+id/tvCpfFinal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/nunito_regular"
-        android:text="Cpf"
-        android:textColor="@color/preto"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDataPixFinal" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_bold"
-        android:text="***.123.***0-**"
-        android:textColor="@color/preto"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@id/tvData"
-        app:layout_constraintTop_toTopOf="@id/tvCpfFinal" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/line_shape"
-        app:layout_constraintTop_toBottomOf="@id/tvCpfFinal"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
 
     <Button
-        android:id="@+id/btnTransfPixFinal"
+        android:id="@+id/btnProximo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:background="@drawable/btnlogin"
-        android:text="@string/txt_btn_transferir"
+        android:text="@string/txt_btn_confirmar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"

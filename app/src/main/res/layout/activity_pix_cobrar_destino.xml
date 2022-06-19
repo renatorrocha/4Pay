@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo"
-    tools:context=".view.Pagamentos.Pix.PixTransferir.PixTransfDestino">
+    tools:context=".view.Pagamentos.Pix.PixCobrar.PixCobrarDestino">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="Para quem será a transferência?"
+        android:text="Para quem será a cobrança?"
         android:textColor="@color/preto"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,13 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Valor da transferência "
+        android:text="Valor da cobrança "
         android:fontFamily="@font/nunito_regular"
         android:textColor="@color/preto"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
@@ -108,4 +106,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,23 +1,16 @@
 package com.example.appbanco.model;
 
-import com.example.appbanco.help.FirebaseHelper;
-import com.google.firebase.database.DatabaseReference;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-
-public class Transferencia implements Serializable {
+public class Pagamento {
 
     private String id;
+    private String idCobranca;
     private String idUserOrigem;
     private String idUserDestino;
-    private long data;
     private double valor;
+    private long data;
 
-    public Transferencia(){}
+    public Pagamento() {
+    }
 
     public String getId() {
         return id;
@@ -25,6 +18,14 @@ public class Transferencia implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getIdCobranca() {
+        return idCobranca;
+    }
+
+    public void setIdCobranca(String idCobranca) {
+        this.idCobranca = idCobranca;
     }
 
     public String getIdUserOrigem() {
@@ -43,15 +44,19 @@ public class Transferencia implements Serializable {
         this.idUserDestino = idUserDestino;
     }
 
-    public long getData() {return data;}
-
-    public void setData(long data) {this.data = data;}
-
     public double getValor() {
         return valor;
     }
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public long getData() {
+        return data;
+    }
+
+    public void setData(long data) {
+        this.data = data;
     }
 }
