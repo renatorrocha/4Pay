@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
-        tools:context=".view.Pagamentos.Recarga.Recarga">
+        tools:context=".view.Pagamentos.Recarga.RecargaInicio">
 
         <TextView
             android:id="@+id/tvTitulo"
@@ -68,10 +68,13 @@
             app:startIconDrawable="@drawable/ic_phone"
             app:startIconTint="@color/preto">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.santalu.maskara.widget.MaskEditText
                 android:id="@+id/edtTelefone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:mask="(__) _____-____"
+                app:maskCharacter="_"
+                app:maskStyle="completable"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>

@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.appbanco.databinding.ActivityLoginBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Pagamentos.Recarga.Recarga;
+import com.example.appbanco.view.Pagamentos.Recarga.RecargaInicio;
 
 
 public class Login extends AppCompatActivity {
@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
         });
 
         binding.tvCadastrar.setOnClickListener(view ->  {
-            startActivity(new Intent(Login.this, Recarga.class));
+            startActivity(new Intent(Login.this, Cadastro.class));
         });
 
         binding.tvEsqueciSenha.setOnClickListener(view -> {

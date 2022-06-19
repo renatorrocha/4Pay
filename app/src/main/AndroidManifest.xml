@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
+            android:name=".view.Pagamentos.Recarga.RecargaReciboActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.Pagamentos.Pix.Pix"
             android:exported="false" />
         <activity
@@ -82,7 +85,7 @@
             android:name=".view.Pagamentos.Recarga.RecargaOperadora"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Recarga.Recarga"
+            android:name=".view.Pagamentos.Recarga.RecargaInicio"
             android:exported="false" />
         <activity
             android:name=".view.Home.Home"
