@@ -32,13 +32,21 @@
         app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
         app:layout_constraintTop_toTopOf="@id/tvTitulo"
         app:tint="@color/white" />
-    
-    <androidx.recyclerview.widget.RecyclerView
+
+    <com.tsuryo.swipeablerv.SwipeableRecyclerView
         android:id="@+id/rv_noti"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:leftBgColor="@color/azul_claro"
+        app:leftImage="@drawable/ic_check"
+        app:rightBgColor="@color/vermelho"
+        app:rightImage="@drawable/ic_delete"
+        app:textColor="@color/white"
+        app:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/tvTitulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
