@@ -13,6 +13,7 @@ import com.example.appbanco.adapter.NotiAdapter;
 import com.example.appbanco.databinding.ActivityNotificacoesBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Notificacao;
+import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PagarCobranca;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,8 +35,6 @@ public class Notificacoes extends AppCompatActivity implements NotiAdapter.OnCli
         binding = ActivityNotificacoesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        getAllNoti();
-
         binding.rvNoti.setLayoutManager(new LinearLayoutManager(this));
         binding.rvNoti.setHasFixedSize(true);
         notiAdapter = new NotiAdapter(list, getBaseContext(), this);
@@ -44,6 +43,8 @@ public class Notificacoes extends AppCompatActivity implements NotiAdapter.OnCli
         binding.ivArrowBack.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Home.class));
         });
+
+        getAllNoti();
 
 
     }
@@ -57,12 +58,11 @@ public class Notificacoes extends AppCompatActivity implements NotiAdapter.OnCli
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
                 if (snapshot.exists()) {
-
+                    list.clear();
                     for (DataSnapshot ds : snapshot.getChildren()) {
                         Notificacao noti = ds.getValue(Notificacao.class);
                         list.add(noti);
                     }
-
 
                 } else {
 
@@ -79,7 +79,12 @@ public class Notificacoes extends AppCompatActivity implements NotiAdapter.OnCli
     }
 
     @Override
-    public void onClickListener(Notificacao notificacao) {
+    public void OnClickListener(Notificacao notificacao) {
+        if(notificacao.getOperação().equals("COBRANCA")){
+            Intent it = new Intent(this, PagarCobranca.class);
+            it.putExtra("notificacao", notificacao);
+            startActivity(it);
+        }
 
     }
 }
