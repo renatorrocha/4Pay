@@ -100,5 +100,4 @@ public class PixCobrarFinal extends AppCompatActivity {
 
     }
 
-    ;
 }

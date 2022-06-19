@@ -4,7 +4,9 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ServerValue;
 
-public class Notificacao {
+import java.io.Serializable;
+
+public class Notificacao implements Serializable {
 
     private String id;
     private String idCobrador;
@@ -31,6 +33,16 @@ public class Notificacao {
                 notiUpdate.setValue(ServerValue.TIMESTAMP);
             }
         });
+    }
+
+    public void salvar(){
+        DatabaseReference notiRef = FirebaseHelper.getDatabaseReference()
+                .child("notificacoes")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(this.id)
+                .child("lida");
+        notiRef.setValue(!this.lida);
+
     }
 
     public String getId() {

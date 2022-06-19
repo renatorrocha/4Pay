@@ -27,7 +27,7 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
 
     private List<Notificacao> list;
     private Context context;
-    private OnClick onClick;
+    private final OnClick onClick;
 
     public NotiAdapter(List<Notificacao> list, Context context, OnClick onClick) {
         this.list = list;
@@ -90,6 +90,8 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
 
         getUserData(item, holder);
 
+        holder.itemView.setOnClickListener(v -> onClick.OnClickListener(item));
+
     }
 
     @Override
@@ -107,7 +109,17 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
                 Usuario user = snapshot.getValue(Usuario.class);
 
                 if(user != null){
-                    holder.tvCobrador.setText(context.getString(R.string.txt_enviada_por, user.getNome()));
+                    switch (notificacao.getOperação()){
+                        case "COBRANCA":
+                        case "TRANSFERENCIA":
+                            holder.tvCobrador.setText(context.getString(R.string.txt_enviada_por, user.getNome()));
+                            break;
+
+                        case "PAGAMENTO":
+                            holder.tvCobrador.setText(context.getString(R.string.txt_enviado_por, user.getNome()));
+                            break;
+                    }
+
                 }
 
             }
@@ -120,7 +132,7 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
     }
 
     public interface OnClick{
-        void onClickListener(Notificacao notificacao);
+        void OnClickListener(Notificacao notificacao);
     }
 
 }

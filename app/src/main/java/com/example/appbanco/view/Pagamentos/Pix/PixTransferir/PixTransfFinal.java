@@ -112,8 +112,6 @@ public class PixTransfFinal extends AppCompatActivity {
         });
     }
 
-
-
     private void salvarTransferencia(ExtratoModel extrato){
 
         transferencia.setId(extrato.getId());
@@ -152,7 +150,6 @@ public class PixTransfFinal extends AppCompatActivity {
         notificacao.setIdOperacao(idOperacao);
         notificacao.enviar();
     }
-
 
     private void configDados() {
         userDestino = (Usuario) getIntent().getSerializableExtra("userDestino");
