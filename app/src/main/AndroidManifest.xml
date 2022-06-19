@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
+            android:name=".view.Pagamentos.Recarga.RecargaReciboActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.Pagamentos.Pix.PixCobrar.PagarCobrancaRecibo"
             android:exported="false" />
         <activity
@@ -32,6 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".view.Home.Notificacoes"
+            app/src/main/AndroidManifest.xml
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Pix.Pix"
@@ -100,7 +104,7 @@
             android:name=".view.Pagamentos.Recarga.RecargaOperadora"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Recarga.Recarga"
+            android:name=".view.Pagamentos.Recarga.RecargaInicio"
             android:exported="false" />
         <activity
             android:name=".view.Home.Home"

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_alternativo"
-        tools:context=".view.Pagamentos.Recarga.Recarga">
+        tools:context=".view.Pagamentos.Recarga.RecargaInicio">
 
         <TextView
             android:id="@+id/tvTitulo"
@@ -67,13 +68,57 @@
             app:startIconDrawable="@drawable/ic_phone"
             app:startIconTint="@color/preto">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.santalu.maskara.widget.MaskEditText
                 android:id="@+id/edtTelefone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:mask="(__) _____-____"
+                app:maskCharacter="_"
+                app:maskStyle="completable"/>
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <TextView
+            android:id="@+id/tvValRecarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="124dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Insira o valor da Recarga"
+            android:textColor="@color/preto"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Telefone" />
+
+        <com.blackcat.currencyedittext.CurrencyEditText
+            android:id="@+id/edtValRecarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:fontFamily="@font/nunito_regular"
+            android:inputType="number"
+            android:textColor="@color/preto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvValRecarga" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/preto"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtValRecarga"
+            tools:visibility="visible" />
 
         <Button
             android:id="@+id/btnProximo"
