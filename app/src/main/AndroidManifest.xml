@@ -35,7 +35,6 @@
             android:exported="false" />
         <activity
             android:name=".view.Home.Notificacoes"
-            app/src/main/AndroidManifest.xml
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Pix.Pix"
