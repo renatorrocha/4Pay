@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/minhaConta"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_marginLeft="8dp"

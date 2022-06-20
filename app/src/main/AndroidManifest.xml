@@ -16,10 +16,10 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
-            android:name=".AtualizarDadosActivity"
+            android:name=".view.Dados_Usuario.AtualizarDadosActivity"
             android:exported="false" />
         <activity
-            android:name=".MeusDadosActivity"
+            android:name=".view.Dados_Usuario.MeusDadosActivity"
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Recarga.RecargaReciboActivity"

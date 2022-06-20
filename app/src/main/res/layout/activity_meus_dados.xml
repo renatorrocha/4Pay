@@ -40,7 +40,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.47"
-            app:srcCompat="@drawable/ic_arrowback_pink" />
+            app:srcCompat="@drawable/ic_arrowback_pink"/>
 
         <ImageView
             android:id="@+id/ivEditar"
@@ -52,7 +52,7 @@
             app:layout_constraintStart_toEndOf="@+id/textView49"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.529"
-            app:srcCompat="@drawable/ic_edit" />
+            app:srcCompat="@drawable/ic_edit_user_pink" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -137,7 +137,7 @@
         app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toEndOf="@+id/textView37"
         app:layout_constraintTop_toTopOf="@+id/textView37"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView43"
@@ -157,13 +157,13 @@
         android:id="@+id/tvTelefone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/nunito_regular"
         android:text="(99)9999-9999"
         android:textColor="@color/preto"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/tvEmail"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/tvEmail"
         app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
@@ -177,6 +177,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTelefone" />
 
+
     <TextView
         android:id="@+id/textView46"
         android:layout_width="wrap_content"
@@ -189,7 +190,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textView43"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView43"
-        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+        app:layout_constraintTop_toBottomOf="@+id/textView50" />
 
     <TextView
         android:id="@+id/tvRendaMensal"
@@ -203,7 +204,7 @@
         app:layout_constraintEnd_toEndOf="@+id/tvTelefone"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvTelefone"
-        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+        app:layout_constraintTop_toBottomOf="@+id/textView50" />
 
     <TextView
         android:id="@+id/textView48"
@@ -212,7 +213,47 @@
         android:layout_marginTop="18dp"
         android:background="@drawable/line_shape"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRendaMensal" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Endereço:"
+        android:textColor="@color/preto"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView43"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView43"
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/line_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Avenida das Nações"
+        android:textColor="@color/preto"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView19"
+        app:layout_constraintEnd_toEndOf="@+id/tvTelefone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvTelefone"
+        app:layout_constraintTop_toTopOf="@+id/textView19"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
