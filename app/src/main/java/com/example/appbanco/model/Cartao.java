@@ -1,7 +1,7 @@
 package com.example.appbanco.model;
 
 import java.io.Serializable;
-import java.util.Random;
+import java.time.LocalDate;
 
 public class Cartao implements Serializable {
     private String tipo;
@@ -9,13 +9,14 @@ public class Cartao implements Serializable {
     private String nome;
     private String senha;
     private String numeros;
-    private double limite;
+    private int limite;
+    private String pin;
     private double saldo;
-    private double pin;
-    private long dataVencimento;
-    private long dataCricacao;
+    private String dataVencimento;
+    private String dataCriacao;
 
     public Cartao() {
+
     }
 
     public void gerarCodigoCartao() {
@@ -35,6 +36,21 @@ public class Cartao implements Serializable {
 
         this.numeros = numeros;
     }
+
+    public void gerarPin(){
+        String pin = "";
+
+        for (int i = 0; i < 10; i++) {
+            int gerados = (int) Math.round(Math.random() * 1000);
+            if (gerados > 100) {
+                pin = Integer.toString(gerados);
+                break;
+            }
+        }
+
+        this.setPin(pin);
+    }
+
 
     public String getTipo() {
         return tipo;
@@ -76,11 +92,11 @@ public class Cartao implements Serializable {
         this.numeros = numeros;
     }
 
-    public double getLimite() {
+    public int getLimite() {
         return limite;
     }
 
-    public void setLimite(double limite) {
+    public void setLimite(int limite) {
         this.limite = limite;
     }
 
@@ -92,27 +108,27 @@ public class Cartao implements Serializable {
         this.saldo = saldo;
     }
 
-    public double getPin() {
+    public String getPin() {
         return pin;
     }
 
-    public void setPin(double pin) {
+    public void setPin(String pin) {
         this.pin = pin;
     }
 
-    public long getDataVencimento() {
+    public String getDataVencimento() {
         return dataVencimento;
     }
 
-    public void setDataVencimento(long dataVencimento) {
+    public void setDataVencimento(String dataVencimento) {
         this.dataVencimento = dataVencimento;
     }
 
-    public long getDataCricacao() {
-        return dataCricacao;
+    public String getDataCriacao() {
+        return dataCriacao;
     }
 
-    public void setDataCricacao(long dataCricacao) {
-        this.dataCricacao = dataCricacao;
+    public void setDataCriacao(String dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 }
