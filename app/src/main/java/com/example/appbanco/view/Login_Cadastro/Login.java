@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.appbanco.databinding.ActivityLoginBinding;
 import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.view.Dados_Usuario.AtualizarDadosActivity;
 import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Pagamentos.Recarga.RecargaInicio;
 
@@ -35,7 +36,7 @@ public class Login extends AppCompatActivity {
         });
 
         binding.tvEsqueciSenha.setOnClickListener(view -> {
-            startActivity(new Intent(this, EsqueciSenha.class));
+            startActivity(new Intent(this, AtualizarDadosActivity.class));
         });
 
         AnimationDrawable animationDrawable = (AnimationDrawable) binding.mainLayout.getBackground();
