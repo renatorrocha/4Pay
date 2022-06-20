@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityGerarCartoesBinding;
+import com.example.appbanco.model.Cartao;
 import com.example.appbanco.view.Home.HomeFragments.HomeFragment;
 
 public class GerarCartoes extends AppCompatActivity {
@@ -46,19 +47,25 @@ public class GerarCartoes extends AppCompatActivity {
         });
 
         binding.btnCartaoCredito.setOnClickListener(view -> {
-            startActivity(new Intent(this, CartaoCriado.class));
+            Intent it = new Intent(this, CartaoCriarSenha.class);
+            it.putExtra("tipoCartao", "CREDITO");
+            startActivity(it);
         });
 
         binding.btnCartaoDebito.setOnClickListener(view -> {
-            startActivity(new Intent(this, CartaoCriado.class));
+            Intent it = new Intent(this, CartaoCriarSenha.class);
+            it.putExtra("tipoCartao", "DEBITO");
+            startActivity(it);
         });
 
         binding.btnCartaoCreditoDebito.setOnClickListener(view -> {
-            startActivity(new Intent(this, CartaoCriado.class));
+            Intent it = new Intent(this, CartaoCriarSenha.class);
+            it.putExtra("tipoCartao", "CREDITOEDEBITO");
+            startActivity(it);
         });
 
         binding.ivArrowBack.setOnClickListener(view1 -> {
-            startActivity(new Intent(this, Cartoes.class));
+            startActivity(new Intent(this, CartaoCriarSenha.class));
         });
 
     }
