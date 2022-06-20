@@ -63,4 +63,8 @@ dependencies {
 //        Swipeable RecyclerView
     implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'
 
+//    SeekBar
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+
 }

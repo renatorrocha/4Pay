@@ -16,6 +16,8 @@ public class Usuario implements Serializable {
         private String urlImagem;
         private double saldo;
         private String senha;
+        private String celular;
+        private String rendimento;
         private Endereco endereco;
         private SegurosUsuario seguros;
 
@@ -109,5 +111,21 @@ public class Usuario implements Serializable {
 
     public void setSeguros(SegurosUsuario seguros) {
         this.seguros = seguros;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getRendimento() {
+        return rendimento;
+    }
+
+    public void setRendimento(String rendimento) {
+        this.rendimento = rendimento;
     }
 }
