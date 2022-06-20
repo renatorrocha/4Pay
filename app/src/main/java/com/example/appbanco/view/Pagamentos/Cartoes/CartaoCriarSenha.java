@@ -16,7 +16,9 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Cartao;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Login_Cadastro.TipoConta;
+import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PixCobrarFinal;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,7 +42,7 @@ public class CartaoCriarSenha extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getUserData();
-
+        binding.tvTipoCartao.setText((String) getIntent().getSerializableExtra("tipoCartao"));
 
         binding.ivArrowBack.setOnClickListener(view -> {
             finish();
@@ -81,7 +83,9 @@ public class CartaoCriarSenha extends AppCompatActivity {
             if (task.isSuccessful()) {
                 Toast.makeText(this, "Cartão criado.", Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(this, CartaoCriado.class));
+                Intent intent = new Intent(this, CartaoCriado.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Não foi possivel criar o cartão.", Toast.LENGTH_SHORT).show();
 
@@ -100,44 +104,52 @@ public class CartaoCriarSenha extends AppCompatActivity {
         if(senha != null){
             if(repitaSenha != null){
                 if(senha.length() == 4){
+                    if(senha.equals(repitaSenha)){
+                        String tipoCartao = (String) getIntent().getSerializableExtra("tipoCartao");
+                        Cartao cartao = new Cartao();
 
-                    String tipoCartao = (String) getIntent().getSerializableExtra("tipoCartao");
-                    Cartao cartao = new Cartao();
-                    cartao.setTipo(tipoCartao);
-                    cartao.setIdDono(usuario.getId());
-                    cartao.setNome(usuario.getNome());
-                    cartao.setSenha(senha);
-                    cartao.gerarPin();
-                    cartao.gerarCodigoCartao();
+                        cartao.setTipo(tipoCartao);
+                        cartao.setIdDono(usuario.getId());
+                        cartao.setNome(usuario.getNome());
+                        cartao.setSenha(senha);
+                        cartao.gerarPin();
+                        cartao.gerarCodigoCartao();
 
-                    int rendimento = Integer.parseInt(usuario.getRendimento());
-                    if(rendimento > 0 && rendimento < 2500){
-                        cartao.setLimite(1600);
+                        int rendimento = Integer.parseInt(usuario.getRendimento());
+                        if(rendimento > 0 && rendimento < 2500){
+                            cartao.setLimite(1600);
+                        }
+                        else if (rendimento >= 2500 && rendimento < 5000){
+                            cartao.setLimite(2400);
+                        }
+
+                        else if (rendimento >= 5000 && rendimento < 7500){
+                            cartao.setLimite(3600);
+                        }
+
+                        else if (rendimento >= 7500 ){
+                            cartao.setLimite(6500);
+                        }
+
+                        else if(rendimento == 0){
+                            cartao.setLimite(300);
+                        }
+
+                        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("MM/YY");
+                        LocalDate date = LocalDate.now();
+                        LocalDate dateVencimento = date.plus(8, ChronoUnit.YEARS);
+
+                        cartao.setDataCriacao(timeFormatter.format(date));
+                        cartao.setDataVencimento(timeFormatter.format(dateVencimento));
+
+                        criarCartao(cartao);
+
+
+
+                    }else{
+                        binding.edtRepitaSenha.requestFocus();
+                        binding.edtsenha.setError("As senhas precisam ser iguais");
                     }
-                    else if (rendimento >= 2500 && rendimento < 5000){
-                        cartao.setLimite(2400);
-                    }
-
-                    else if (rendimento >= 5000 && rendimento < 7500){
-                        cartao.setLimite(3600);
-                    }
-
-                    else if (rendimento >= 7500 ){
-                        cartao.setLimite(6500);
-                    }
-
-                    else if(rendimento == 0){
-                        cartao.setLimite(300);
-                    }
-
-                    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("MM/YY");
-                    LocalDate date = LocalDate.now();
-                    LocalDate dateVencimento = date.plus(8, ChronoUnit.YEARS);
-
-                    cartao.setDataCriacao(timeFormatter.format(date));
-                    cartao.setDataVencimento(timeFormatter.format(dateVencimento));
-
-                    criarCartao(cartao);
 
 
                 }else{

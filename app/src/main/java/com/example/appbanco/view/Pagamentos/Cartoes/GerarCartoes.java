@@ -62,16 +62,16 @@ public class GerarCartoes extends AppCompatActivity {
         });
 
         binding.btnCartaoCredito.setOnClickListener(view -> {
-            verificarCartoes("CREDITO");
+            verificarCartoes("Credit card");
         });
 
         binding.btnCartaoDebito.setOnClickListener(view -> {
-            verificarCartoes( "DEBITO");
+            verificarCartoes( "Debit card");
 
         });
 
         binding.btnCartaoCreditoDebito.setOnClickListener(view -> {
-            verificarCartoes( "CREDITOEDEBITO");
+            verificarCartoes( "Credit and Debit card");
 
         });
 
