@@ -4,22 +4,28 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.FragmentHomeBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
+import com.example.appbanco.model.Cartao;
 import com.example.appbanco.model.Notificacao;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Notificacoes;
 import com.example.appbanco.view.Home.Seguros;
+import com.example.appbanco.view.Pagamentos.Cartoes.CartaoCriarSenha;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
+import com.example.appbanco.view.Pagamentos.Cartoes.GerarCartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
 import com.example.appbanco.view.Pagamentos.Pix.Pix;
 import com.example.appbanco.view.Pagamentos.Recarga.RecargaInicio;
@@ -35,6 +41,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+    private List<Cartao> cartaoList = new ArrayList<>();
     private List<Notificacao> notiList = new ArrayList<>();
     FragmentHomeBinding binding;
     private double userSaldo;
@@ -74,14 +81,35 @@ public class HomeFragment extends Fragment {
         binding.ivEsconderSaldo.setOnClickListener(view1 -> {
             if (binding.ivEsconderSaldo.getDrawable().getConstantState() == ContextCompat.getDrawable(getContext(), R.drawable.ic_eye).getConstantState()) {
                 binding.ivEsconderSaldo.setImageResource(R.drawable.ic_eye_closed);
-                binding.tvSaldoValor.setText("***,**");
-                binding.tvNumCartao.setText("**** **** **** ****");
-                binding.tvValidadeCartao.setText("**/**");
+                binding.tvSaldoValor.setText("**,**");
+
+                if (cartaoList.size() == 1) {
+                    binding.tvNumCartao.setText("**** **** **** ****");
+                    binding.tvValidadeCartao.setText("**/**");
+
+                } else if (cartaoList.size() == 2) {
+                    binding.tvNumCartao.setText("**** **** **** ****");
+                    binding.tvValidadeCartao.setText("**/**");
+
+                    binding.tvNumCartaoDois.setText("**** **** **** ****");
+                    binding.tvValidadeCartaoDois.setText("**/**");
+
+                } else if (cartaoList.size() == 3) {
+                    binding.tvNumCartao.setText("**** **** **** ****");
+                    binding.tvValidadeCartao.setText("**/**");
+
+                    binding.tvNumCartaoDois.setText("**** **** **** ****");
+                    binding.tvValidadeCartaoDois.setText("**/**");
+
+                    binding.tvNumCartaoTres.setText("**** **** **** ****");
+                    binding.tvValidadeCartaoTres.setText("**/**");
+
+                }
+
             } else {
                 binding.ivEsconderSaldo.setImageResource(R.drawable.ic_eye);
                 binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(userSaldo)));
-                binding.tvNumCartao.setText(R.string.txt_codigo_cartao);
-                binding.tvValidadeCartao.setText(R.string.txt_cartao_validade);
+                recuperarCartoes();
             }
         });
 
@@ -92,8 +120,8 @@ public class HomeFragment extends Fragment {
         super.onStart();
         getUserData();
         getAllNoti();
+        recuperarCartoes();
     }
-
 
     private void getUserData() {
         DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
@@ -145,5 +173,89 @@ public class HomeFragment extends Fragment {
 
             }
         });
+    }
+
+    private void recuperarCartoes() {
+
+        DatabaseReference cartoesRef = FirebaseHelper.getDatabaseReference()
+                .child("cartoes")
+                .child(FirebaseHelper.getIdFirebase());
+        cartoesRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                cartaoList.clear();
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    Cartao cartao = ds.getValue(Cartao.class);
+                    cartaoList.add(cartao);
+                }
+
+                if (cartaoList.size() > 0) {
+                    verificarCartoes();
+                } else {
+                    binding.clCartao.setBackgroundResource(R.drawable.ic_gerar_cartao);
+                    binding.tvTipoCartao.setText("");
+                    binding.tvValidadeCartao.setText("");
+                    binding.tvNumCartao.setText("");
+
+                    binding.clListaCartoes.removeView(binding.clCartaoDois);
+                    binding.clListaCartoes.removeView(binding.clCartaoTres);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void verificarCartoes() {
+
+        if (cartaoList.size() == 1) {
+            binding.clCartao.setBackgroundResource(R.drawable.credit_card);
+            binding.tvTipoCartao.setText(cartaoList.get(0).getTipo());
+            String[] splitNumero = cartaoList.get(0).getNumeros().trim().split(" ");
+            binding.tvNumCartao.setText(getString(R.string.txt_codigo_cartao_put, splitNumero[3]));
+            binding.tvValidadeCartao.setText(cartaoList.get(0).getDataVencimento());
+
+            binding.clListaCartoes.removeView(binding.clCartaoDois);
+            binding.clListaCartoes.removeView(binding.clCartaoTres);
+
+
+        } else if (cartaoList.size() == 2) {
+            binding.tvTipoCartao.setText(cartaoList.get(0).getTipo());
+            String[] splitNumero = cartaoList.get(0).getNumeros().trim().split(" ");
+            binding.tvNumCartao.setText(getString(R.string.txt_codigo_cartao_put, splitNumero[3]));
+            binding.tvValidadeCartao.setText(cartaoList.get(0).getDataVencimento());
+
+            binding.tvTipoCartaoDois.setText(cartaoList.get(1).getTipo());
+            String[] splitNumero2 = cartaoList.get(1).getNumeros().trim().split(" ");
+            binding.tvNumCartaoDois.setText(getString(R.string.txt_codigo_cartao_put, splitNumero2[3]));
+            binding.tvValidadeCartaoDois.setText(cartaoList.get(1).getDataVencimento());
+
+
+            binding.clListaCartoes.removeView(binding.clCartaoTres);
+        } else if (cartaoList.size() == 3) {
+            binding.clCartao.setBackgroundResource(R.drawable.credit_card);
+            binding.tvTipoCartao.setText(cartaoList.get(0).getTipo());
+            String[] splitNumero = cartaoList.get(0).getNumeros().trim().split(" ");
+            binding.tvNumCartao.setText(getString(R.string.txt_codigo_cartao_put, splitNumero[3]));
+            binding.tvValidadeCartao.setText(cartaoList.get(0).getDataVencimento());
+
+            binding.clCartaoDois.setBackgroundResource(R.drawable.credit_card);
+            binding.tvTipoCartaoDois.setText(cartaoList.get(1).getTipo());
+            String[] splitNumero2 = cartaoList.get(1).getNumeros().trim().split(" ");
+            binding.tvNumCartaoDois.setText(getString(R.string.txt_codigo_cartao_put, splitNumero2[3]));
+            binding.tvValidadeCartaoDois.setText(cartaoList.get(1).getDataVencimento());
+
+            binding.clCartaoTres.setBackgroundResource(R.drawable.credit_card);
+            binding.tvTipoCartao.setText(cartaoList.get(2).getTipo());
+            String[] splitNumero3 = cartaoList.get(2).getNumeros().trim().split(" ");
+            binding.tvNumCartaoTres.setText(getString(R.string.txt_codigo_cartao_put, splitNumero3[3]));
+            binding.tvValidadeCartaoTres.setText(cartaoList.get(2).getDataVencimento());
+
+        }
+
+
     }
 }
