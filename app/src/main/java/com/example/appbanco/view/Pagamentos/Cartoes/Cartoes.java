@@ -37,13 +37,26 @@ public class Cartoes extends AppCompatActivity {
 
         recuperarCartoes();
 
-        binding.clCartao.setOnClickListener(view -> {
+        binding.clCartao.setOnClickListener(view1 -> {
             if(cartaoList.size() < 1){
-                startActivity(new Intent(view.getContext(), GerarCartoes.class));
+                startActivity(new Intent(this, GerarCartoes.class));
             }else{
-                startActivity(new Intent(view.getContext(), CartaoFatura.class));
+                Intent it = new Intent(this, CartaoFatura.class);
+                it.putExtra("cartao", cartaoUm);
+                startActivity(it);
             }
+        });
 
+        binding.clCartaoDois.setOnClickListener(view1 -> {
+            Intent it = new Intent(this, CartaoFatura.class);
+            it.putExtra("cartao", cartaoDois);
+            startActivity(it);
+        });
+
+        binding.clCartaoTres.setOnClickListener(view1 -> {
+            Intent it = new Intent(this, CartaoFatura.class);
+            it.putExtra("cartao", cartaoTres);
+            startActivity(it);
         });
 
 
@@ -91,7 +104,7 @@ public class Cartoes extends AppCompatActivity {
         });
     }
 
-            private void verificarCartoes() {
+    private void verificarCartoes() {
 
         if (cartaoList.size() == 1) {
             cartaoUm = cartaoList.get(0);
