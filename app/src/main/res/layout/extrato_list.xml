@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/preto"
+    android:background="@color/azul_claro"
     android:layout_height="wrap_content">
 
 
@@ -25,7 +25,7 @@
         android:layout_marginLeft="12dp"
         android:fontFamily="@font/nunito_regular"
         android:text="Transferência"
-        android:textColor="@color/white"
+        android:textColor="@color/preto"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/ivExt"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginLeft="8dp"
         android:text="Entrada"
-        android:textColor="@color/white"
+        android:textColor="@color/preto"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/tvExtTitulo"
         app:layout_constraintTop_toBottomOf="@id/tvExtTitulo" />
@@ -51,7 +51,7 @@
         android:layout_marginRight="8dp"
         android:fontFamily="@font/nunito_bold"
         android:text="R$ 150,00"
-        android:textColor="@color/white"
+        android:textColor="@color/preto"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -64,20 +64,21 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
         android:layout_marginTop="2dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/nunito_regular"
         android:text="19/06/2002"
-        android:textColor="@color/white"
-
+        android:textColor="@color/preto"
         android:textSize="14sp"
        app:layout_constraintTop_toBottomOf="@id/tvExtTipo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvExtTipo"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/line_shape"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvExtData" />
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/line_shape"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvExtData" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
