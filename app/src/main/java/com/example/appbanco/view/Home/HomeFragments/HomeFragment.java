@@ -105,7 +105,7 @@ public class HomeFragment extends Fragment {
         binding.ivEsconderSaldo.setOnClickListener(view1 -> {
             if (binding.ivEsconderSaldo.getDrawable().getConstantState() == ContextCompat.getDrawable(getContext(), R.drawable.ic_eye).getConstantState()) {
                 binding.ivEsconderSaldo.setImageResource(R.drawable.ic_eye_closed);
-                binding.tvSaldoValor.setText("**,**");
+                binding.tvSaldoValor.setText("***");
 
                 if (cartaoList.size() == 1) {
                     binding.tvNumCartao.setText("**** **** **** ****");
