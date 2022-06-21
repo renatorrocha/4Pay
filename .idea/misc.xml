@@ -29,6 +29,7 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/btn_alternativo.xml" value="0.1985" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/btnlogin.xml" value="0.3465" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/extrato_shape.xml" value="0.3465" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/fatura_shape.xml" value="0.3465" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/ic_arrow_right.xml" value="0.192" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/ic_baseline_data_usage_24.xml" value="0.192" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/drawable/ic_conf.xml" value="0.192" />
@@ -43,6 +44,7 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.29010416666666666" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_cartao_criado.xml" value="0.2171875" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_cartao_criar_senha.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_cartao_fatura.xml" value="0.4" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_cartoes.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_chave_criada.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_confirmacao_pix.xml" value="0.264" />
