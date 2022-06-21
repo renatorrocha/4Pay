@@ -139,7 +139,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="307dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="23dp"
                 android:autofillHints="name"
                 android:hint="E-mail"
                 android:textColorHint="@color/preto"
@@ -159,8 +159,33 @@
                     android:textColor="@color/preto" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/logradouro"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:autofillHints="name"
+                android:hint="Endereço"
+                android:textColorHint="@color/preto"
+                app:boxStrokeColor="@color/preto"
+                app:hintTextColor="@color/preto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtemail"
+                app:startIconDrawable="@drawable/ic_address"
+                app:startIconTint="@color/preto">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtlogradouroAtt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress"
+                    android:textColor="@color/preto" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonSalvar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
@@ -180,10 +205,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/preto"
-                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/buttonSalvar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtemail" />
+                app:layout_constraintStart_toStartOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
