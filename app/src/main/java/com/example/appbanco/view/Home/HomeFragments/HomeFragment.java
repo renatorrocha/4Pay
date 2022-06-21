@@ -8,6 +8,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +17,12 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.appbanco.R;
+import com.example.appbanco.adapter.ExtratoAdapter;
 import com.example.appbanco.databinding.FragmentHomeBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Cartao;
+import com.example.appbanco.model.ExtratoModel;
 import com.example.appbanco.model.Notificacao;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Notificacoes;
@@ -30,12 +34,14 @@ import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
 import com.example.appbanco.view.Pagamentos.Pix.Pix;
 import com.example.appbanco.view.Pagamentos.Recarga.RecargaInicio;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -43,8 +49,13 @@ public class HomeFragment extends Fragment {
 
     private List<Cartao> cartaoList = new ArrayList<>();
     private List<Notificacao> notiList = new ArrayList<>();
+    private List<ExtratoModel> extratoList = new ArrayList<>();
+    private ExtratoAdapter extratoAdapter;
+    private RecyclerView rvExtrato;
     FragmentHomeBinding binding;
     private double userSaldo;
+    BottomSheetBehavior bottomSheetBehavior;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -78,10 +89,23 @@ public class HomeFragment extends Fragment {
         });
 
 
+        recuperarExtrato();
+
+        rvExtrato = view.findViewById(R.id.rv_extrato);
+        rvExtrato.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        rvExtrato.setHasFixedSize(true);
+        extratoAdapter = new ExtratoAdapter(extratoList, view.getContext());
+        rvExtrato.setAdapter(extratoAdapter);
+
+
+        ConstraintLayout clBehavior = view.findViewById(R.id.clBehavior);
+        bottomSheetBehavior = BottomSheetBehavior.from(clBehavior);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
         binding.ivEsconderSaldo.setOnClickListener(view1 -> {
             if (binding.ivEsconderSaldo.getDrawable().getConstantState() == ContextCompat.getDrawable(getContext(), R.drawable.ic_eye).getConstantState()) {
                 binding.ivEsconderSaldo.setImageResource(R.drawable.ic_eye_closed);
-                binding.tvSaldoValor.setText("**,**");
+                binding.tvSaldoValor.setText("***");
 
                 if (cartaoList.size() == 1) {
                     binding.tvNumCartao.setText("**** **** **** ****");
@@ -258,4 +282,35 @@ public class HomeFragment extends Fragment {
 
 
     }
+
+    private void recuperarExtrato() {
+        DatabaseReference extratoRef = FirebaseHelper.getDatabaseReference()
+                .child("extratos")
+                .child(FirebaseHelper.getIdFirebase());
+        extratoRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    extratoList.clear();
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        ExtratoModel extrato = ds.getValue(ExtratoModel.class);
+                        extratoList.add(extrato);
+                    }
+
+                } else {
+                    Toast.makeText(getView().getContext(), "Nenhum extrato encontrado.", Toast.LENGTH_SHORT).show();
+                }
+
+                Collections.reverse(extratoList);
+
+                extratoAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 }
