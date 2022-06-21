@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,265 +7,347 @@
     android:background="@drawable/background_alternativo"
     tools:context=".view.Pagamentos.Cartoes.CartaoFatura">
 
-    <TextView
-        android:id="@+id/tvTitulo"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/preto"
-        android:fontFamily="@font/nunito_regular"
-        android:paddingVertical="8dp"
-        android:text="Fatura"
-        android:textAlignment="center"
-        android:textColor="@color/rosa"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/ivArrowBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:src="@drawable/ic_arrow_back"
-        app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvTitulo"
-        app:tint="@color/white" />
-
-    <HorizontalScrollView
-        android:id="@+id/hsvCartoes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo">
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clListaCartoes"
+        <TextView
+            android:id="@+id/tvTitulo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/preto"
+            android:fontFamily="@font/nunito_regular"
+            android:paddingVertical="8dp"
+            android:text="Fatura"
+            android:textAlignment="center"
+            android:textColor="@color/rosa"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/clCartaoFrente"
-                            android:layout_width="360dp"
-                            android:layout_height="220dp"
-                            android:background="@drawable/credit_card"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/ivArrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitulo"
+            app:tint="@color/white" />
 
-                            <TextView
-                                android:id="@+id/tvTipoCartao"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginRight="8dp"
-                                android:fontFamily="@font/nunito_regular"
-                                android:text="Credit card"
-                                android:textColor="@color/preto"
-                                android:textSize="12sp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+        <HorizontalScrollView
+            android:id="@+id/hsvCartoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo">
 
-                            <TextView
-                                android:id="@+id/tvFatura"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginBottom="24dp"
-                                android:fontFamily="@font/nunito_bold"
-                                android:text="R$ 1480,00"
-                                android:textColor="@color/preto"
-                                android:textSize="20dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent" />
-
-                            <TextView
-                                android:id="@+id/tvValidadeCartao"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="8dp"
-                                android:layout_marginBottom="16dp"
-                                android:fontFamily="@font/nunito_regular"
-                                android:text="@string/txt_cartao_validade"
-                                android:textColor="@color/preto"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clCartaoTras"
-                android:layout_width="360dp"
-                android:layout_height="220dp"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/credit_card_back"
-                app:layout_constraintStart_toEndOf="@id/clCartaoFrente"
-                app:layout_constraintTop_toTopOf="parent">
+                android:id="@+id/clListaCartoes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="Cod segurança"
-                    android:textColor="@color/preto"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toTopOf="@id/tvPin"
-                    app:layout_constraintStart_toStartOf="@id/tvPin"
-                    app:layout_constraintEnd_toEndOf="@id/tvPin"/>
-
-                <TextView
-                    android:id="@+id/tvPin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_bold"
-                    android:text="123"
-                    android:textColor="@color/preto"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@id/tvDataValidade"
-                    app:layout_constraintBottom_toBottomOf="@id/tvDataCriacao"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="Validade"
-                    android:textColor="@color/preto"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toTopOf="@id/tvDataValidade"
-                    app:layout_constraintStart_toStartOf="@id/tvDataValidade"
-                    app:layout_constraintEnd_toEndOf="@id/tvDataValidade"/>
-
-                <TextView
-                    android:id="@+id/tvDataValidade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_bold"
-                    android:text="06/28"
-                    android:textColor="@color/preto"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@id/tvDataCriacao"
-                    app:layout_constraintStart_toEndOf="@id/tvDataCriacao"
-                    app:layout_constraintEnd_toStartOf="@id/tvPin"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="Membro desde"
-                    android:textColor="@color/preto"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toTopOf="@id/tvDataCriacao"
-                    app:layout_constraintStart_toStartOf="@id/tvDataCriacao"
-                    app:layout_constraintEnd_toEndOf="@id/tvDataCriacao"/>
-
-                <TextView
-                    android:id="@+id/tvDataCriacao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/nunito_bold"
-                    android:text="06/20"
-                    android:textColor="@color/preto"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toTopOf="@id/tvNumCartaoDois"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clCartaoFrente"
+                    android:layout_width="360dp"
+                    android:layout_height="220dp"
+                    android:background="@drawable/credit_card"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/tvDataValidade"/>
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvTipoCartao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="Credit card"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvValorDisponivel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="R$ 1480,00"
+                        android:textColor="@color/preto"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvValidadeCartao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="@string/txt_cartao_validade"
+                        android:textColor="@color/preto"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clCartaoTras"
+                    android:layout_width="360dp"
+                    android:layout_height="220dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/credit_card_back"
+                    app:layout_constraintStart_toEndOf="@id/clCartaoFrente"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="Cod segurança"
+                        android:textColor="@color/preto"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvPin"
+                        app:layout_constraintEnd_toEndOf="@id/tvPin"
+                        app:layout_constraintStart_toStartOf="@id/tvPin" />
+
+                    <TextView
+                        android:id="@+id/tvPin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="123"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvDataCriacao"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvDataValidade" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="Validade"
+                        android:textColor="@color/preto"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvDataValidade"
+                        app:layout_constraintEnd_toEndOf="@id/tvDataValidade"
+                        app:layout_constraintStart_toStartOf="@id/tvDataValidade" />
+
+                    <TextView
+                        android:id="@+id/tvDataValidade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="06/28"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvDataCriacao"
+                        app:layout_constraintEnd_toStartOf="@id/tvPin"
+                        app:layout_constraintStart_toEndOf="@id/tvDataCriacao" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="Membro desde"
+                        android:textColor="@color/preto"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvDataCriacao"
+                        app:layout_constraintEnd_toEndOf="@id/tvDataCriacao"
+                        app:layout_constraintStart_toStartOf="@id/tvDataCriacao" />
+
+                    <TextView
+                        android:id="@+id/tvDataCriacao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="06/20"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvNumCartao"
+                        app:layout_constraintEnd_toStartOf="@id/tvDataValidade"
+                        app:layout_constraintStart_toStartOf="parent" />
 
 
-                <TextView
-                    android:id="@+id/tvNumCartaoDois"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginRight="16dp"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="1234   5678   9876   5432"
-                    android:textColor="@color/preto"
-                    android:textSize="22sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvDataValidade"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    <TextView
+                        android:id="@+id/tvNumCartao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="1234   5678   9876   5432"
+                        android:textColor="@color/preto"
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDataValidade" />
 
 
-                <!--                <TextView-->
-                <!--                    android:id="@+id/tvValidadeCartaoDois"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginRight="8dp"-->
-                <!--                    android:layout_marginBottom="16dp"-->
-                <!--                    android:fontFamily="@font/nunito_regular"-->
-                <!--                    android:text="@string/txt_cartao_validade"-->
-                <!--                    android:textColor="@color/preto"-->
-                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--                    app:layout_constraintEnd_toEndOf="parent" />-->
+                    <!--                <TextView-->
+                    <!--                    android:id="@+id/tvValidadeCartaoDois"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_marginRight="8dp"-->
+                    <!--                    android:layout_marginBottom="16dp"-->
+                    <!--                    android:fontFamily="@font/nunito_regular"-->
+                    <!--                    android:text="@string/txt_cartao_validade"-->
+                    <!--                    android:textColor="@color/preto"-->
+                    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                    app:layout_constraintEnd_toEndOf="parent" />-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
 
+        <TextView
+            android:id="@+id/tvLimiteMes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Limite do mês"
+            android:textColor="@color/preto"
+            app:layout_constraintStart_toStartOf="@id/hsvCartoes"
+            app:layout_constraintTop_toBottomOf="@id/hsvCartoes" />
 
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/tvLimiteMes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Limite do mês"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/nunito_regular"
-        android:textColor="@color/preto"
-        app:layout_constraintTop_toBottomOf="@id/hsvCartoes"
-        app:layout_constraintStart_toStartOf="@id/hsvCartoes" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clLimite"
             android:layout_width="360dp"
             android:layout_height="38dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/fatura_shape"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvLimiteMes">
 
             <TextView
                 android:id="@+id/tvValorFatura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="R$ 120,00"
                 android:layout_marginLeft="16dp"
                 android:fontFamily="@font/nunito_regular"
+                android:text="R$ 120,00"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvValorLimite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="R$ 1600,00"
                 android:layout_marginRight="16dp"
                 android:fontFamily="@font/nunito_regular"
+                android:text="R$ 1600,00"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <Button
+            android:id="@+id/btnFatura"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/rosa_salmao"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Pagar fatura"
+            android:textAllCaps="false"
+            android:textColor="@color/preto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clLimite" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBehavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_peekHeight="220dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:background="@drawable/extrato_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvLinha2"
+                android:layout_width="52dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btnlogin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
+            <TextView
+                android:id="@+id/tvHistorico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:layout_marginLeft="12dp"
+                android:text="Historico"
+                android:textColor="@color/preto"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLinha2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Ultimas movimentações"
+                android:textColor="@color/preto"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvHistorico"
+                app:layout_constraintTop_toBottomOf="@id/tvHistorico" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_extrato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingBottom="52dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHistorico" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
