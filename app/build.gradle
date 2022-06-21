@@ -66,5 +66,9 @@ dependencies {
 //    SeekBar
     implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
 
+//    SlideUp
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
+    implementation 'com.android.support:multidex:1.0.3'
+
 
 }
