@@ -51,6 +51,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:30.1.0')
     implementation 'com.google.firebase:firebase-auth:21.0.5'
     implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
 
     implementation 'com.github.BlacKCaT27:CurrencyEditText:2.0.2'
     //  Retrofit
@@ -64,6 +65,14 @@ dependencies {
     //  Meow Bottom nav menu
     implementation 'com.etebarian:meow-bottom-navigation:1.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
+
+    //Pegar imagem da galeria
+    // Normal
+    implementation 'io.github.ParkSangGwon:tedpermission-normal:3.3.0'
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
+
 
     //  Swipeable RecyclerView
     implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'

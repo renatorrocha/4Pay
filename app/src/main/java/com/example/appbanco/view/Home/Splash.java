@@ -20,7 +20,9 @@ public class Splash extends AppCompatActivity {
 
         new Handler(Looper.getMainLooper()).postDelayed(this::verificarLogin, 3000);
 
-//        verificarLogin();
+        //verificarLogin();
+
+
     }
 
     private void verificarLogin() {
