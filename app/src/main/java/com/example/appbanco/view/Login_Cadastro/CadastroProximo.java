@@ -22,6 +22,7 @@ import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Endereco;
 import com.example.appbanco.model.MyApi;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Home.Home;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -222,7 +223,7 @@ public class CadastroProximo extends AppCompatActivity {
             if (task.isSuccessful()) {
                 getUserData();
                 finish();
-                startActivity(new Intent(this, TipoConta.class));
+                startActivity(new Intent(this, Home.class));
             } else {
                 progressbar.setVisibility(View.GONE);
                 Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
