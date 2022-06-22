@@ -8,190 +8,308 @@
     tools:context=".view.Pagamentos.Pix.Chave_Pix.TipoChave">
 
     <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/nunito_bold"
-        android:text="@string/txt_tipo_chave"
+        android:background="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingVertical="8dp"
+        android:text="Chaves Pix"
         android:textAlignment="center"
-        android:textColor="@color/preto"
-        android:textSize="24sp"
+        android:textColor="@color/rosa"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvEmail"
+    <ImageView
+        android:id="@+id/ivArrowBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:fontFamily="@font/nunito_regular"
-        android:text="@string/txt_opc_email_pix"
-        android:textColor="@color/preto"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintHorizontal_bias="0.055"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toTopOf="@id/tvTitulo"
+        app:tint="@color/white" />
 
     <TextView
-        android:id="@+id/TvChaveEmail"
+        android:id="@+id/tvDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="@string/txt_hint_email"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
-        app:layout_constraintStart_toEndOf="@+id/tvEmail"
-        app:layout_constraintTop_toTopOf="@+id/tvEmail"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="match_parent"
-        android:layout_height="7dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="@string/txt_desc_chave_pix"
+        android:textSize="12sp"
+        android:layout_marginLeft="28dp"
+        android:textAlignment="textStart"
         android:layout_marginTop="12dp"
-        android:background="@drawable/line_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TvChaveEmail" />
-
-    <TextView
-        android:id="@+id/tvCpf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/nunito_regular"
-        android:text="@string/txt_opc_cpf_pix"
         android:textColor="@color/preto"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
-
-    <TextView
-        android:id="@+id/tvChaveCpf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="@string/txt_hint_cpf"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvCpf"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.701"
-        app:layout_constraintStart_toEndOf="@+id/tvCpf"
-        app:layout_constraintTop_toTopOf="@+id/tvCpf"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/line_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChaveCpf" />
-
-    <TextView
-        android:id="@+id/tvCelular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/nunito_regular"
-        android:text="@string/txt_opc_celular_pix"
-        android:textColor="@color/preto"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCpf" />
-
-    <TextView
-        android:id="@+id/tvChaveCelular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="@string/txt_hint_celular"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvCelular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvCelular"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:background="@drawable/line_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCelular" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
 
     <Button
-        android:id="@+id/btnTipoChaveProximo"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnCriarChave"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/btnlogin"
-        android:text="@string/txt_proximo"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/azul_claro"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Criar chave"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/preto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDesc" />
+
+    <TextView
+        android:id="@+id/tvLinha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/line_shape_cinza"
+        app:layout_constraintTop_toBottomOf="@id/btnCriarChave"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tvGerarChave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:text="@string/txt_chave_quantidade"
         android:fontFamily="@font/nunito_regular"
-        android:text="@string/txt_gerar_chave"
+        android:layout_marginTop="8dp"
         android:textColor="@color/preto"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvCelular"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvCelular"
-        app:layout_constraintTop_toBottomOf="@+id/tvCelular" />
-
-    <TextView
-        android:id="@+id/tvChaveAleatoria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="@string/txt_hint_chave_aleatoria"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvGerarChave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tvGerarChave"
-        app:layout_constraintTop_toTopOf="@+id/tvGerarChave"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/line_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tvLinha"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChaveAleatoria" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChavesPix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@id/tvLinha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/clSuasChaves"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvDesc">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/clEmail"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cvEmail"-->
+<!--                android:layout_width="36dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:backgroundTint="@color/azul_claro"-->
+<!--                app:cardCornerRadius="6dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_margin="4dp"-->
+<!--                    android:src="@drawable/ic_email" />-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvEmail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:fontFamily="@font/nunito_regular"-->
+<!--                android:text="@string/txt_opc_email_pix"-->
+<!--                android:textColor="@color/preto"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/tvChaveEmail"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cvEmail"-->
+<!--                app:layout_constraintTop_toTopOf="@id/cvEmail" />-->
+<!--            -->
+<!--            <TextView-->
+<!--                android:id="@+id/tvChaveEmail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="joao@gmail.com"-->
+<!--                android:layout_marginBottom="6dp"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tvEmail"-->
+<!--                app:layout_constraintStart_toStartOf="@id/tvEmail"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"/>-->
+<!--                -->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/line_shape_cinza"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/clCelular"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/clEmail">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cvCelular"-->
+<!--                android:layout_width="36dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:backgroundTint="@color/azul_claro"-->
+<!--                app:cardCornerRadius="6dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_margin="4dp"-->
+<!--                    android:src="@drawable/ic_cel"-->
+<!--                    app:tint="@color/preto" />-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:fontFamily="@font/nunito_regular"-->
+<!--                android:text="@string/txt_opc_celular_pix"-->
+<!--                android:textColor="@color/preto"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/cvCelular"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cvCelular"-->
+<!--                app:layout_constraintTop_toTopOf="@id/cvCelular" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/line_shape_cinza"-->
+<!--                android:paddingTop="2dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/cvCelular" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/clCpf"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/clCelular">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cvCpf"-->
+<!--                android:layout_width="36dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:backgroundTint="@color/azul_claro"-->
+<!--                app:cardCornerRadius="6dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_margin="4dp"-->
+<!--                    android:src="@drawable/ic_id" -->
+<!--                    app:tint="@color/preto" />-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:fontFamily="@font/nunito_regular"-->
+<!--                android:text="@string/txt_opc_cpf_pix"-->
+<!--                android:textColor="@color/preto"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/cvCpf"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cvCpf"-->
+<!--                app:layout_constraintTop_toTopOf="@id/cvCpf" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/line_shape_cinza"-->
+<!--                android:paddingTop="2dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/cvCpf" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/clSobre"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/clCpf">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cvSobre"-->
+<!--                android:layout_width="36dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:backgroundTint="@color/azul_claro"-->
+<!--                app:cardCornerRadius="6dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_margin="4dp"-->
+<!--                    android:src="@drawable/ic_sec" />-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="12dp"-->
+<!--                android:fontFamily="@font/nunito_regular"-->
+<!--                android:text="@string/txt_chave_aleatoria"-->
+<!--                android:textColor="@color/preto"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/cvSobre"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cvSobre"-->
+<!--                app:layout_constraintTop_toTopOf="@id/cvSobre" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/line_shape_cinza"-->
+<!--                android:paddingTop="2dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/cvSobre" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
