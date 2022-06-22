@@ -17,7 +17,6 @@ import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Cartao;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Login_Cadastro.TipoConta;
 import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PixCobrarFinal;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
