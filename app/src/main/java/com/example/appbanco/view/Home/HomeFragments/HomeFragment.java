@@ -25,6 +25,7 @@ import com.example.appbanco.model.Cartao;
 import com.example.appbanco.model.ExtratoModel;
 import com.example.appbanco.model.Notificacao;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.ChatBot.ChatBot;
 import com.example.appbanco.view.Home.Notificacoes;
 import com.example.appbanco.view.Home.Seguros;
 import com.example.appbanco.view.Pagamentos.Cartoes.CartaoCriarSenha;
@@ -88,6 +89,10 @@ public class HomeFragment extends Fragment {
 
         binding.ivNoti.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), Notificacoes.class));
+        });
+
+        binding.clAtendimento.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), ChatBot.class));
         });
 
 
