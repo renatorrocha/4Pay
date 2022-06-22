@@ -88,9 +88,32 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/viewpager_item.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1435" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.201" />
+<<<<<<< .idea/misc.xml
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_atualizar_dados.xml" value="0.175" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_deposito_form.xml" value="0.175" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_deposito_recibo.xml" value="0.4" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_home_configs.xml" value="0.1" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_meus_dados.xml" value="0.1" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_recarga.xml" value="0.175" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_recarga_operadora.xml" value="0.175" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_recarga_pagamento.xml" value="0.175" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_recarga_recibo.xml" value="0.264" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/activity_recarga_valor_cartao.xml" value="0.2" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/fragment_meus_dados.xml" value="0.264" />
+        <entry key="..\:/Users/igorm/AndroidStudioProjects/4PAY/app/src/main/res/layout/fragment_profile.xml" value="0.175" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_atualizar_dados.xml" value="0.4" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_cadastro.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.4" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_deposito_recibo.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_home_configs.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_meus_dados.xml" value="0.264" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_seguros_ativos.xml" value="0.4" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/fragment_configs.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/fragment_home.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/fragment_meus_dados.xml" value="0.176" />
+        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/fragment_profile.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/item_seguro.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/list_seguros.xml" value="0.4" />
         <entry key="..\:/Users/user/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.3375" />
