@@ -1,4 +1,4 @@
-package com.example.appbanco.view.Pagamentos.Pix;
+package com.example.appbanco.view.Pagamentos.Pix.PixTransferir;
 
 import android.content.Intent;
 import android.os.Bundle;

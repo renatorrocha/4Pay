@@ -1,4 +1,4 @@
-package com.example.appbanco.view.Pagamentos.Pix;
+package com.example.appbanco.view.Pagamentos.Pix.PixTransferir;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,6 @@ import com.example.appbanco.databinding.ActivityPixTransfBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Transferencia;
 
-import java.util.Date;
 import java.util.Locale;
 
 public class PixTransf extends AppCompatActivity {
@@ -40,7 +39,6 @@ public class PixTransf extends AppCompatActivity {
 
             Transferencia transf = new Transferencia();
             transf.setIdUserOrigem(FirebaseHelper.getIdFirebase());
-            transf.setData(new Date());
             transf.setValor(value);
 
             Intent intent = new Intent(this, PixTransfDestino.class);

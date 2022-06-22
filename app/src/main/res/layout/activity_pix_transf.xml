@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo"
-    tools:context=".view.Pagamentos.Pix.PixTransf">
+    tools:context=".view.Pagamentos.Pix.PixTransferir.PixTransf">
 
     <TextView
         android:id="@+id/textView7"
