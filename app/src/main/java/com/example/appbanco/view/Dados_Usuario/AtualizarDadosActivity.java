@@ -1,11 +1,18 @@
 package com.example.appbanco.view.Dados_Usuario;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.ImageDecoder;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -22,8 +29,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.normal.TedPermission;
+
+
+import java.io.IOException;
+import java.util.List;
 
 public class AtualizarDadosActivity extends AppCompatActivity {
+
+    private final int REQUEST_GALERIA = 100;
 
     private ImageView ivArrowBack;
     private EditText edtNomeAtt;
@@ -33,6 +48,9 @@ public class AtualizarDadosActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private Usuario usuario;
     private Button buttonSalvar;
+    private ImageView ivUserFoto;
+
+    private String caminhoImagem;
 
 
     @Override
@@ -125,7 +143,45 @@ public class AtualizarDadosActivity extends AppCompatActivity {
             }
         });
 
+        ivUserFoto.setOnClickListener(v -> verificaPermissaogaleria());
+
     }
+
+    private void verificaPermissaogaleria() {
+        PermissionListener permissionListener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                abrirGaleria();
+            }
+
+
+            @Override
+            public void onPermissionDenied(List<String> deniedPermissions) {
+                Toast.makeText(AtualizarDadosActivity.this, "Permissão negada", Toast.LENGTH_SHORT);
+            }
+        };
+
+        TedPermission.create()
+                .setPermissionListener(permissionListener)
+                .setDeniedTitle("Permissão negada")
+                .setDeniedMessage("Você precisa aceitar a permissão para acessar a galeria do " +
+                        "dispositivo, deseja fazer isso agora?")
+                .setDeniedCloseButtonText("não")
+                .setGotoSettingButtonText("Sim")
+                .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .check();
+
+    }
+
+    //Método pra abrir a galeria do dispositivo
+    private void abrirGaleria() {
+
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, REQUEST_GALERIA);
+    }
+
+
+    //Metodo pra resgatar os dados do usuario
     private void getUserData() {
         DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
@@ -145,6 +201,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         });
     }
 
+    //Metodo pra iniciar o FindView dos componentes
     private void iniciaComponetes() {
 
         ivArrowBack = findViewById(R.id.ivArrowBack);
@@ -154,6 +211,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         buttonSalvar = findViewById(R.id.buttonSalvar);
         edtLogradouroAtt = findViewById(R.id.edtlogradouroAtt);
+        ivUserFoto = findViewById(R.id.ivUserFoto);
 
     }
 
@@ -162,5 +220,43 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(edtNomeAtt.getWindowToken(),
                 InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK){
+            if(requestCode == REQUEST_GALERIA){
+
+                Bitmap bitmap;
+
+                Uri imagemSelecionada = data.getData();
+                caminhoImagem = data.getData().toString();
+
+                if(Build.VERSION.SDK_INT < 28){
+
+                    try {
+                        bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),
+                                imagemSelecionada);
+                        ivUserFoto.setImageBitmap(bitmap);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }else{
+
+                    ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(),
+                            imagemSelecionada);
+                    try {
+                        bitmap = ImageDecoder.decodeBitmap(source);
+                        ivUserFoto.setImageBitmap(bitmap);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        }
     }
 }
