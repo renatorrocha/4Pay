@@ -39,8 +39,8 @@ public class SegurosAtivos extends AppCompatActivity {
                     "imprevistos", "10/25"));
         }
         if (seguros.getSeguroVida()) {
-            listSeguros.add(new ListaSeguro("Seguro de Vida", "Seu corpinho " +
-                    "ainda vai ser meu >:)", "10/25"));
+            listSeguros.add(new ListaSeguro("Seguro de Vida", "Com nosso seguro" +
+                    "você pode ficar tranquilo em momentos difíceis.", "10/25"));
         }
         rvSeguros = findViewById(R.id.rvSegurosAtivos);
         rvSeguros.setLayoutManager(new LinearLayoutManager(this));

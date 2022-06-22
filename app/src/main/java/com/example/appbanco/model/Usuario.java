@@ -1,6 +1,11 @@
 package com.example.appbanco.model;
 
+import android.content.Intent;
+import android.view.View;
+import android.widget.Toast;
+
 import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.view.Login_Cadastro.CadastroProximo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
@@ -21,6 +26,7 @@ public class Usuario implements Serializable {
         private Endereco endereco;
         private SegurosUsuario seguros;
 
+
     public Usuario() {
         }
 
@@ -31,6 +37,7 @@ public class Usuario implements Serializable {
                 .child("saldo");
         usuarioRef.setValue(getSaldo());
     }
+
 
         public String getId() {
             return id;
