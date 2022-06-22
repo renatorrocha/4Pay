@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< app/src/main/java/com/example/appbanco/view/Home/HomeFragments/ConfigsFragment.java
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+
 import com.example.appbanco.R;
-import com.example.appbanco.adapter.Photo;
-import com.example.appbanco.adapter.Photoadapter;
 import com.example.appbanco.databinding.FragmentConfigsBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Usuario;
@@ -27,8 +27,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 
 public class ConfigsFragment extends Fragment {

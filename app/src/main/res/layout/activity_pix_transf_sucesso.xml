@@ -11,130 +11,219 @@
         android:background="@drawable/background_alternativo"
         tools:context=".view.PixTransfSucesso">
 
-        <TextView
-            android:id="@+id/tvTitulo"
-            android:layout_width="279dp"
-            android:layout_height="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lineard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_alternativo"
+            >
+
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Recibo"
+                android:textColor="@color/preto"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/line_shape"
+                android:textColor="@color/preto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+
+
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="279dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Transferência realizada com sucesso!"
+                android:textAlignment="center"
+                android:textColor="@color/teal_700"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView28" />
+
+            <TextView
+                android:id="@+id/tvCodTransf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Código transação"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/preto"
+                android:fontFamily="@font/nunito_regular"
+                app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCodigoTransferencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:text="-MEiz1lUlLnXxLLxK9Yh"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCodTransf"/>
+
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/divisor"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCodigoTransferencia" />
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/tvValorTransfSucesso"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            -->
+            <!--            android:fontFamily="@font/nunito_regular"-->
+            <!--            android:text="Valor da transferencia"-->
+            <!--            android:textColor="@color/preto"-->
+            <!--            android:textSize="18sp"-->
+            <!--            app:layout_constraintStart_toStartOf="@id/tvTitulo"-->
+            <!--            app:layout_constraintTop_toBottomOf="@id/textView29" />-->
+
+            <TextView
+                android:id="@+id/tvPixDataTransf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="24dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Data "
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/include"/>
+
+            <TextView
+                android:id="@+id/tvPixData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="24dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="16/06/2022 21:57"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/include"/>
+
+
+
+            <TextView
+                android:id="@+id/tvPixFinalValor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="24dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Valor"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPixData" />
+
+            <TextView
+                android:id="@+id/tvValorPixFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_regular"
+                android:layout_marginRight="24dp"
+                android:text="R$ 100,00"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPixData" />
+
+            <TextView
+                android:id="@+id/tvPixFinalPessoa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="24dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Para "
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPixFinalValor" />
+
+
+
+            <TextView
+                android:id="@+id/tvPixFinalPessoaPara"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:text="João"
+                android:textColor="@color/preto"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvValorPixFinal"/>
+
+
+
+
+            <Button
+                android:id="@+id/btnProximo"
+                android:layout_width="280dp"
+                android:layout_height="54dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/btnlogin"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Concluido"
+                android:textAllCaps="false"
+                android:textColor="@color/branco"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/btnd"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/nunito_bold"
-            android:text="Transferência realizada com sucesso!"
-            android:textAlignment="center"
-            android:textColor="@color/preto"
-            android:textSize="26sp"
+            android:src="@drawable/ic_pdf"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvValorTransfSucesso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text="Valor da transferencia"
-            android:textColor="@color/preto"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/tvTitulo"
-            app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
-
-        <TextView
-            android:id="@+id/tvValorPixFinal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/nunito_bold"
-            android:text="R$ 100,00"
-            android:textColor="@color/preto"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/tvTitulo"
-            app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
-
-        <TextView
-            android:id="@+id/tvPixFinalPessoa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text="Para"
-            android:textColor="@color/preto"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/tvValorTransfSucesso"
-            app:layout_constraintTop_toBottomOf="@id/tvValorTransfSucesso" />
-
-        <TextView
-            android:id="@+id/tvPixFinalPessoaPara"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/nunito_bold"
-            android:text="João"
-            android:textColor="@color/preto"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/tvValorPixFinal"
-            app:layout_constraintTop_toBottomOf="@id/tvValorPixFinal"/>
-
-        <TextView
-            android:id="@+id/tvCodigoTransferencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="32dp"
-            android:fontFamily="@font/nunito_bold"
-            android:text="Codigo"
-            android:textColor="@color/preto"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPixFinalPessoaPara"/>
-
-        <TextView
-            android:id="@+id/tvPixDataTransf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text="Data transferência"
-            android:textColor="@color/preto"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/tvPixFinalPessoa"
-            app:layout_constraintTop_toBottomOf="@id/tvCodigoTransferencia"/>
-
-        <TextView
-            android:id="@+id/tvPixData"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text="16/06/2022"
-            android:textColor="@color/preto"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/tvValorPixFinal"
-            app:layout_constraintTop_toBottomOf="@id/tvCodigoTransferencia"/>
-
-
-        <ImageView
-            android:id="@+id/ivCartaoCriado"
-            android:layout_width="285dp"
-            android:layout_height="285dp"
-            android:layout_marginBottom="32dp"
-            android:src="@drawable/img_cartao_criado"
-            app:layout_constraintBottom_toTopOf="@id/btnProximo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/btnProximo"
-            android:layout_width="280dp"
-            android:layout_height="54dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/btnlogin"
-            android:fontFamily="@font/nunito_bold"
-            android:text="Confirmar"
-            android:textAllCaps="false"
-            android:textColor="@color/branco"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

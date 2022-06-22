@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo"
-    tools:context=".view.Pagamentos.Pix.PixTransfFinal">
+    tools:context=".view.Pagamentos.Pix.PixTransferir.PixTransfFinal">
 
     <TextView
         android:id="@+id/textView4"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvUserDestino" />
 
     <TextView
-        android:id="@+id/tvDataTransf"
+        android:id="@+id/tvData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="46dp"
@@ -120,7 +120,7 @@
         android:text="***.123.***0-**"
         android:textColor="@color/preto"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@id/tvDataTransf"
+        app:layout_constraintStart_toStartOf="@id/tvData"
         app:layout_constraintTop_toTopOf="@id/tvCpfFinal" />
 
     <TextView

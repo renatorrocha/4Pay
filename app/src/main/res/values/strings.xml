@@ -40,5 +40,12 @@
     <string name="txt_noti">Notificações</string>
     <string name="txt_sobre">Sobre</string>
     <string name="txt_sair">Sair</string>
-    <string name="txt_codigo_cartao">*** *** *** 8734</string>
+    <string name="txt_codigo_cartao">**** **** **** 8734</string>
+    <string name="txt_codigo_cartao_put">**** **** **** %1$s</string>
+    <string name="txt_cobranca">Solicitação de cobrança</string>
+    <string name="txt_msg">Clique na notificação para mais informações.</string>
+    <string name="txt_enviada_por">Enviada por %1$s</string>
+    <string name="txt_enviado_por">Enviado por %1$s</string>
+    <string name="txt_cartao_validade">07/29</string>
+    <string name="txt_descrição_cobrar">Informe o valor a ser cobrado</string>
 </resources>

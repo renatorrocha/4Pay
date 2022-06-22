@@ -1,20 +1,21 @@
-package com.example.appbanco.view.Pagamentos.Pix;
+package com.example.appbanco.view.Pagamentos.Pix.PixCobrar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.appbanco.R;
-import com.example.appbanco.databinding.ActivityPixTransfDestinoBinding;
+import com.example.appbanco.databinding.ActivityPixCobrarDestinoBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
+import com.example.appbanco.model.Cobranca;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransfDestino;
+import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransfFinal;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,33 +23,32 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-public class PixTransfDestino extends AppCompatActivity {
+public class PixCobrarDestino extends AppCompatActivity {
 
-    ActivityPixTransfDestinoBinding binding;
+    ActivityPixCobrarDestinoBinding binding;
     List<Usuario> usuarioList = new ArrayList<>();
     private String pesquisa = "";
-    private Transferencia transf;
-    private Usuario userDestino;
+    private Cobranca cobranca;
+    private Usuario userDestinatario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityPixTransfDestinoBinding.inflate(getLayoutInflater());
+        binding = ActivityPixCobrarDestinoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         getAllUsersData();
 
-        transf = (Transferencia) getIntent().getSerializableExtra("transferencia");
-        binding.tvValorPix.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(transf.getValor())));
+        cobranca = (Cobranca) getIntent().getSerializableExtra("cobranca");
+        binding.tvValorPix.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(cobranca.getValor())));
 
 
         binding.btnPixFinal.setOnClickListener(view -> {
             configPesquisa();
         });
-
     }
+
 
     private void getAllUsersData() {
         DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
@@ -64,10 +64,10 @@ public class PixTransfDestino extends AppCompatActivity {
                             if (!usuario.getId().equals(FirebaseHelper.getIdFirebase())) {
                                 usuarioList.add(usuario);
                             }
+                        } else {
+                            Toast.makeText(PixCobrarDestino.this, "Nenhum usuario cadastrado.", Toast.LENGTH_SHORT).show();
                         }
                     }
-                } else {
-                    Toast.makeText(PixTransfDestino.this, "Nenhum usuario cadastrado.", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -89,22 +89,24 @@ public class PixTransfDestino extends AppCompatActivity {
     }
 
     private void pesquisarUsuarios(String pesquisa) {
+        boolean userEncontrado = false;
         for (int i = 0; i < usuarioList.size(); i++) {
             if (pesquisa.equals(usuarioList.get(i).getEmail())) {
-                userDestino = usuarioList.get(i);
-                Intent intent = new Intent(this, PixTransfFinal.class);
+                userEncontrado = true;
+                userDestinatario = usuarioList.get(i);
+                Intent intent = new Intent(this, PixCobrarFinal.class);
 
-                transf.setIdUserDestino(userDestino.getId());
-                intent.putExtra("userDestino", userDestino);
-                intent.putExtra("transferencia", transf);
+                cobranca.setIdDestinatario(userDestinatario.getId());
+                intent.putExtra("userDestinatario", userDestinatario);
+                intent.putExtra("cobranca", cobranca);
                 startActivity(intent);
             }
         }
 
-        if (usuarioList.isEmpty()) {
+        if (!userEncontrado) {
             Toast.makeText(this, "Nenhum usuario com este nome.", Toast.LENGTH_SHORT).show();
-
         }
+
     }
 
 }
