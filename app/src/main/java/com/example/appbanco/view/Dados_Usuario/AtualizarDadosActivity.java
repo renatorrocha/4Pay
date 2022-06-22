@@ -29,8 +29,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.normal.TedPermission;
+import com.squareup.picasso.Picasso;
 
 
 import java.io.IOException;
@@ -80,7 +83,11 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                 usuario.setNome(nome);
                 //usuario.setNumero(numero);
 
-                salvarDadosUser();
+                if(caminhoImagem != null){
+                    salvarImagemFirebase();
+                }else{
+                    salvarDadosUser();
+                }
 
                 /*if(!endereco.isEmpty()){
 
@@ -99,6 +106,25 @@ public class AtualizarDadosActivity extends AppCompatActivity {
             edtNomeAtt.setError("Informe seu nome");
         }
 
+    }
+
+    private void salvarImagemFirebase(){
+
+        StorageReference storageReference = FirebaseHelper.getStorageReference()
+                .child("imagens")
+                .child("perfil")
+                .child(FirebaseHelper.getIdFirebase() +".JPEG");
+
+        UploadTask uploadTask = storageReference.putFile(Uri.parse(caminhoImagem));
+        uploadTask.addOnSuccessListener(taskSnapshot -> storageReference.getDownloadUrl()
+                .addOnCompleteListener(task -> {
+
+                    usuario.setUrlImagem(task.getResult().toString());
+                    salvarDadosUser();
+
+                }))
+                .addOnFailureListener(e -> Toast
+                .makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void salvarDadosUser() {
@@ -122,6 +148,11 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         edtEmailAtt.setText(usuario.getEmail());
         edtNomeAtt.setText(usuario.getNome());
         //edtLogradouroAtt.setText(usuario.getEndereco().getLogradouro());
+
+        if(usuario.getUrlImagem() != null){
+            Picasso.get().load(usuario.getUrlImagem())
+                    .into(ivUserFoto);
+        }
 
         progressBar.setVisibility((View.GONE));
     }
