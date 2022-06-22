@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
+            android:name=".view.ChatBot.ChatBot"
+            android:exported="false" />
+        <activity
             android:name=".view.Pagamentos.Cartoes.CartaoFatura"
             android:exported="false" />
         <activity
