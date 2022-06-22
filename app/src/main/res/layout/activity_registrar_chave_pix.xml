@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".view.Pagamentos.Pix.Chave_Pix.RegistrarChavePix">
 
     <TextView
@@ -13,7 +14,7 @@
         android:background="@color/preto"
         android:fontFamily="@font/nunito_regular"
         android:paddingVertical="8dp"
-        android:text="Registrar {chave}"
+        android:text="@string/txt_registrar_chave"
         android:textAlignment="center"
         android:textColor="@color/rosa"
         android:textSize="28sp"
@@ -31,6 +32,76 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvTitulo"
         app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="@string/txt_desc_tipo_chave"
+        android:textColor="@color/preto"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvChave"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="24dp"
+        android:backgroundTint="@color/azul_claro"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivTipoChave"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_email"
+            app:tint="@color/preto" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvChave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="@string/txt_opc_email_pix"
+        android:textColor="@color/preto"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tvChave"
+        app:layout_constraintStart_toEndOf="@id/cvChave"
+        app:layout_constraintTop_toTopOf="@id/cvChave" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvChaveUsuario"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="6dp"-->
+<!--        android:text="joao@gmail.com"-->
+<!--        app:layout_constraintStart_toStartOf="@id/tvChave"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvChave" />-->
+
+    <Button
+        android:id="@+id/btnCriarChave"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/azul_claro"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/txt_registrar_chave"
+        android:textAllCaps="false"
+        android:textColor="@color/preto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

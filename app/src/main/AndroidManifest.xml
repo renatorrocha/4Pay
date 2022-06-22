@@ -26,7 +26,6 @@
             android:name=".view.Dados_Usuario.MeusDadosActivity"
              android:exported="false" />
          <activity
->>>>>>> 0c6862edbcdda919de4080c7201f7ebcae350fc0
             android:name=".view.ChatBot.ChatBot"
             android:exported="false" />
         <activity
@@ -130,9 +129,6 @@
             android:exported="false" />
         <activity
             android:name=".view.Login_Cadastro.EsqueciSenha"
-            android:exported="false" />
-        <activity
-            android:name=".view.Login_Cadastro.TipoConta"
             android:exported="false" />
         <activity
             android:name=".view.Login_Cadastro.CadastroProximo"

@@ -51,4 +51,7 @@
     <string name="txt_desc_chave_pix">Gerencie suas chaves e crie chaves novas para enviar e receber transferências.</string>
     <string name="txt_chave_aleatoria">Chave aleatória</string>
     <string name="txt_chave_quantidade">Você possui %1$s de 4 chaves</string>
+    <string name="txt_desc_tipo_chave">Enviar e receber transferências pelo \n Pix usando apenas seu %1$s</string>
+    <string name="txt_registrar_chave">Registrar %1$s</string>
+
 </resources>
