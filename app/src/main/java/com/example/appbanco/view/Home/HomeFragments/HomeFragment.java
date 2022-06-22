@@ -64,6 +64,10 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
+        binding.clCartoes.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), Cartoes.class));
+        });
+
         binding.clDeposito.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), DepositofFormActivity.class));
         });

@@ -39,11 +39,12 @@
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvTituloCartoes">
+        app:layout_constraintTop_toBottomOf="@id/tvTituloCartoes"
+        app:layout_constraintBottom_toTopOf="@id/clGerarCartao">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clCartao"
-            android:layout_width="320dp"
+            android:layout_width="300dp"
             android:layout_height="160dp"
             android:background="@drawable/credit_card"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,9 +94,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clCartaoDois"
-            android:layout_width="320dp"
+            android:layout_width="300dp"
             android:layout_height="160dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/credit_card"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -144,9 +145,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clCartaoTres"
-            android:layout_width="320dp"
+            android:layout_width="300dp"
             android:layout_height="160dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/credit_card"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -201,9 +202,9 @@
         android:id="@+id/clGerarCartao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clListaCartoes">
+        app:layout_constraintBottom_toBottomOf="parent">
 
 
         <TextView
@@ -231,7 +232,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/line_shape_white"
+            android:background="@drawable/line_shape"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvGerarCartao" />
