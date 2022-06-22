@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.appbanco.databinding.ActivityTipoChaveBinding;
+import com.example.appbanco.view.Pagamentos.Pix.Pix;
 
 public class TipoChave extends AppCompatActivity {
 
@@ -17,8 +18,12 @@ public class TipoChave extends AppCompatActivity {
         binding = ActivityTipoChaveBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnTipoChaveProximo.setOnClickListener(view -> {
+        binding.btnCriarChave.setOnClickListener(view -> {
             startActivity(new Intent(this, ChaveCriada.class));
+        });
+
+        binding.ivArrowBack.setOnClickListener(view -> {
+            startActivity(new Intent(this, Pix.class));
         });
     }
 }

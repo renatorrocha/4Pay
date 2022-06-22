@@ -9,7 +9,7 @@
     <string name="imagem_chave_pix">Imagem Chave Pix</string>
     <string name="txt_tipo_chave">Selecione o tipo de chave</string>
     <string name="txt_opc_email_pix">Email</string>
-    <string name="txt_opc_cpf_pix">CPF</string>
+    <string name="txt_opc_cpf_pix">Cpf</string>
     <string name="txt_hint_email">Teste@foursys.com.br</string>
     <string name="txt_hint_cpf">123.3456.789-99</string>
     <string name="txt_hint_celular">(99)99999-9999</string>
@@ -48,4 +48,7 @@
     <string name="txt_enviado_por">Enviado por %1$s</string>
     <string name="txt_cartao_validade">07/29</string>
     <string name="txt_descrição_cobrar">Informe o valor a ser cobrado</string>
+    <string name="txt_desc_chave_pix">Gerencie suas chaves e crie chaves novas para enviar e receber transferências.</string>
+    <string name="txt_chave_aleatoria">Chave aleatória</string>
+    <string name="txt_chave_quantidade">Você possui %1$s de 4 chaves</string>
 </resources>
