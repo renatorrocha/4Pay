@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< app/src/main/java/com/example/appbanco/view/Home/HomeFragments/ConfigsFragment.java
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
