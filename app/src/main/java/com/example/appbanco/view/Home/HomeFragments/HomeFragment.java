@@ -28,6 +28,7 @@ import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Notificacoes;
 import com.example.appbanco.view.Home.Seguros;
 import com.example.appbanco.view.Pagamentos.Cartoes.CartaoCriarSenha;
+import com.example.appbanco.view.Pagamentos.Cartoes.CartaoFatura;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Cartoes.GerarCartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
@@ -52,9 +53,10 @@ public class HomeFragment extends Fragment {
     private List<ExtratoModel> extratoList = new ArrayList<>();
     private ExtratoAdapter extratoAdapter;
     private RecyclerView rvExtrato;
-    FragmentHomeBinding binding;
     private double userSaldo;
+    private Cartao cartaoUm, cartaoDois, cartaoTres;
     BottomSheetBehavior bottomSheetBehavior;
+    FragmentHomeBinding binding;
 
 
     @Override
@@ -62,7 +64,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        binding.clCartao.setOnClickListener(view1 -> {
+        binding.clCartoes.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), Cartoes.class));
         });
 
@@ -90,17 +92,38 @@ public class HomeFragment extends Fragment {
 
 
         recuperarExtrato();
-
         rvExtrato = view.findViewById(R.id.rv_extrato);
         rvExtrato.setLayoutManager(new LinearLayoutManager(view.getContext()));
         rvExtrato.setHasFixedSize(true);
         extratoAdapter = new ExtratoAdapter(extratoList, view.getContext());
         rvExtrato.setAdapter(extratoAdapter);
 
-
         ConstraintLayout clBehavior = view.findViewById(R.id.clBehavior);
         bottomSheetBehavior = BottomSheetBehavior.from(clBehavior);
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+        binding.clCartao.setOnClickListener(view1 -> {
+            if(cartaoList.size() < 1){
+                startActivity(new Intent(view.getContext(), GerarCartoes.class));
+            }else{
+                Intent it = new Intent(view.getContext(), CartaoFatura.class);
+                it.putExtra("cartao", cartaoUm);
+                startActivity(it);
+            }
+        });
+
+        binding.clCartaoDois.setOnClickListener(view1 -> {
+                Intent it = new Intent(view.getContext(), CartaoFatura.class);
+                it.putExtra("cartao", cartaoDois);
+                startActivity(it);
+        });
+
+        binding.clCartaoTres.setOnClickListener(view1 -> {
+            Intent it = new Intent(view.getContext(), CartaoFatura.class);
+            it.putExtra("cartao", cartaoTres);
+            startActivity(it);
+        });
+
 
         binding.ivEsconderSaldo.setOnClickListener(view1 -> {
             if (binding.ivEsconderSaldo.getDrawable().getConstantState() == ContextCompat.getDrawable(getContext(), R.drawable.ic_eye).getConstantState()) {
@@ -236,6 +259,7 @@ public class HomeFragment extends Fragment {
     private void verificarCartoes() {
 
         if (cartaoList.size() == 1) {
+            cartaoUm = cartaoList.get(0);
             binding.clCartao.setBackgroundResource(R.drawable.credit_card);
             binding.tvTipoCartao.setText(cartaoList.get(0).getTipo());
             String[] splitNumero = cartaoList.get(0).getNumeros().trim().split(" ");
@@ -247,6 +271,9 @@ public class HomeFragment extends Fragment {
 
 
         } else if (cartaoList.size() == 2) {
+            cartaoUm = cartaoList.get(0);
+            cartaoDois = cartaoList.get(1);
+
             binding.tvTipoCartao.setText(cartaoList.get(0).getTipo());
             String[] splitNumero = cartaoList.get(0).getNumeros().trim().split(" ");
             binding.tvNumCartao.setText(getString(R.string.txt_codigo_cartao_put, splitNumero[3]));
@@ -260,6 +287,10 @@ public class HomeFragment extends Fragment {
 
             binding.clListaCartoes.removeView(binding.clCartaoTres);
         } else if (cartaoList.size() == 3) {
+            cartaoUm = cartaoList.get(0);
+            cartaoDois = cartaoList.get(1);
+            cartaoTres = cartaoList.get(2);
+
             binding.clCartao.setBackgroundResource(R.drawable.credit_card);
             binding.tvTipoCartao.setText(cartaoList.get(0).getTipo());
             String[] splitNumero = cartaoList.get(0).getNumeros().trim().split(" ");
@@ -279,6 +310,8 @@ public class HomeFragment extends Fragment {
             binding.tvValidadeCartaoTres.setText(cartaoList.get(2).getDataVencimento());
 
         }
+
+
 
 
     }
