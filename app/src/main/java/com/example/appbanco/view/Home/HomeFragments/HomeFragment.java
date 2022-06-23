@@ -41,6 +41,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -188,6 +189,10 @@ public class HomeFragment extends Fragment {
                 binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(userSaldo)));
                 String[] splitName = user.getNome().trim().split("\\s+");
                 binding.tvBemVindo.setText("Olá, " + splitName[0]);
+                if(user.getUrlImagem() != null){
+                    Picasso.get().load(user.getUrlImagem())
+                            .into(binding.ivUserFoto);
+                }
 
             }
 
@@ -336,7 +341,7 @@ public class HomeFragment extends Fragment {
                     }
 
                 } else {
-                    Toast.makeText(getView().getContext(), "Nenhum extrato encontrado.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getView().getContext(), "Nenhum extrato encontrado.", Toast.LENGTH_SHORT).show();
                 }
 
                 Collections.reverse(extratoList);

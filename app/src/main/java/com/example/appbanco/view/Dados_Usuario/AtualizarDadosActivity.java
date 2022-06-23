@@ -70,18 +70,19 @@ public class AtualizarDadosActivity extends AppCompatActivity {
 
         String nome = edtNomeAtt.getText().toString();
         String email = edtEmailAtt.getText().toString();
-        String telefone = edtNumeroAtt.getText().toString();
+        String celular = edtNumeroAtt.getText().toString();
         String endereco = edtLogradouroAtt.getText().toString();
 
+
         if(!nome.isEmpty()){
-            if(!telefone.isEmpty()){
+            if(!celular.isEmpty()){
 
                 ocultarTeclado();
 
                 progressBar.setVisibility(View.GONE);
 
                 usuario.setNome(nome);
-                //usuario.setNumero(numero);
+                usuario.setCelular(celular);
 
                 if(caminhoImagem != null){
                     salvarImagemFirebase();
@@ -147,6 +148,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
     private void configDados(Usuario usuario) {
         edtEmailAtt.setText(usuario.getEmail());
         edtNomeAtt.setText(usuario.getNome());
+        edtNumeroAtt.setText(usuario.getCelular());
         //edtLogradouroAtt.setText(usuario.getEndereco().getLogradouro());
 
         if(usuario.getUrlImagem() != null){
