@@ -81,7 +81,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
 
                 usuario.setNome(nome);
-                //usuario.setNumero(numero);
+                usuario.setCelular(telefone);
 
                 if(caminhoImagem != null){
                     salvarImagemFirebase();
@@ -147,6 +147,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
     private void configDados(Usuario usuario) {
         edtEmailAtt.setText(usuario.getEmail());
         edtNomeAtt.setText(usuario.getNome());
+        edtNumeroAtt.setText(usuario.getCelular());
         //edtLogradouroAtt.setText(usuario.getEndereco().getLogradouro());
 
         if(usuario.getUrlImagem() != null){
