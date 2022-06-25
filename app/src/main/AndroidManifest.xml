@@ -4,6 +4,7 @@
     package="com.example.appbanco">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
+        <activity
+            android:name=".view.Pagamentos.Pix.Chave_Pix.RegistrarChavePix"
+            android:exported="false" />
+        <activity
+            android:name=".view.Dados_Usuario.AtualizarDadosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.Dados_Usuario.MeusDadosActivity"
+             android:exported="false" />
+         <activity
+            android:name=".view.ChatBot.ChatBot"
+            android:exported="false" />
+        <activity
+            android:name=".view.Pagamentos.Cartoes.CartaoFatura"
+            android:exported="false" />
+        <activity
+            android:name=".view.Pagamentos.Cartoes.CartaoCriarSenha"
+            android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Recarga.RecargaReciboActivity"
             android:exported="false" />
@@ -59,9 +78,6 @@
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Pix.Chave_Pix.TipoChave"
-            android:exported="false" />
-        <activity
-            android:name=".view.Pagamentos.Pix.Chave_Pix.CriaChavePix"
             android:exported="false" />
         <activity
             android:name=".view.Pagamentos.Cartoes.CartaoCriado"
@@ -110,9 +126,6 @@
             android:exported="false" />
         <activity
             android:name=".view.Login_Cadastro.EsqueciSenha"
-            android:exported="false" />
-        <activity
-            android:name=".view.Login_Cadastro.TipoConta"
             android:exported="false" />
         <activity
             android:name=".view.Login_Cadastro.CadastroProximo"

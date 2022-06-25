@@ -132,7 +132,7 @@ public class RecargaInicio extends AppCompatActivity {
         ExtratoModel extrato =  new ExtratoModel();
         extrato.setOperacao("RECARGA");
         extrato.setValor(valor);
-        extrato.setTipo("SAÍDA");
+        extrato.setTipo("SAIDA");
 
         DatabaseReference extratoRef = FirebaseHelper.getDatabaseReference()
                 .child("extratos")
