@@ -9,11 +9,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.FragmentConfigsBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Dados_Usuario.AtualizarDadosActivity;
+import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Login_Cadastro.Login;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ConfigsFragment extends Fragment {
 
     FragmentConfigsBinding binding;
+    private TextView tvEditarDados;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,6 +42,15 @@ public class ConfigsFragment extends Fragment {
             FirebaseHelper.getAuth().signOut();
             startActivity(new Intent(view.getContext(), Login.class));
         });
+
+        binding.tvEditarDados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(view.getContext(), AtualizarDadosActivity.class));
+            }
+        });
+
+
 
         return view;
     }

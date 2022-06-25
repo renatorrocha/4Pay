@@ -1,5 +1,6 @@
 package com.example.appbanco.view.Login_Cadastro;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -17,10 +18,15 @@ import android.widget.Toast;
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityCadastroProximoBinding;
 import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Endereco;
 import com.example.appbanco.model.MyApi;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Home.Home;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 import com.thyagoneves.custom_mask_textwatcher.CustomMask;
 
 import java.util.Objects;
@@ -37,8 +43,8 @@ public class CadastroProximo extends AppCompatActivity {
     private String cep;
     private Endereco endereco;
     private ProgressBar progressbar;
-    private TextView tvLimiteCartao;
-    private SeekBar sbAjusteLimite;
+//    private TextView tvLimiteCartao;
+//    private SeekBar sbAjusteLimite;
 
 
     @Override
@@ -79,26 +85,26 @@ public class CadastroProximo extends AppCompatActivity {
 
             }
         });
+//
+//        sbAjusteLimite = (SeekBar)findViewById(R.id.sbAjusteLimite);
+//        tvLimiteCartao = (TextView)findViewById(R.id.tvLimiteCartao);
 
-        sbAjusteLimite = (SeekBar)findViewById(R.id.sbAjusteLimite);
-        tvLimiteCartao = (TextView)findViewById(R.id.tvLimiteCartao);
-
-        sbAjusteLimite.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                tvLimiteCartao.setText("R$ " + String.valueOf(progress));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
+//        sbAjusteLimite.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            @Override
+//            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+//                tvLimiteCartao.setText("R$ " + String.valueOf(progress));
+//            }
+//
+//            @Override
+//            public void onStartTrackingTouch(SeekBar seekBar) {
+//
+//            }
+//
+//            @Override
+//            public void onStopTrackingTouch(SeekBar seekBar) {
+//
+//            }
+//        });
     }
 
 
@@ -215,8 +221,9 @@ public class CadastroProximo extends AppCompatActivity {
 
         usuarioRef.setValue(endereco).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                getUserData();
                 finish();
-                startActivity(new Intent(this, TipoConta.class));
+                startActivity(new Intent(this, Home.class));
             } else {
                 progressbar.setVisibility(View.GONE);
                 Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -232,6 +239,36 @@ public class CadastroProximo extends AppCompatActivity {
 
     }
 
+
+    private void getUserData() {
+        DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
+                .child("usuarios")
+                .child(FirebaseHelper.getIdFirebase());
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Usuario user = snapshot.getValue(Usuario.class);
+
+                user.setCelular(binding.edtcelular.getText().toString());
+                user.setRendimento(Integer.toString(binding.seekBar.getProgress()));
+                salvarUser(user);
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void salvarUser(Usuario usuario){
+        DatabaseReference usuarioRef = FirebaseHelper.getDatabaseReference()
+                .child("usuarios")
+                .child(usuario.getId());
+        usuarioRef.setValue(usuario);
+
+    }
 
 }
 

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_alternativo"
+    tools:context=".view.Pagamentos.Cartoes.CartaoCriarSenha">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingVertical="8dp"
+        android:text="Gerar cartão"
+        android:textAlignment="center"
+        android:textColor="@color/rosa"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivArrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
+        app:layout_constraintTop_toTopOf="@id/tvTitulo"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tvSelecionado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/preto"
+        android:textSize="16dp"
+        android:text="Tipo de cartão selecionado"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTipoCartao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_bold"
+        android:textSize="18sp"
+        android:text="Cartão de crédito"
+        android:textColor="@color/preto"
+        app:layout_constraintTop_toBottomOf="@id/tvSelecionado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInformeSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crie uma senha para o cartão"
+        android:fontFamily="@font/nunito_regular"
+        android:textColor="@color/preto"
+        android:textSize="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTipoCartao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtsenha"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="name"
+        android:layout_marginTop="8dp"
+        android:hint="Senha"
+        android:textColorHint="@color/preto"
+        app:boxStrokeColor="@color/preto"
+        app:hintTextColor="@color/preto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInformeSenha"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/preto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:textColor="@color/preto" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtRepitaSenha"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="name"
+        android:layout_marginTop="16dp"
+        android:hint="Repita a senha"
+        android:textColorHint="@color/preto"
+        app:boxStrokeColor="@color/preto"
+        app:hintTextColor="@color/preto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtsenha"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/preto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/repitaSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:textColor="@color/preto" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnCriar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btnlogin"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Criar"
+        android:textAllCaps="false"
+        android:textColor="@color/branco"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
