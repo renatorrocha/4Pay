@@ -142,7 +142,7 @@ public class RegistrarChavePix extends AppCompatActivity {
 
 
             } else {
-//                criarChavePix(tipoChave);
+                criarChavePix(tipoChave);
             }
 
         }
@@ -234,11 +234,10 @@ public class RegistrarChavePix extends AppCompatActivity {
             chavesPixRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                     for (DataSnapshot ds : snapshot.getChildren()) {
                         ChavePix chavePixAll = ds.getValue(ChavePix.class);
 
-                        if (!chavePix.getChave().equals(chavePixAll.getChave())) {
+                        if (chavePix.getChave().equals(chavePixAll.getChave())) {
                             verify = true;
                         }
                     }
