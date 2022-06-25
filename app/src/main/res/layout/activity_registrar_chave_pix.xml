@@ -37,11 +37,11 @@
         android:id="@+id/tvDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/nunito_regular"
         android:text="@string/txt_desc_tipo_chave"
         android:textColor="@color/preto"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
@@ -49,14 +49,14 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvChave"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
         android:layout_marginLeft="24dp"
+        android:layout_marginTop="46dp"
         android:backgroundTint="@color/azul_claro"
         app:cardCornerRadius="6dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tvDesc">
 
         <ImageView
             android:id="@+id/ivTipoChave"
@@ -76,18 +76,19 @@
         android:text="@string/txt_opc_email_pix"
         android:textColor="@color/preto"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/tvChave"
+        app:layout_constraintBottom_toTopOf="@id/tvChaveUsuario"
         app:layout_constraintStart_toEndOf="@id/cvChave"
         app:layout_constraintTop_toTopOf="@id/cvChave" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tvChaveUsuario"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginBottom="6dp"-->
-<!--        android:text="joao@gmail.com"-->
-<!--        app:layout_constraintStart_toStartOf="@id/tvChave"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tvChave" />-->
+    <TextView
+        android:id="@+id/tvChaveUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="joao@gmail.com"
+        android:textColor="@color/preto"
+        app:layout_constraintStart_toStartOf="@id/tvChave"
+        app:layout_constraintTop_toBottomOf="@id/tvChave"
+        app:layout_constraintBottom_toBottomOf="@id/cvChave"/>
 
     <Button
         android:id="@+id/btnCriarChave"
@@ -102,6 +103,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

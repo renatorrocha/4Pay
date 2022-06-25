@@ -48,7 +48,7 @@ public class TipoChave extends AppCompatActivity {
         ConstraintLayout clEmail = view.findViewById(R.id.clEmail);
         ConstraintLayout clCelular = view.findViewById(R.id.clCelular);
         ConstraintLayout clCpf = view.findViewById(R.id.clCpf);
-        ConstraintLayout clChaveAleatoria = view.findViewById(R.id.clEmail);
+        ConstraintLayout clChaveAleatoria = view.findViewById(R.id.clChaveAleatoria);
 
         ivClose.setOnClickListener(view1 -> {
             dialog.dismiss();
