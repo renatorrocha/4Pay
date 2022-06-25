@@ -336,7 +336,7 @@ public class HomeFragment extends Fragment {
                     }
 
                 } else {
-                    Toast.makeText(getView().getContext(), "Nenhum extrato encontrado.", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getView().getContext(), "Nenhum extrato encontrado.", Toast.LENGTH_SHORT).show();
                 }
 
                 Collections.reverse(extratoList);
