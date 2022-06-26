@@ -1,8 +1,10 @@
 package com.example.appbanco.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,10 +24,15 @@ import java.util.List;
 public class ChavesPixAdapter extends RecyclerView.Adapter<ChavesPixAdapter.ViewHolder> {
 
     private List<ChavePix> list = new ArrayList<>();
+    private Context context;
+    private final OnLongClick onLongClick;
 
 
-    public ChavesPixAdapter(List<ChavePix> list) {
+
+    public ChavesPixAdapter(List<ChavePix> list, Context context, OnLongClick onLongClick) {
         this.list = list;
+        this.context = context;
+        this.onLongClick = onLongClick;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -76,6 +83,16 @@ public class ChavesPixAdapter extends RecyclerView.Adapter<ChavesPixAdapter.View
             removeChave(item);
         });
 
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                onLongClick.OnLongClickListener(item);
+                return false;
+            }
+        });
+
+
     }
 
     @Override
@@ -96,6 +113,12 @@ public class ChavesPixAdapter extends RecyclerView.Adapter<ChavesPixAdapter.View
 
 
         });
+    }
+
+    public interface OnLongClick{
+        void OnLongClickListener(ChavePix chavePix);
+
+
     }
 
 

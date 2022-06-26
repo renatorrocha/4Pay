@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class RegistrarChavePix extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class RegistrarChavePix extends AppCompatActivity {
     private List<ChavePix> listChaves = new ArrayList<>();
     List<String> usersList = new ArrayList<>();
     private String tipoChave = "";
+    private String chaveAleatoria =  UUID.randomUUID().toString();
     private Boolean verify = false;
 
     @Override
@@ -39,6 +41,7 @@ public class RegistrarChavePix extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         tipoChave = getIntent().getStringExtra("tipoChave");
+
         getUserData();
         getAllUsuarios();
 
@@ -94,13 +97,8 @@ public class RegistrarChavePix extends AppCompatActivity {
     }
 
     private void setData() {
-
         String setTipoChave = tipoChave.substring(0, 1).toUpperCase() + tipoChave.substring(1);
 
-        binding.tvTitulo.setText(getString(R.string.txt_registrar_chave, setTipoChave));
-        binding.btnCriarChave.setText(getString(R.string.txt_registrar_chave, tipoChave));
-        binding.tvDesc.setText(getString(R.string.txt_desc_tipo_chave, setTipoChave));
-        binding.tvChave.setText(setTipoChave);
 
         if (tipoChave.equals("email")) {
             binding.ivTipoChave.setImageResource(R.drawable.ic_email);
@@ -117,8 +115,15 @@ public class RegistrarChavePix extends AppCompatActivity {
 
         } else if (tipoChave.equals("chaveAleatoria")) {
             binding.ivTipoChave.setImageResource(R.drawable.ic_sec);
-            binding.tvChaveUsuario.setText("sadlkjçasd218973459");
+            binding.tvChaveUsuario.setText(chaveAleatoria);
+            setTipoChave = "Chave aleatória";
         }
+
+
+        binding.tvTitulo.setText(getString(R.string.txt_registrar_chave, setTipoChave));
+        binding.btnCriarChave.setText(getString(R.string.txt_registrar_chave, tipoChave));
+        binding.tvDesc.setText(getString(R.string.txt_desc_tipo_chave, setTipoChave));
+        binding.tvChave.setText(setTipoChave);
 
     }
 
@@ -153,7 +158,6 @@ public class RegistrarChavePix extends AppCompatActivity {
 
         ChavePix chavePix = new ChavePix();
 
-        if (!tipoChave.equals("chaveAletoria")) {
 
             chavePix.setTipoChave(tipoChave);
             chavePix.setLimite(usuario.getRendimento());
@@ -169,13 +173,12 @@ public class RegistrarChavePix extends AppCompatActivity {
                 chavePix.setChave(usuario.getCpf());
             }
 
+            if (tipoChave.equals("chaveAleatoria")) {
+                chavePix.setChave(chaveAleatoria);
+            }
+
             getAllChavesPix(chavePix);
 
-
-        } else {
-            chavePix.criarChaveAleatoria();
-            chavePix.setLimite(usuario.getRendimento());
-        }
 
     }
 
