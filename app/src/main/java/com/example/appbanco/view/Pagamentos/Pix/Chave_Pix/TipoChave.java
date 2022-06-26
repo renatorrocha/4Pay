@@ -6,21 +6,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.ChavesPixAdapter;
 import com.example.appbanco.databinding.ActivityTipoChaveBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.ChavePix;
-import com.example.appbanco.model.Notificacao;
-import com.example.appbanco.view.Pagamentos.Pix.Pix;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TipoChave extends AppCompatActivity {
+public class TipoChave extends AppCompatActivity implements ChavesPixAdapter.OnLongClick {
 
     private List<ChavePix> chavesPixList = new ArrayList<>();
     private ActivityTipoChaveBinding binding;
@@ -49,12 +49,12 @@ public class TipoChave extends AppCompatActivity {
         });
 
         binding.ivArrowBack.setOnClickListener(view -> {
-            startActivity(new Intent(this, Pix.class));
+            finish();
         });
 
         binding.rvChavesPix.setLayoutManager(new LinearLayoutManager(this));
         binding.rvChavesPix.setHasFixedSize(true);
-        chavesPixAdapter = new ChavesPixAdapter(chavesPixList);
+        chavesPixAdapter = new ChavesPixAdapter(chavesPixList,  getBaseContext(), this);
         binding.rvChavesPix.setAdapter(chavesPixAdapter);
 
     }
@@ -128,5 +128,14 @@ public class TipoChave extends AppCompatActivity {
 
         dialog = builder.create();
         dialog.show();
+    }
+
+    @Override
+    public void OnLongClickListener(ChavePix chavePix) {
+        ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData = ClipData.newPlainText("Text", chavePix.getChave());
+        clipboardManager.setPrimaryClip(clipData);
+
+        Toast.makeText(this, "Chave copiada", Toast.LENGTH_SHORT).show();
     }
 }
