@@ -32,6 +32,7 @@ public class PixCobrarFinal extends AppCompatActivity {
 
     ActivityPixCobrarFinalBinding binding;
     private Cobranca cobranca;
+    private Usuario userDestino;
 
 
     @Override
@@ -40,7 +41,7 @@ public class PixCobrarFinal extends AppCompatActivity {
         binding = ActivityPixCobrarFinalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        configDados();
+        recuperaUsuarioDestino();
 
         binding.btnProximo.setOnClickListener(view -> {
             confirmarCobranca(view);
@@ -83,14 +84,33 @@ public class PixCobrarFinal extends AppCompatActivity {
         notificacao.enviar();
     }
 
-    ;
+    private void recuperaUsuarioDestino() {
+        cobranca = (Cobranca) getIntent().getSerializableExtra("cobranca");
+
+        DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
+                .child("usuarios")
+                .child(cobranca.getIdDestinatario());
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                userDestino = snapshot.getValue(Usuario.class);
+
+
+                configDados();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 
     private void configDados() {
-        Usuario userDestinatario = (Usuario) getIntent().getSerializableExtra("userDestinatario");
-        cobranca = (Cobranca) getIntent().getSerializableExtra("cobranca");
 
-        binding.tvUserDestino.setText("Para " + userDestinatario.getNome());
+        binding.tvUserDestino.setText("Para " + userDestino.getNome());
         binding.tvValorCobranca.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(cobranca.getValor())));
 
         SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");

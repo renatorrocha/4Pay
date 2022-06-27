@@ -16,6 +16,7 @@ import java.util.Locale;
 public class PixTransf extends AppCompatActivity {
 
     ActivityPixTransfBinding binding;
+    String userSaldo = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +24,8 @@ public class PixTransf extends AppCompatActivity {
         binding = ActivityPixTransfBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Intent intent = getIntent();
-
-        binding.tvValorSaldo.setText("R$ " + intent.getStringExtra("userSaldo"));
+        userSaldo = getIntent().getStringExtra("userSaldo");
+        binding.tvValorSaldo.setText("R$ " + userSaldo);
         binding.etValorPix.setLocale(new Locale("PT", "br"));
 
         binding.btnPixProximo.setOnClickListener(view -> {
@@ -44,7 +44,6 @@ public class PixTransf extends AppCompatActivity {
             Intent intent = new Intent(this, PixTransfDestino.class);
             intent.putExtra("transferencia", transf);
             startActivity(intent);
-
         } else {
             Toast.makeText(this, "Digite um valor maior que 0.", Toast.LENGTH_SHORT).show();
         }
