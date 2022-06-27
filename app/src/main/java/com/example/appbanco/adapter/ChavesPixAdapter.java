@@ -63,9 +63,6 @@ public class ChavesPixAdapter extends RecyclerView.Adapter<ChavesPixAdapter.View
 
         String setTipoChave = item.getTipoChave().substring(0, 1).toUpperCase() + item.getTipoChave().substring(1);
 
-        holder.tvChave.setText(setTipoChave);
-        holder.tvChaveUsuario.setText(item.getChave());
-
         if(item.getTipoChave().equals("celular")){
             holder.ivTipoChave.setImageResource(R.drawable.ic_cel);
 
@@ -76,8 +73,13 @@ public class ChavesPixAdapter extends RecyclerView.Adapter<ChavesPixAdapter.View
             holder.ivTipoChave.setImageResource(R.drawable.ic_email);
 
         }else if(item.getTipoChave().equals("chaveAleatoria")){
-            holder.ivTipoChave.setImageResource(R.drawable.ic_sec);
+            holder.ivTipoChave.setImageResource(R.drawable.ic_key);
+            setTipoChave = "Chave aleatória";
         }
+
+        holder.tvChave.setText(setTipoChave);
+        holder.tvChaveUsuario.setText(item.getChave());
+
 
         holder.ivClose.setOnClickListener(view1 -> {
             removeChave(item);

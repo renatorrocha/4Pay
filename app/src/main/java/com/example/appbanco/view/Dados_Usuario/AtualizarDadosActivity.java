@@ -82,7 +82,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
 
                 usuario.setNome(nome);
-                usuario.setCelular(telefone);
+                usuario.setCelular(celular);
 
                 if(caminhoImagem != null){
                     salvarImagemFirebase();
