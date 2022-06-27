@@ -95,6 +95,7 @@
         android:background="@drawable/btnlogin"
         android:fontFamily="@font/nunito_regular"
         android:text="@string/txt_btn_confirmar"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

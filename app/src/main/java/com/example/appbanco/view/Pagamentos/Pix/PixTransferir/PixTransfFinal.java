@@ -40,7 +40,7 @@ public class PixTransfFinal extends AppCompatActivity {
         binding = ActivityPixTransfFinalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        configDados();
+        recuperaUsuarioDestino();
         recuperaUsuarioOrigem();
 
         binding.btnTransfPixFinal.setOnClickListener(view -> {
@@ -85,6 +85,30 @@ public class PixTransfFinal extends AppCompatActivity {
             }
         });
     }
+
+    private void recuperaUsuarioDestino() {
+        transferencia = (Transferencia) getIntent().getSerializableExtra("transferencia");
+
+        DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
+                .child("usuarios")
+                .child(transferencia.getIdUserDestino());
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                userDestino = snapshot.getValue(Usuario.class);
+
+
+                configDados();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
     private void salvarExtrato(Usuario usuario, String tipo){
 
@@ -152,8 +176,6 @@ public class PixTransfFinal extends AppCompatActivity {
     }
 
     private void configDados() {
-        userDestino = (Usuario) getIntent().getSerializableExtra("userDestino");
-        transferencia = (Transferencia) getIntent().getSerializableExtra("transferencia");
 
         binding.tvUserDestino.setText("Para "+ userDestino.getNome());
         binding.tvValorTransfPix.setText(getString( R.string.txt_valor_deposito, GetMask.getValor(transferencia.getValor())));
@@ -162,7 +184,6 @@ public class PixTransfFinal extends AppCompatActivity {
         String dataFormatada = formataData.format(System.currentTimeMillis());
 
         binding.tvData.setText(dataFormatada);
-
 
     }
 }

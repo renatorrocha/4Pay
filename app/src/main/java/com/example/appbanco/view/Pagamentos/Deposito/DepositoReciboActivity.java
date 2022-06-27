@@ -67,7 +67,6 @@ public class DepositoReciboActivity extends AppCompatActivity {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
-
         iniciaComponentes();
         getDeposito();
 
@@ -77,25 +76,17 @@ public class DepositoReciboActivity extends AppCompatActivity {
             Log.d("size", "" + linear.getWidth() + " " + linear.getWidth());
             bitmap = LoadBitmap(linear, linear.getWidth(), linear.getHeight());
             createPdf();
-
         });
 
-
         button = findViewById(R.id.buttonRecibo);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DepositoReciboActivity.this, Home.class);
                 startActivity(intent);
-
-
-
-
             }
         });
     }
-
 
     private void getDeposito() {
         String idDeposito = (String) getIntent().getSerializableExtra("idDeposito");
@@ -118,20 +109,11 @@ public class DepositoReciboActivity extends AppCompatActivity {
     }
 
     private Bitmap LoadBitmap(View v, int width, int height) {
-
         Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-
         Canvas canvas = new Canvas(bitmap);
         v.draw(canvas);
-
-
-
         return bitmap;
-
-
-
     }
-
 
     private void configDados(Deposito deposito) {
         tvCodigoDeposito.setText(deposito.getId());
@@ -153,9 +135,6 @@ public class DepositoReciboActivity extends AppCompatActivity {
         float height = displayMetrics.heightPixels;
         int convertWidth = (int) width, convertHeight = (int) height;
 
-
-
-
         PdfDocument document = new PdfDocument();
         PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(convertWidth, convertHeight, 1).create();
         PdfDocument.Page page = document.startPage(pageInfo);
@@ -171,34 +150,19 @@ public class DepositoReciboActivity extends AppCompatActivity {
         File file;
         file = new File(targetPdf);
         try {
-
-
-
-
             document.writeTo(new FileOutputStream(file));
-
             document.close();
-
-
             Toast.makeText(this, "baixado com sucesso", Toast.LENGTH_SHORT).show();
-
             openPdf();
-
-
 
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(this, "algo errado tente novamente!" + e.toString(), Toast.LENGTH_SHORT).show();
-
-
             //depois de fechar o documento
-
         }
     }
 
     private void openPdf() {
-
-
         File file = new File("/sdcard/recibo.pdf");
         if (file.exists()) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -211,12 +175,7 @@ public class DepositoReciboActivity extends AppCompatActivity {
 
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(this, "Nenhum aplicativo para visualização em pdf", Toast.LENGTH_SHORT).show();
-
             }
-
-
         }
     }
-
-
 }

@@ -10,7 +10,6 @@ import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityHomeBinding;
 import com.example.appbanco.view.Home.HomeFragments.ConfigsFragment;
-import com.example.appbanco.view.Home.HomeFragments.ExtratoFragment;
 import com.example.appbanco.view.Home.HomeFragments.HomeFragment;
 import com.example.appbanco.view.Home.HomeFragments.ProfileFragment;
 
@@ -31,8 +30,7 @@ public class Home extends AppCompatActivity {
         bnv_Main = findViewById(R.id.bnv_Main);
         bnv_Main.add(new MeowBottomNavigation.Model(1,R.drawable.ic_home));
         bnv_Main.add(new MeowBottomNavigation.Model(2,R.drawable.ic_person));
-        bnv_Main.add(new MeowBottomNavigation.Model(3,R.drawable.ic_dados));
-        bnv_Main.add(new MeowBottomNavigation.Model(4,R.drawable.ic_conf));
+        bnv_Main.add(new MeowBottomNavigation.Model(3,R.drawable.ic_conf));
 
         bnv_Main.show(1,true);
         replace(new HomeFragment());
@@ -50,10 +48,6 @@ public class Home extends AppCompatActivity {
                         break;
 
                     case 3:
-                        replace(new ExtratoFragment());
-                        break;
-
-                    case 4:
                         replace(new ConfigsFragment());
                         break;
                 }
