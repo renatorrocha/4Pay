@@ -3,17 +3,20 @@ package com.example.appbanco.view.ChatBot;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.ChatAdapter;
 import com.example.appbanco.help.SendMessageInBg;
 import com.example.appbanco.model.Message;
+import com.example.appbanco.view.Home.Home;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -38,12 +41,13 @@ public class ChatBot extends AppCompatActivity implements BotReply {
     List<Message> messageList = new ArrayList<>();
     EditText editMessage;
     ImageButton btnSend;
+    ImageView ivArrowBack;
 
     //dialogFlow
     private SessionsClient sessionsClient;
     private SessionName sessionName;
     private String uuid = UUID.randomUUID().toString();
-//    private String TAG = "mainactivity";
+//  private String TAG = "mainactivity";
     private String TAG = "chatbot";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,7 @@ public class ChatBot extends AppCompatActivity implements BotReply {
         chatView = findViewById(R.id.chatView);
         editMessage = findViewById(R.id.editMessage);
         btnSend = findViewById(R.id.btnSend);
+        ivArrowBack = findViewById(R.id.ivArrowBack);
 
         chatAdapter = new ChatAdapter(messageList, this);
         chatView.setAdapter(chatAdapter);
@@ -67,9 +72,13 @@ public class ChatBot extends AppCompatActivity implements BotReply {
                     Objects.requireNonNull(chatView.getLayoutManager())
                             .scrollToPosition(messageList.size() - 1);
                 } else {
-                    Toast.makeText(ChatBot.this, "Por favor, digite o texto!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChatBot.this, "Por favor, digite algo!", Toast.LENGTH_SHORT).show();
                 }
             }
+        });
+
+        ivArrowBack.setOnClickListener(view1 -> {
+            startActivity(new Intent(this, Home.class));
         });
 
         setUpBot();

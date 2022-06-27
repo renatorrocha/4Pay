@@ -92,26 +92,26 @@ public class PixTransfDestino extends AppCompatActivity {
 
                         for (DataSnapshot ds : snapshot.getChildren()) {
                             ChavePix chavePixAll = ds.getValue(ChavePix.class);
+
                             if (chavePixAll != null) {
                                 if (pesquisa.equals(chavePixAll.getChave())) {
                                     userEncontrado = true;
                                     userDestino = chavePixAll.getIdUsuario();
                                 }
                             }
+
                         }
 
-                            if (userEncontrado) {
-                                Intent intent = new Intent(PixTransfDestino.this, PixTransfFinal.class);
-                                transf.setIdUserDestino(userDestino);
-                                intent.putExtra("userDestino", userDestino);
-                                intent.putExtra("transferencia", transf);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(PixTransfDestino.this, "Nenhuma conta com esta chave foi encontrada.", Toast.LENGTH_SHORT).show();
-                            }
+                        if (userEncontrado) {
+                            Intent intent = new Intent(PixTransfDestino.this, PixTransfFinal.class);
+                            transf.setIdUserDestino(userDestino);
+                            intent.putExtra("userDestino", userDestino);
+                            intent.putExtra("transferencia", transf);
+                            startActivity(intent);
                         }
+                        
 
-
+                    }
                 }
 
                 @Override
@@ -119,14 +119,7 @@ public class PixTransfDestino extends AppCompatActivity {
 //                    Toast.makeText(PixTransfDestino.this, error.toString(), Toast.LENGTH_SHORT).show();
                 }
             });
-
-
         }
-
-            if(!userEncontrado){
-                Toast.makeText(PixTransfDestino.this, "Nenhuma conta com esta chave foi encontrada.", Toast.LENGTH_SHORT).show();
-            }
-
     }
 
     private void configPesquisa() {

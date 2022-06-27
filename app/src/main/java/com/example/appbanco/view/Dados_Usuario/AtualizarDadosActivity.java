@@ -66,7 +66,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         configClicks();
     }
 
-    public void validaDados(View view){
+    public void validaDados(View view) {
 
         String nome = edtNomeAtt.getText().toString();
         String email = edtEmailAtt.getText().toString();
@@ -74,8 +74,8 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         String endereco = edtLogradouroAtt.getText().toString();
 
 
-        if(!nome.isEmpty()){
-            if(!celular.isEmpty()){
+        if (!nome.isEmpty()) {
+            if (!celular.isEmpty()) {
 
                 ocultarTeclado();
 
@@ -84,9 +84,9 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                 usuario.setNome(nome);
                 usuario.setCelular(celular);
 
-                if(caminhoImagem != null){
+                if (caminhoImagem != null) {
                     salvarImagemFirebase();
-                }else{
+                } else {
                     salvarDadosUser();
                 }
 
@@ -97,46 +97,46 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                     edtLogradouroAtt.requestFocus();
                     edtLogradouroAtt.setError("Informe seu endereço");
                 }*/
-            }else{
+            } else {
                 edtNumeroAtt.requestFocus();
                 edtNumeroAtt.setError("Informe seu número");
             }
 
-        }else{
+        } else {
             edtNomeAtt.requestFocus();
             edtNomeAtt.setError("Informe seu nome");
         }
 
     }
 
-    private void salvarImagemFirebase(){
+    private void salvarImagemFirebase() {
 
         StorageReference storageReference = FirebaseHelper.getStorageReference()
                 .child("imagens")
                 .child("perfil")
-                .child(FirebaseHelper.getIdFirebase() +".JPEG");
+                .child(FirebaseHelper.getIdFirebase() + ".JPEG");
 
         UploadTask uploadTask = storageReference.putFile(Uri.parse(caminhoImagem));
         uploadTask.addOnSuccessListener(taskSnapshot -> storageReference.getDownloadUrl()
-                .addOnCompleteListener(task -> {
+                        .addOnCompleteListener(task -> {
 
-                    usuario.setUrlImagem(task.getResult().toString());
-                    salvarDadosUser();
+                            usuario.setUrlImagem(task.getResult().toString());
+                            salvarDadosUser();
 
-                }))
+                        }))
                 .addOnFailureListener(e -> Toast
-                .makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show());
+                        .makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void salvarDadosUser() {
-        DatabaseReference usuarioRef =FirebaseHelper.getDatabaseReference()
+        DatabaseReference usuarioRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
                 .child(usuario.getId());
         usuarioRef.setValue(usuario).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 Toast.makeText(this, "Informações salvas com sucesso.",
                         Toast.LENGTH_SHORT).show();
-            }else{
+            } else {
                 Toast.makeText(this, "Não foi possível salvar as informações.",
                         Toast.LENGTH_SHORT).show();
             }
@@ -151,7 +151,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         edtNumeroAtt.setText(usuario.getCelular());
         //edtLogradouroAtt.setText(usuario.getEndereco().getLogradouro());
 
-        if(usuario.getUrlImagem() != null){
+        if (usuario.getUrlImagem() != null) {
             Picasso.get().load(usuario.getUrlImagem())
                     .into(ivUserFoto);
         }
@@ -161,13 +161,13 @@ public class AtualizarDadosActivity extends AppCompatActivity {
 
     private void configClicks() {
         ivArrowBack.setOnClickListener(new
- View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AtualizarDadosActivity.this,
-                        MeusDadosActivity.class));
-            }
-        });
+                                               View.OnClickListener() {
+                                                   @Override
+                                                   public void onClick(View view) {
+                                                       startActivity(new Intent(AtualizarDadosActivity.this,
+                                                               MeusDadosActivity.class));
+                                                   }
+                                               });
 
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -223,7 +223,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 usuario = snapshot.getValue(Usuario.class);
-               configDados(usuario);
+                configDados(usuario);
 
             }
 
@@ -249,7 +249,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
     }
 
     //Oculta o teclado do dispositivo
-    private void ocultarTeclado(){
+    private void ocultarTeclado() {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(edtNomeAtt.getWindowToken(),
                 InputMethodManager.HIDE_NOT_ALWAYS);
@@ -259,15 +259,15 @@ public class AtualizarDadosActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK){
-            if(requestCode == REQUEST_GALERIA){
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_GALERIA) {
 
                 Bitmap bitmap;
 
                 Uri imagemSelecionada = data.getData();
                 caminhoImagem = data.getData().toString();
 
-                if(Build.VERSION.SDK_INT < 28){
+                if (Build.VERSION.SDK_INT < 28) {
 
                     try {
                         bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),
@@ -277,7 +277,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                }else{
+                } else {
 
                     ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(),
                             imagemSelecionada);
