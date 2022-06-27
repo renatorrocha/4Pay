@@ -34,6 +34,7 @@ import com.google.firebase.storage.UploadTask;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.normal.TedPermission;
 import com.squareup.picasso.Picasso;
+import com.thyagoneves.custom_mask_textwatcher.CustomMask;
 
 
 import java.io.IOException;
@@ -148,6 +149,8 @@ public class AtualizarDadosActivity extends AppCompatActivity {
     private void configDados(Usuario usuario) {
         edtEmailAtt.setText(usuario.getEmail());
         edtNomeAtt.setText(usuario.getNome());
+        edtNumeroAtt.addTextChangedListener(CustomMask.Companion.mask("(##) #####-####",
+                edtNumeroAtt, null));
         edtNumeroAtt.setText(usuario.getCelular());
         //edtLogradouroAtt.setText(usuario.getEndereco().getLogradouro());
 
@@ -160,14 +163,13 @@ public class AtualizarDadosActivity extends AppCompatActivity {
     }
 
     private void configClicks() {
-        ivArrowBack.setOnClickListener(new
-                                               View.OnClickListener() {
-                                                   @Override
-                                                   public void onClick(View view) {
-                                                       startActivity(new Intent(AtualizarDadosActivity.this,
-                                                               MeusDadosActivity.class));
-                                                   }
-                                               });
+        ivArrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AtualizarDadosActivity.this,
+                        MeusDadosActivity.class));
+            }
+        });
 
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
