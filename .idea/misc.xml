@@ -3,56 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/drawable/bg_alert_dialog.xml" value="0.2615" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/drawable/bg_noti.xml" value="0.2615" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/drawable/btnlogin.xml" value="0.261" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/drawable/ic_check.xml" value="0.2615" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/drawable/ic_delete.xml" value="0.2615" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_atualizar_dados.xml" value="0.228125" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_cadastro.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_cartao_criado.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_cartao_criar_senha.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_cartao_fatura.xml" value="0.5" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_cartoes.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_chave_criada.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_confirmacao_pix.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_deposito_form.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_deposito_recibo.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_gerar_cartoes.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_meus_dados.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_notificacoes.xml" value="0.3296875" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pagar_cobranca.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pagar_cobranca_recibo.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pix.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pix_cobrar.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pix_cobrar_destino.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pix_cobrar_final.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pix_transf.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pix_transf_destino.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pix_transf_final.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_pix_transf_sucesso.xml" value="0.25" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_recarga.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_registrar_chave_pix.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/activity_tipo_chave.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/divisor.xml" value="0.29322916666666665" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/extrato_list.xml" value="0.3296875" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/fragment_configs.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/fragment_extrato.xml" value="0.3296875" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/fragment_home.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/item_chavespix.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/layout_dialog.xml" value="0.67" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/layout_dialog_delete.xml" value="0.5" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/layout_dialog_info.xml" value="0.29583333333333334" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/list_chavespix.xml" value="0.365625" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/noti_item.xml" value="0.33" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/toolbar_volta.xml" value="0.3296875" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/toolbar_volta_add.xml" value="0.3296875" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/toolbar_volta_salvar.xml" value="0.3296875" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/4Pay/app/src/main/res/layout/viewpager_item.xml" value="0.3296875" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/Test/app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/Users/gabri/AndroidStudioProjects/Test/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/background.xml" value="0.261" />
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/background_alternativo.xml" value="0.199" />
         <entry key="..\:/Projetos_Android/Appbanco/app/src/main/res/drawable/bakcground.xml" value="0.196" />
@@ -112,6 +62,7 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_home_configs.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_notificacoes.xml" value="0.2328125" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_pagar_cobranca_recibo.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_pix.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_pix_transf.xml" value="0.4" />
@@ -128,7 +79,7 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/extrato_list.xml" value="0.536" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_configs.xml" value="0.4" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_extrato.xml" value="0.264" />
-        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_profile.xml" value="0.3447782546494993" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/fragment_visualizar_cartoes.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/layout_dialog.xml" value="0.36666666666666664" />
@@ -141,12 +92,9 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/viewpager_item.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1435" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.201" />
-        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_atualizar_dados.xml" value="0.264" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_cadastro.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_cadastro_proximo.xml" value="0.4" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/activity_seguros_ativos.xml" value="0.4" />
-        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/fragment_configs.xml" value="0.2811881188118812" />
-        <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/fragment_home.xml" value="0.2084639498432602" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/item_seguro.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imiranda/AndroidStudioProjects/4Bank/app/src/main/res/layout/list_seguros.xml" value="0.4" />
         <entry key="..\:/Users/user/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.3375" />

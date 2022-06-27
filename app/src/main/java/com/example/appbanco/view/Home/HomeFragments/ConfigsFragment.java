@@ -21,11 +21,13 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Dados_Usuario.AtualizarDadosActivity;
 import com.example.appbanco.view.Home.Home;
+import com.example.appbanco.view.Home.Notificacoes;
 import com.example.appbanco.view.Login_Cadastro.Login;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 
 public class ConfigsFragment extends Fragment {
@@ -50,6 +52,10 @@ public class ConfigsFragment extends Fragment {
             }
         });
 
+        binding.cvNoti.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), Notificacoes.class));
+        });
+
 
 
         return view;
@@ -70,6 +76,10 @@ public class ConfigsFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Usuario user = snapshot.getValue(Usuario.class);
+                if(user.getUrlImagem() != null){
+                    Picasso.get().load(user.getUrlImagem())
+                            .into(binding.ivUserFoto);
+                }
 
                 binding.tvNomeUser.setText(user.getNome());
             }
