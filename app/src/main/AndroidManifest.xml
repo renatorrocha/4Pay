@@ -80,9 +80,6 @@
             android:name=".view.Pagamentos.Pix.Chave_Pix.TipoChave"
             android:exported="false" />
         <activity
-            android:name=".view.Pagamentos.Pix.Chave_Pix.CriaChavePix"
-            android:exported="false" />
-        <activity
             android:name=".view.Pagamentos.Cartoes.CartaoCriado"
             android:exported="false" />
         <activity

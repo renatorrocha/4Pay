@@ -27,7 +27,6 @@
                     android:layout_height="46dp"
                     android:backgroundTint="@color/preto"
                     app:cardCornerRadius="100dp"
-
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/ivLogo4Pay"
                     app:layout_constraintStart_toStartOf="parent"
@@ -688,9 +687,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
