@@ -70,11 +70,12 @@ public class AtualizarDadosActivity extends AppCompatActivity {
 
         String nome = edtNomeAtt.getText().toString();
         String email = edtEmailAtt.getText().toString();
-        String telefone = edtNumeroAtt.getText().toString();
+        String celular = edtNumeroAtt.getText().toString();
         String endereco = edtLogradouroAtt.getText().toString();
 
+
         if(!nome.isEmpty()){
-            if(!telefone.isEmpty()){
+            if(!celular.isEmpty()){
 
                 ocultarTeclado();
 

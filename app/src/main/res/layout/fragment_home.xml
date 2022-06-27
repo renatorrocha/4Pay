@@ -21,14 +21,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
                     android:layout_width="46dp"
                     android:layout_height="46dp"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/ic_person_pink"
+                    android:backgroundTint="@color/preto"
+                    app:cardCornerRadius="100dp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivLogo4Pay"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivUserFoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_person_pink" />
+
+                </androidx.cardview.widget.CardView>
 
 
                 <ImageView
@@ -298,7 +311,6 @@
                 android:id="@+id/hsvOpcoes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="28dp"
                 android:scrollbars="none"
                 app:layout_constraintStart_toStartOf="parent"
