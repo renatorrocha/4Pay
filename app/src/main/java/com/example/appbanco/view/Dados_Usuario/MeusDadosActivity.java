@@ -25,8 +25,8 @@ public class MeusDadosActivity extends AppCompatActivity {
 
     private void iniciaComponentes() {
 
-        ivArrowBack.findViewById(R.id.ivArrowBack);
-        ivEditar.findViewById(R.id.ivArrowBack);
+        ivArrowBack = findViewById(R.id.ivArrowBack);
+        ivEditar = findViewById(R.id.ivArrowBack);
 
         ivArrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
