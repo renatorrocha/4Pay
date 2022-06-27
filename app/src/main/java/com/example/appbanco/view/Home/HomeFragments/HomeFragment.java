@@ -33,6 +33,7 @@ import com.example.appbanco.view.Pagamentos.Cartoes.CartaoFatura;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Cartoes.GerarCartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
+import com.example.appbanco.view.Pagamentos.Pagamento.Pagamento;
 import com.example.appbanco.view.Pagamentos.Pix.Pix;
 import com.example.appbanco.view.Pagamentos.Recarga.RecargaInicio;
 
@@ -94,6 +95,10 @@ public class HomeFragment extends Fragment {
 
         binding.clAtendimento.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), ChatBot.class));
+        });
+
+        binding.clPags.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), Pagamento.class));
         });
 
 
