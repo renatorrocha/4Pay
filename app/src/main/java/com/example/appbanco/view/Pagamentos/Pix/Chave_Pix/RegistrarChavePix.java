@@ -114,7 +114,7 @@ public class RegistrarChavePix extends AppCompatActivity {
 
 
         } else if (tipoChave.equals("chaveAleatoria")) {
-            binding.ivTipoChave.setImageResource(R.drawable.ic_sec);
+            binding.ivTipoChave.setImageResource(R.drawable.ic_key);
             binding.tvChaveUsuario.setText(chaveAleatoria);
             setTipoChave = "Chave aleatória";
         }

@@ -120,8 +120,12 @@ public class PixTransfDestino extends AppCompatActivity {
                 }
             });
 
+
         }
 
+            if(!userEncontrado){
+                Toast.makeText(PixTransfDestino.this, "Nenhuma conta com esta chave foi encontrada.", Toast.LENGTH_SHORT).show();
+            }
 
     }
 
@@ -135,24 +139,5 @@ public class PixTransfDestino extends AppCompatActivity {
         }
     }
 
-//    private void pesquisarUsuarios(String pesquisa) {
-//
-//        for (int i = 0; i < chavesList.size(); i++) {
-//            if (pesquisa.equals(chavesList.get(i).getChave())) {
-//                userEncontrado = true;
-//                userDestino = chavesList.get(i).getIdUsuario();
-//                Intent intent = new Intent(this, PixTransfFinal.class);
-//
-//                transf.setIdUserDestino(userDestino);
-//                intent.putExtra("userDestino", userDestino);
-//                intent.putExtra("transferencia", transf);
-//                startActivity(intent);
-//            }
-//        }
-//
-//        if (!userEncontrado) {
-//            Toast.makeText(this, "Nenhuma conta com esta chave foi encontrada.", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 
 }
