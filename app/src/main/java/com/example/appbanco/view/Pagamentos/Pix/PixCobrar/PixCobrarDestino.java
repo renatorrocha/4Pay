@@ -11,6 +11,7 @@ import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixCobrarDestinoBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
+import com.example.appbanco.model.ChavePix;
 import com.example.appbanco.model.Cobranca;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
@@ -27,10 +28,11 @@ import java.util.List;
 public class PixCobrarDestino extends AppCompatActivity {
 
     ActivityPixCobrarDestinoBinding binding;
-    List<Usuario> usuarioList = new ArrayList<>();
+    List<String> usuarioList = new ArrayList<>();
     private String pesquisa = "";
     private Cobranca cobranca;
-    private Usuario userDestinatario;
+    private String userDestino;
+    boolean userEncontrado = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +64,7 @@ public class PixCobrarDestino extends AppCompatActivity {
                         Usuario usuario = ds.getValue(Usuario.class);
                         if (usuario != null) {
                             if (!usuario.getId().equals(FirebaseHelper.getIdFirebase())) {
-                                usuarioList.add(usuario);
+                                usuarioList.add(usuario.getId());
                             }
                         } else {
                             Toast.makeText(PixCobrarDestino.this, "Nenhum usuario cadastrado.", Toast.LENGTH_SHORT).show();
@@ -82,31 +84,59 @@ public class PixCobrarDestino extends AppCompatActivity {
         String pesquisa = binding.etPessoaDestino.getText().toString();
 
         if (!pesquisa.equals("")) {
-            pesquisarUsuarios(pesquisa);
+            getAllChavesPix(pesquisa);
         } else {
             Toast.makeText(this, "Insira os dados corretamente.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void pesquisarUsuarios(String pesquisa) {
-        boolean userEncontrado = false;
+
+    private void getAllChavesPix(String pesquisa) {
+
         for (int i = 0; i < usuarioList.size(); i++) {
-            if (pesquisa.equals(usuarioList.get(i).getEmail())) {
-                userEncontrado = true;
-                userDestinatario = usuarioList.get(i);
-                Intent intent = new Intent(this, PixCobrarFinal.class);
+            DatabaseReference chavesPixRef = FirebaseHelper.getDatabaseReference()
+                    .child("chavesPix")
+                    .child(usuarioList.get(i));
+            int finalI = i;
 
-                cobranca.setIdDestinatario(userDestinatario.getId());
-                intent.putExtra("userDestinatario", userDestinatario);
-                intent.putExtra("cobranca", cobranca);
-                startActivity(intent);
-            }
+            chavesPixRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            ChavePix chavePixAll = ds.getValue(ChavePix.class);
+
+                            if (chavePixAll != null) {
+                                if (pesquisa.equals(chavePixAll.getChave())) {
+                                    userEncontrado = true;
+                                    userDestino = chavePixAll.getIdUsuario();
+                                }
+                            }
+
+                        }
+
+                        if (userEncontrado) {
+                            Intent intent = new Intent(PixCobrarDestino.this, PixCobrarFinal.class);
+                            cobranca.setIdDestinatario(userDestino);
+                            intent.putExtra("userDestinatario", userDestino);
+                            intent.putExtra("cobranca", cobranca);
+                            startActivity(intent);
+
+
+                        }
+
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+//                    Toast.makeText(PixTransfDestino.this, error.toString(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
-
-        if (!userEncontrado) {
-            Toast.makeText(this, "Nenhum usuario com este nome.", Toast.LENGTH_SHORT).show();
-        }
-
     }
+
 
 }
