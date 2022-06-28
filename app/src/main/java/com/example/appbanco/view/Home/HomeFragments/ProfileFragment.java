@@ -38,21 +38,21 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        binding.ivMeusDados.setOnClickListener(new View.OnClickListener() {
+        binding.clMeusDados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(view.getContext(), MeusDadosActivity.class));
             }
         });
 
-        binding.ivCartoes.setOnClickListener(new View.OnClickListener() {
+        binding.clMeusCartoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(view.getContext(), Cartoes.class));
             }
         });
 
-        binding.ivChavesPix.setOnClickListener(new View.OnClickListener() {
+        binding.clMinhasChaves.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(view.getContext(), TipoChave.class));
