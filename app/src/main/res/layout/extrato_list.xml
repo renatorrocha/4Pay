@@ -6,16 +6,31 @@
     android:layout_height="wrap_content">
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvExt"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:cardElevation="8dp"
+        android:layout_marginLeft="12dp"
+        android:backgroundTint="@color/rosa_salmao"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/ivExt"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginHorizontal="12dp"
-            android:src="@drawable/ic_money_bag"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/ivExt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:src="@drawable/ic_money_bag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.cardview.widget.CardView>
+
+
 
     <TextView
         android:id="@+id/tvExtTitulo"
@@ -27,7 +42,7 @@
         android:text="Transferência"
         android:textColor="@color/preto"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/ivExt"
+        app:layout_constraintStart_toEndOf="@id/cvExt"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

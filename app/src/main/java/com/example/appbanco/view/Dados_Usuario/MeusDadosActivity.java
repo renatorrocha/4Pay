@@ -76,7 +76,7 @@ public class MeusDadosActivity extends AppCompatActivity {
         tvEmail.setText(usuario.getEmail());
         tvNomeUser.setText(usuario.getNome());
         tvTelefone.setText(usuario.getCelular());
-        tvRendaMensal.setText(usuario.getRendimento());
+        tvRendaMensal.setText("R$" + usuario.getRendimento());
 
         if (usuario.getUrlImagem() != null) {
             Picasso.get().load(usuario.getUrlImagem())
@@ -116,7 +116,9 @@ public class MeusDadosActivity extends AppCompatActivity {
                     }
                 }
 
-                tvEndereco.setText(enderecos.getLogradouro());
+                if(enderecos != null){
+                    tvEndereco.setText(enderecos.getLogradouro());
+                }
 
             }
 
