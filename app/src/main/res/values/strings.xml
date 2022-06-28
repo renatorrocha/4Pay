@@ -51,5 +51,10 @@
     <string name="txt_chave_quantidade">Você possui %1$s de 4 chaves</string>
     <string name="txt_desc_tipo_chave">Enviar e receber transferências pelo \nPix usando apenas seu %1$s</string>
     <string name="txt_registrar_chave">Registrar %1$s</string>
+    <string name="txt_pag_desc">Estas são as opções de pagamento \ndisponíveis</string>
+    <string name="txt_boleto_desc">Insira o código do boleto que \nserá pago.</string>
+    <string name="txt_confirmar_pag_desc">Confira os dados do seu \npagamento</string>
+    <string name="txt_escolher_pag">Escolha um método de pagamento</string>
+    <string name="txt_escolher_pag_desc">Selecione um dos dois métodos para o pagamento do boleto.</string>
 
 </resources>

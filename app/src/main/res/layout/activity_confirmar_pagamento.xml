@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clMain"
+    android:background="@drawable/background_alternativo"
+    tools:context=".view.Pagamentos.Pagamento.ConfirmarPagamento">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingVertical="8dp"
+        android:text="Confirmar pagamento"
+        android:textAlignment="center"
+        android:textColor="@color/rosa"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivArrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitulo"
+        app:layout_constraintTop_toTopOf="@id/tvTitulo"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tvPagConfirmaDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_confirmar_pag_desc"
+        android:fontFamily="@font/nunito_regular"
+        android:textSize="20sp"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/preto"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvParaQuem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Para"
+        android:textColor="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvPagConfirmaDesc"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loja blablabla"
+        android:textColor="@color/preto"
+        android:textSize="14sp"
+        android:fontFamily="@font/nunito_bold"
+        app:layout_constraintTop_toBottomOf="@id/tvParaQuem"
+        app:layout_constraintStart_toStartOf="@id/tvParaQuem" />
+
+    <TextView
+        android:id="@+id/tvLinha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_shape_cinza"
+        app:layout_constraintTop_toBottomOf="@id/tvPara"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvValorQuantd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor"
+        android:textColor="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvLinha"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 1000,00"
+        android:textColor="@color/preto"
+        android:fontFamily="@font/nunito_bold"
+
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvValorQuantd"
+        app:layout_constraintStart_toStartOf="@id/tvValorQuantd" />
+
+    <TextView
+        android:id="@+id/tvLinha2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_shape_cinza"
+        app:layout_constraintTop_toBottomOf="@id/tvValor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDataVenc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vencimento"
+        android:textColor="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvLinha2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="27/06/2023"
+        android:textColor="@color/preto"
+        android:textSize="14sp"
+        android:fontFamily="@font/nunito_bold"
+        app:layout_constraintTop_toBottomOf="@id/tvDataVenc"
+        app:layout_constraintStart_toStartOf="@id/tvDataVenc" />
+
+    <TextView
+        android:id="@+id/tvLinha3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_shape_cinza"
+        app:layout_constraintTop_toBottomOf="@id/tvData"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCdBarras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Código de barras"
+        android:textColor="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvLinha3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0000.0000.0000.0000.000.00120065"
+        android:textColor="@color/preto"
+        android:fontFamily="@font/nunito_bold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvCdBarras"
+        app:layout_constraintStart_toStartOf="@id/tvCdBarras" />
+
+    <TextView
+        android:id="@+id/tvLinha4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_shape_cinza"
+        app:layout_constraintTop_toBottomOf="@id/tvCodigo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btnlogin"
+        android:text="@string/txt_btn_confirmar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
