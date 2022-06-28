@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivClose"
-        android:text="Titulo" />
+        android:text="@string/txt_escolher_pag" />
 
     <TextView
         android:id="@+id/textMensagem"
@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTitulo"
-        android:text="descrição" />
+        android:text="@string/txt_escolher_pag_desc" />
 
     <Button
         android:id="@+id/btnPagarSaldo"

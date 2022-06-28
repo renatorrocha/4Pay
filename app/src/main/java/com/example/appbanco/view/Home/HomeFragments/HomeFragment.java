@@ -319,7 +319,7 @@ public class HomeFragment extends Fragment {
             binding.tvValidadeCartaoDois.setText(cartaoList.get(1).getDataVencimento());
 
             binding.clCartaoTres.setBackgroundResource(R.drawable.credit_card);
-            binding.tvTipoCartao.setText(cartaoList.get(2).getTipo());
+            binding.tvTipoCartaoTres.setText(cartaoList.get(2).getTipo());
             String[] splitNumero3 = cartaoList.get(2).getNumeros().trim().split(" ");
             binding.tvNumCartaoTres.setText(getString(R.string.txt_codigo_cartao_put, splitNumero3[3]));
             binding.tvValidadeCartaoTres.setText(cartaoList.get(2).getDataVencimento());

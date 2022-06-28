@@ -65,7 +65,8 @@
             android:id="@+id/etCodigo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="textFilter"
+            android:digits="1234567890"
             android:textColor="@color/preto" />
 
 
