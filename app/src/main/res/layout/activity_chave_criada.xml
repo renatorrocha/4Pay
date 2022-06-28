@@ -8,47 +8,21 @@
     tools:context=".view.Pagamentos.Pix.Chave_Pix.ChaveCriada">
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/tipoChave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:paddingHorizontal="24dp"
+        android:textAlignment="center"
         android:fontFamily="@font/nunito_bold"
         android:text="@string/txt_apresenta_chave"
         android:textColor="@color/preto"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvTipoChave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_bold"
-        android:text="@string/txt_tipo_chave_recebida"
-        android:textColor="@color/preto"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView18"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toTopOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/nunito_bold"
-        android:text="@string/txt_criacao_chave_concluida"
-        android:textColor="@color/preto"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -58,10 +32,8 @@
         android:contentDescription="@string/txt_imagem_chave_criada"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.282"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_chave_criada" />
 
     <Button
@@ -70,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:background="@drawable/btnlogin"
+        android:textColor="@color/white"
         android:text="@string/txt_btn_concluir_pix"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"

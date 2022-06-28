@@ -16,9 +16,7 @@
     <string name="txt_opc_celular_pix">Celular</string>
     <string name="txt_gerar_chave">Gerar Chave</string>
     <string name="txt_hint_chave_aleatoria">123abc456def</string>
-    <string name="txt_apresenta_chave">Chave de</string>
-    <string name="txt_tipo_chave_recebida">{tipoChave}</string>
-    <string name="txt_criacao_chave_concluida">Cadastrada com sucesso</string>
+    <string name="txt_apresenta_chave">Chave de %1$s cadastrada com sucesso.</string>
     <string name="txt_btn_concluir_pix">Concluir</string>
     <string name="txt_imagem_chave_criada">Imagem Chave Pix Criada</string>
     <string name="txt_depositar_title">Depositar</string>
@@ -51,7 +49,12 @@
     <string name="txt_desc_chave_pix">Gerencie suas chaves e crie chaves novas para enviar e receber transferências.</string>
     <string name="txt_chave_aleatoria">Chave aleatória</string>
     <string name="txt_chave_quantidade">Você possui %1$s de 4 chaves</string>
-    <string name="txt_desc_tipo_chave">Enviar e receber transferências pelo \n Pix usando apenas seu %1$s</string>
+    <string name="txt_desc_tipo_chave">Enviar e receber transferências pelo \nPix usando apenas seu %1$s</string>
     <string name="txt_registrar_chave">Registrar %1$s</string>
+    <string name="txt_pag_desc">Estas são as opções de pagamento \ndisponíveis</string>
+    <string name="txt_boleto_desc">Insira o código do boleto que \nserá pago.</string>
+    <string name="txt_confirmar_pag_desc">Confira os dados do seu \npagamento</string>
+    <string name="txt_escolher_pag">Escolha um método de pagamento</string>
+    <string name="txt_escolher_pag_desc">Selecione um dos dois métodos para o pagamento do boleto.</string>
 
 </resources>

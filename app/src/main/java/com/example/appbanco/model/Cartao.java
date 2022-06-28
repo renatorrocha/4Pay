@@ -1,5 +1,8 @@
 package com.example.appbanco.model;
 
+import com.example.appbanco.help.FirebaseHelper;
+import com.google.firebase.database.DatabaseReference;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -51,8 +54,19 @@ public class Cartao implements Serializable {
         this.setPin(pin);
     }
 
+    public void atualizarSaldo() {
+        DatabaseReference cartaoRef = FirebaseHelper.getDatabaseReference()
+                .child("cartoes")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(getTipo())
+                .child("saldo");
 
-    public String getTipo() {
+        cartaoRef.setValue(getSaldo());
+
+    }
+
+
+        public String getTipo() {
         return tipo;
     }
 

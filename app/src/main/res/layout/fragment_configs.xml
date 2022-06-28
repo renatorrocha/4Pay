@@ -6,21 +6,26 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo">
 
-    <TextView
-        android:id="@+id/tvTitulo"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="66dp"
         android:background="@color/preto"
-        android:fontFamily="@font/nunito_regular"
-        android:paddingVertical="8dp"
-        android:text="Configurações"
-        android:textAlignment="center"
-        android:textColor="@color/rosa"
-        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/ivLogo4Pay"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_4pay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvPerfil"
@@ -33,7 +38,7 @@
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo">
+        app:layout_constraintTop_toBottomOf="@id/clLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -43,15 +48,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitulo">
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/ivUser"
                 android:layout_width="86dp"
                 android:layout_height="86dp"
                 android:layout_marginLeft="8dp"
-                android:src="@drawable/ic_person_pink"
+                android:backgroundTint="@color/preto"
+                app:cardCornerRadius="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivUserFoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_person_pink"
+                     />
+
+            </androidx.cardview.widget.CardView>
+
+
 
             <TextView
                 android:id="@+id/tvNomeUser"
@@ -125,7 +144,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginLeft="12dp"
-                android:backgroundTint="@color/azul_claro"
+                android:backgroundTint="@color/rosa_salmao"
                 app:cardCornerRadius="6dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -174,7 +193,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginLeft="12dp"
-                android:backgroundTint="@color/azul_claro"
+                android:backgroundTint="@color/rosa_salmao"
                 app:cardCornerRadius="6dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -223,7 +242,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginLeft="12dp"
-                android:backgroundTint="@color/azul_claro"
+                android:backgroundTint="@color/rosa_salmao"
                 app:cardCornerRadius="6dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -272,7 +291,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginLeft="12dp"
-                android:backgroundTint="@color/azul_claro"
+                android:backgroundTint="@color/rosa_salmao"
                 app:cardCornerRadius="6dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -331,6 +350,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="42dp"
                 android:layout_height="42dp"
+                android:layout_marginVertical="6dp"
                 android:layout_marginLeft="12dp"
                 android:backgroundTint="@color/rosa"
                 app:cardCornerRadius="8dp"

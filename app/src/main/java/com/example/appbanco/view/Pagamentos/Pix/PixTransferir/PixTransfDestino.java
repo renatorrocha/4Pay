@@ -11,8 +11,10 @@ import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixTransfDestinoBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
+import com.example.appbanco.model.ChavePix;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.RegistrarChavePix;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,10 +26,11 @@ import java.util.List;
 public class PixTransfDestino extends AppCompatActivity {
 
     ActivityPixTransfDestinoBinding binding;
-    List<Usuario> usuarioList = new ArrayList<>();
+    List<String> usuarioList = new ArrayList<>();
     private String pesquisa = "";
     private Transferencia transf;
-    private Usuario userDestino;
+    private String userDestino;
+    boolean userEncontrado = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +62,7 @@ public class PixTransfDestino extends AppCompatActivity {
                         Usuario usuario = ds.getValue(Usuario.class);
                         if (usuario != null) {
                             if (!usuario.getId().equals(FirebaseHelper.getIdFirebase())) {
-                                usuarioList.add(usuario);
+                                usuarioList.add(usuario.getId());
                             }
                         } else {
                             Toast.makeText(PixTransfDestino.this, "Nenhum usuario cadastrado.", Toast.LENGTH_SHORT).show();
@@ -74,36 +77,60 @@ public class PixTransfDestino extends AppCompatActivity {
         });
     }
 
+    private void getAllChavesPix(String pesquisa) {
+
+        for (int i = 0; i < usuarioList.size(); i++) {
+            DatabaseReference chavesPixRef = FirebaseHelper.getDatabaseReference()
+                    .child("chavesPix")
+                    .child(usuarioList.get(i));
+            int finalI = i;
+
+            chavesPixRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            ChavePix chavePixAll = ds.getValue(ChavePix.class);
+
+                            if (chavePixAll != null) {
+                                if (pesquisa.equals(chavePixAll.getChave())) {
+                                    userEncontrado = true;
+                                    userDestino = chavePixAll.getIdUsuario();
+                                }
+                            }
+
+                        }
+
+                        if (userEncontrado) {
+                            Intent intent = new Intent(PixTransfDestino.this, PixTransfFinal.class);
+                            transf.setIdUserDestino(userDestino);
+                            intent.putExtra("userDestino", userDestino);
+                            intent.putExtra("transferencia", transf);
+                            startActivity(intent);
+                        }
+                        
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+//                    Toast.makeText(PixTransfDestino.this, error.toString(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
 
     private void configPesquisa() {
         String pesquisa = binding.etPessoaDestino.getText().toString();
 
         if (!pesquisa.equals("")) {
-            pesquisarUsuarios(pesquisa);
+            getAllChavesPix(pesquisa);
         } else {
             Toast.makeText(this, "Insira os dados corretamente.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void pesquisarUsuarios(String pesquisa) {
-        boolean userEncontrado = false;
-
-        for (int i = 0; i < usuarioList.size(); i++) {
-            if (pesquisa.equals(usuarioList.get(i).getEmail())) {
-                userEncontrado = true;
-                userDestino = usuarioList.get(i);
-                Intent intent = new Intent(this, PixTransfFinal.class);
-
-                transf.setIdUserDestino(userDestino.getId());
-                intent.putExtra("userDestino", userDestino);
-                intent.putExtra("transferencia", transf);
-                startActivity(intent);
-            }
-        }
-
-        if (!userEncontrado) {
-            Toast.makeText(this, "Nenhum usuario com este nome.", Toast.LENGTH_SHORT).show();
-        }
-    }
 
 }

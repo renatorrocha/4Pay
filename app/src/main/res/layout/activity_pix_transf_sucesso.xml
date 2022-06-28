@@ -11,6 +11,7 @@
         android:background="@drawable/background_alternativo"
         tools:context=".view.PixTransfSucesso">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lineard"
             android:layout_width="match_parent"
@@ -223,7 +224,6 @@
             app:layout_constraintHorizontal_bias="0.066"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
