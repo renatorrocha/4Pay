@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.appbanco.R;
 import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.CriaChavePix;
 import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.TipoChave;
 import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PixCobrar;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransf;

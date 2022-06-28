@@ -3,10 +3,11 @@ package com.example.appbanco.model;
 import com.example.appbanco.help.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExtratoModel {
+public class ExtratoModel implements Serializable {
 
     private String id;
     private String operacao;

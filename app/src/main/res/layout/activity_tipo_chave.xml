@@ -39,9 +39,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_regular"
         android:text="@string/txt_desc_chave_pix"
-        android:textSize="12sp"
-        android:layout_marginLeft="28dp"
-        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:paddingHorizontal="6dp"
         android:layout_marginTop="12dp"
         android:textColor="@color/preto"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +55,7 @@
         android:backgroundTint="@color/azul_claro"
         android:fontFamily="@font/nunito_bold"
         android:text="Criar chave"
+        android:textSize="16sp"
         android:textAllCaps="false"
         android:textColor="@color/preto"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +72,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/tvQuantdChaves"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_chave_quantidade"
@@ -87,228 +88,10 @@
         android:id="@+id/rvChavesPix"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintTop_toBottomOf="@id/tvLinha"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:id="@+id/clSuasChaves"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tvDesc">-->
-
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:id="@+id/clEmail"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="16dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent">-->
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:id="@+id/cvEmail"-->
-<!--                android:layout_width="36dp"-->
-<!--                android:layout_height="36dp"-->
-<!--                android:layout_marginLeft="12dp"-->
-<!--                android:backgroundTint="@color/azul_claro"-->
-<!--                app:cardCornerRadius="6dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_margin="4dp"-->
-<!--                    android:src="@drawable/ic_email" />-->
-<!--            </androidx.cardview.widget.CardView>-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tvEmail"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="12dp"-->
-<!--                android:fontFamily="@font/nunito_regular"-->
-<!--                android:text="@string/txt_opc_email_pix"-->
-<!--                android:textColor="@color/preto"-->
-<!--                android:textSize="20sp"-->
-<!--                app:layout_constraintBottom_toTopOf="@id/tvChaveEmail"-->
-<!--                app:layout_constraintStart_toEndOf="@id/cvEmail"-->
-<!--                app:layout_constraintTop_toTopOf="@id/cvEmail" />-->
-<!--            -->
-<!--            <TextView-->
-<!--                android:id="@+id/tvChaveEmail"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="joao@gmail.com"-->
-<!--                android:layout_marginBottom="6dp"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/tvEmail"-->
-<!--                app:layout_constraintStart_toStartOf="@id/tvEmail"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"/>-->
-<!--                -->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/line_shape_cinza"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent" />-->
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:id="@+id/clCelular"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="16dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/clEmail">-->
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:id="@+id/cvCelular"-->
-<!--                android:layout_width="36dp"-->
-<!--                android:layout_height="36dp"-->
-<!--                android:layout_marginLeft="12dp"-->
-<!--                android:backgroundTint="@color/azul_claro"-->
-<!--                app:cardCornerRadius="6dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_margin="4dp"-->
-<!--                    android:src="@drawable/ic_cel"-->
-<!--                    app:tint="@color/preto" />-->
-
-<!--            </androidx.cardview.widget.CardView>-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="12dp"-->
-<!--                android:fontFamily="@font/nunito_regular"-->
-<!--                android:text="@string/txt_opc_celular_pix"-->
-<!--                android:textColor="@color/preto"-->
-<!--                android:textSize="20sp"-->
-<!--                app:layout_constraintBottom_toBottomOf="@id/cvCelular"-->
-<!--                app:layout_constraintStart_toEndOf="@id/cvCelular"-->
-<!--                app:layout_constraintTop_toTopOf="@id/cvCelular" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/line_shape_cinza"-->
-<!--                android:paddingTop="2dp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/cvCelular" />-->
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:id="@+id/clCpf"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="16dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/clCelular">-->
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:id="@+id/cvCpf"-->
-<!--                android:layout_width="36dp"-->
-<!--                android:layout_height="36dp"-->
-<!--                android:layout_marginLeft="12dp"-->
-<!--                android:backgroundTint="@color/azul_claro"-->
-<!--                app:cardCornerRadius="6dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_margin="4dp"-->
-<!--                    android:src="@drawable/ic_id" -->
-<!--                    app:tint="@color/preto" />-->
-<!--            </androidx.cardview.widget.CardView>-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="12dp"-->
-<!--                android:fontFamily="@font/nunito_regular"-->
-<!--                android:text="@string/txt_opc_cpf_pix"-->
-<!--                android:textColor="@color/preto"-->
-<!--                android:textSize="20sp"-->
-<!--                app:layout_constraintBottom_toBottomOf="@id/cvCpf"-->
-<!--                app:layout_constraintStart_toEndOf="@id/cvCpf"-->
-<!--                app:layout_constraintTop_toTopOf="@id/cvCpf" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/line_shape_cinza"-->
-<!--                android:paddingTop="2dp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/cvCpf" />-->
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:id="@+id/clSobre"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="16dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/clCpf">-->
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:id="@+id/cvSobre"-->
-<!--                android:layout_width="36dp"-->
-<!--                android:layout_height="36dp"-->
-<!--                android:layout_marginLeft="12dp"-->
-<!--                android:backgroundTint="@color/azul_claro"-->
-<!--                app:cardCornerRadius="6dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_margin="4dp"-->
-<!--                    android:src="@drawable/ic_sec" />-->
-<!--            </androidx.cardview.widget.CardView>-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="12dp"-->
-<!--                android:fontFamily="@font/nunito_regular"-->
-<!--                android:text="@string/txt_chave_aleatoria"-->
-<!--                android:textColor="@color/preto"-->
-<!--                android:textSize="20sp"-->
-<!--                app:layout_constraintBottom_toBottomOf="@id/cvSobre"-->
-<!--                app:layout_constraintStart_toEndOf="@id/cvSobre"-->
-<!--                app:layout_constraintTop_toTopOf="@id/cvSobre" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/line_shape_cinza"-->
-<!--                android:paddingTop="2dp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/cvSobre" />-->
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
 
 
 

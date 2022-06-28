@@ -33,6 +33,7 @@ import com.example.appbanco.view.Pagamentos.Cartoes.CartaoFatura;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Cartoes.GerarCartoes;
 import com.example.appbanco.view.Pagamentos.Deposito.DepositofFormActivity;
+import com.example.appbanco.view.Pagamentos.Pagamento.Pagamento;
 import com.example.appbanco.view.Pagamentos.Pix.Pix;
 import com.example.appbanco.view.Pagamentos.Recarga.RecargaInicio;
 
@@ -94,6 +95,10 @@ public class HomeFragment extends Fragment {
 
         binding.clAtendimento.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), ChatBot.class));
+        });
+
+        binding.clPags.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), Pagamento.class));
         });
 
 
@@ -314,7 +319,7 @@ public class HomeFragment extends Fragment {
             binding.tvValidadeCartaoDois.setText(cartaoList.get(1).getDataVencimento());
 
             binding.clCartaoTres.setBackgroundResource(R.drawable.credit_card);
-            binding.tvTipoCartao.setText(cartaoList.get(2).getTipo());
+            binding.tvTipoCartaoTres.setText(cartaoList.get(2).getTipo());
             String[] splitNumero3 = cartaoList.get(2).getNumeros().trim().split(" ");
             binding.tvNumCartaoTres.setText(getString(R.string.txt_codigo_cartao_put, splitNumero3[3]));
             binding.tvValidadeCartaoTres.setText(cartaoList.get(2).getDataVencimento());
