@@ -166,8 +166,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         ivArrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AtualizarDadosActivity.this,
-                        MeusDadosActivity.class));
+                finish();
             }
         });
 
