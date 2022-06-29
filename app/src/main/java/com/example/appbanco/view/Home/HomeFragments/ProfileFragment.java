@@ -23,6 +23,7 @@ import com.example.appbanco.view.Dados_Usuario.MeusDadosActivity;
 import com.example.appbanco.view.Pagamentos.Cartoes.Cartoes;
 import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.ChaveCriada;
 import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.TipoChave;
+import com.example.appbanco.view.Seguros.SegurosAtivos;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -60,10 +61,9 @@ public class ProfileFragment extends Fragment {
         });
 
         binding.clMeusSeguros.setOnClickListener(v -> {
-
+            startActivity(new Intent(view.getContext(), SegurosAtivos.class));
         });
 
-        //binding.iv
 
         return view;
     }
