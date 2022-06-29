@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.SegurosAtivosAdapter;
@@ -25,7 +26,7 @@ public class SegurosAtivos extends AppCompatActivity {
 
     private SegurosAtivosAdapter segurosAdapter;
     private RecyclerView rvSeguros;
-    private ImageButton btn_voltar;
+    private ImageView btn_voltar;
     Usuario usuario;
 
     @Override
