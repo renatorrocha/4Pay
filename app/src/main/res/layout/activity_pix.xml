@@ -44,8 +44,8 @@
         android:text="Faça o envio ou recebimento de pagamentos de uma forma mais rápida."
         android:textColor="@color/preto"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
     <TextView
@@ -63,22 +63,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
+
     <TextView
         android:id="@+id/tvEnviarPix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="24dp"
+        android:drawableBottom="@drawable/ic_money_bag"
+        android:drawableTint="@color/preto"
         android:fontFamily="@font/nunito_regular"
         android:text="Transferência"
         android:textColor="@color/preto"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textView12"
-        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        android:drawableBottom="@drawable/ic_money_bag"
-        android:drawableTint="@color/preto"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/tvEnviarQrCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:drawableBottom="@drawable/ic_qrcode"
+        android:drawableTint="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Enviar Qr Code"
+        android:textColor="@color/preto"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tvEnviarPix"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
 
 
     <TextView
@@ -109,6 +125,21 @@
         android:drawableTint="@color/preto"
         app:layout_constraintEnd_toEndOf="@+id/textView33"
         app:layout_constraintStart_toStartOf="@+id/textView33"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <TextView
+        android:id="@+id/tvLerQrCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:drawableBottom="@drawable/ic_qrcode"
+        android:drawableTint="@color/preto"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Ler Qr Code"
+        android:textColor="@color/preto"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tvDepositarPix"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
 

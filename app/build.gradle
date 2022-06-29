@@ -95,5 +95,9 @@ dependencies {
     // Dotindicator
     implementation("com.tbuonomo:dotsindicator:4.3")
 
+    // QR Code
+    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
+    implementation 'com.karumi:dexter:6.2.3'
+
 
 }
