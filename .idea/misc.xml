@@ -116,7 +116,7 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_pix_transf_final.xml" value="0.264" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_pix_transf_sucesso.xml" value="0.37890625" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_recarga.xml" value="0.2171875" />
-        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_seguros.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_seguros.xml" value="0.536" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_seguros_ativos.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_sobre.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/activity_tipo_chave.xml" value="0.4" />
@@ -135,9 +135,11 @@
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/layout_dialog_escolhercartao.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/layout_dialog_info.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/linha.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/list_seguros.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/toolbar_volta.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/toolbar_volta_add.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/toolbar_volta_salvar.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/layout/viewpager_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1435" />
         <entry key="..\:/Users/gfarias/AndroidStudioProjects/Appbanco-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.201" />
         <entry key="..\:/Users/user/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.3375" />

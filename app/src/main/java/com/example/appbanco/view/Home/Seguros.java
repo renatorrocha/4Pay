@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.VPAdapter;
+import com.example.appbanco.databinding.ActivitySegurosBinding;
 import com.example.appbanco.model.ViewPagerItem;
 import com.example.appbanco.view.Seguros.SegurosAtivos;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
@@ -25,11 +27,13 @@ public class Seguros extends AppCompatActivity {
 
     private ImageView ivArrowBack;
     private Button btnSeusSeguros;
+    private ActivitySegurosBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seguros);
+        binding = ActivitySegurosBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         ivArrowBack = findViewById(R.id.ivArrowBack);
         viewPager2 = findViewById(R.id.viewPager);
@@ -46,7 +50,7 @@ public class Seguros extends AppCompatActivity {
 
         btnSeusSeguros = findViewById(R.id.btnProximo);
 
-        VPAdapter vpAdapter = new VPAdapter(viewPagerItemArrayList);
+        VPAdapter vpAdapter = new VPAdapter(viewPagerItemArrayList, getBaseContext());
 
         viewPager2.setAdapter(vpAdapter);
 
@@ -58,6 +62,10 @@ public class Seguros extends AppCompatActivity {
 
         viewPager2.getChildAt(0).setOverScrollMode(View.OVER_SCROLL_NEVER);
 
+        binding.viewPager.getChildAt(0).setOnClickListener(view -> {
+
+        });
+
         btnSeusSeguros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +76,7 @@ public class Seguros extends AppCompatActivity {
         ivArrowBack.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Home.class));
         });
+
 
         WormDotsIndicator wormDotsIndicator = findViewById(R.id.worm_dots_indicator);
         wormDotsIndicator.setViewPager2(viewPager2);

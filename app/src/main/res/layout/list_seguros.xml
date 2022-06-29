@@ -10,55 +10,81 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingVertical="16dp"
-        android:paddingHorizontal="12dp">
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="16dp">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="340dp"
+            android:layout_height="260dp"
+            android:backgroundTint="@color/preto"
             app:cardCornerRadius="15dp">
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/preto"
-                android:padding="10dp">
-
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tvSeguroTitulo"
+                    android:id="@+id/tvTitulo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_bold"
-
-                    android:text="@string/txt_titulo_seguro"
-                    android:textColor="@color/rosa"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvSeguroDesc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvSeguroTitulo"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="4dp"
                     android:fontFamily="@font/nunito_regular"
-                    android:paddingTop="12dp"
-                    android:text="@string/txt_descricao_plano"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:text="Titulo"
+                    android:textColor="@color/rosa_salmao"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tvSegExpira"
+                    android:id="@+id/tvDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvSeguroDesc"
-                    android:layout_marginTop="18dp"
-                    android:text="10/25"
-                    android:textColor="@color/white" />
+                    android:layout_marginTop="12dp"
+                    android:text="descrição"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="8dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+
+                <ImageView
+                    android:id="@+id/ivSeguro"
+                    android:layout_width="180dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvDesc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/cartao_credito" />
+
+                <TextView
+                    android:id="@+id/tvValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="R$ 160,00"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvVencimento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="08/29"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
 
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
