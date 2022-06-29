@@ -13,6 +13,8 @@ import com.example.appbanco.R;
 import com.example.appbanco.adapter.VPAdapter;
 import com.example.appbanco.model.ViewPagerItem;
 import com.example.appbanco.view.Seguros.SegurosAtivos;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 
 import java.util.ArrayList;
 
@@ -66,6 +68,9 @@ public class Seguros extends AppCompatActivity {
         ivArrowBack.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Home.class));
         });
+
+        WormDotsIndicator wormDotsIndicator = findViewById(R.id.worm_dots_indicator);
+        wormDotsIndicator.setViewPager2(viewPager2);
 
     }
 }
