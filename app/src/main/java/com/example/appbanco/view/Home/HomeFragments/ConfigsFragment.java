@@ -22,6 +22,7 @@ import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Dados_Usuario.AtualizarDadosActivity;
 import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Home.Notificacoes;
+import com.example.appbanco.view.Home.Sobre;
 import com.example.appbanco.view.Login_Cadastro.Login;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,6 +55,11 @@ public class ConfigsFragment extends Fragment {
 
         binding.cvNoti.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), Notificacoes.class));
+        });
+
+        binding.clSobre.setOnClickListener(v -> {
+            startActivity(new Intent(view.getContext(), Sobre.class));
+
         });
 
 

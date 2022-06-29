@@ -56,5 +56,7 @@
     <string name="txt_confirmar_pag_desc">Confira os dados do seu \npagamento</string>
     <string name="txt_escolher_pag">Escolha um método de pagamento</string>
     <string name="txt_escolher_pag_desc">Selecione um dos dois métodos para o pagamento do boleto.</string>
+    <string name="txt_sobre_text">Durante o Fourcamp2022 foi proposto o desafio de fazer um banco digital para consolidar os conhecimentos adquiridos durante os 2 meses de conteudo.
+E o 4pay é o banco digital feito pelo grupo 3 de Android composto por: Gabriel Santos, Igor Montezuma, Thiago Costa e Renato Rocha.</string>
 
 </resources>
