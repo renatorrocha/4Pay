@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nunito_regular"
-            android:text="Configurações do Pix"
+            android:text="Minhas chaves Pix"
             android:textColor="@color/preto"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
