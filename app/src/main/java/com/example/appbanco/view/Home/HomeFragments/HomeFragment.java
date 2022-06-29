@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
     private List<ExtratoModel> extratoList = new ArrayList<>();
     private ExtratoAdapter extratoAdapter;
     private RecyclerView rvExtrato;
-    private double userSaldo;
+    private Usuario user;
     private Cartao cartaoUm, cartaoDois, cartaoTres;
     BottomSheetBehavior bottomSheetBehavior;
     FragmentHomeBinding binding;
@@ -66,6 +66,10 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
+
+        getUserData();
+        getAllNoti();
+        recuperarCartoes();
 
         binding.clCartoes.setOnClickListener(view1 -> {
             startActivity(new Intent(view.getContext(), Cartoes.class));
@@ -114,9 +118,9 @@ public class HomeFragment extends Fragment {
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 
         binding.clCartao.setOnClickListener(view1 -> {
-            if(cartaoList.size() < 1){
+            if (cartaoList.size() < 1) {
                 startActivity(new Intent(view.getContext(), GerarCartoes.class));
-            }else{
+            } else {
                 Intent it = new Intent(view.getContext(), CartaoFatura.class);
                 it.putExtra("cartao", cartaoUm);
                 startActivity(it);
@@ -124,9 +128,9 @@ public class HomeFragment extends Fragment {
         });
 
         binding.clCartaoDois.setOnClickListener(view1 -> {
-                Intent it = new Intent(view.getContext(), CartaoFatura.class);
-                it.putExtra("cartao", cartaoDois);
-                startActivity(it);
+            Intent it = new Intent(view.getContext(), CartaoFatura.class);
+            it.putExtra("cartao", cartaoDois);
+            startActivity(it);
         });
 
         binding.clCartaoTres.setOnClickListener(view1 -> {
@@ -166,7 +170,7 @@ public class HomeFragment extends Fragment {
 
             } else {
                 binding.ivEsconderSaldo.setImageResource(R.drawable.ic_eye);
-                binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(userSaldo)));
+                binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(user.getSaldo())));
                 recuperarCartoes();
             }
         });
@@ -174,12 +178,6 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    public void onStart() {
-        super.onStart();
-        getUserData();
-        getAllNoti();
-        recuperarCartoes();
-    }
 
     private void getUserData() {
         DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
@@ -188,17 +186,17 @@ public class HomeFragment extends Fragment {
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Usuario user = snapshot.getValue(Usuario.class);
+                user = snapshot.getValue(Usuario.class);
 
-                userSaldo = user.getSaldo();
-                binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(userSaldo)));
-                String[] splitName = user.getNome().trim().split("\\s+");
-                binding.tvBemVindo.setText("Olá, " + splitName[0]);
-                if(user.getUrlImagem() != null){
-                    Picasso.get().load(user.getUrlImagem())
-                            .into(binding.ivUserFoto);
+                if (user != null) {
+                    binding.tvSaldoValor.setText(getString(R.string.txt_valor_saldo, GetMask.getValor(user.getSaldo())));
+                    String[] splitName = user.getNome().trim().split("\\s+");
+                    binding.tvBemVindo.setText("Olá, " + splitName[0]);
+                    if (user.getUrlImagem() != null) {
+                        Picasso.get().load(user.getUrlImagem())
+                                .into(binding.ivUserFoto);
+                    }
                 }
-
             }
 
             @Override
@@ -278,7 +276,7 @@ public class HomeFragment extends Fragment {
             binding.clCartao.setBackgroundResource(R.drawable.credit_card);
             binding.tvTipoCartao.setText(cartaoList.get(0).getTipo());
             String[] splitNumero = cartaoList.get(0).getNumeros().trim().split(" ");
-            binding.tvNumCartao.setText(getString(R.string.txt_codigo_cartao_put, splitNumero[3]));
+            binding.tvNumCartao.setText(getActivity().getString(R.string.txt_codigo_cartao_put, splitNumero[3]));
             binding.tvValidadeCartao.setText(cartaoList.get(0).getDataVencimento());
 
             binding.clListaCartoes.removeView(binding.clCartaoDois);
@@ -325,8 +323,6 @@ public class HomeFragment extends Fragment {
             binding.tvValidadeCartaoTres.setText(cartaoList.get(2).getDataVencimento());
 
         }
-
-
 
 
     }

@@ -51,7 +51,7 @@
                 android:id="@+id/cvCartaoCredito"
                 android:layout_width="380dp"
                 android:layout_height="580dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="4dp"
                 app:cardBackgroundColor="@color/preto"
                 app:cardCornerRadius="14dp">
 
@@ -176,7 +176,7 @@
                 android:id="@+id/cvCartaoDebito"
                 android:layout_width="380dp"
                 android:layout_height="580dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="4dp"
                 app:cardBackgroundColor="@color/preto"
                 app:cardCornerRadius="14dp">
 
@@ -297,7 +297,7 @@
                 android:id="@+id/cvCartaoDebitoCredito"
                 android:layout_width="380dp"
                 android:layout_height="580dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="4dp"
                 app:cardBackgroundColor="@color/preto"
                 app:cardCornerRadius="14dp">
 
