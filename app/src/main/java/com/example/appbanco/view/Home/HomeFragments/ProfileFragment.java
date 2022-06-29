@@ -59,6 +59,10 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        binding.clMeusSeguros.setOnClickListener(v -> {
+
+        });
+
         //binding.iv
 
         return view;

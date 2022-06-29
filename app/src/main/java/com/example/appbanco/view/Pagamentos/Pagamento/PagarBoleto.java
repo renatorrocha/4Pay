@@ -126,6 +126,7 @@ public class PagarBoleto extends AppCompatActivity {
                 btnCartaoUm.setOnClickListener(v -> {
                     intentNext.putExtra("tipoCartao", cartaoList.get(0));
                     startActivity(intentNext);
+                    dialog.dismiss();
                 });
 
 
@@ -139,6 +140,8 @@ public class PagarBoleto extends AppCompatActivity {
                     btnCartaoDois.setOnClickListener(v -> {
                         intentNext.putExtra("tipoCartao", cartaoList.get(1));
                         startActivity(intentNext);
+                        dialog.dismiss();
+
                     });
 
                     clMain.removeView(btnCartaoTres);
@@ -155,6 +158,8 @@ public class PagarBoleto extends AppCompatActivity {
                     btnCartaoTres.setOnClickListener(v -> {
                         intentNext.putExtra("tipoCartao", cartaoList.get(2));
                         startActivity(intentNext);
+                        dialog.dismiss();
+
                     });
                 }
 

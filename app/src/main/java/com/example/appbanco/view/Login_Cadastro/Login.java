@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
         });
 
         binding.tvEsqueciSenha.setOnClickListener(view -> {
-            startActivity(new Intent(this, AtualizarDadosActivity.class));
+            startActivity(new Intent(this, EsqueciSenha.class));
         });
 
         AnimationDrawable animationDrawable = (AnimationDrawable) binding.mainLayout.getBackground();
