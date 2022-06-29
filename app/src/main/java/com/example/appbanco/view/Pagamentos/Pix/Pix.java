@@ -14,10 +14,11 @@ import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.TipoChave;
 import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PixCobrar;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransf;
+import com.example.appbanco.view.Pagamentos.Pix.QRCode.PixQrCode;
 
 public class Pix extends AppCompatActivity {
 
-    private TextView tvEnviarPix, tvDepositarPix;
+    private TextView tvEnviarPix, tvDepositarPix, tvLerQrCode;
     private ConstraintLayout confPix;
     private ImageView ivArrowBack;
 
@@ -32,6 +33,7 @@ public class Pix extends AppCompatActivity {
         tvDepositarPix = findViewById(R.id.tvDepositarPix);
         confPix = findViewById(R.id.confPix);
         ivArrowBack = findViewById(R.id.ivArrowBack);
+        tvLerQrCode = findViewById(R.id.tvLerQrCode);
 
         ivArrowBack.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Home.class));
@@ -59,6 +61,10 @@ public class Pix extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(Pix.this, TipoChave.class));
             }
+        });
+
+        tvLerQrCode.setOnClickListener(v -> {
+            startActivity(new Intent(Pix.this, PixQrCode.class));
         });
     }
 }
