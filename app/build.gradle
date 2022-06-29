@@ -92,5 +92,8 @@ dependencies {
     implementation 'io.grpc:grpc-okhttp:1.30.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
+    // Dotindicator
+    implementation("com.tbuonomo:dotsindicator:4.3")
+
 
 }
