@@ -1,5 +1,6 @@
 package com.example.appbanco.view.Seguros;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,20 +13,27 @@ import android.widget.ImageView;
 
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.SegurosAtivosAdapter;
+import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.model.ChavePix;
 import com.example.appbanco.model.ListaSeguro;
+import com.example.appbanco.model.SeguroModel;
 import com.example.appbanco.model.SegurosUsuario;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Home.Seguros;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SegurosAtivos extends AppCompatActivity {
 
-    List<ListaSeguro> listSeguros = new ArrayList<>();
 
     private SegurosAtivosAdapter segurosAdapter;
+    private List<SeguroModel> seguroList = new ArrayList<>();
     private RecyclerView rvSeguros;
     private ImageView ivArrowBack;
     Usuario usuario;
@@ -34,19 +42,12 @@ public class SegurosAtivos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seguros_ativos);
-        SegurosUsuario seguros = new SegurosUsuario();
-        if (seguros.getSeguroCartao()) {
-            listSeguros.add(new ListaSeguro("Seguro de Crédito", "Com o seguro " +
-                    "cartao da 4pay, você pode ficar tranquilo que te protegemos contra alguns " +
-                    "imprevistos", "10/25"));
-        }
-        if (seguros.getSeguroVida()) {
-            listSeguros.add(new ListaSeguro("Seguro de Vida", "Com nosso seguro " +
-                    "você e seus familiares podem ficar tranquilos em relacao a despesas hospitalares que oferecemos cobertura para auxiliar e confortar seus agregados..", "10/25"));
-        }
+
+        recuperarSeguros();
+
         rvSeguros = findViewById(R.id.rvSegurosAtivos);
         rvSeguros.setLayoutManager(new LinearLayoutManager(this));
-        segurosAdapter = new SegurosAtivosAdapter(listSeguros);
+        segurosAdapter = new SegurosAtivosAdapter(seguroList, getBaseContext());
         rvSeguros.setAdapter(segurosAdapter);
 
         ivArrowBack = findViewById(R.id.ivArrowBack);
@@ -54,4 +55,32 @@ public class SegurosAtivos extends AppCompatActivity {
             startActivity(new Intent(this, Seguros.class));
         });
     }
+
+    private void recuperarSeguros(){
+
+        DatabaseReference segurosRef = FirebaseHelper.getDatabaseReference()
+                .child("seguros")
+                .child(FirebaseHelper.getIdFirebase());
+        segurosRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                seguroList.clear();
+                if(snapshot.exists()){
+
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        SeguroModel seguro = ds.getValue(SeguroModel.class);
+                        seguroList.add(seguro);
+                    }
+
+                }
+                segurosAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+
 }
