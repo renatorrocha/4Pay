@@ -53,111 +53,245 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/nunito_bold"
         android:text="Enviar Pix"
         android:textColor="@color/preto"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-
-    <TextView
-        android:id="@+id/tvEnviarPix"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clEnviarPix"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="24dp"
-        android:drawableBottom="@drawable/ic_money_bag"
-        android:drawableTint="@color/preto"
-        android:fontFamily="@font/nunito_regular"
-        android:text="Transferência"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@id/textView12">
 
-    <TextView
-        android:id="@+id/tvEnviarQrCode"
-        android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvEnviarPix"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:cardElevation="8dp"
+            android:layout_marginLeft="12dp"
+            android:backgroundTint="@color/rosa_salmao"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:src="@drawable/ic_money_bag" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Transferência"
+            android:textColor="@color/preto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/cvEnviarPix"
+            app:layout_constraintStart_toEndOf="@id/cvEnviarPix"
+            app:layout_constraintTop_toTopOf="@id/cvEnviarPix" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_shape_cinza"
+            android:paddingTop="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvEnviarPix" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clLerQrCode"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:drawableBottom="@drawable/ic_qrcode"
-        android:drawableTint="@color/preto"
-        android:fontFamily="@font/nunito_regular"
-        android:text="Enviar Qr Code"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@id/tvEnviarPix"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clEnviarPix">
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvLerQrCode"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:cardElevation="8dp"
+            android:layout_marginLeft="12dp"
+            android:backgroundTint="@color/rosa_salmao"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:src="@drawable/ic_qrcode" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Ler Qr Code"
+            android:textColor="@color/preto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/cvLerQrCode"
+            app:layout_constraintStart_toEndOf="@id/cvLerQrCode"
+            app:layout_constraintTop_toTopOf="@id/cvLerQrCode" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_shape_cinza"
+            android:paddingTop="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvLerQrCode" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/nunito_bold"
         android:text="Receber Pix"
         android:textColor="@color/preto"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvEnviarPix"
-        app:layout_constraintHorizontal_bias="0.1"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/tvEnviarPix"
+        app:layout_constraintTop_toBottomOf="@+id/clLerQrCode"
         app:tint="@color/preto" />
 
-    <TextView
-        android:id="@+id/tvDepositarPix"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCobrarPix"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/nunito_regular"
-        android:text="Cobrar"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        android:drawableBottom="@drawable/ic_money_bag"
-        android:drawableTint="@color/preto"
-        app:layout_constraintEnd_toEndOf="@+id/textView33"
-        app:layout_constraintStart_toStartOf="@+id/textView33"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView33">
 
-    <TextView
-        android:id="@+id/tvLerQrCode"
-        android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCobrarPix"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:cardElevation="8dp"
+            android:layout_marginLeft="12dp"
+            android:backgroundTint="@color/rosa_salmao"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:src="@drawable/ic_money_bag" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Cobrança"
+            android:textColor="@color/preto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/cvCobrarPix"
+            app:layout_constraintStart_toEndOf="@id/cvCobrarPix"
+            app:layout_constraintTop_toTopOf="@id/cvCobrarPix" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_shape_cinza"
+            android:paddingTop="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvCobrarPix" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCriarQrCode"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:drawableBottom="@drawable/ic_qrcode"
-        android:drawableTint="@color/preto"
-        android:fontFamily="@font/nunito_regular"
-        android:text="Ler Qr Code"
-        android:textColor="@color/preto"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@id/tvDepositarPix"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clCobrarPix">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCriarQrCode"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:cardElevation="8dp"
+            android:layout_marginLeft="12dp"
+            android:backgroundTint="@color/rosa_salmao"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:src="@drawable/ic_qrcode" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Enviar Qr Code"
+            android:textColor="@color/preto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/cvCriarQrCode"
+            app:layout_constraintStart_toEndOf="@id/cvCriarQrCode"
+            app:layout_constraintTop_toTopOf="@id/cvCriarQrCode" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_shape_cinza"
+            android:paddingTop="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvCriarQrCode" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/confPix"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvDepositarPix"
-        tools:layout_editor_absoluteY="654dp">
+        app:layout_constraintTop_toBottomOf="@id/clCriarQrCode"
+        >
 
 
         <TextView
             android:id="@+id/textView39"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/line_shape"
+            android:background="@drawable/line_shape_cinza"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="48dp" />
+            android:layout_marginTop="32dp" />
 
 
         <TextView
@@ -187,7 +321,7 @@
             android:id="@+id/textView41"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/line_shape"
+            android:background="@drawable/line_shape_cinza"
             app:layout_constraintTop_toBottomOf="@+id/textView40"
             tools:layout_editor_absoluteX="0dp" />
 
