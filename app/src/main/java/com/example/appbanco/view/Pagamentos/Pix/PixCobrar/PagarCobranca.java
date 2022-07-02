@@ -37,14 +37,24 @@ public class PagarCobranca extends AppCompatActivity {
         binding = ActivityPagarCobrancaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        notificacao = (Notificacao) getIntent().getSerializableExtra("notificacao");
-
-        recuperaCobranca();
-
         getUserData();
+        notificacao = (Notificacao) getIntent().getSerializableExtra("notificacao");
+        if (notificacao != null) {
+            recuperaCobranca();
+        } else {
+            cobranca = (Cobranca) getIntent().getSerializableExtra("cobranca");
+            cobranca.setIdDestinatario(FirebaseHelper.getIdFirebase());
+            getUserDestinoData();
+        }
+
 
         binding.btnProximo.setOnClickListener(view1 -> {
-            confirmarPagamento();
+            if (notificacao != null) {
+                confirmarPagamento();
+
+            } else {
+                confirmarPagamentoQrCode();
+            }
         });
 
         binding.ivArrowBack.setOnClickListener(view1 -> {
@@ -53,11 +63,11 @@ public class PagarCobranca extends AppCompatActivity {
 
     }
 
-    private void confirmarPagamento(){
-        if(cobranca != null){
-            if(!cobranca.isPaga()){
-                if(userDestino != null && userOrigem != null){
-                    if(userOrigem.getSaldo() >= cobranca.getValor()){
+    private void confirmarPagamento() {
+        if (cobranca != null) {
+            if (!cobranca.isPaga()) {
+                if (userDestino != null && userOrigem != null) {
+                    if (userOrigem.getSaldo() >= cobranca.getValor()) {
 
                         userOrigem.setSaldo(userOrigem.getSaldo() - cobranca.getValor());
                         userOrigem.atualizarSaldo();
@@ -69,7 +79,6 @@ public class PagarCobranca extends AppCompatActivity {
                         DatabaseReference cobrancaRef = FirebaseHelper.getDatabaseReference()
                                 .child("cobrancas")
                                 .child(FirebaseHelper.getIdFirebase())
-                                .child(notificacao.getIdOperacao())
                                 .child("paga");
                         cobrancaRef.setValue(true);
 
@@ -77,25 +86,65 @@ public class PagarCobranca extends AppCompatActivity {
                         salvarExtrato(userDestino, "ENTRADA");
 
 
-                    }else{
+                    } else {
                         Toast.makeText(this, "Sem saldo suficiente", Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(this, "Ainda estamos confirmando o pagamento.", Toast.LENGTH_SHORT).show();
                 }
 
-            }else{
+            } else {
                 Toast.makeText(this, "Esta cobrança ja foi paga.", Toast.LENGTH_SHORT).show();
             }
 
-            } else{
+        } else {
             Toast.makeText(this, "Ainda estamos confirmando o pagamento.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void salvarExtrato(Usuario usuario, String tipo){
+    private void confirmarPagamentoQrCode() {
+        if (cobranca != null) {
+            if (!cobranca.isPaga()) {
+                if (userDestino != null && userOrigem != null) {
+                    if (userOrigem.getSaldo() >= cobranca.getValor()) {
 
-        ExtratoModel extrato =  new ExtratoModel();
+                        userOrigem.setSaldo(userOrigem.getSaldo() - cobranca.getValor());
+                        userOrigem.atualizarSaldo();
+
+                        userDestino.setSaldo(userDestino.getSaldo() + cobranca.getValor());
+                        userDestino.atualizarSaldo();
+
+//                ATUALIZAR COBRANÇA PARA PAGA
+                        DatabaseReference cobrancaQrCodeRef = FirebaseHelper.getDatabaseReference()
+                                .child("cobrancasQrCode")
+                                .child(cobranca.getId())
+                                .child("paga");
+                        cobrancaQrCodeRef.setValue(true);
+
+                        salvarExtrato(userOrigem, "SAIDA");
+                        salvarExtrato(userDestino, "ENTRADA");
+
+
+                    } else {
+                        Toast.makeText(this, "Sem saldo suficiente", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, "Ainda estamos confirmando o pagamento.", Toast.LENGTH_SHORT).show();
+                }
+
+            } else {
+                Toast.makeText(this, "Esta cobrança ja foi paga.", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "Ainda estamos confirmando o pagamento.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    private void salvarExtrato(Usuario usuario, String tipo) {
+
+        ExtratoModel extrato = new ExtratoModel();
         extrato.setOperacao("PAGAMENTO");
         extrato.setValor(cobranca.getValor());
         extrato.setTipo(tipo);
@@ -105,7 +154,7 @@ public class PagarCobranca extends AppCompatActivity {
                 .child(usuario.getId())
                 .child(extrato.getId());
         extratoRef.setValue(extrato).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
                 DatabaseReference updateExtrato = extratoRef
                         .child("data");
@@ -113,13 +162,13 @@ public class PagarCobranca extends AppCompatActivity {
 
                 salvarPagamento(extrato);
 
-            }else{
+            } else {
                 Toast.makeText(this, "Não foi possivel realizar o pagamento", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void  salvarPagamento(ExtratoModel extrato){
+    private void salvarPagamento(ExtratoModel extrato) {
         Pagamento pagamento = new Pagamento();
         pagamento.setId(extrato.getId());
         pagamento.setIdCobranca(cobranca.getId());
@@ -135,14 +184,16 @@ public class PagarCobranca extends AppCompatActivity {
             update.setValue(ServerValue.TIMESTAMP);
         });
 
-        if(extrato.getTipo().equals("ENTRADA")){
+        if (extrato.getTipo().equals("ENTRADA")) {
             enviaNoti(extrato.getId());
-        }else{
+        } else {
             Intent it = new Intent(this, PagarCobrancaRecibo.class);
             it.putExtra("idPagamento", pagamento.getId());
             startActivity(it);
         }
-    };
+    }
+
+    ;
 
     private void configDados() {
         binding.tvValorCobranca.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(cobranca.getValor())));
@@ -194,7 +245,7 @@ public class PagarCobranca extends AppCompatActivity {
         notificacao.enviar();
     }
 
-    private void recuperaCobranca(){
+    private void recuperaCobranca() {
         DatabaseReference cobrancaRef = FirebaseHelper.getDatabaseReference()
                 .child("cobrancas")
                 .child(FirebaseHelper.getIdFirebase())
@@ -205,7 +256,7 @@ public class PagarCobranca extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 cobranca = snapshot.getValue(Cobranca.class);
 
-               getUserDestinoData();
+                getUserDestinoData();
             }
 
             @Override
@@ -214,4 +265,6 @@ public class PagarCobranca extends AppCompatActivity {
             }
         });
     }
+
+
 }

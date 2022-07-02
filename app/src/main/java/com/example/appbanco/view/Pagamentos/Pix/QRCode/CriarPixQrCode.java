@@ -5,6 +5,7 @@ import static android.graphics.Color.WHITE;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,39 +13,65 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.blackcat.currencyedittext.CurrencyEditText;
 import com.example.appbanco.R;
+import com.example.appbanco.databinding.ActivityCriarPixQrCodeBinding;
+import com.example.appbanco.help.FirebaseHelper;
+import com.example.appbanco.model.Cobranca;
 import com.example.appbanco.model.Pagamento;
+import com.example.appbanco.view.Home.Home;
+import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PixCobrarFinal;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ServerValue;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
+
+import java.util.Locale;
 
 public class CriarPixQrCode extends AppCompatActivity {
 
     ImageView imageView;
     Button btnQRCode;
     EditText textView;
+    private Cobranca cobranca;
+    private ActivityCriarPixQrCodeBinding binding;
+    private CurrencyEditText edtValor;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_criar_pix_qr_code);
-        imageView = findViewById(R.id.imageView);
-        btnQRCode = findViewById(R.id.generateBtn);
-        textView = findViewById(R.id.inputText);
-        btnQRCode.setOnClickListener(new View.OnClickListener() {
+        binding = ActivityCriarPixQrCodeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+//        imageView = findViewById(R.id.imageView);
+//        btnQRCode = findViewById(R.id.generateBtn);
+
+
+        edtValor = findViewById(R.id.edtValCobrar);
+        edtValor.setLocale(new Locale("PT", "br"));
+
+        binding.generateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!TextUtils.isEmpty(textView.getText())) {
-                    String text = textView.getText().toString();
-                    Bitmap qrCode = createBitmap(text);
+                if (!TextUtils.isEmpty(edtValor.getText())) {
+                    double valorCobrar = (double) edtValor.getRawValue() / 100;
 
-                    imageView.setImageBitmap(qrCode);
+                    criarTransferencia(valorCobrar);
+                    enviarTransferencia();
+
+                    Bitmap qrCode = createBitmap(cobranca.getId());
+
+                    binding.imageView.setImageBitmap(qrCode);
                 }
             }
         });
 
     }
+
     private Bitmap createBitmap(String text) {
         BitMatrix result;
         try {
@@ -64,7 +91,31 @@ public class CriarPixQrCode extends AppCompatActivity {
             }
         }
         Bitmap myBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-        myBitmap.setPixels(pixels,0,width,0,0,width,height);
+        myBitmap.setPixels(pixels, 0, width, 0, 0, width, height);
         return myBitmap;
+    }
+
+    private void criarTransferencia(double valor) {
+        cobranca = new Cobranca();
+        cobranca.setValor(valor);
+        cobranca.setIdCobrador(FirebaseHelper.getIdFirebase());
+    }
+
+    private void enviarTransferencia(){
+        DatabaseReference cobrancaRef = FirebaseHelper.getDatabaseReference()
+                .child("cobrancasQrCode")
+                .child(cobranca.getId());
+
+        cobrancaRef.setValue(cobranca).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+
+                DatabaseReference updateRef = cobrancaRef
+                        .child("data");
+                updateRef.setValue(ServerValue.TIMESTAMP);
+
+            } else {
+                Toast.makeText(this, "Não foi possível confirmar a cobrança.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

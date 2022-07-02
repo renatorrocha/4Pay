@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,6 @@ import com.example.appbanco.databinding.FragmentConfigsBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Dados_Usuario.AtualizarDadosActivity;
-import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Home.Notificacoes;
 import com.example.appbanco.view.Home.Sobre;
 import com.example.appbanco.view.Login_Cadastro.Login;
@@ -34,12 +34,12 @@ import com.squareup.picasso.Picasso;
 public class ConfigsFragment extends Fragment {
 
     FragmentConfigsBinding binding;
-    private TextView tvEditarDados;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentConfigsBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
+
 
         binding.clSair.setOnClickListener(view1 -> {
             FirebaseHelper.getAuth().signOut();
@@ -61,6 +61,7 @@ public class ConfigsFragment extends Fragment {
             startActivity(new Intent(view.getContext(), Sobre.class));
 
         });
+
 
 
 
