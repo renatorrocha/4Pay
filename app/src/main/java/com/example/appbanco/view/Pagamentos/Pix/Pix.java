@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.appbanco.R;
+import com.example.appbanco.databinding.ActivityPixBinding;
 import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.TipoChave;
 import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PixCobrar;
@@ -28,30 +29,20 @@ import com.google.zxing.common.BitMatrix;
 
 public class Pix extends AppCompatActivity {
 
-    private TextView tvEnviarPix, tvDepositarPix, tvLerQrCode, tvEnviarQrCode;
-    private ConstraintLayout confPix;
-    private ImageView ivArrowBack;
-
+    private ActivityPixBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pix);
+        binding = ActivityPixBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 
-
-        tvEnviarPix = findViewById(R.id.tvEnviarPix);
-        tvDepositarPix = findViewById(R.id.tvDepositarPix);
-        confPix = findViewById(R.id.confPix);
-        ivArrowBack = findViewById(R.id.ivArrowBack);
-        tvLerQrCode = findViewById(R.id.tvLerQrCode);
-        tvEnviarQrCode = findViewById(R.id.tvEnviarQrCode);
-
-        ivArrowBack.setOnClickListener(view1 -> {
+        binding.ivArrowBack.setOnClickListener(view1 -> {
             startActivity(new Intent(this, Home.class));
         });
 
 
-        tvEnviarPix.setOnClickListener(new View.OnClickListener() {
+        binding.clEnviarPix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent itPix = getIntent();
@@ -63,29 +54,27 @@ public class Pix extends AppCompatActivity {
             }
         });
 
-        tvDepositarPix.setOnClickListener(view -> {
+        binding.clCobrarPix.setOnClickListener(view -> {
             startActivity(new Intent(Pix.this, PixCobrar.class));
         });
 
-        confPix.setOnClickListener(new View.OnClickListener() {
+        binding.confPix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Pix.this, TipoChave.class));
             }
         });
 
-        tvLerQrCode.setOnClickListener(v -> {
+        binding.clLerQrCode.setOnClickListener(v -> {
             startActivity(new Intent(Pix.this, PixQrCode.class));
         });
 
-        tvEnviarQrCode.setOnClickListener(v -> {
+        binding.clCriarQrCode.setOnClickListener(v -> {
             startActivity(new Intent(Pix.this, CriarPixQrCode.class));
 
         });
 
     }
-
-
 
 
 }

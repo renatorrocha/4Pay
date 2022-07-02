@@ -1,6 +1,7 @@
 package com.example.appbanco.view.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,9 +19,10 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+
+
         new Handler(Looper.getMainLooper()).postDelayed(this::verificarLogin, 3000);
 
-        //verificarLogin();
 
 
     }

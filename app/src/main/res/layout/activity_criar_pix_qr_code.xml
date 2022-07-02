@@ -19,13 +19,20 @@
             android:layout_width="match_parent"
             android:layout_height="300dp" />
 
-        <EditText
-            android:id="@+id/inputText"
-            android:fontFamily="@font/nunito_regular"
-            android:textColor="@color/preto"
+        <com.blackcat.currencyedittext.CurrencyEditText
+            android:id="@+id/edtValCobrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:fontFamily="@font/nunito_regular"
+            android:inputType="number"
+            android:textColor="@color/preto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+
+            />
 
         <Button
             android:id="@+id/generateBtn"
@@ -33,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Gerador QR Code"
+            android:textColor="@color/white"
             android:layout_marginVertical="16dp"
             android:textAllCaps="false"
             android:fontFamily="@font/nunito_regular"
