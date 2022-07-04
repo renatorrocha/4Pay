@@ -1,92 +1,49 @@
 # 4Pay
 
+[![FOURSYS LOGO](https://foursys.avantecnologia.com.br//img/logo_empresa.png)](https://foursys.com.br)
 
+## Sobre o app 
+Esse app foi criado para pôr em prática os conhecimentos adquiridos durante o **Programa de estágio Fourcamp2022** na stack de Android com JAVA, criando assim um Banco digital, seguindo a arquitetura MVVM, com as suas principais funcionalidades, como PIX, Deposito, Recarga, Cartões de crédito e/ou de debito, Pagamento da Fatura, atendimento por inteligência artificial entre outros...
 
-## Getting started
+## Ferramentas Utilizadas
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+[![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)](https://developer.android.com/docs)
+[![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html)
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+[![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)](https://firebase.google.com)
+[![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](www.figma.com)
 
-## Add your files
+[![DialogFlow](https://img.shields.io/badge/DialogFlow-EF6C00.svg?style=for-the-badge&logo=dialogflow&logoColor=white)](https://dialogflow.cloud.google.com)
+[![Miro](https://img.shields.io/badge/Miro-FFD02F.svg?style=for-the-badge&logo=miro&logoColor=050038)](https://miro.com)
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## Bibliotecas/Repositorios Utilizadas
 
-```
-cd existing_repo
-git remote add origin https://gitlab.fourcamp.com/fourcamp22/android/grupo-3/4pay/4pay.git
-git branch -M main
-git push -uf origin main
-```
+* [Binding](https://developer.android.com/topic/libraries/view-binding)
+* [BlacKCaT27](https://github.com/BlacKCaT27/CurrencyEditText)
+* [DialogFlow](https://cloud.google.com/dialogflow/docs)
+* [Dotsindicator](https://github.com/tommybuonomo/dotsindicator)
+* [Firebase](https://firebase.google.com/docs)
+* [Mask](https://github.com/T7Droid/Custom-Mask-for-EditText)
+* [Meow Bottom navigation](https://github.com/oneHamidreza/MeowBottomNavigation)
+* [Picasso](https://github.com/square/picasso)
+* [Bar Code Scanner](https://github.com/dm77/barcodescanner)
+* [Retrofit](https://square.github.io/retrofit/)
+* [Serializable](https://developer.android.com/reference/java/io/Serializable)
+* [Seekbar](https://github.com/warkiz/IndicatorSeekBar)
+* [SlideUp](https://github.com/umano/AndroidSlidingUpPanel)
+* [Swipeable Recyclerview](https://github.com/tsuryo/Swipeable-RecyclerView)
 
-## Integrate with your tools
+# Colaboradores
 
-- [ ] [Set up project integrations](https://gitlab.fourcamp.com/fourcamp22/android/grupo-3/4pay/4pay/-/settings/integrations)
+* [Gabriel Santos](https://www.linkedin.com/in/gabriel-santos-farias/)
+  * <imgabrielsf@gmail.com>
+* [Igor Montezuma](https://www.linkedin.com/in/igor-montezuma/)
+  * <igorminranda17@gmail.com>
+* [Thiago Costa](https://www.linkedin.com/in/thiago-costa-de-jesus-273481104/)
+  * <thiagocostadejesus2@gmail.com>
+* [Renato Rocha](https://www.linkedin.com/in/renato-rrodrigues/)
+  * <renatorrodrigues2002@gmail.com>
+ 
+<hr/>
 
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+👆[(Ir para o topo)](#4pay)
