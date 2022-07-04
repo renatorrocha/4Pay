@@ -1,42 +1,41 @@
 {
   "project_info": {
-    "project_number": "985618954354",
-    "firebase_url": "https://fourpay-42037-default-rtdb.firebaseio.com",
-    "project_id": "fourpay-42037",
-    "storage_bucket": "fourpay-42037.appspot.com"
+    "project_number": "3666593735",
+    "project_id": "banco4pay",
+    "storage_bucket": "banco4pay.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:985618954354:android:d2ac4d12ddf24a828e2aeb",
+        "mobilesdk_app_id": "1:3666593735:android:737543286d6262a8b83be2",
         "android_client_info": {
           "package_name": "com.example.appbanco"
         }
       },
       "oauth_client": [
         {
-          "client_id": "985618954354-tetkop2k2k3k2amo21d99c1829ivia48.apps.googleusercontent.com",
+          "client_id": "3666593735-1semeent4ft0nada3pjm8ed0k94ptio2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.appbanco",
-            "certificate_hash": "cd087ab3e8ac9857bc3a599d9170cf272a5d86f6"
+            "certificate_hash": "9e784962590cf15b32c9c54614d3db0e28d34ed5"
           }
         },
         {
-          "client_id": "985618954354-3hhvibp8dci00jrsu031j58o2ju8i4t9.apps.googleusercontent.com",
+          "client_id": "3666593735-31a93gslkr846r2mf93m9h93109bqefk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBeQqjdeWkHXyXtYGmlHAT7bGfAiLCRBe4"
+          "current_key": "AIzaSyDkjcEPY9eD1eN4SKWSjC2XfkrJ9vjo2f0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "985618954354-3hhvibp8dci00jrsu031j58o2ju8i4t9.apps.googleusercontent.com",
+              "client_id": "3666593735-31a93gslkr846r2mf93m9h93109bqefk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
