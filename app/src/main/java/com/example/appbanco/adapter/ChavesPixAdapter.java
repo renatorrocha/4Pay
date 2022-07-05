@@ -4,10 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.appbanco.R;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.ChavePix;
-import com.example.appbanco.model.Notificacao;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
@@ -28,14 +25,13 @@ public class ChavesPixAdapter extends RecyclerView.Adapter<ChavesPixAdapter.View
     private final OnLongClick onLongClick;
 
 
-
     public ChavesPixAdapter(List<ChavePix> list, Context context, OnLongClick onLongClick) {
         this.list = list;
         this.context = context;
         this.onLongClick = onLongClick;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvChave, tvChaveUsuario;
         private ImageView ivTipoChave, ivClose;
@@ -63,16 +59,16 @@ public class ChavesPixAdapter extends RecyclerView.Adapter<ChavesPixAdapter.View
 
         String setTipoChave = item.getTipoChave().substring(0, 1).toUpperCase() + item.getTipoChave().substring(1);
 
-        if(item.getTipoChave().equals("celular")){
+        if (item.getTipoChave().equals("celular")) {
             holder.ivTipoChave.setImageResource(R.drawable.ic_cel);
 
-        } else if(item.getTipoChave().equals("cpf")){
+        } else if (item.getTipoChave().equals("cpf")) {
             holder.ivTipoChave.setImageResource(R.drawable.ic_id);
 
-        }else if(item.getTipoChave().equals("email")){
+        } else if (item.getTipoChave().equals("email")) {
             holder.ivTipoChave.setImageResource(R.drawable.ic_email);
 
-        }else if(item.getTipoChave().equals("chaveAleatoria")){
+        } else if (item.getTipoChave().equals("chaveAleatoria")) {
             holder.ivTipoChave.setImageResource(R.drawable.ic_key);
             setTipoChave = "Chave aleatória";
         }
@@ -108,16 +104,16 @@ public class ChavesPixAdapter extends RecyclerView.Adapter<ChavesPixAdapter.View
                 .child(FirebaseHelper.getIdFirebase())
                 .child(chavePix.getTipoChave());
         chaveRef.removeValue().addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
-            }else {
+            } else {
             }
 
 
         });
     }
 
-    public interface OnLongClick{
+    public interface OnLongClick {
         void OnLongClickListener(ChavePix chavePix);
 
 

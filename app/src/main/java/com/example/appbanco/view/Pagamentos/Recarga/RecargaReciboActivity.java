@@ -3,11 +3,6 @@ package com.example.appbanco.view.Pagamentos.Recarga;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
-
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +22,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
 
 import com.example.appbanco.R;
 import com.example.appbanco.help.FirebaseHelper;
@@ -48,7 +48,7 @@ public class RecargaReciboActivity extends AppCompatActivity {
     private TextView tvDataRecarga;
     private TextView tvValorRecarga;
     private TextView tvNumeroRecarga;
-    private Button   buttonRecibo;
+    private Button buttonRecibo;
     private Button button;
     private ImageView btn;
     private ConstraintLayout linear;
@@ -83,7 +83,7 @@ public class RecargaReciboActivity extends AppCompatActivity {
         });
     }
 
-    private void getRecarga(){
+    private void getRecarga() {
         String idRecarga = (String) getIntent().getSerializableExtra("idRecarga");
 
         DatabaseReference recargaRef = FirebaseHelper.getDatabaseReference()
@@ -112,23 +112,21 @@ public class RecargaReciboActivity extends AppCompatActivity {
         v.draw(canvas);
 
 
-
         return bitmap;
-
 
 
     }
 
 
-    private void configDados(Recarga recarga){
+    private void configDados(Recarga recarga) {
         tvCodigoRecarga.setText(recarga.getId());
         tvDataRecarga.setText(GetMask.getDate(recarga.getData(), 3));
         tvValorRecarga.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(recarga.getValor())));
         tvNumeroRecarga.setText(recarga.getNumero());
     }
 
-    private void iniciaComponentes(){
-        tvCodigoRecarga =findViewById(R.id.tvCodigoRecarga);
+    private void iniciaComponentes() {
+        tvCodigoRecarga = findViewById(R.id.tvCodigoRecarga);
         tvDataRecarga = findViewById(R.id.tvDataRecarga);
         tvValorRecarga = findViewById(R.id.tvValorRecarga);
         tvNumeroRecarga = findViewById(R.id.tvNumeroRecarga);
@@ -142,8 +140,6 @@ public class RecargaReciboActivity extends AppCompatActivity {
         float width = displayMetrics.widthPixels;
         float height = displayMetrics.heightPixels;
         int convertWidth = (int) width, convertHeight = (int) height;
-
-
 
 
         PdfDocument document = new PdfDocument();
@@ -163,8 +159,6 @@ public class RecargaReciboActivity extends AppCompatActivity {
         try {
 
 
-
-
             document.writeTo(new FileOutputStream(file));
 
             document.close();
@@ -173,7 +167,6 @@ public class RecargaReciboActivity extends AppCompatActivity {
             Toast.makeText(this, "baixado com sucesso", Toast.LENGTH_SHORT).show();
 
             openPdf();
-
 
 
         } catch (IOException e) {

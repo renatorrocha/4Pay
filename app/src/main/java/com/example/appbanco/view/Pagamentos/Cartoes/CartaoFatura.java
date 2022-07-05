@@ -1,15 +1,14 @@
 package com.example.appbanco.view.Pagamentos.Cartoes;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.content.Intent;
-import android.os.Bundle;
-
 import com.example.appbanco.R;
-import com.example.appbanco.adapter.ExtratoAdapter;
 import com.example.appbanco.adapter.ExtratoCartaoAdapter;
 import com.example.appbanco.databinding.ActivityCartaoFaturaBinding;
 import com.example.appbanco.help.FirebaseHelper;
@@ -42,7 +41,9 @@ public class CartaoFatura extends AppCompatActivity {
         binding = ActivityCartaoFaturaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.ivArrowBack.setOnClickListener(view -> { finish();});
+        binding.ivArrowBack.setOnClickListener(view -> {
+            finish();
+        });
 
         setData();
 
@@ -68,8 +69,8 @@ public class CartaoFatura extends AppCompatActivity {
 
     }
 
-    private void setData(){
-        if(getIntent().hasExtra("cartao")){
+    private void setData() {
+        if (getIntent().hasExtra("cartao")) {
             cartao = (Cartao) getIntent().getSerializableExtra("cartao");
             binding.tvTipoCartao.setText(cartao.getTipo());
             binding.tvPin.setText(cartao.getPin());

@@ -4,7 +4,6 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 public class Cartao implements Serializable {
     private String tipo;
@@ -40,7 +39,7 @@ public class Cartao implements Serializable {
         this.numeros = numeros;
     }
 
-    public void gerarPin(){
+    public void gerarPin() {
         String pin = "";
 
         for (int i = 0; i < 10; i++) {
@@ -66,7 +65,7 @@ public class Cartao implements Serializable {
     }
 
 
-        public String getTipo() {
+    public String getTipo() {
         return tipo;
     }
 

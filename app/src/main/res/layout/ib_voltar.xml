@@ -4,4 +4,4 @@
     android:layout_height="32dp"
     android:id="@+id/ibVoltar"
     android:background="@color/white"
-    android:src="@drawable/ic_voltar"/>
+    android:src="@drawable/ic_voltar" />

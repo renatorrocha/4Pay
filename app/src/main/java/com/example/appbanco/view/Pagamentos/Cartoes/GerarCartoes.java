@@ -1,23 +1,19 @@
 package com.example.appbanco.view.Pagamentos.Cartoes;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityGerarCartoesBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Cartao;
-import com.example.appbanco.model.Notificacao;
-import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Home.HomeFragments.HomeFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -66,12 +62,12 @@ public class GerarCartoes extends AppCompatActivity {
         });
 
         binding.btnCartaoDebito.setOnClickListener(view -> {
-            verificarCartoes( "Debit card");
+            verificarCartoes("Debit card");
 
         });
 
         binding.btnCartaoCreditoDebito.setOnClickListener(view -> {
-            verificarCartoes( "Credit and Debit card");
+            verificarCartoes("Credit and Debit card");
 
         });
 
@@ -121,16 +117,17 @@ public class GerarCartoes extends AppCompatActivity {
                 break;
             }
         }
-        if(!verify){
+        if (!verify) {
             Intent it = new Intent(GerarCartoes.this, CartaoCriarSenha.class);
             it.putExtra("tipoCartao", tipoCartao);
             startActivity(it);
         }
 
-        if(cartaoList.size() == 0){
+        if (cartaoList.size() == 0) {
             Intent it = new Intent(GerarCartoes.this, CartaoCriarSenha.class);
             it.putExtra("tipoCartao", tipoCartao);
-            startActivity(it);        }
+            startActivity(it);
+        }
     }
 
 }

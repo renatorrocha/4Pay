@@ -19,7 +19,7 @@ public class SendMessageInBg extends AsyncTask<Void, Void, DetectIntentResponse>
     private String TAG = "async";
     private BotReply botReply;
 
-    public SendMessageInBg(BotReply botReply,SessionName session, SessionsClient sessionsClient,
+    public SendMessageInBg(BotReply botReply, SessionName session, SessionsClient sessionsClient,
                            QueryInput queryInput) {
         this.botReply = botReply;
         this.session = session;

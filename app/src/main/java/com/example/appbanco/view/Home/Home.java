@@ -1,10 +1,10 @@
 package com.example.appbanco.view.Home;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.appbanco.R;
@@ -28,17 +28,16 @@ public class Home extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         bnv_Main = findViewById(R.id.bnv_Main);
-        bnv_Main.add(new MeowBottomNavigation.Model(1,R.drawable.ic_home));
-        bnv_Main.add(new MeowBottomNavigation.Model(2,R.drawable.ic_person));
-        bnv_Main.add(new MeowBottomNavigation.Model(3,R.drawable.ic_conf));
+        bnv_Main.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
+        bnv_Main.add(new MeowBottomNavigation.Model(2, R.drawable.ic_person));
+        bnv_Main.add(new MeowBottomNavigation.Model(3, R.drawable.ic_conf));
 
-        bnv_Main.show(1,true);
+        bnv_Main.show(1, true);
         replace(new HomeFragment());
         bnv_Main.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(MeowBottomNavigation.Model model) {
-                switch (model.getId())
-                {
+                switch (model.getId()) {
                     case 1:
                         replace(new HomeFragment());
                         break;
@@ -59,9 +58,8 @@ public class Home extends AppCompatActivity {
     }
 
     private void replace(Fragment fragment) {
-
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame,fragment);
+        transaction.replace(R.id.frame, fragment);
         transaction.commit();
     }
 }

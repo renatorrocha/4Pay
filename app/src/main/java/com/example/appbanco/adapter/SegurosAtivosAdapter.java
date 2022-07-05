@@ -12,15 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appbanco.R;
 import com.example.appbanco.help.GetMask;
-import com.example.appbanco.model.ListaSeguro;
 import com.example.appbanco.model.SeguroModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SegurosAtivosAdapter extends RecyclerView.Adapter<SegurosAtivosAdapter.ViewHolder>{
+public class SegurosAtivosAdapter extends RecyclerView.Adapter<SegurosAtivosAdapter.ViewHolder> {
 
-    List<SeguroModel>listaSeguros = new ArrayList<>();
+    List<SeguroModel> listaSeguros = new ArrayList<>();
     private Context context;
 
     public SegurosAtivosAdapter(List<SeguroModel> listaSeguros, Context context) {
@@ -28,7 +27,7 @@ public class SegurosAtivosAdapter extends RecyclerView.Adapter<SegurosAtivosAdap
         this.context = context;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvTitulo, tvDesc, tvValor, tvVencimento;
         private ImageView ivSeguro;
@@ -58,17 +57,17 @@ public class SegurosAtivosAdapter extends RecyclerView.Adapter<SegurosAtivosAdap
 
         SeguroModel item = listaSeguros.get(position);
 
-       holder.tvTitulo.setText(item.getTipo());
-       holder.tvDesc.setText(item.getDesc());
-       holder.tvVencimento.setText(item.getDataVencimento());
-       holder.tvValor.setText(context.getString(R.string.txt_valor_deposito, GetMask.getValor(item.getValor())));
+        holder.tvTitulo.setText(item.getTipo());
+        holder.tvDesc.setText(item.getDesc());
+        holder.tvVencimento.setText(item.getDataVencimento());
+        holder.tvValor.setText(context.getString(R.string.txt_valor_deposito, GetMask.getValor(item.getValor())));
 
-       if(item.getTipo().equals("Seguro De Cartão")){
-           holder.ivSeguro.setImageResource(R.drawable.cartao_credito);
+        if (item.getTipo().equals("Seguro De Cartão")) {
+            holder.ivSeguro.setImageResource(R.drawable.cartao_credito);
 
-       } else if(item.getTipo().equals("Seguro De Vida")){
-           holder.ivSeguro.setImageResource(R.drawable.seguro_de_vida);
-       }
+        } else if (item.getTipo().equals("Seguro De Vida")) {
+            holder.ivSeguro.setImageResource(R.drawable.seguro_de_vida);
+        }
 
 
     }

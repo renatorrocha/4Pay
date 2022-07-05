@@ -3,9 +3,6 @@ package com.example.appbanco.view.Pagamentos.Pix.QRCode;
 import static android.graphics.Color.BLACK;
 import static android.graphics.Color.WHITE;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,14 +12,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.blackcat.currencyedittext.CurrencyEditText;
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityCriarPixQrCodeBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Cobranca;
-import com.example.appbanco.model.Pagamento;
-import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PixCobrarFinal;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ServerValue;
 import com.google.zxing.BarcodeFormat;
@@ -101,7 +97,7 @@ public class CriarPixQrCode extends AppCompatActivity {
         cobranca.setIdCobrador(FirebaseHelper.getIdFirebase());
     }
 
-    private void enviarTransferencia(){
+    private void enviarTransferencia() {
         DatabaseReference cobrancaRef = FirebaseHelper.getDatabaseReference()
                 .child("cobrancasQrCode")
                 .child(cobranca.getId());

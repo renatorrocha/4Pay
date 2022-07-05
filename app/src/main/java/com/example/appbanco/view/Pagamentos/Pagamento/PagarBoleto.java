@@ -1,10 +1,5 @@
 package com.example.appbanco.view.Pagamentos.Pagamento;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,20 +7,20 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPagarBoletoBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.Boleto;
 import com.example.appbanco.model.Cartao;
-import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.RegistrarChavePix;
-import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.TipoChave;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import com.thyagoneves.custom_mask_textwatcher.CustomMask;
-
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.ArrayList;
 import java.util.List;

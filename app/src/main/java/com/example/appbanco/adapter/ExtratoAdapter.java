@@ -18,14 +18,13 @@ import com.example.appbanco.model.ExtratoModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-public class ExtratoAdapter extends RecyclerView.Adapter<ExtratoAdapter.ViewHolder>{
+public class ExtratoAdapter extends RecyclerView.Adapter<ExtratoAdapter.ViewHolder> {
 
     private List<ExtratoModel> list = new ArrayList<>();
     private Context context;
 
-    public ExtratoAdapter(List<ExtratoModel> list, Context baseContext){
+    public ExtratoAdapter(List<ExtratoModel> list, Context baseContext) {
         this.list = list;
         this.context = baseContext;
     }
@@ -59,48 +58,48 @@ public class ExtratoAdapter extends RecyclerView.Adapter<ExtratoAdapter.ViewHold
 
         String tipo = item.getTipo().toLowerCase();
         String operacao = item.getOperacao().toLowerCase();
-        holder.tvExtTitulo.setText(operacao.substring(0,1).toUpperCase() + operacao.substring(1));
-        holder.tvExtTipo.setText(tipo.substring(0,1).toUpperCase() + tipo.substring(1));
+        holder.tvExtTitulo.setText(operacao.substring(0, 1).toUpperCase() + operacao.substring(1));
+        holder.tvExtTipo.setText(tipo.substring(0, 1).toUpperCase() + tipo.substring(1));
         holder.tvExtValor.setText(context.getString(R.string.txt_valor_deposito, GetMask.getValor(item.getValor())));
         holder.tvExtData.setText(GetMask.getDate(item.getData(), 1));
 
 
-        if(item.getOperacao().equals("TRANSFERENCIA")){
-            if(item.getTipo().equals("SAIDA")){
+        if (item.getOperacao().equals("TRANSFERENCIA")) {
+            if (item.getTipo().equals("SAIDA")) {
                 holder.ivExt.setImageResource(R.drawable.ic_transf_saida);
                 holder.tvExtValor.setTextColor(ContextCompat.getColor(context, R.color.vermelho));
 
             }
         }
-        if(item.getOperacao().equals("TRANSFERENCIA")){
-            if(item.getTipo().equals("ENTRADA")){
+        if (item.getOperacao().equals("TRANSFERENCIA")) {
+            if (item.getTipo().equals("ENTRADA")) {
                 holder.ivExt.setImageResource(R.drawable.ic_transf_entrada);
                 holder.tvExtValor.setTextColor(ContextCompat.getColor(context, R.color.teal_700));
 
             }
         }
 
-        if(item.getOperacao().equals("RECARGA")){
+        if (item.getOperacao().equals("RECARGA")) {
             holder.ivExt.setImageResource(R.drawable.ic_recarga);
             holder.tvExtValor.setTextColor(ContextCompat.getColor(context, R.color.vermelho));
         }
 
-        if(item.getOperacao().equals("PAGAMENTO")){
-            if(item.getTipo().equals("SAIDA")){
+        if (item.getOperacao().equals("PAGAMENTO")) {
+            if (item.getTipo().equals("SAIDA")) {
                 holder.ivExt.setImageResource(R.drawable.ic_pag_saida);
                 holder.tvExtValor.setTextColor(ContextCompat.getColor(context, R.color.vermelho));
 
             }
         }
-        if(item.getOperacao().equals("PAGAMENTO")){
-            if(item.getTipo().equals("ENTRADA")){
+        if (item.getOperacao().equals("PAGAMENTO")) {
+            if (item.getTipo().equals("ENTRADA")) {
                 holder.ivExt.setImageResource(R.drawable.ic_pag_entrada);
                 holder.tvExtValor.setTextColor(ContextCompat.getColor(context, R.color.teal_700));
 
             }
         }
 
-        if(item.getOperacao().equals("DEPOSITO")){
+        if (item.getOperacao().equals("DEPOSITO")) {
             holder.ivExt.setImageResource(R.drawable.ic_deposit_entrada);
             holder.tvExtValor.setTextColor(ContextCompat.getColor(context, R.color.teal_700));
         }
@@ -112,7 +111,6 @@ public class ExtratoAdapter extends RecyclerView.Adapter<ExtratoAdapter.ViewHold
 //
 //        if(item.getTipo().equals("ENTRADA")){
 //        }
-
 
 
     }

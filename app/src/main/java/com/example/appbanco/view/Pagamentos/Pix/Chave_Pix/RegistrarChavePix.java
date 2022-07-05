@@ -1,20 +1,17 @@
 package com.example.appbanco.view.Pagamentos.Pix.Chave_Pix;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityRegistrarChavePixBinding;
 import com.example.appbanco.help.FirebaseHelper;
-import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.ChavePix;
-import com.example.appbanco.model.Notificacao;
 import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Pagamentos.Cartoes.CartaoCriado;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +28,7 @@ public class RegistrarChavePix extends AppCompatActivity {
     private List<ChavePix> listChaves = new ArrayList<>();
     List<String> usersList = new ArrayList<>();
     private String tipoChave = "";
-    private String chaveAleatoria =  UUID.randomUUID().toString();
+    private String chaveAleatoria = UUID.randomUUID().toString();
     private Boolean verify = false;
 
     @Override
@@ -159,25 +156,25 @@ public class RegistrarChavePix extends AppCompatActivity {
         ChavePix chavePix = new ChavePix();
 
 
-            chavePix.setTipoChave(tipoChave);
-            chavePix.setLimite(usuario.getRendimento());
+        chavePix.setTipoChave(tipoChave);
+        chavePix.setLimite(usuario.getRendimento());
 
-            if (tipoChave.equals("email")) {
-                chavePix.setChave(usuario.getEmail());
-            }
-            if (tipoChave.equals("celular")) {
-                chavePix.setChave(usuario.getCelular());
-            }
+        if (tipoChave.equals("email")) {
+            chavePix.setChave(usuario.getEmail());
+        }
+        if (tipoChave.equals("celular")) {
+            chavePix.setChave(usuario.getCelular());
+        }
 
-            if (tipoChave.equals("cpf")) {
-                chavePix.setChave(usuario.getCpf());
-            }
+        if (tipoChave.equals("cpf")) {
+            chavePix.setChave(usuario.getCpf());
+        }
 
-            if (tipoChave.equals("chaveAleatoria")) {
-                chavePix.setChave(chaveAleatoria);
-            }
+        if (tipoChave.equals("chaveAleatoria")) {
+            chavePix.setChave(chaveAleatoria);
+        }
 
-            getAllChavesPix(chavePix);
+        getAllChavesPix(chavePix);
 
 
     }
@@ -245,7 +242,7 @@ public class RegistrarChavePix extends AppCompatActivity {
                         }
                     }
 
-                    if(finalI == usersList.size() - 1 ){
+                    if (finalI == usersList.size() - 1) {
                         if (!verify) {
                             setChavePix(chavePix);
                         } else {
@@ -260,8 +257,6 @@ public class RegistrarChavePix extends AppCompatActivity {
             });
 
         }
-
-
 
 
     }

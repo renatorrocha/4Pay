@@ -1,20 +1,11 @@
 package com.example.appbanco.view.Pagamentos.Pix;
 
-import static android.graphics.Color.BLACK;
-import static android.graphics.Color.WHITE;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixBinding;
 import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.TipoChave;
@@ -22,14 +13,11 @@ import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PixCobrar;
 import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransf;
 import com.example.appbanco.view.Pagamentos.Pix.QRCode.CriarPixQrCode;
 import com.example.appbanco.view.Pagamentos.Pix.QRCode.PixQrCode;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.MultiFormatWriter;
-import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
 
 public class Pix extends AppCompatActivity {
 
     private ActivityPixBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

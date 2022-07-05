@@ -7,8 +7,6 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.appbanco.databinding.ActivitySegurosBinding;
-
 public class SliderAdapter extends PagerAdapter {
 
     Context context;

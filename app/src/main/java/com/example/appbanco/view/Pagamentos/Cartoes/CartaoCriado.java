@@ -1,14 +1,13 @@
 package com.example.appbanco.view.Pagamentos.Cartoes;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.appbanco.databinding.ActivityCartaoCriadoBinding;
 import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Login_Cadastro.Login;
 
 public class CartaoCriado extends AppCompatActivity {
 

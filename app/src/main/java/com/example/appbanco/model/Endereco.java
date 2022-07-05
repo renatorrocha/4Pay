@@ -28,11 +28,11 @@ public class Endereco {
     }
 
     //public void delete() {
-       // DatabaseReference enderecoRef = FirebaseHelper.getDatabaseReference()
-            //    .child("enderecos")
-               // .child(FirebaseHelper.getIdFirebase())
-                //.child(this.id);
-        //enderecoRef.removeValue();
+    // DatabaseReference enderecoRef = FirebaseHelper.getDatabaseReference()
+    //    .child("enderecos")
+    // .child(FirebaseHelper.getIdFirebase())
+    //.child(this.id);
+    //enderecoRef.removeValue();
     //}
 
 

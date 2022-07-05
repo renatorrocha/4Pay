@@ -1,16 +1,16 @@
 package com.example.appbanco.view.Home;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.NotiAdapter;
@@ -101,18 +101,18 @@ public class Notificacoes extends AppCompatActivity implements NotiAdapter.OnCli
         DatabaseReference notiRef = FirebaseHelper.getDatabaseReference()
                 .child("notificacoes")
                 .child(FirebaseHelper.getIdFirebase())
-                        .child(notificacao.getId());
+                .child(notificacao.getId());
         notiRef.removeValue().addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 list.remove(notificacao);
 
-                if(list.isEmpty()){
+                if (list.isEmpty()) {
                     Toast.makeText(this, "Nenhuma notificação.", Toast.LENGTH_LONG).show();
                 }
 
                 Toast.makeText(this, "Notificação removida.", Toast.LENGTH_SHORT).show();
 
-            }else {
+            } else {
                 Toast.makeText(this, "Não foi possível remover a notificacação.", Toast.LENGTH_SHORT).show();
 
             }
@@ -132,13 +132,13 @@ public class Notificacoes extends AppCompatActivity implements NotiAdapter.OnCli
         TextView textTitulo = view.findViewById(R.id.textTitulo);
         TextView textMensagem = view.findViewById(R.id.textMensagem);
 
-       if(notificacao.isLida()){
-           textTitulo.setText("Deseja marcar esta notificação como Não lida?");
-           textMensagem.setText("Aperte em sim para marcar como Não lida ou em fechar para cancelar.");
-       }else{
-           textTitulo.setText("Deseja marcar esta notificação como Lida?");
-           textMensagem.setText("Aperte em sim para marcar como Lida ou em fechar para cancelar.");
-       }
+        if (notificacao.isLida()) {
+            textTitulo.setText("Deseja marcar esta notificação como Não lida?");
+            textMensagem.setText("Aperte em sim para marcar como Não lida ou em fechar para cancelar.");
+        } else {
+            textTitulo.setText("Deseja marcar esta notificação como Lida?");
+            textMensagem.setText("Aperte em sim para marcar como Lida ou em fechar para cancelar.");
+        }
 
         btnOk.setOnClickListener(v -> {
             notificacao.salvar();
@@ -190,7 +190,7 @@ public class Notificacoes extends AppCompatActivity implements NotiAdapter.OnCli
 
     @Override
     public void OnClickListener(Notificacao notificacao) {
-        if(notificacao.getOperação().equals("COBRANCA")){
+        if (notificacao.getOperação().equals("COBRANCA")) {
             Intent it = new Intent(this, PagarCobranca.class);
             it.putExtra("notificacao", notificacao);
             startActivity(it);

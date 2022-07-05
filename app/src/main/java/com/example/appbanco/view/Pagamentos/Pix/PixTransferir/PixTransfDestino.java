@@ -1,11 +1,11 @@
 package com.example.appbanco.view.Pagamentos.Pix.PixTransferir;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixTransfDestinoBinding;
@@ -14,7 +14,6 @@ import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.ChavePix;
 import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.RegistrarChavePix;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -109,7 +108,7 @@ public class PixTransfDestino extends AppCompatActivity {
                             intent.putExtra("transferencia", transf);
                             startActivity(intent);
                         }
-                        
+
 
                     }
                 }

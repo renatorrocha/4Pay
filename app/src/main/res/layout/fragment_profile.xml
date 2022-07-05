@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo">
@@ -29,116 +28,55 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clOpcoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clOpcoes"
+            android:id="@+id/clMeusDados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/clLayout">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clMeusDados"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMeusDados"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                app:cardElevation="8dp"
+                android:backgroundTint="@color/rosa_salmao"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cvMeusDados"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="12dp"
-                    app:cardElevation="8dp"
-                    android:backgroundTint="@color/rosa_salmao"
-                    app:cardCornerRadius="6dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="4dp"
-                        android:src="@drawable/ic_perfil" />
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="Meus Dados"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/cvMeusDados"
-                    app:layout_constraintStart_toEndOf="@id/cvMeusDados"
-                    app:layout_constraintTop_toTopOf="@id/cvMeusDados" />
-
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
-                    android:src="@drawable/ic_arrow_foward"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:tint="@color/preto"/>
-
-                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/line_shape_cinza"
-                    android:paddingTop="2dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cvMeusDados" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_perfil" />
+            </androidx.cardview.widget.CardView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clMeusCartoes"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clMeusDados">
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Meus Dados"
+                android:textColor="@color/preto"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cvMeusDados"
+                app:layout_constraintStart_toEndOf="@id/cvMeusDados"
+                app:layout_constraintTop_toTopOf="@id/cvMeusDados" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cvMeusCartoes"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    app:cardElevation="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:backgroundTint="@color/rosa_salmao"
-                    app:cardCornerRadius="6dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="4dp"
-                        android:src="@drawable/ic_card" />
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="Meus Cartões"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/cvMeusCartoes"
-                    app:layout_constraintStart_toEndOf="@id/cvMeusCartoes"
-                    app:layout_constraintTop_toTopOf="@id/cvMeusCartoes" />
-
-                <ImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
@@ -146,277 +84,332 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:tint="@color/preto"/>
+                app:tint="@color/preto" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/line_shape_cinza"
-                    android:paddingTop="2dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cvMeusCartoes" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clMinhasChaves"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/line_shape_cinza"
+                android:paddingTop="2dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clMeusCartoes">
+                app:layout_constraintTop_toBottomOf="@id/cvMeusDados" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cvMinhasChaves"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="12dp"
-                    app:cardElevation="8dp"
-                    android:backgroundTint="@color/rosa_salmao"
-                    app:cardCornerRadius="6dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="4dp"
-                        android:src="@drawable/ic_pix" />
-                </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMeusCartoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clMeusDados">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="Minhas chaves Pix"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/cvMinhasChaves"
-                    app:layout_constraintStart_toEndOf="@id/cvMinhasChaves"
-                    app:layout_constraintTop_toTopOf="@id/cvMinhasChaves" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMeusCartoes"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:cardElevation="8dp"
+                android:layout_marginLeft="12dp"
+                android:backgroundTint="@color/rosa_salmao"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
-                    android:src="@drawable/ic_arrow_foward"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:tint="@color/preto"/>
-
-                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/line_shape_cinza"
-                    android:paddingTop="2dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cvMinhasChaves" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_card" />
+            </androidx.cardview.widget.CardView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Meus Cartões"
+                android:textColor="@color/preto"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cvMeusCartoes"
+                app:layout_constraintStart_toEndOf="@id/cvMeusCartoes"
+                app:layout_constraintTop_toTopOf="@id/cvMeusCartoes" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clMeusSeguros"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_arrow_foward"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/preto" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/line_shape_cinza"
+                android:paddingTop="2dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clMinhasChaves">
+                app:layout_constraintTop_toBottomOf="@id/cvMeusCartoes" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cvMeusSeguros"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="12dp"
-                    app:cardElevation="8dp"
-                    android:backgroundTint="@color/rosa_salmao"
-                    app:cardCornerRadius="6dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="4dp"
-                        android:src="@drawable/ic_seguro" />
-                </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMinhasChaves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clMeusCartoes">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="Meus seguros"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/cvMeusSeguros"
-                    app:layout_constraintStart_toEndOf="@id/cvMeusSeguros"
-                    app:layout_constraintTop_toTopOf="@id/cvMeusSeguros" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMinhasChaves"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                app:cardElevation="8dp"
+                android:backgroundTint="@color/rosa_salmao"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
-                    android:src="@drawable/ic_arrow_foward"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:tint="@color/preto"/>
-
-                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/line_shape_cinza"
-                    android:paddingTop="2dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cvMeusSeguros" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_pix" />
+            </androidx.cardview.widget.CardView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Minhas chaves Pix"
+                android:textColor="@color/preto"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cvMinhasChaves"
+                app:layout_constraintStart_toEndOf="@id/cvMinhasChaves"
+                app:layout_constraintTop_toTopOf="@id/cvMinhasChaves" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_arrow_foward"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/preto" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_shape_cinza"
+                android:paddingTop="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvMinhasChaves" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMeusSeguros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clMinhasChaves">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMeusSeguros"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                app:cardElevation="8dp"
+                android:backgroundTint="@color/rosa_salmao"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_seguro" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Meus seguros"
+                android:textColor="@color/preto"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cvMeusSeguros"
+                app:layout_constraintStart_toEndOf="@id/cvMeusSeguros"
+                app:layout_constraintTop_toTopOf="@id/cvMeusSeguros" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_arrow_foward"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/preto" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_shape_cinza"
+                android:paddingTop="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvMeusSeguros" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="360dp"
-            android:layout_height="260dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintTop_toBottomOf="@id/clOpcoes"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/img_bg_fragment_user" />
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView16"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="100dp"-->
-<!--            android:fontFamily="@font/nunito_regular"-->
-<!--            android:text="Meus Dados"-->
-<!--            android:textColor="@color/preto"-->
-<!--            android:textSize="22sp"-->
-<!--            android:layout_marginLeft="12dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView17"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:fontFamily="@font/nunito_regular"-->
-<!--            android:text="Meus Cartões"-->
-<!--            android:textColor="@color/preto"-->
-<!--            android:textSize="22sp"-->
-<!--            android:layout_marginLeft="12dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/textView18" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView18"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/line_shape"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/textView16" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView20"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/line_shape"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/textView17" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView21"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:fontFamily="@font/nunito_regular"-->
-<!--            android:text="Minhas Chaves Pix"-->
-<!--            android:textColor="@color/preto"-->
-<!--            android:textSize="22sp"-->
-<!--            android:layout_marginLeft="12dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/textView20" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView23"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/line_shape"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/textView21" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView26"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:fontFamily="@font/nunito_regular"-->
-<!--            android:text="Consultar senha de 4 digitos"-->
-<!--            android:textColor="@color/preto"-->
-<!--            android:textSize="22sp"-->
-<!--            android:layout_marginLeft="12dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/textView23" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="360dp"
+        android:layout_height="260dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintTop_toBottomOf="@id/clOpcoes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/img_bg_fragment_user" />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/ivMeusDados"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="12dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/textView16"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/textView16"-->
-<!--            app:srcCompat="@drawable/ic_arrow_foward" />-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView16"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="100dp"-->
+    <!--            android:fontFamily="@font/nunito_regular"-->
+    <!--            android:text="Meus Dados"-->
+    <!--            android:textColor="@color/preto"-->
+    <!--            android:textSize="22sp"-->
+    <!--            android:layout_marginLeft="12dp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/ivCartoes"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="12dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/textView17"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/textView17"-->
-<!--            app:srcCompat="@drawable/ic_arrow_foward" />-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView17"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="20dp"-->
+    <!--            android:fontFamily="@font/nunito_regular"-->
+    <!--            android:text="Meus Cartões"-->
+    <!--            android:textColor="@color/preto"-->
+    <!--            android:textSize="22sp"-->
+    <!--            android:layout_marginLeft="12dp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textView18" />-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/ivChavesPix"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="12dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/textView21"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/textView21"-->
-<!--            app:srcCompat="@drawable/ic_arrow_foward" />-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView18"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/line_shape"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textView16" />-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/ivConsultSenha"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="12dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/textView26"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/textView26"-->
-<!--            app:srcCompat="@drawable/ic_arrow_foward" />-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView20"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/line_shape"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textView17" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView21"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="20dp"-->
+    <!--            android:fontFamily="@font/nunito_regular"-->
+    <!--            android:text="Minhas Chaves Pix"-->
+    <!--            android:textColor="@color/preto"-->
+    <!--            android:textSize="22sp"-->
+    <!--            android:layout_marginLeft="12dp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textView20" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView23"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/line_shape"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textView21" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView26"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="20dp"-->
+    <!--            android:fontFamily="@font/nunito_regular"-->
+    <!--            android:text="Consultar senha de 4 digitos"-->
+    <!--            android:textColor="@color/preto"-->
+    <!--            android:textSize="22sp"-->
+    <!--            android:layout_marginLeft="12dp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textView23" />-->
 
 
+    <!--        <ImageView-->
+    <!--            android:id="@+id/ivMeusDados"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="12dp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@+id/textView16"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/textView16"-->
+    <!--            app:srcCompat="@drawable/ic_arrow_foward" />-->
 
+    <!--        <ImageView-->
+    <!--            android:id="@+id/ivCartoes"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="12dp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@+id/textView17"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/textView17"-->
+    <!--            app:srcCompat="@drawable/ic_arrow_foward" />-->
 
+    <!--        <ImageView-->
+    <!--            android:id="@+id/ivChavesPix"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="12dp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@+id/textView21"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/textView21"-->
+    <!--            app:srcCompat="@drawable/ic_arrow_foward" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/ivConsultSenha"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="12dp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@+id/textView26"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/textView26"-->
+    <!--            app:srcCompat="@drawable/ic_arrow_foward" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

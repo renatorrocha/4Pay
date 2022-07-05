@@ -1,8 +1,5 @@
 package com.example.appbanco.view.Pagamentos.Recarga;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blackcat.currencyedittext.CurrencyEditText;
 import com.example.appbanco.R;
@@ -67,14 +67,14 @@ public class RecargaInicio extends AppCompatActivity {
 
     }
 
-    public void validaDados(View view){
+    public void validaDados(View view) {
 
         double valor = (double) edtVal.getRawValue() / 100;
         String numero = edtTelefone.getUnMasked();
 
-        if(!numero.isEmpty()){
-            if (numero.length() == 11){
-                if(valor >= 15){
+        if (!numero.isEmpty()) {
+            if (numero.length() == 11) {
+                if (valor >= 15) {
 
                     progressBar.setVisibility(view.VISIBLE);
 
@@ -83,13 +83,13 @@ public class RecargaInicio extends AppCompatActivity {
 
                     salvarExtrato(valor, numero);
 
-                }else{
+                } else {
                     showDialog("Valor minimo para recarga é de R$ 15,00.");
                 }
-            }else{
+            } else {
                 showDialog("Informe um número válido.");
             }
-        }else{
+        } else {
             showDialog("Por favor, informe o número.");
         }
 
@@ -109,7 +109,7 @@ public class RecargaInicio extends AppCompatActivity {
 
 
         recargaRef.setValue(recarga).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
                 DatabaseReference updateRecarga = recargaRef
                         .child("data");
@@ -120,16 +120,16 @@ public class RecargaInicio extends AppCompatActivity {
                 startActivity(intent);
                 finish();
 
-            }else{
+            } else {
                 progressBar.setVisibility(View.GONE);
                 showDialog("Não foi possível realizar a recarga, tente novamente mais tarde.");
             }
         });
     }
 
-    private void salvarExtrato(double valor, String numero){
+    private void salvarExtrato(double valor, String numero) {
 
-        ExtratoModel extrato =  new ExtratoModel();
+        ExtratoModel extrato = new ExtratoModel();
         extrato.setOperacao("RECARGA");
         extrato.setValor(valor);
         extrato.setTipo("SAIDA");
@@ -139,7 +139,7 @@ public class RecargaInicio extends AppCompatActivity {
                 .child(FirebaseHelper.getIdFirebase())
                 .child(extrato.getId());
         extratoRef.setValue(extrato).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
                 DatabaseReference updateExtrato = extratoRef
                         .child("data");
@@ -147,7 +147,7 @@ public class RecargaInicio extends AppCompatActivity {
 
                 salvarRecarga(extrato, numero);
 
-            }else{
+            } else {
                 showDialog("Não foi possível realizar o depósito, tente novamente mais tarde.");
             }
         });
@@ -176,7 +176,7 @@ public class RecargaInicio extends AppCompatActivity {
         dialog.show();
     }
 
-    private void iniciaComponentes(){
+    private void iniciaComponentes() {
         edtVal = findViewById(R.id.edtValRecarga);
         edtVal.setLocale(new Locale("PT", "br"));
         edtTelefone = findViewById(R.id.edtTelefone);
@@ -185,7 +185,7 @@ public class RecargaInicio extends AppCompatActivity {
     }
 
     //Oculta o teclado do dispositivo
-    private void ocultarTeclado(){
+    private void ocultarTeclado() {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(edtVal.getWindowToken(),
                 InputMethodManager.HIDE_NOT_ALWAYS);

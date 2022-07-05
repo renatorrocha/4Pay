@@ -1,19 +1,16 @@
 package com.example.appbanco.view.Login_Cadastro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
-
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbanco.databinding.ActivityLoginBinding;
 import com.example.appbanco.help.FirebaseHelper;
-import com.example.appbanco.view.Dados_Usuario.AtualizarDadosActivity;
 import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Pagamentos.Recarga.RecargaInicio;
 
 
 public class Login extends AppCompatActivity {
@@ -31,7 +28,7 @@ public class Login extends AppCompatActivity {
             validaDados();
         });
 
-        binding.tvCadastrar.setOnClickListener(view ->  {
+        binding.tvCadastrar.setOnClickListener(view -> {
             startActivity(new Intent(Login.this, Cadastro.class));
         });
 

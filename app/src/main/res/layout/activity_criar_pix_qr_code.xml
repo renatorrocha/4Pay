@@ -43,8 +43,7 @@
             android:textColor="@color/white"
             android:layout_marginVertical="16dp"
             android:textAllCaps="false"
-            android:fontFamily="@font/nunito_regular"
-            />
+            android:fontFamily="@font/nunito_regular" />
 
     </LinearLayout>
 

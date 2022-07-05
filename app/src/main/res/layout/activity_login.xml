@@ -6,128 +6,128 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/mainLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_list"
-            tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_list"
+        tools:context=".MainActivity">
 
-            <ImageView
-                android:id="@+id/ivLogo"
-                android:layout_width="340dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/icon_4pay"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="340dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/icon_4pay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edtemail"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="307dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtemail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:hint="Email"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/preto">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmailLogin"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="46dp"
-                android:hint="Email"
-                android:textColorHint="@color/preto"
-                app:boxStrokeColor="@color/preto"
-                app:hintTextColor="@color/preto"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivLogo"
-                app:startIconDrawable="@drawable/ic_person"
-                app:startIconTint="@color/preto">
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etEmailLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/preto" />
-            </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtSenha"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Senha"
+            android:textColorHint="@color/preto"
+            app:boxStrokeColor="@color/preto"
+            app:hintTextColor="@color/preto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtemail"
+            app:startIconDrawable="@drawable/ic_lock"
+            app:startIconTint="@color/preto">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edtSenha"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="307dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSenhaLogin"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="Senha"
-                android:textColorHint="@color/preto"
-                app:boxStrokeColor="@color/preto"
-                app:hintTextColor="@color/preto"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtemail"
-                app:startIconDrawable="@drawable/ic_lock"
-                app:startIconTint="@color/preto">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etSenhaLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:textColor="@color/preto" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:inputType="textPassword"
+                android:textColor="@color/preto" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <Button
-                android:id="@+id/btnEntrar"
-                android:layout_width="280dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="84dp"
-                android:background="@drawable/btnlogin"
-                android:fontFamily="@font/nunito_bold"
-                android:onClick="validaDados"
-                android:text="Entrar"
-                android:textAllCaps="false"
-                android:textColor="@color/branco"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+        <Button
+            android:id="@+id/btnEntrar"
+            android:layout_width="280dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="84dp"
+            android:background="@drawable/btnlogin"
+            android:fontFamily="@font/nunito_bold"
+            android:onClick="validaDados"
+            android:text="Entrar"
+            android:textAllCaps="false"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
 
-            <TextView
-                android:id="@+id/tvCadastrar"
-                android:layout_width="wrap_content"
-                android:layout_height="27dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/nunito_bold"
-                android:text="Cadastrar-se"
-                android:textColor="@color/preto"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnEntrar" />
+        <TextView
+            android:id="@+id/tvCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Cadastrar-se"
+            android:textColor="@color/preto"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnEntrar" />
 
-            <TextView
-                android:id="@+id/tvEsqueciSenha"
-                android:layout_width="wrap_content"
-                android:layout_height="16dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/dashed_underline"
-                android:fontFamily="@font/nunito_regular"
-                android:text="Esqueci a senha"
-                android:textColor="@color/preto"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvCadastrar" />
+        <TextView
+            android:id="@+id/tvEsqueciSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/dashed_underline"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Esqueci a senha"
+            android:textColor="@color/preto"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCadastrar" />
 
-            <ProgressBar
-                android:id="@+id/progressbar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvEsqueciSenha"
-                tools:visibility="visible" />
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEsqueciSenha"
+            tools:visibility="visible" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.core.widget.NestedScrollView>

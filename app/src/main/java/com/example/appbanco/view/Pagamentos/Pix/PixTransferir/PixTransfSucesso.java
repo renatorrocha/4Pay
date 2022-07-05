@@ -3,11 +3,6 @@ package com.example.appbanco.view.Pagamentos.Pix.PixTransferir;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
-
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -23,10 +18,12 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixTransfSucessoBinding;
@@ -93,7 +90,7 @@ public class PixTransfSucesso extends AppCompatActivity {
 
 
     private void recuperarTransferencia() {
-        String idTransferencia = (String) getIntent().getStringExtra("idTransferencia") ;
+        String idTransferencia = (String) getIntent().getStringExtra("idTransferencia");
 
         DatabaseReference transferenciaRef = FirebaseHelper.getDatabaseReference()
                 .child("transferencias")
@@ -102,7 +99,7 @@ public class PixTransfSucesso extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Transferencia transferencia = snapshot.getValue(Transferencia.class);
-                if(transferencia != null){
+                if (transferencia != null) {
                     recuperarUserDestino(transferencia);
                 }
             }
@@ -123,14 +120,12 @@ public class PixTransfSucesso extends AppCompatActivity {
         v.draw(canvas);
 
 
-
         return bitmap;
-
 
 
     }
 
-    private void recuperarUserDestino(Transferencia transferencia){
+    private void recuperarUserDestino(Transferencia transferencia) {
         DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
                 .child(transferencia.getIdUserDestino());
@@ -138,10 +133,11 @@ public class PixTransfSucesso extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Usuario userDestino = snapshot.getValue(Usuario.class);
-                if(userDestino != null){
+                if (userDestino != null) {
                     configDados(transferencia, userDestino);
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -158,6 +154,7 @@ public class PixTransfSucesso extends AppCompatActivity {
         binding.tvPixFinalPessoaPara.setText(userDestino.getNome());
         binding.tvCodigoTransferencia.setText("Código: " + transferencia.getId());
     }
+
     private void createPdf() {
         WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -165,8 +162,6 @@ public class PixTransfSucesso extends AppCompatActivity {
         float width = displayMetrics.widthPixels;
         float height = displayMetrics.heightPixels;
         int convertWidth = (int) width, convertHeight = (int) height;
-
-
 
 
         PdfDocument document = new PdfDocument();
@@ -186,8 +181,6 @@ public class PixTransfSucesso extends AppCompatActivity {
         try {
 
 
-
-
             document.writeTo(new FileOutputStream(file));
 
             document.close();
@@ -196,7 +189,6 @@ public class PixTransfSucesso extends AppCompatActivity {
             Toast.makeText(this, "baixado com sucesso", Toast.LENGTH_SHORT).show();
 
             openPdf();
-
 
 
         } catch (IOException e) {

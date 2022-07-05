@@ -1,16 +1,16 @@
 package com.example.appbanco.view.Pagamentos.Pagamento;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPagamentoBinding;
@@ -80,46 +80,46 @@ public class Pagamento extends AppCompatActivity {
 
         } else {
 
-                Intent intentNext = new Intent(Pagamento.this, ConfirmarPagamento.class);
-                intentNext.putExtra("tipoPagamento", "pagarFatura");
+            Intent intentNext = new Intent(Pagamento.this, ConfirmarPagamento.class);
+            intentNext.putExtra("tipoPagamento", "pagarFatura");
 
-                btnCartaoUm.setText(cartaoList.get(0).getTipo());
-                btnCartaoUm.setOnClickListener(v -> {
-                    intentNext.putExtra("tipoCartao", cartaoList.get(0));
+            btnCartaoUm.setText(cartaoList.get(0).getTipo());
+            btnCartaoUm.setOnClickListener(v -> {
+                intentNext.putExtra("tipoCartao", cartaoList.get(0));
+                startActivity(intentNext);
+            });
+
+
+            if (cartaoList.size() == 1) {
+                clMain.removeView(btnCartaoDois);
+                clMain.removeView(btnCartaoTres);
+            }
+
+            if (cartaoList.size() == 2) {
+                btnCartaoDois.setText(cartaoList.get(1).getTipo());
+                btnCartaoDois.setOnClickListener(v -> {
+                    intentNext.putExtra("tipoCartao", cartaoList.get(1));
                     startActivity(intentNext);
                 });
 
+                clMain.removeView(btnCartaoTres);
+            }
 
-                if (cartaoList.size() == 1) {
-                    clMain.removeView(btnCartaoDois);
-                    clMain.removeView(btnCartaoTres);
-                }
+            if (cartaoList.size() == 3) {
+                btnCartaoDois.setText(cartaoList.get(1).getTipo());
+                btnCartaoDois.setOnClickListener(v -> {
+                    intentNext.putExtra("tipoCartao", cartaoList.get(1));
+                    startActivity(intentNext);
+                });
 
-                if (cartaoList.size() == 2) {
-                    btnCartaoDois.setText(cartaoList.get(1).getTipo());
-                    btnCartaoDois.setOnClickListener(v -> {
-                        intentNext.putExtra("tipoCartao", cartaoList.get(1));
-                        startActivity(intentNext);
-                    });
+                btnCartaoTres.setText(cartaoList.get(2).getTipo());
+                btnCartaoTres.setOnClickListener(v -> {
+                    intentNext.putExtra("tipoCartao", cartaoList.get(2));
+                    startActivity(intentNext);
+                });
 
-                    clMain.removeView(btnCartaoTres);
-                }
-
-                if (cartaoList.size() == 3) {
-                    btnCartaoDois.setText(cartaoList.get(1).getTipo());
-                    btnCartaoDois.setOnClickListener(v -> {
-                        intentNext.putExtra("tipoCartao", cartaoList.get(1));
-                        startActivity(intentNext);
-                    });
-
-                    btnCartaoTres.setText(cartaoList.get(2).getTipo());
-                    btnCartaoTres.setOnClickListener(v -> {
-                        intentNext.putExtra("tipoCartao", cartaoList.get(2));
-                        startActivity(intentNext);
-                    });
-
-                    clMain.removeView(btnCartaoTres);
-                }
+                clMain.removeView(btnCartaoTres);
+            }
 
 
         }

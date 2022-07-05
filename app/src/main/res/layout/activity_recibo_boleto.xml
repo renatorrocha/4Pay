@@ -11,8 +11,7 @@
         android:id="@+id/lineard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_alternativo"
-        >
+        android:background="@drawable/background_alternativo">
 
         <TextView
             android:id="@+id/textView27"
@@ -175,7 +174,6 @@
             tools:text="R$100,00" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

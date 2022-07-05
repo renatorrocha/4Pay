@@ -1,25 +1,19 @@
 package com.example.appbanco.view.Seguros;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.SegurosAtivosAdapter;
 import com.example.appbanco.help.FirebaseHelper;
-import com.example.appbanco.model.ChavePix;
-import com.example.appbanco.model.ListaSeguro;
 import com.example.appbanco.model.SeguroModel;
-import com.example.appbanco.model.SegurosUsuario;
 import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Home.Seguros;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -56,7 +50,7 @@ public class SegurosAtivos extends AppCompatActivity {
         });
     }
 
-    private void recuperarSeguros(){
+    private void recuperarSeguros() {
 
         DatabaseReference segurosRef = FirebaseHelper.getDatabaseReference()
                 .child("seguros")
@@ -65,7 +59,7 @@ public class SegurosAtivos extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 seguroList.clear();
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
 
                     for (DataSnapshot ds : snapshot.getChildren()) {
                         SeguroModel seguro = ds.getValue(SeguroModel.class);

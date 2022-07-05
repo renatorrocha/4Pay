@@ -18,12 +18,12 @@ import com.example.appbanco.model.ExtratoModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExtratoCartaoAdapter extends RecyclerView.Adapter<ExtratoCartaoAdapter.ViewHolder>{
+public class ExtratoCartaoAdapter extends RecyclerView.Adapter<ExtratoCartaoAdapter.ViewHolder> {
 
     private List<ExtratoModel> list = new ArrayList<>();
     private Context context;
 
-    public ExtratoCartaoAdapter(List<ExtratoModel> list, Context baseContext){
+    public ExtratoCartaoAdapter(List<ExtratoModel> list, Context baseContext) {
         this.list = list;
         this.context = baseContext;
     }
@@ -57,16 +57,15 @@ public class ExtratoCartaoAdapter extends RecyclerView.Adapter<ExtratoCartaoAdap
 
         String tipo = item.getTipo().toLowerCase();
         String operacao = item.getOperacao().toLowerCase();
-        holder.tvExtTitulo.setText(tipo.substring(0,1).toUpperCase() + tipo.substring(1));
+        holder.tvExtTitulo.setText(tipo.substring(0, 1).toUpperCase() + tipo.substring(1));
         holder.tvExtValor.setText(context.getString(R.string.txt_valor_deposito, GetMask.getValor(item.getValor())));
         holder.tvExtData.setText(GetMask.getDate(item.getData(), 1));
         holder.tvExtTipo.setText(item.getTituloExtrato());
 
-        if(item.getOperacao().equals("BOLETO")){
+        if (item.getOperacao().equals("BOLETO")) {
             holder.ivExt.setImageResource(R.drawable.ic_barcode);
             holder.tvExtValor.setTextColor(ContextCompat.getColor(context, R.color.vermelho));
         }
-
 
 
     }

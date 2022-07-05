@@ -1,24 +1,20 @@
 package com.example.appbanco.view.Login_Cadastro;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ProgressBar;
-import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.appbanco.R;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.appbanco.databinding.ActivityCadastroProximoBinding;
 import com.example.appbanco.help.FirebaseHelper;
-import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Endereco;
 import com.example.appbanco.model.MyApi;
 import com.example.appbanco.model.Usuario;
@@ -254,6 +250,7 @@ public class CadastroProximo extends AppCompatActivity {
                 salvarUser(user);
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -262,7 +259,7 @@ public class CadastroProximo extends AppCompatActivity {
 
     }
 
-    private void salvarUser(Usuario usuario){
+    private void salvarUser(Usuario usuario) {
         DatabaseReference usuarioRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
                 .child(usuario.getId());

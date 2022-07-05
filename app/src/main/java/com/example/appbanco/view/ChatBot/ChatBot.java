@@ -1,8 +1,5 @@
 package com.example.appbanco.view.ChatBot;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.ChatAdapter;
@@ -47,8 +47,9 @@ public class ChatBot extends AppCompatActivity implements BotReply {
     private SessionsClient sessionsClient;
     private SessionName sessionName;
     private String uuid = UUID.randomUUID().toString();
-//  private String TAG = "mainactivity";
+    //  private String TAG = "mainactivity";
     private String TAG = "chatbot";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +63,8 @@ public class ChatBot extends AppCompatActivity implements BotReply {
         chatView.setAdapter(chatAdapter);
 
         btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
                 String message = editMessage.getText().toString();
                 if (!message.isEmpty()) {
                     messageList.add(new Message(message, false));
@@ -83,6 +85,7 @@ public class ChatBot extends AppCompatActivity implements BotReply {
 
         setUpBot();
     }
+
     private void setUpBot() {
         try {
             InputStream stream = this.getResources().openRawResource(R.raw.assistentevirtual);
@@ -110,13 +113,13 @@ public class ChatBot extends AppCompatActivity implements BotReply {
 
     @Override
     public void callback(DetectIntentResponse returnResponse) {
-        if(returnResponse!=null) {
+        if (returnResponse != null) {
             String botReply = returnResponse.getQueryResult().getFulfillmentText();
-            if(!botReply.isEmpty()){
+            if (!botReply.isEmpty()) {
                 messageList.add(new Message(botReply, true));
                 chatAdapter.notifyDataSetChanged();
                 Objects.requireNonNull(chatView.getLayoutManager()).scrollToPosition(messageList.size() - 1);
-            }else {
+            } else {
                 Toast.makeText(this, "Algo deu errado!", Toast.LENGTH_SHORT).show();
             }
         } else {

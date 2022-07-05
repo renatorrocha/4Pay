@@ -16,8 +16,7 @@
             android:id="@+id/lineard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_alternativo"
-            >
+            android:background="@drawable/background_alternativo">
 
 
             <TextView
@@ -43,7 +42,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
 
 
             <TextView
@@ -82,7 +80,7 @@
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvCodTransf"/>
+                app:layout_constraintTop_toBottomOf="@id/tvCodTransf" />
 
 
             <include
@@ -121,7 +119,7 @@
                 android:textColor="@color/preto"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/include"/>
+                app:layout_constraintTop_toBottomOf="@id/include" />
 
             <TextView
                 android:id="@+id/tvPixData"
@@ -134,8 +132,7 @@
                 android:textColor="@color/preto"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/include"/>
-
+                app:layout_constraintTop_toBottomOf="@id/include" />
 
 
             <TextView
@@ -178,7 +175,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tvPixFinalValor" />
 
 
-
             <TextView
                 android:id="@+id/tvPixFinalPessoaPara"
                 android:layout_width="wrap_content"
@@ -190,9 +186,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvValorPixFinal"/>
-
-
+                app:layout_constraintTop_toBottomOf="@id/tvValorPixFinal" />
 
 
             <Button

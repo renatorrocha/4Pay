@@ -21,6 +21,12 @@
         android:theme="@style/Theme.Appbanco"
         tools:targetApi="31">
         <activity
+            android:name=".view.Crypto.CryptoNext"
+            android:exported="false" />
+        <activity
+            android:name=".view.Crypto.Crypto"
+            android:exported="false" />
+        <activity
             android:name=".view.Pagamentos.Pix.QRCode.CriarPixQrCode"
             android:exported="false" />
         <activity

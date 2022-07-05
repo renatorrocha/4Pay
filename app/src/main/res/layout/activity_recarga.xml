@@ -50,7 +50,7 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitulo"/>
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/Telefone"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 app:mask="(__) _____-____"
                 app:maskCharacter="_"
-                app:maskStyle="completable"/>
+                app:maskStyle="completable" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
