@@ -1,11 +1,11 @@
 package com.example.appbanco.view.Pagamentos.Pix.PixCobrar;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixCobrarDestinoBinding;
@@ -13,10 +13,7 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.ChavePix;
 import com.example.appbanco.model.Cobranca;
-import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransfDestino;
-import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransfFinal;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

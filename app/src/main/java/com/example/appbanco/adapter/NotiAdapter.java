@@ -15,7 +15,6 @@ import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Notificacao;
 import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Home.Notificacoes;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -61,7 +60,7 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
         Notificacao item = list.get(position);
 
         String titulo = "";
-        switch (item.getOperação()){
+        switch (item.getOperação()) {
             case "COBRANCA":
                 titulo = "Você recebeu uma cobrança.";
                 break;
@@ -78,11 +77,11 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
         holder.tvTitulo.setText(titulo);
         holder.tvData.setText(GetMask.getDate(item.getData(), 3));
 
-        if(item.isLida()){
+        if (item.isLida()) {
             holder.tvTitulo.setTypeface(null, Typeface.NORMAL);
             holder.tvData.setTypeface(null, Typeface.NORMAL);
             holder.tvMsg.setTypeface(null, Typeface.NORMAL);
-        }else{
+        } else {
             holder.tvTitulo.setTypeface(null, Typeface.BOLD);
             holder.tvData.setTypeface(null, Typeface.BOLD);
             holder.tvMsg.setTypeface(null, Typeface.BOLD);
@@ -108,8 +107,8 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Usuario user = snapshot.getValue(Usuario.class);
 
-                if(user != null){
-                    switch (notificacao.getOperação()){
+                if (user != null) {
+                    switch (notificacao.getOperação()) {
                         case "COBRANCA":
                         case "TRANSFERENCIA":
                             holder.tvCobrador.setText(context.getString(R.string.txt_enviada_por, user.getNome()));
@@ -131,7 +130,7 @@ public class NotiAdapter extends RecyclerView.Adapter<NotiAdapter.ViewHolder> {
         });
     }
 
-    public interface OnClick{
+    public interface OnClick {
         void OnClickListener(Notificacao notificacao);
     }
 

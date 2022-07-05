@@ -1,9 +1,5 @@
 package com.example.appbanco.view.Dados_Usuario;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
@@ -21,10 +17,18 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.appbanco.R;
+import com.example.appbanco.databinding.ActivityAtualizarDadosBinding;
 import com.example.appbanco.help.FirebaseHelper;
-import com.example.appbanco.help.GetMask;
+import com.example.appbanco.model.Endereco;
 import com.example.appbanco.model.Usuario;
+import com.example.appbanco.viewModel.GetUserViewModel;
+import com.example.appbanco.viewModel.SetUserViewModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,7 +40,6 @@ import com.gun0912.tedpermission.normal.TedPermission;
 import com.squareup.picasso.Picasso;
 import com.thyagoneves.custom_mask_textwatcher.CustomMask;
 
-
 import java.io.IOException;
 import java.util.List;
 
@@ -44,51 +47,71 @@ public class AtualizarDadosActivity extends AppCompatActivity {
 
     private final int REQUEST_GALERIA = 100;
 
-    private ImageView ivArrowBack;
-    private EditText edtNomeAtt;
-    private EditText edtNumeroAtt;
-    private EditText edtEmailAtt;
-    private EditText edtLogradouroAtt;
-    private ProgressBar progressBar;
-    private Usuario usuario;
-    private Button buttonSalvar;
-    private ImageView ivUserFoto;
-
     private String caminhoImagem;
+
+    private Usuario usuario;
+    private Endereco endereco;
+    private GetUserViewModel userViewModel;
+    private SetUserViewModel setUserViewModel;
+    private ActivityAtualizarDadosBinding binding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atualizar_dados);
+        binding = ActivityAtualizarDadosBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        iniciaComponetes();
-        getUserData();
+        userViewModel = new ViewModelProvider(this).get(GetUserViewModel.class);
+        setUserViewModel = new ViewModelProvider(this).get(SetUserViewModel.class);
+
+        userViewModel.verifyUserData();
+        userViewModel.verifyEndereco();
+
+        userViewModel.getUser.observe(this, sucess -> {
+            if (sucess) {
+                usuario = userViewModel.getUser();
+            }
+        });
+
+        userViewModel.getEndereco.observe(this, sucess -> {
+            if(sucess){
+                endereco = userViewModel.getEndereco();
+                configDados();
+
+            }
+        });
+
         configClicks();
     }
 
     public void validaDados(View view) {
 
-        String nome = edtNomeAtt.getText().toString();
-        String email = edtEmailAtt.getText().toString();
-        String celular = edtNumeroAtt.getText().toString();
-        String endereco = edtLogradouroAtt.getText().toString();
+        String nome = binding.edtNomeAtt.getText().toString();
+        String email = binding.edtEmailAtt.getText().toString();
+        String celular =  binding.edtNumeroAtt.getText().toString();
+        String enderecoAtt =  binding.edtlogradouroAtt.getText().toString();
 
 
         if (!nome.isEmpty()) {
             if (!celular.isEmpty()) {
+                if(!enderecoAtt.isEmpty()){
+
+
 
                 ocultarTeclado();
 
-                progressBar.setVisibility(View.GONE);
+                binding.progressBar.setVisibility(View.GONE);
 
                 usuario.setNome(nome);
                 usuario.setCelular(celular);
+//                endereco.setLogradouro(enderecoAtt);
 
                 if (caminhoImagem != null) {
                     salvarImagemFirebase();
                 } else {
                     salvarDadosUser();
+
                 }
 
                 /*if(!endereco.isEmpty()){
@@ -98,14 +121,19 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                     edtLogradouroAtt.requestFocus();
                     edtLogradouroAtt.setError("Informe seu endereço");
                 }*/
+                } else {
+                    binding.edtlogradouroAtt.requestFocus();
+                    binding.edtlogradouroAtt.setError("Informe seu Logradouro");
+                }
+
             } else {
-                edtNumeroAtt.requestFocus();
-                edtNumeroAtt.setError("Informe seu número");
+                binding.edtNumeroAtt.requestFocus();
+                binding.edtNumeroAtt.setError("Informe seu número");
             }
 
         } else {
-            edtNomeAtt.requestFocus();
-            edtNomeAtt.setError("Informe seu nome");
+            binding.edtNomeAtt.requestFocus();
+            binding.edtNomeAtt.setError("Informe seu nome");
         }
 
     }
@@ -130,54 +158,55 @@ public class AtualizarDadosActivity extends AppCompatActivity {
     }
 
     private void salvarDadosUser() {
-        DatabaseReference usuarioRef = FirebaseHelper.getDatabaseReference()
-                .child("usuarios")
-                .child(usuario.getId());
-        usuarioRef.setValue(usuario).addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Toast.makeText(this, "Informações salvas com sucesso.",
-                        Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Não foi possível salvar as informações.",
-                        Toast.LENGTH_SHORT).show();
+        setUserViewModel.setUser(usuario);
+
+        setUserViewModel.setUser.observe(this, sucess -> {
+            if (sucess) {
+                Toast.makeText(this, "Salvo com sucesso.", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "Não foi possível salvar as informações.", Toast.LENGTH_SHORT).show();
+
             }
-            progressBar.setVisibility(View.GONE);
         });
+//        setUserViewModel.setEndereco(usuario.getId(), endereco);
+//        setUserViewModel.setEndereco.observe(this, sucess -> {
+//            if (sucess) {
+//                Toast.makeText(this, "Endereco Salvo com sucesso.", Toast.LENGTH_SHORT).show();
+//            }else{
+//                Toast.makeText(this, "Não foi possível salvar as informações.", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
     }
 
-    private void configDados(Usuario usuario) {
-        edtEmailAtt.setText(usuario.getEmail());
-        edtNomeAtt.setText(usuario.getNome());
-        edtNumeroAtt.addTextChangedListener(CustomMask.Companion.mask("(##) #####-####",
-                edtNumeroAtt, null));
-        edtNumeroAtt.setText(usuario.getCelular());
-        //edtLogradouroAtt.setText(usuario.getEndereco().getLogradouro());
+    private void configDados() {
+
+        binding.edtlogradouroAtt.setText(endereco.getLogradouro());
+        binding.edtEmailAtt.setText(usuario.getEmail());
+        binding.edtNomeAtt.setText(usuario.getNome());
+        binding.edtNumeroAtt.addTextChangedListener(CustomMask.Companion.mask("(##) #####-####",
+                binding.edtNumeroAtt, null));
+        binding.edtNumeroAtt.setText(usuario.getCelular());
 
         if (usuario.getUrlImagem() != null) {
             Picasso.get().load(usuario.getUrlImagem())
-                    .into(ivUserFoto);
+                    .into(binding.ivUserFoto);
         }
 
-        progressBar.setVisibility((View.GONE));
+        binding.progressBar.setVisibility((View.GONE));
     }
 
     private void configClicks() {
-        ivArrowBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
+        binding.ivArrowBack.setOnClickListener(view -> {
+            finish();
         });
 
-        buttonSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validaDados(view);
-            }
+        binding.buttonSalvar.setOnClickListener(view ->  {
+            validaDados(view);
         });
 
-        ivUserFoto.setOnClickListener(v -> verificaPermissaogaleria());
+        binding.ivUserFoto.setOnClickListener(v -> verificaPermissaogaleria());
 
     }
 
@@ -214,45 +243,10 @@ public class AtualizarDadosActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_GALERIA);
     }
 
-
-    //Metodo pra resgatar os dados do usuario
-    private void getUserData() {
-        DatabaseReference userRef = FirebaseHelper.getDatabaseReference()
-                .child("usuarios")
-                .child(FirebaseHelper.getIdFirebase());
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                usuario = snapshot.getValue(Usuario.class);
-                configDados(usuario);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    //Metodo pra iniciar o FindView dos componentes
-    private void iniciaComponetes() {
-
-        ivArrowBack = findViewById(R.id.ivArrowBack);
-        edtNomeAtt = findViewById(R.id.edtNomeAtt);
-        edtNumeroAtt = findViewById(R.id.edtNumeroAtt);
-        edtEmailAtt = findViewById(R.id.edtEmailAtt);
-        progressBar = findViewById(R.id.progressBar);
-        buttonSalvar = findViewById(R.id.buttonSalvar);
-        edtLogradouroAtt = findViewById(R.id.edtlogradouroAtt);
-        ivUserFoto = findViewById(R.id.ivUserFoto);
-
-    }
-
     //Oculta o teclado do dispositivo
     private void ocultarTeclado() {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(edtNomeAtt.getWindowToken(),
+        inputMethodManager.hideSoftInputFromWindow(binding.edtNomeAtt.getWindowToken(),
                 InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
@@ -273,7 +267,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                     try {
                         bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),
                                 imagemSelecionada);
-                        ivUserFoto.setImageBitmap(bitmap);
+                        binding.ivUserFoto.setImageBitmap(bitmap);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -284,7 +278,7 @@ public class AtualizarDadosActivity extends AppCompatActivity {
                             imagemSelecionada);
                     try {
                         bitmap = ImageDecoder.decodeBitmap(source);
-                        ivUserFoto.setImageBitmap(bitmap);
+                        binding.ivUserFoto.setImageBitmap(bitmap);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

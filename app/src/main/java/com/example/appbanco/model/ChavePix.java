@@ -3,7 +3,6 @@ package com.example.appbanco.model;
 
 import com.example.appbanco.help.FirebaseHelper;
 
-
 import java.util.UUID;
 
 public class ChavePix {
@@ -14,13 +13,13 @@ public class ChavePix {
     private boolean status;
 
     public ChavePix() {
-      this.setIdUsuario(FirebaseHelper.getIdFirebase());
-      this.setStatus(true);
+        this.setIdUsuario(FirebaseHelper.getIdFirebase());
+        this.setStatus(true);
 
     }
 
-    public void criarChaveAleatoria(){
-        this.setChave( UUID.randomUUID().toString());
+    public void criarChaveAleatoria() {
+        this.setChave(UUID.randomUUID().toString());
     }
 
     public String getTipoChave() {

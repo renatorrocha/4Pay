@@ -67,8 +67,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/play_button"
-            android:background="@drawable/botao_redondo"
-            />
+            android:background="@drawable/botao_redondo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -1,24 +1,21 @@
 package com.example.appbanco.view.Pagamentos.Pix.PixCobrar;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityPixCobrarFinalBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.Cobranca;
-import com.example.appbanco.model.ExtratoModel;
 import com.example.appbanco.model.Notificacao;
-import com.example.appbanco.model.Transferencia;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransfSucesso;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +23,6 @@ import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class PixCobrarFinal extends AppCompatActivity {
 

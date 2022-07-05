@@ -1,28 +1,21 @@
 package com.example.appbanco.view.Pagamentos.Pagamento;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityReciboBoletoBinding;
-import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
 import com.example.appbanco.model.ExtratoModel;
-import com.example.appbanco.model.Pagamento;
 import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PagarCobrancaRecibo;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 
 public class ReciboBoleto extends AppCompatActivity {
 
     ActivityReciboBoletoBinding binding;
     ExtratoModel extrato;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

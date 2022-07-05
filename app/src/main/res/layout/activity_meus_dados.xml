@@ -271,7 +271,7 @@
                 android:textColor="@color/preto"
                 app:layout_constraintStart_toStartOf="@id/tvRend"
                 app:layout_constraintTop_toBottomOf="@id/tvRend"
-                app:layout_constraintBottom_toBottomOf="@id/tvRend"/>
+                app:layout_constraintBottom_toBottomOf="@id/tvRend" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -331,7 +331,7 @@
                 android:textColor="@color/preto"
                 app:layout_constraintStart_toStartOf="@id/tvEnd"
                 app:layout_constraintTop_toBottomOf="@id/tvEnd"
-                app:layout_constraintBottom_toBottomOf="@id/tvEnd"/>
+                app:layout_constraintBottom_toBottomOf="@id/tvEnd" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -340,7 +340,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tvEndereco"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

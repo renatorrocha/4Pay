@@ -1,9 +1,5 @@
 package com.example.appbanco.view.Pagamentos.Deposito;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blackcat.currencyedittext.CurrencyEditText;
 import com.example.appbanco.R;
@@ -64,10 +64,10 @@ public class DepositofFormActivity extends AppCompatActivity {
         });
     }
 
-    public void validaDeposito(){
+    public void validaDeposito() {
         double valorDeposito = (double) edtValor.getRawValue() / 100;
 
-        if(valorDeposito > 0){
+        if (valorDeposito > 0) {
 
             ocultarTeclado();
 
@@ -75,15 +75,15 @@ public class DepositofFormActivity extends AppCompatActivity {
 
             salvarExtrato(valorDeposito);
 
-        }else{
+        } else {
 
             showDialog("Digite um valor maior que 0.");
         }
     }
 
-    private void salvarExtrato(double valorDeposito){
+    private void salvarExtrato(double valorDeposito) {
 
-        ExtratoModel extrato =  new ExtratoModel();
+        ExtratoModel extrato = new ExtratoModel();
         extrato.setOperacao("DEPOSITO");
         extrato.setValor(valorDeposito);
         extrato.setTipo("ENTRADA");
@@ -93,15 +93,15 @@ public class DepositofFormActivity extends AppCompatActivity {
                 .child(FirebaseHelper.getIdFirebase())
                 .child(extrato.getId());
         extratoRef.setValue(extrato).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
                 DatabaseReference updateExtrato = extratoRef
                         .child("data");
                 updateExtrato.setValue(ServerValue.TIMESTAMP);
 
                 salvarDeposito(extrato);
-                
-            }else{
+
+            } else {
                 showDialog("Não foi possível realizar o depósito, tente novamente mais tarde.");
             }
         });
@@ -119,7 +119,7 @@ public class DepositofFormActivity extends AppCompatActivity {
 
 
         depositoRef.setValue(deposito).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
                 DatabaseReference updateDeposito = depositoRef
                         .child("data");
@@ -128,19 +128,19 @@ public class DepositofFormActivity extends AppCompatActivity {
                 usuario.setSaldo(usuario.getSaldo() + deposito.getValor());
                 usuario.atualizarSaldo();
 
-                Intent intent = new Intent(this,DepositoReciboActivity.class);
+                Intent intent = new Intent(this, DepositoReciboActivity.class);
                 intent.putExtra("idDeposito", deposito.getId());
                 startActivity(intent);
                 finish();
 
-            }else{
+            } else {
                 progressBar.setVisibility(View.GONE);
                 showDialog("Não foi possível realizar o depósito, tente novamente mais tarde.");
             }
         });
     }
 
-    private void recuperaUsuario(){
+    private void recuperaUsuario() {
         DatabaseReference usuarioRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
                 .child(FirebaseHelper.getIdFirebase());
@@ -180,7 +180,7 @@ public class DepositofFormActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    private void iniciaComponentes(){
+    private void iniciaComponentes() {
         edtValor = findViewById(R.id.edtValDeposito);
         edtValor.setLocale(new Locale("PT", "br"));
 
@@ -188,7 +188,7 @@ public class DepositofFormActivity extends AppCompatActivity {
     }
 
     //Oculta o teclado do dispositivo
-    private void ocultarTeclado(){
+    private void ocultarTeclado() {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(edtValor.getWindowToken(),
                 InputMethodManager.HIDE_NOT_ALWAYS);

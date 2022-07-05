@@ -1,11 +1,5 @@
 package com.example.appbanco.view.Pagamentos.Pix.Chave_Pix;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -15,12 +9,17 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.example.appbanco.R;
 import com.example.appbanco.adapter.ChavesPixAdapter;
 import com.example.appbanco.databinding.ActivityTipoChaveBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.model.ChavePix;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -54,7 +53,7 @@ public class TipoChave extends AppCompatActivity implements ChavesPixAdapter.OnL
 
         binding.rvChavesPix.setLayoutManager(new LinearLayoutManager(this));
         binding.rvChavesPix.setHasFixedSize(true);
-        chavesPixAdapter = new ChavesPixAdapter(chavesPixList,  getBaseContext(), this);
+        chavesPixAdapter = new ChavesPixAdapter(chavesPixList, getBaseContext(), this);
         binding.rvChavesPix.setAdapter(chavesPixAdapter);
 
     }
@@ -121,7 +120,6 @@ public class TipoChave extends AppCompatActivity implements ChavesPixAdapter.OnL
             intent.putExtra("tipoChave", "chaveAleatoria");
             startActivity(intent);
         });
-
 
 
         builder.setView(view);

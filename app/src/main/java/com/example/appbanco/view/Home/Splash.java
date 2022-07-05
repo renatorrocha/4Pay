@@ -1,12 +1,11 @@
 package com.example.appbanco.view.Home;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbanco.R;
 import com.example.appbanco.help.FirebaseHelper;
@@ -20,9 +19,7 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
 
-
         new Handler(Looper.getMainLooper()).postDelayed(this::verificarLogin, 3000);
-
 
 
     }

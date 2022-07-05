@@ -1,12 +1,11 @@
 package com.example.appbanco.view.Pagamentos.Cartoes;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.ImageView;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityCartoesBinding;
@@ -25,7 +24,6 @@ public class Cartoes extends AppCompatActivity {
 
     List<Cartao> cartaoList = new ArrayList<>();
     private ConstraintLayout gerarCartão;
-    private ImageView ivArrowBack;
     ActivityCartoesBinding binding;
     private Cartao cartaoUm, cartaoDois, cartaoTres;
 
@@ -38,9 +36,9 @@ public class Cartoes extends AppCompatActivity {
         recuperarCartoes();
 
         binding.clCartao.setOnClickListener(view1 -> {
-            if(cartaoList.size() < 1){
+            if (cartaoList.size() < 1) {
                 startActivity(new Intent(this, GerarCartoes.class));
-            }else{
+            } else {
                 Intent it = new Intent(this, CartaoFatura.class);
                 it.putExtra("cartao", cartaoUm);
                 startActivity(it);

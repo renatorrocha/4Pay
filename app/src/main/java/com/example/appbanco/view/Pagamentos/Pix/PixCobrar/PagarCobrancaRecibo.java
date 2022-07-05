@@ -3,11 +3,6 @@ package com.example.appbanco.view.Pagamentos.Pix.PixCobrar;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
-
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -25,16 +20,18 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
+
 import com.example.appbanco.R;
-import com.example.appbanco.databinding.ActivityPagarCobrancaBinding;
 import com.example.appbanco.databinding.ActivityPagarCobrancaReciboBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
-import com.example.appbanco.model.Deposito;
 import com.example.appbanco.model.Pagamento;
 import com.example.appbanco.model.Usuario;
 import com.example.appbanco.view.Home.Home;
-import com.example.appbanco.view.Pagamentos.Pix.PixTransferir.PixTransfSucesso;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -83,7 +80,7 @@ public class PagarCobrancaRecibo extends AppCompatActivity {
         });
     }
 
-    private void recuperaDados(){
+    private void recuperaDados() {
         String idPagamento = (String) getIntent().getSerializableExtra("idPagamento");
 
         DatabaseReference pagRef = FirebaseHelper.getDatabaseReference()
@@ -113,9 +110,7 @@ public class PagarCobrancaRecibo extends AppCompatActivity {
         v.draw(canvas);
 
 
-
         return bitmap;
-
 
 
     }
@@ -137,12 +132,13 @@ public class PagarCobrancaRecibo extends AppCompatActivity {
         });
     }
 
-    private void configDados(){
+    private void configDados() {
         binding.tvCodigo.setText(pagamento.getId());
         binding.tvPessoa.setText(userDestino.getNome());
         binding.tvData.setText(GetMask.getDate(pagamento.getData(), 3));
         binding.tvValor.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(pagamento.getValor())));
     }
+
     private void createPdf() {
         WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -150,8 +146,6 @@ public class PagarCobrancaRecibo extends AppCompatActivity {
         float width = displayMetrics.widthPixels;
         float height = displayMetrics.heightPixels;
         int convertWidth = (int) width, convertHeight = (int) height;
-
-
 
 
         PdfDocument document = new PdfDocument();
@@ -171,8 +165,6 @@ public class PagarCobrancaRecibo extends AppCompatActivity {
         try {
 
 
-
-
             document.writeTo(new FileOutputStream(file));
 
             document.close();
@@ -181,7 +173,6 @@ public class PagarCobrancaRecibo extends AppCompatActivity {
             Toast.makeText(this, "baixado com sucesso", Toast.LENGTH_SHORT).show();
 
             openPdf();
-
 
 
         } catch (IOException e) {

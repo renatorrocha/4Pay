@@ -7,7 +7,7 @@ public class SeguroModel {
     private boolean status;
     private String dataVencimento;
 
-    public SeguroModel(){
+    public SeguroModel() {
 
     }
 

@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_alternativo"
     tools:context=".view.Pagamentos.Recarga.RecargaReciboActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lineard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_alternativo"
-        >
+        android:background="@drawable/background_alternativo">
 
         <TextView
             android:id="@+id/textView27"

@@ -97,7 +97,7 @@
         android:background="@drawable/line_shape"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDataPixFinal"
-        app:layout_constraintBottom_toTopOf="@id/tvCpfFinal"/>
+        app:layout_constraintBottom_toTopOf="@id/tvCpfFinal" />
 
     <TextView
         android:id="@+id/tvCpfFinal"
@@ -129,7 +129,6 @@
         android:background="@drawable/line_shape"
         app:layout_constraintTop_toBottomOf="@id/tvCpfFinal"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 
     <Button

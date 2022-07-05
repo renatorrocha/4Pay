@@ -1,16 +1,14 @@
 package com.example.appbanco.view.Pagamentos.Pix.PixTransferir;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbanco.R;
-
 import com.example.appbanco.databinding.ActivityPixTransfFinalBinding;
 import com.example.appbanco.help.FirebaseHelper;
 import com.example.appbanco.help.GetMask;
@@ -110,9 +108,9 @@ public class PixTransfFinal extends AppCompatActivity {
     }
 
 
-    private void salvarExtrato(Usuario usuario, String tipo){
+    private void salvarExtrato(Usuario usuario, String tipo) {
 
-        ExtratoModel extrato =  new ExtratoModel();
+        ExtratoModel extrato = new ExtratoModel();
         extrato.setOperacao("TRANSFERENCIA");
         extrato.setValor(transferencia.getValor());
         extrato.setTipo(tipo);
@@ -122,7 +120,7 @@ public class PixTransfFinal extends AppCompatActivity {
                 .child(usuario.getId())
                 .child(extrato.getId());
         extratoRef.setValue(extrato).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
                 DatabaseReference updateExtrato = extratoRef
                         .child("data");
@@ -130,13 +128,13 @@ public class PixTransfFinal extends AppCompatActivity {
 
                 salvarTransferencia(extrato);
 
-            }else{
+            } else {
 //                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void salvarTransferencia(ExtratoModel extrato){
+    private void salvarTransferencia(ExtratoModel extrato) {
 
         transferencia.setId(extrato.getId());
 
@@ -145,28 +143,28 @@ public class PixTransfFinal extends AppCompatActivity {
                 .child(transferencia.getId());
 
         transferenciaRef.setValue(transferencia).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
                 DatabaseReference updateTransferencia = transferenciaRef
                         .child("data");
                 updateTransferencia.setValue(ServerValue.TIMESTAMP);
 
-                if(extrato.getTipo().equals("SAIDA")){
+                if (extrato.getTipo().equals("SAIDA")) {
 
                     enviaNoti(extrato.getId());
                     Intent intent = new Intent(this, PixTransfSucesso.class);
-                    intent.putExtra("idTransferencia",transferencia.getId());
+                    intent.putExtra("idTransferencia", transferencia.getId());
                     startActivity(intent);
                 }
 
-            }else{
+            } else {
                 Toast.makeText(this, "Não foi possivel completar a transferência.", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
-    private void enviaNoti(String idOperacao){
+    private void enviaNoti(String idOperacao) {
         Notificacao notificacao = new Notificacao();
         notificacao.setOperação("TRANSFERENCIA");
         notificacao.setIdDestinario(userDestino.getId());
@@ -177,8 +175,8 @@ public class PixTransfFinal extends AppCompatActivity {
 
     private void configDados() {
 
-        binding.tvUserDestino.setText("Para "+ userDestino.getNome());
-        binding.tvValorTransfPix.setText(getString( R.string.txt_valor_deposito, GetMask.getValor(transferencia.getValor())));
+        binding.tvUserDestino.setText("Para " + userDestino.getNome());
+        binding.tvValorTransfPix.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(transferencia.getValor())));
 
         SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
         String dataFormatada = formataData.format(System.currentTimeMillis());

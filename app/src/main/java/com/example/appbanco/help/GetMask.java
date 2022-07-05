@@ -1,5 +1,7 @@
 package com.example.appbanco.help;
 
+import static java.text.DateFormat.getDateInstance;
+
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -9,11 +11,9 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import static java.text.DateFormat.getDateInstance;
-
 public class GetMask {
 
-    public static String getDate(long dataPublicacao, int tipo){
+    public static String getDate(long dataPublicacao, int tipo) {
 
         final int DIA_MES_ANO = 1; // 31/12/2021
         final int HORA_MINUTO = 2; // 22:00
@@ -49,8 +49,8 @@ public class GetMask {
         String mes = mesSdf.format(netDate);
         String ano = anoSdf.format(netDate);
 
-        if(tipo == 4){
-            switch (mes){
+        if (tipo == 4) {
+            switch (mes) {
                 case "01":
                     mes = "janeiro";
                     break;
@@ -94,7 +94,7 @@ public class GetMask {
         }
 
         String time;
-        switch (tipo){
+        switch (tipo) {
             case DIA_MES_ANO:
                 time = dia + "/" + mes + "/" + ano;
                 break;
@@ -114,7 +114,7 @@ public class GetMask {
         return time;
     }
 
-    public static String getValor(double valor){
+    public static String getValor(double valor) {
         NumberFormat nf = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(
                 new Locale("PT", "br")));
         return nf.format(valor);

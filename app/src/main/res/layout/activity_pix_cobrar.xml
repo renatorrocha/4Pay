@@ -47,8 +47,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
 
-
-
     <com.blackcat.currencyedittext.CurrencyEditText
         android:id="@+id/edtValCobrar"
         android:layout_width="wrap_content"
@@ -63,7 +61,6 @@
         app:layout_constraintTop_toBottomOf="@id/textView24"
 
         />
-
 
 
     <Button

@@ -1,7 +1,6 @@
 package com.example.appbanco.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appbanco.R;
 import com.example.appbanco.help.FirebaseHelper;
-import com.example.appbanco.model.ChavePix;
 import com.example.appbanco.model.SeguroModel;
 import com.example.appbanco.model.ViewPagerItem;
-import com.example.appbanco.view.Home.Seguros;
-import com.example.appbanco.view.Pagamentos.Pix.Chave_Pix.ChaveCriada;
 import com.google.firebase.database.DatabaseReference;
 
 import java.time.LocalDate;
@@ -84,23 +80,23 @@ public class VPAdapter extends RecyclerView.Adapter<VPAdapter.ViewHolder> {
         }
     }
 
-    private void setSeguro(SeguroModel seguro){
+    private void setSeguro(SeguroModel seguro) {
 
-            DatabaseReference seguroRef = FirebaseHelper.getDatabaseReference()
-                    .child("seguros")
-                    .child(FirebaseHelper.getIdFirebase())
-                    .child(seguro.getTipo());
+        DatabaseReference seguroRef = FirebaseHelper.getDatabaseReference()
+                .child("seguros")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(seguro.getTipo());
 
         seguroRef.setValue(seguro).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    Toast.makeText(context, "Seguro contratado com sucesso.", Toast.LENGTH_SHORT).show();
+            if (task.isSuccessful()) {
+                Toast.makeText(context, "Seguro contratado com sucesso.", Toast.LENGTH_SHORT).show();
 
 
-                } else {
-                    Toast.makeText(context, "Não foi possivel contratado o seguro.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Não foi possivel contratado o seguro.", Toast.LENGTH_SHORT).show();
 
-                }
-            });
+            }
+        });
 
     }
 

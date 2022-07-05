@@ -1,11 +1,11 @@
 package com.example.appbanco.view.Pagamentos.Pagamento;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbanco.R;
 import com.example.appbanco.databinding.ActivityConfirmarPagamentoBinding;
@@ -15,11 +15,8 @@ import com.example.appbanco.model.Boleto;
 import com.example.appbanco.model.Cartao;
 import com.example.appbanco.model.ExtratoModel;
 import com.example.appbanco.model.Notificacao;
-import com.example.appbanco.model.Pagamento;
 import com.example.appbanco.model.Usuario;
-import com.example.appbanco.view.Home.Home;
 import com.example.appbanco.view.Pagamentos.Cartoes.CartaoFatura;
-import com.example.appbanco.view.Pagamentos.Pix.PixCobrar.PagarCobrancaRecibo;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,7 +42,7 @@ public class ConfirmarPagamento extends AppCompatActivity {
             cartao = (Cartao) getIntent().getSerializableExtra("tipoCartao");
         }
 
-        if(tipoPagamento.equals("fatura") || tipoPagamento.equals("pagarFatura")){
+        if (tipoPagamento.equals("fatura") || tipoPagamento.equals("pagarFatura")) {
             cartao = (Cartao) getIntent().getSerializableExtra("tipoCartao");
 
             binding.tvValor.setText(getString(R.string.txt_valor_deposito, GetMask.getValor(cartao.getSaldo())));
@@ -73,7 +70,7 @@ public class ConfirmarPagamento extends AppCompatActivity {
     }
 
     private void setData() {
-        if(getIntent().hasExtra("boleto")){
+        if (getIntent().hasExtra("boleto")) {
             boleto = (Boleto) getIntent().getSerializableExtra("boleto");
 
             boleto.setData(System.currentTimeMillis());
@@ -108,31 +105,31 @@ public class ConfirmarPagamento extends AppCompatActivity {
             pagarComSaldo();
         }
 
-        if(tipoPagamento.equals("cartao")){
+        if (tipoPagamento.equals("cartao")) {
             pagarComCartao();
         }
 
-        if(tipoPagamento.equals("fatura") || tipoPagamento.equals("pagarFatura")){
+        if (tipoPagamento.equals("fatura") || tipoPagamento.equals("pagarFatura")) {
             pagarFatura();
         }
     }
 
     private void pagarComSaldo() {
-        if(usuario != null){
-            if(usuario.getSaldo() >= boleto.getValor()){
+        if (usuario != null) {
+            if (usuario.getSaldo() >= boleto.getValor()) {
                 usuario.setSaldo(usuario.getSaldo() - boleto.getValor());
                 usuario.atualizarSaldo();
                 salvarExtrato();
-            }else{
+            } else {
                 Toast.makeText(this, "Saldo insuficiente.", Toast.LENGTH_SHORT).show();
             }
         }
 
     }
 
-    private void salvarExtrato(){
+    private void salvarExtrato() {
 
-        ExtratoModel extrato =  new ExtratoModel();
+        ExtratoModel extrato = new ExtratoModel();
         extrato.setOperacao("PAGAMENTO");
         extrato.setValor(boleto.getValor());
         extrato.setTipo("SAIDA");
@@ -143,18 +140,18 @@ public class ConfirmarPagamento extends AppCompatActivity {
                 .child(usuario.getId())
                 .child(extrato.getId());
         extratoRef.setValue(extrato).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 DatabaseReference updateExtrato = extratoRef
                         .child("data");
                 updateExtrato.setValue(ServerValue.TIMESTAMP);
 
 //             enviaNoti(extrato.getId());
-             Intent intent = new Intent(ConfirmarPagamento.this, ReciboBoleto.class);
-             intent.putExtra("extrato", extrato);
-             startActivity(intent);
+                Intent intent = new Intent(ConfirmarPagamento.this, ReciboBoleto.class);
+                intent.putExtra("extrato", extrato);
+                startActivity(intent);
 
 
-            }else{
+            } else {
                 Toast.makeText(this, "Não foi possivel realizar o pagamento", Toast.LENGTH_SHORT).show();
             }
         });
@@ -169,31 +166,31 @@ public class ConfirmarPagamento extends AppCompatActivity {
         notificacao.enviar();
     }
 
-    private void pagarComCartao(){
-        if(cartao != null){
-            if(cartao.getLimite() >= boleto.getValor()){
-                if((cartao.getSaldo() + boleto.getValor()) <= cartao.getLimite()){
+    private void pagarComCartao() {
+        if (cartao != null) {
+            if (cartao.getLimite() >= boleto.getValor()) {
+                if ((cartao.getSaldo() + boleto.getValor()) <= cartao.getLimite()) {
 
                     cartao.setSaldo(cartao.getSaldo() + boleto.getValor());
                     cartao.atualizarSaldo();
                     salvarExtratoCartao();
-                }else{
+                } else {
                     Toast.makeText(this, "Limite insuficiente", Toast.LENGTH_SHORT).show();
 
                 }
-            }else{
+            } else {
                 Toast.makeText(this, "Limite insuficiente", Toast.LENGTH_SHORT).show();
 
             }
-        }else{
+        } else {
             Toast.makeText(this, "Não foi possivel recuperar o cartão", Toast.LENGTH_SHORT).show();
         }
 
     }
 
-    private void salvarExtratoCartao(){
+    private void salvarExtratoCartao() {
 
-        ExtratoModel extrato =  new ExtratoModel();
+        ExtratoModel extrato = new ExtratoModel();
         extrato.setOperacao("BOLETO");
         extrato.setValor(boleto.getValor());
         extrato.setTipo(boleto.getPara());
@@ -207,7 +204,7 @@ public class ConfirmarPagamento extends AppCompatActivity {
                 .child(extrato.getId());
 
         extratoCartaoRef.setValue(extrato).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 DatabaseReference updateExtrato = extratoCartaoRef
                         .child("data");
                 updateExtrato.setValue(ServerValue.TIMESTAMP);
@@ -218,15 +215,15 @@ public class ConfirmarPagamento extends AppCompatActivity {
                 startActivity(intent);
 
 
-            }else{
+            } else {
                 Toast.makeText(this, "Não foi possivel realizar o pagamento", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void pagarFatura(){
-        if(cartao != null){
-            if(usuario.getSaldo() >= cartao.getSaldo()){
+    private void pagarFatura() {
+        if (cartao != null) {
+            if (usuario.getSaldo() >= cartao.getSaldo()) {
                 double valor = cartao.getSaldo();
                 cartao.setSaldo(0);
                 usuario.setSaldo(usuario.getSaldo() - valor);
@@ -238,17 +235,15 @@ public class ConfirmarPagamento extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
-            }else{
+            } else {
                 Toast.makeText(this, "Saldo insuficiente", Toast.LENGTH_SHORT).show();
 
             }
 
-        }else{
+        } else {
             Toast.makeText(this, "Não foi possivel recuperar o cartão", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 
 
 }

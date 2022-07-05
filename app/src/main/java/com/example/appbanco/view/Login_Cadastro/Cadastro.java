@@ -1,17 +1,16 @@
 package com.example.appbanco.view.Login_Cadastro;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-
-import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.appbanco.R;
 import com.example.appbanco.help.FirebaseHelper;
@@ -48,7 +47,7 @@ public class Cadastro extends AppCompatActivity {
 
     }
 
-    public void  validaDados(View view) {
+    public void validaDados(View view) {
 
         String nome = edtNome.getText().toString();
         String cpf = edtCpf.getText().toString();
@@ -112,29 +111,29 @@ public class Cadastro extends AppCompatActivity {
         FirebaseHelper.getAuth().createUserWithEmailAndPassword(
                 usuario.getEmail(), usuario.getSenha()
         ).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
 
                 String id = task.getResult().getUser().getUid();
                 usuario.setId(id);
 
                 salvarDadosUsuario(usuario);
 
-            }else {
+            } else {
                 progressbar.setVisibility(View.GONE);
                 Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void salvarDadosUsuario(Usuario usuario){
+    private void salvarDadosUsuario(Usuario usuario) {
         DatabaseReference usuarioRef = FirebaseHelper.getDatabaseReference()
                 .child("usuarios")
                 .child(usuario.getId());
         usuarioRef.setValue(usuario).addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 finish();
                 startActivity(new Intent(this, CadastroProximo.class));
-            }else {
+            } else {
                 progressbar.setVisibility(View.GONE);
                 Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
             }
@@ -142,14 +141,14 @@ public class Cadastro extends AppCompatActivity {
 
     }
 
-    private void iniciaComponentes(){
+    private void iniciaComponentes() {
 
         edtNome = findViewById(R.id.nome);
-        edtCpf=findViewById(R.id.cpf);
+        edtCpf = findViewById(R.id.cpf);
         edtNascimento = findViewById(R.id.nascimento);
         edtemail = findViewById(R.id.email);
         edtsenha = findViewById(R.id.senha);
-        edtConfirmarsenha=findViewById(R.id.confirmasenha);
+        edtConfirmarsenha = findViewById(R.id.confirmasenha);
         progressbar = findViewById(R.id.progressbar);
     }
 

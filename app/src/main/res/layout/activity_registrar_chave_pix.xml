@@ -89,7 +89,7 @@
         android:textColor="@color/preto"
         app:layout_constraintStart_toStartOf="@id/tvChave"
         app:layout_constraintTop_toBottomOf="@id/tvChave"
-        app:layout_constraintBottom_toBottomOf="@id/cvChave"/>
+        app:layout_constraintBottom_toBottomOf="@id/cvChave" />
 
     <Button
         android:id="@+id/btnCriarChave"

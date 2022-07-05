@@ -1,11 +1,11 @@
 package com.example.appbanco.view.Pagamentos.Transferencia;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appbanco.R;
 import com.example.appbanco.view.Home.Home;
@@ -13,6 +13,7 @@ import com.example.appbanco.view.Home.Home;
 public class Transferencia extends AppCompatActivity {
 
     Button btnTransf2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
